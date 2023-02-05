@@ -1,0 +1,356 @@
+#  _ _____                    __ _       
+# (_)___ /    ___ ___  _ __  / _(_) __ _ 
+# | | |_ \   / __/ _ \| '_ \| |_| |/ _` |
+# | |___) | | (_| (_) | | | |  _| | (_| |
+# |_|____/   \___\___/|_| |_|_| |_|\__, |
+#                                  |___/ 
+
+set $mod Mod4
+
+font pango:JetBrainsMono Nerd Font 10
+
+floating_modifier $mod
+
+focus_follows_mouse no
+
+#  ____  _             _               
+# / ___|| |_ __ _ _ __| |_ _   _ _ __  
+# \___ \| __/ _` | '__| __| | | | '_ \ 
+#  ___) | || (_| | |  | |_| |_| | |_) |
+# |____/ \__\__,_|_|   \__|\__,_| .__/ 
+#                               |_|    
+
+exec --no-startup-id numlockx
+exec --no-startup-id amixer set Capture 40%
+exec --no-startup-id xset r rate 420 42
+exec --no-startup-id setxkbmap -layout us,ar && setxkbmap -option 'grp:alt_shift_toggle' && bash ~/.config/i3/scripts/caps_remapping.sh
+exec --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Accel Speed' 0.5
+exec --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Natural Scrolling Enabled' 1
+exec --no-startup-id polybar -r
+exec --no-startup-id nm-applet
+exec --no-startup-id killall nm-applet
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id ~/.config/i3/scripts/volume_control/volume_subscribe.sh
+exec --no-startup-id gpaste-client start
+exec --no-startup-id sudo virsh net-start default
+exec_always --no-startup-id volnoti -t 2
+exec_always --no-startup-id dunst
+exec_always --no-startup-id picom
+# exec_always --no-startup-id killall xborders; xborders --border-radius 14 --border-width 2 --disable-version-warning --border-mode outside
+# exec setxkbmap -layout us,ar && setxkbmap -option 'grp:alt_shift_toggle' && xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock" && xmodmap -e "keycode 66 = Escape NoSymbol Escape" && xmodmap -e "clear lock"
+
+#  _____ _                    _             
+# |_   _| |__   ___ _ __ ___ (_)_ __   __ _ 
+#   | | | '_ \ / _ \ '_ ` _ \| | '_ \ / _` |
+#   | | | | | |  __/ | | | | | | | | | (_| |
+#   |_| |_| |_|\___|_| |_| |_|_|_| |_|\__, |
+#                                     |___/ 
+
+gaps inner 10
+# gaps top 28
+# gaps horizontal 28
+hide_edge_borders both
+# smart_borders no_gaps
+default_border pixel 2
+default_floating_border pixel 2
+
+# # class                 border  backgr. text    indicator child_border
+# client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+# client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+# client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+# client.urgent           #2f343a #900000 #ffffff #900000   #900000
+# client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+# client.focused          #7b58dc #7b58dc #ffffff #9b58dc   #7b58dc
+# client.focused          #69faec #69faec #ffffff #c9faec   #69faec
+client.focused          #8bd5ca #8bd5ca #24273a #7ad3f5   #8bd5ca
+client.focused_inactive #555555 #555555 #ffffff #666666   #555555
+client.unfocused        #222222 #222222 #888888 #333333   #555555
+
+#  _  __            _     _           _ _                 
+# | |/ /___ _   _  | |__ (_)_ __   __| (_)_ __   __ _ ___ 
+# | ' // _ \ | | | | '_ \| | '_ \ / _` | | '_ \ / _` / __|
+# | . \  __/ |_| | | |_) | | | | | (_| | | | | | (_| \__ \
+# |_|\_\___|\__, | |_.__/|_|_| |_|\__,_|_|_| |_|\__, |___/
+#           |___/                               |___/     
+
+bindsym $mod+Return      exec kitty
+bindsym $mod+Escape      exec setcapslock toggle
+bindsym $mod+a           mode "applications"
+bindsym $mod+b           exec brave
+bindsym $mod+shift+b     exec qutebrowser
+bindsym $mod+c           exec rofi-gpaste
+bindsym $mod+shift+c     exec dunstctl close-all
+bindsym $mod+d           exec rofi -show drun
+bindsym $mod+shift+d     exec killall dunst
+bindsym $mod+e           layout toggle split
+bindsym $mod+f           fullscreen toggle
+bindsym $mod+shift+f     exec bash ~/.config/i3/scripts/toggle_gaps.sh
+bindsym $mod+g           gaps inner current plus 5
+bindsym $mod+shift+g     gaps inner current minus 5
+bindsym $mod+i           exec rofi -modi emoji -show emoji
+bindsym $mod+shift+i     exec xcalib -invert -alter
+bindsym $mod+m           mode "mouse"
+bindsym $mod+shift+m     --release exec xdotool type 'ﷺ'
+bindsym $mod+n           mode "redshift"
+bindsym $mod+shift+n     exec xdotool mousemove 1890 153 click 1 sleep 0.02 mousemove restore
+bindsym $mod+o           mode "scripts"
+bindsym $mod+shift+o     mode "executable_scripts"
+bindsym $mod+p           exec dolphin
+bindsym $mod+shift+p     exec killall picom
+bindsym $mod+q           kill
+bindsym $mod+shift+q     exec ~/.config/rofi/powermenu/type-1/powermenu.sh
+bindsym $mod+r           exec kitty -e ranger
+bindsym $mod+shift+r     restart
+bindsym $mod+s           split v
+bindsym $mod+t           split v ; layout tabbed
+bindsym $mod+shift+u     exec killall uget-gtk
+bindsym $mod+v           split h
+bindsym $mod+w           layout tabbed
+bindsym $mod+shift+w     exec nitrogen --set-zoom-fill --random /mnt/Disk_D/Backgrounds
+bindsym $mod+space       focus mode_toggle
+bindsym $mod+shift+space floating toggle
+bindsym Print            exec flameshot gui --path ~/Pictures
+bindsym shift+Print      exec flameshot full --path ~/Pictures
+# PulseAudio controls
+bindsym XF86AudioRaiseVolume       exec bash ~/.config/i3/scripts/volume_control/pactl_volume_up_limit.sh
+bindsym XF86AudioLowerVolume       exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym shift+XF86AudioRaiseVolume exec bash ~/.config/i3/scripts/volume_control/pactl_volume_up_by_1_limit.sh
+bindsym shift+XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -1%
+bindsym XF86AudioMute              exec bash ~/.config/i3/scripts/volume_control/volume_toggle_mute.sh
+bindsym XF86AudioMicMute           exec bash ~/.config/i3/scripts/volume_control/mic_toggle_mute.sh
+# screen brightness controls
+bindsym XF86MonBrightnessUp         exec ~/.config/i3/scripts/brightness_control/inc.exp
+bindsym XF86MonBrightnessDown       exec ~/.config/i3/scripts/brightness_control/dec.exp
+bindsym shift+XF86MonBrightnessUp   exec ~/.config/i3/scripts/brightness_control/s_inc.exp
+bindsym shift+XF86MonBrightnessDown exec ~/.config/i3/scripts/brightness_control/s_dec.exp
+# media player controls
+bindsym XF86AudioPlay       exec playerctl play-pause
+bindsym XF86AudioPause      exec playerctl play-pause
+bindsym XF86AudioNext       exec playerctl next
+bindsym XF86AudioPrev       exec playerctl previous
+bindsym shift+XF86AudioNext exec playerctl position 5+
+bindsym shift+XF86AudioPrev exec playerctl position 5-
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left  focus left
+bindsym $mod+Down  focus down
+bindsym $mod+Up    focus up
+bindsym $mod+Right focus right
+# move focused window
+bindsym $mod+shift+h move left
+bindsym $mod+shift+j move down
+bindsym $mod+shift+k move up
+bindsym $mod+shift+l move right
+# alternatively, you can use the cursor keys:
+bindsym $mod+shift+Left  move left
+bindsym $mod+shift+Down  move down
+bindsym $mod+shift+Up    move up
+bindsym $mod+shift+Right move right
+# resize focused window
+bindsym $mod+ctrl+h resize shrink width 20 px or 5 ppt
+bindsym $mod+ctrl+j resize grow height 20 px or 5 ppt
+bindsym $mod+ctrl+k resize shrink height 20 px or 5 ppt
+bindsym $mod+ctrl+l resize grow width 20 px or 5 ppt
+# alternatively, you can use the cursor keys:
+bindsym $mod+ctrl+Left  resize shrink width 20 px or 5 ppt
+bindsym $mod+ctrl+Down  resize grow height 20 px or 5 ppt
+bindsym $mod+ctrl+Up    resize shrink height 20 px or 5 ppt
+bindsym $mod+ctrl+Right resize grow width 20 px or 5 ppt
+
+# __        __         _                                  
+# \ \      / /__  _ __| | _____ _ __   __ _  ___ ___  ___ 
+#  \ \ /\ / / _ \| '__| |/ / __| '_ \ / _` |/ __/ _ \/ __|
+#   \ V  V / (_) | |  |   <\__ \ |_) | (_| | (_|  __/\__ \
+#    \_/\_/ \___/|_|  |_|\_\___/ .__/ \__,_|\___\___||___/
+#                              |_|                        
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1  "1"
+set $ws2  "2"
+set $ws3  "3"
+set $ws4  "4"
+set $ws5  "5"
+set $ws6  "6"
+set $ws7  "7"
+set $ws8  "8"
+set $ws9  "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Mod1+1 move container to workspace number $ws1  
+bindsym $mod+Mod1+2 move container to workspace number $ws2  
+bindsym $mod+Mod1+3 move container to workspace number $ws3  
+bindsym $mod+Mod1+4 move container to workspace number $ws4  
+bindsym $mod+Mod1+5 move container to workspace number $ws5  
+bindsym $mod+Mod1+6 move container to workspace number $ws6  
+bindsym $mod+Mod1+7 move container to workspace number $ws7  
+bindsym $mod+Mod1+8 move container to workspace number $ws8  
+bindsym $mod+Mod1+9 move container to workspace number $ws9  
+bindsym $mod+Mod1+0 move container to workspace number $ws10 
+
+# move focused container to workspace and switch to that workspace
+bindsym $mod+shift+1 move container to workspace number $ws1  ; workspace number $ws1
+bindsym $mod+shift+2 move container to workspace number $ws2  ; workspace number $ws2
+bindsym $mod+shift+3 move container to workspace number $ws3  ; workspace number $ws3
+bindsym $mod+shift+4 move container to workspace number $ws4  ; workspace number $ws4
+bindsym $mod+shift+5 move container to workspace number $ws5  ; workspace number $ws5
+bindsym $mod+shift+6 move container to workspace number $ws6  ; workspace number $ws6
+bindsym $mod+shift+7 move container to workspace number $ws7  ; workspace number $ws7
+bindsym $mod+shift+8 move container to workspace number $ws8  ; workspace number $ws8
+bindsym $mod+shift+9 move container to workspace number $ws9  ; workspace number $ws9
+bindsym $mod+shift+0 move container to workspace number $ws10 ; workspace number $ws10
+
+# open windows in specific workspaces
+for_window [class="Uget-gtk"] layout tabbed
+for_window [class="RangerFileChooser"] floating enabled
+for_window [class="Gcolor3"] floating enabled
+for_window [class="Timeshift-gtk"] floating disabled
+for_window [class="Shutter"] floating disabled
+assign     [class="Uget-gtk"] $ws10
+
+#  __  __           _           
+# |  \/  | ___   __| | ___  ___ 
+# | |\/| |/ _ \ / _` |/ _ \/ __|
+# | |  | | (_) | (_| |  __/\__ \
+# |_|  |_|\___/ \__,_|\___||___/
+#                               
+
+mode "redshift" {
+    bindsym r exec --no-startup-id "$kill_redshift redshift -x", mode "default"
+    bindsym 1 exec --no-startup-id "$kill_redshift redshift -P -O 5000", mode "default"
+    bindsym 2 exec --no-startup-id "$kill_redshift redshift -P -O 4000", mode "default"
+    bindsym 3 exec --no-startup-id "$kill_redshift redshift -P -O 3500", mode "default"
+    bindsym 4 exec --no-startup-id "$kill_redshift redshift -P -O 3000", mode "default"
+    bindsym 5 exec --no-startup-id "$kill_redshift redshift -P -O 2500", mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+n mode "default"
+}
+
+mode "applications" {
+    bindsym a exec android-studio, mode "default"
+    bindsym b exec blueman-manager, mode "default"
+    bindsym c exec gcolor3, mode "default"
+    bindsym d exec gnome-disks, mode "default"
+    bindsym g exec gparted, mode "default"
+    bindsym i exec idea, mode "default"
+    bindsym k exec kcalc, mode "default"
+    bindsym m exec picard, mode "default"
+    bindsym n exec nitrogen, mode "default"
+    bindsym o exec obs, mode "default"
+    bindsym p exec pamac-manager, mode "default"
+    bindsym s exec kshutdown, mode "default"
+    bindsym t exec telegram-desktop, mode "default"
+    bindsym u exec uget-gtk, mode "default"
+    bindsym v exec virt-manager, mode "default"
+    bindsym w exec whatsapp-for-linux, mode "default"
+    bindsym z exec zoom, mode "default"
+
+    bindsym shift+b exec bleachbit, mode "default"
+    bindsym shift+c exec cheese, mode "default"
+    bindsym shift+d exec discord, mode "default"
+    bindsym shift+g exec gimp, mode "default"
+    bindsym shift+i exec inkscape, mode "default"
+    bindsym shift+k exec kate, mode "default"
+    bindsym shift+m exec mp3splt-gtk, mode "default"
+    bindsym shift+n exec kitty -e newsboat, mode "default"
+    bindsym shift+p exec pdfarranger, mode "default"
+    bindsym shift+s exec shotcut, mode "default"
+    bindsym shift+t exec timeshift-launcher, mode "default"
+    bindsym shift+u exec python3 /mnt/Disk_D/برامج/Linux/ultimatevocalremovergui-master/UVR.py, mode "default"
+    bindsym shift+v exec ventoygui, mode "default"
+    bindsym shift+z exec zathura /mnt/Disk_D/مستندات/برمجة/Head-First-Kotlin-Dawn-Griffiths.pdf, mode "default"
+
+    bindsym Mod1+b exec notify-send -t 5000 "$(acpi)", mode "default"
+    bindsym Mod1+c exec gucharmap, mode "default"
+    bindsym Mod1+p exec pavucontrol, mode "default"
+    bindsym Mod1+t exec ticktick, mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+a mode "default"
+}
+
+mode "mouse" {
+    bindsym h exec xdotool mousemove_relative -- -30 0
+    bindsym j exec xdotool mousemove_relative -- 0 30
+    bindsym k exec xdotool mousemove_relative -- 0 -30
+    bindsym l exec xdotool mousemove_relative -- 30 0
+    bindsym $mod+h exec xdotool mousemove_relative -- -5 0
+    bindsym $mod+j exec xdotool mousemove_relative -- 0 5
+    bindsym $mod+k exec xdotool mousemove_relative -- 0 -5
+    bindsym $mod+l exec xdotool mousemove_relative -- 5 0
+
+    bindsym f exec xdotool click 1 # left
+    bindsym d exec xdotool click 2 # middle
+    bindsym s exec xdotool click 3 # right
+
+    bindsym Mod1+k exec xdotool click --repeat 3 4 # wheel up
+    bindsym Mod1+j exec xdotool click --repeat 3 5 # wheel down
+
+    bindsym 1 exec xdotool mousemove 0 0
+    bindsym 2 exec xdotool mousemove 1920 0
+    bindsym 3 exec xdotool mousemove 0 1080
+    bindsym 4 exec xdotool mousemove 1920 1080
+    bindsym 5 exec xdotool mousemove 960 540
+    bindsym 6 exec xdotool mousemove 480 270
+    bindsym 7 exec xdotool mousemove 1440 270
+    bindsym 8 exec xdotool mousemove 480 810
+    bindsym 9 exec xdotool mousemove 1440 810
+
+    bindsym $mod+m mode "default"
+}
+
+mode "scripts" {
+    bindsym b exec kitty -e nvim ~/.config/polybar/config.ini, mode "default"
+    bindsym d exec kitty -e nvim ~/.config/dunst/dunstrc, mode "default"
+    bindsym f exec kitty -e nvim ~/.config/newsboat/urls, mode "default"
+    bindsym h exec kitty -e nvim ~/.zsh_history, mode "default"
+    bindsym i exec kitty -e nvim ~/.config/i3/config, mode "default"
+    bindsym k exec kitty -e nvim ~/.config/kitty/kitty.conf, mode "default"
+    bindsym n exec kitty -e nvim ~/.config/nvim/init.vim, mode "default"
+    bindsym m exec kitty -e nvim ~/.config/mpv/mpv.conf, mode "default"
+    bindsym p exec kitty -e nvim ~/.config/picom/picom.conf, mode "default"
+    bindsym q exec kitty -e nvim ~/.config/qutebrowser/config.py, mode "default"
+    bindsym r exec kitty -e nvim ~/.config/ranger/rc.conf, mode "default"
+    bindsym z exec kitty -e nvim ~/.config/zathura/zathurarc, mode "default"
+
+    bindsym shift+i exec kitty -e nvim ~/Disk_D/Muhammad/Linux_stuff/Scripts/myManjaroI3Script.sh, mode "default"
+    bindsym shift+u exec kitty -e nvim /mnt/Disk_D/Muhammad/Linux_stuff/Scripts/update_MyDotFiles_repo.sh, mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+o mode "default"
+}
+
+mode "executable_scripts" {
+    bindsym u exec bash /mnt/Disk_D/Muhammad/Linux_stuff/Scripts/update_MyDotFiles_repo.sh, mode "default"
+    bindsym e exec kitty -e bash /mnt/Disk_D/Muhammad/English_Learner/english_learner.sh, mode "default"
+    bindsym w exec bash ~/.config/i3/scripts/add_workspaces.sh, mode "default"
+    bindsym y workspace $ws10; layout tabbed; exec kitty -e bash ~/.config/i3/scripts/yt-dlp_script.sh, mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+shift+o mode "default"
+}
+
