@@ -325,7 +325,7 @@ mode "scripts" {
     bindsym b exec kitty -e nvim ~/.config/polybar/config.ini, mode "default"
     bindsym d exec kitty -e nvim ~/.config/dunst/dunstrc, mode "default"
     bindsym f exec kitty -e nvim ~/.config/newsboat/urls, mode "default"
-    bindsym h exec kitty -e nvim ~/.zsh_history, mode "default"
+    bindsym h exec kitty -e nvim ~/.zhistory, mode "default"
     bindsym i exec kitty -e nvim ~/.config/i3/config, mode "default"
     bindsym k exec kitty -e nvim ~/.config/kitty/kitty.conf, mode "default"
     bindsym n exec kitty -e nvim ~/.config/nvim/init.vim, mode "default"
@@ -344,8 +344,9 @@ mode "scripts" {
 }
 
 mode "executable_scripts" {
-    bindsym u exec bash /mnt/Disk_D/Muhammad/Linux_stuff/Scripts/update_MyDotFiles_repo.sh, mode "default"
     bindsym e exec kitty -e bash /mnt/Disk_D/Muhammad/English_Learner/english_learner.sh, mode "default"
+    bindsym u exec bash /mnt/Disk_D/Muhammad/Linux_stuff/Scripts/update_MyDotFiles_repo.sh, mode "default"
+    bindsym v exec bash /mnt/Disk_D/Muhammad/Linux_stuff/Scripts/toggle_vpn.sh, mode "default"
     bindsym w exec bash ~/.config/i3/scripts/add_workspaces.sh, mode "default"
     bindsym y workspace $ws10; layout tabbed; exec kitty -e bash ~/.config/i3/scripts/yt-dlp_script.sh, mode "default"
 
