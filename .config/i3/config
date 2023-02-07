@@ -325,7 +325,6 @@ mode "scripts" {
     bindsym b exec kitty -e nvim ~/.config/polybar/config.ini, mode "default"
     bindsym d exec kitty -e nvim ~/.config/dunst/dunstrc, mode "default"
     bindsym f exec kitty -e nvim ~/.config/newsboat/urls, mode "default"
-    bindsym h exec kitty -e nvim ~/.zhistory, mode "default"
     bindsym i exec kitty -e nvim ~/.config/i3/config, mode "default"
     bindsym k exec kitty -e nvim ~/.config/kitty/kitty.conf, mode "default"
     bindsym n exec kitty -e nvim ~/.config/nvim/init.vim, mode "default"
@@ -335,8 +334,10 @@ mode "scripts" {
     bindsym r exec kitty -e nvim ~/.config/ranger/rc.conf, mode "default"
     bindsym z exec kitty -e nvim ~/.config/zathura/zathurarc, mode "default"
 
+    bindsym shift+h exec kitty -e nvim ~/.zhistory, mode "default"
     bindsym shift+i exec kitty -e nvim ~/Disk_D/Muhammad/Linux_stuff/Scripts/myManjaroI3Script.sh, mode "default"
     bindsym shift+u exec kitty -e nvim /mnt/Disk_D/Muhammad/Linux_stuff/Scripts/update_MyDotFiles_repo.sh, mode "default"
+    bindsym shift+z exec kitty -e nvim ~/.zshrc, mode "default"
 
     bindsym Return mode "default"
     bindsym Escape mode "default"

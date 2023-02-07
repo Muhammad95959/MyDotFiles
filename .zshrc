@@ -16,8 +16,9 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 setopt INC_APPEND_HISTORY
 
-# Enable colors
+# Enable colors and change prompt
 autoload -U colors && colors
+PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M%{$fg[red]%}]%{$fg[cyan]%}$%b "
 
 # Basic auto/tab complete:
 autoload -U compinit
@@ -35,7 +36,10 @@ bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -v '^?' backward-delete-char
+bindkey '^?' backward-delete-char # Fix backspace bug
+
+# Enable searching through history
+bindkey '^R' history-incremental-pattern-search-backward
 
 # Edit line in vim with ctrl-e:
 export VISUAL=nvim
