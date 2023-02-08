@@ -85,6 +85,7 @@ bindsym $mod+shift+c     exec dunstctl close-all
 bindsym $mod+d           exec rofi -show drun
 bindsym $mod+shift+d     exec killall dunst
 bindsym $mod+e           layout toggle split
+bindsym $mod+shift+e     exec ocrdesktop -c && notify-send -t 5000 "content copied to clipboard"
 bindsym $mod+f           fullscreen toggle
 bindsym $mod+shift+f     exec bash ~/.config/i3/scripts/toggle_gaps.sh
 bindsym $mod+g           gaps inner current plus 5

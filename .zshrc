@@ -18,7 +18,7 @@ setopt INC_APPEND_HISTORY
 
 # Enable colors and change prompt
 autoload -U colors && colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M%{$fg[red]%}]%{$fg[cyan]%}$%b "
+PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[white]%}%~%{$fg[red]%}]%{$fg[cyan]%}$%b "
 
 # Basic auto/tab complete:
 autoload -U compinit
@@ -69,6 +69,7 @@ alias nvimrc="nvim ~/.config/nvim/init.vim"
 alias i3config="nvim ~/.config/i3/config"
 alias barconfig="nvim ~/.config/polybar/config.ini"
 alias notes="nvim /mnt/Disk_D/Muhammad/notes"
+alias pnotes="nvim /mnt/Disk_D/Muhammad/My\ Documents/my_programming_notes.txt"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
