@@ -26,6 +26,7 @@ exec --no-startup-id xset r rate 420 42
 exec --no-startup-id setxkbmap -layout us,ar && setxkbmap -option 'grp:alt_shift_toggle' && bash ~/.config/i3/scripts/caps_remapping.sh
 exec --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Accel Speed' 0.5
 exec --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Natural Scrolling Enabled' 1
+exec --no-startup-id xinput set-prop 'PixArt Lenovo USB Optical Mouse' 'libinput Accel Speed' 0.5
 exec --no-startup-id polybar -r
 exec --no-startup-id nm-applet
 exec --no-startup-id killall nm-applet
@@ -64,7 +65,7 @@ default_floating_border pixel 2
 
 # client.focused          #7b58dc #7b58dc #ffffff #9b58dc   #7b58dc
 # client.focused          #69faec #69faec #ffffff #c9faec   #69faec
-client.focused          #8bd5ca #8bd5ca #24273a #7ad3f5   #8bd5ca
+client.focused          #8bd5ca #8bd5ca #24273a #8ed5fa   #8bd5ca
 client.focused_inactive #555555 #555555 #ffffff #666666   #555555
 client.unfocused        #222222 #222222 #888888 #333333   #555555
 
@@ -109,7 +110,7 @@ bindsym $mod+t           split v ; layout tabbed
 bindsym $mod+shift+u     exec killall uget-gtk
 bindsym $mod+v           split h
 bindsym $mod+w           layout tabbed
-bindsym $mod+shift+w     exec nitrogen --set-zoom-fill --random /mnt/Disk_D/Backgrounds
+bindsym $mod+shift+w     exec nitrogen --set-zoom-fill --random --no-recurse /mnt/Disk_D/Backgrounds
 bindsym $mod+space       focus mode_toggle
 bindsym $mod+shift+space floating toggle
 bindsym Print            exec flameshot gui --path ~/Pictures
