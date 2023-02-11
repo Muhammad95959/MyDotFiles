@@ -38,7 +38,7 @@ exec --no-startup-id sudo virsh net-start default
 exec_always --no-startup-id volnoti -t 2
 exec_always --no-startup-id dunst
 exec_always --no-startup-id picom
-# exec_always --no-startup-id killall xborders; xborders --border-radius 14 --border-width 2 --disable-version-warning --border-mode outside
+# exec_always --no-startup-id killall xborders; xborders --border-rgba 8bd5caff --border-radius 14 --border-width 2 --disable-version-warning --border-mode outside
 # exec setxkbmap -layout us,ar && setxkbmap -option 'grp:alt_shift_toggle' && xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock" && xmodmap -e "keycode 66 = Escape NoSymbol Escape" && xmodmap -e "clear lock"
 
 #  _____ _                    _             
@@ -51,7 +51,7 @@ exec_always --no-startup-id picom
 gaps inner 10
 # gaps top 28
 # gaps horizontal 28
-hide_edge_borders both
+hide_edge_borders smart_no_gaps
 # smart_borders no_gaps
 default_border pixel 2
 default_floating_border pixel 2
@@ -63,11 +63,9 @@ default_floating_border pixel 2
 # client.urgent           #2f343a #900000 #ffffff #900000   #900000
 # client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
-# client.focused          #7b58dc #7b58dc #ffffff #9b58dc   #7b58dc
-# client.focused          #69faec #69faec #ffffff #c9faec   #69faec
-client.focused          #8bd5ca #8bd5ca #24273a #8ed5fa   #8bd5ca
-client.focused_inactive #555555 #555555 #ffffff #666666   #555555
-client.unfocused        #222222 #222222 #888888 #333333   #555555
+client.focused           #cad3f5 #cad3f5 #24273a #cad3d5   #cad3f5
+ client.focused_inactive #555555 #555555 #ffffff #666666   #555555
+client.unfocused         #222222 #222222 #888888 #333333   #555555
 
 #  _  __            _     _           _ _                 
 # | |/ /___ _   _  | |__ (_)_ __   __| (_)_ __   __ _ ___ 
@@ -347,7 +345,9 @@ mode "scripts" {
 }
 
 mode "executable_scripts" {
+    bindsym b exec bash ~/.config/i3/scripts/i3_border_changer.sh, mode "default"
     bindsym e exec kitty -e bash /mnt/Disk_D/Muhammad/English_Learner/english_learner.sh, mode "default"
+    bindsym p exec bash ~/.config/i3/scripts/toggle_polybar_location.sh, mode "default"
     bindsym u exec bash /mnt/Disk_D/Muhammad/Linux_stuff/Scripts/update_MyDotFiles_repo.sh, mode "default"
     bindsym v exec bash /mnt/Disk_D/Muhammad/Linux_stuff/Scripts/toggle_vpn.sh, mode "default"
     bindsym w exec bash ~/.config/i3/scripts/add_workspaces.sh, mode "default"

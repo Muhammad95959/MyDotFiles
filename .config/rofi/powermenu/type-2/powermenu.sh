@@ -12,7 +12,7 @@
 
 # Current Theme
 dir="$HOME/.config/rofi/powermenu/type-2"
-theme='style-4'
+theme='style-8'
 
 # CMDs
 uptime="`uptime -p | sed -e 's/up //g'`"
@@ -48,11 +48,6 @@ confirm_cmd() {
 		-theme ${dir}/${theme}.rasi
 }
 
-# Ask for confirmation
-confirm_exit() {
-	echo -e "$yes\n$no" | confirm_cmd
-}
-
 # Pass variables to rofi dmenu
 run_rofi() {
 	echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd
@@ -60,8 +55,6 @@ run_rofi() {
 
 # Execute Command
 run_cmd() {
-	selected="$(confirm_exit)"
-	if [[ "$selected" == "$yes" ]]; then
 		if [[ $1 == '--shutdown' ]]; then
 			systemctl poweroff
 		elif [[ $1 == '--reboot' ]]; then
@@ -81,9 +74,6 @@ run_cmd() {
 				qdbus org.kde.ksmserver /KSMServer logout 0 0 0
 			fi
 		fi
-	else
-		exit 0
-	fi
 }
 
 # Actions
@@ -99,7 +89,7 @@ case ${chosen} in
 		if [[ -x '/usr/bin/betterlockscreen' ]]; then
 			betterlockscreen -l
 		elif [[ -x '/usr/bin/i3lock' ]]; then
-			i3lock
+			i3lock -c 000000
 		fi
         ;;
     $suspend)

@@ -49,11 +49,6 @@ confirm_cmd() {
 		-theme ${dir}/${theme}.rasi
 }
 
-# Ask for confirmation
-confirm_exit() {
-	echo -e "$yes\n$no" | confirm_cmd
-}
-
 # Pass variables to rofi dmenu
 run_rofi() {
 	echo -e "$lock\n$suspend\n$logout\n$hibernate\n$reboot\n$shutdown" | rofi_cmd
@@ -61,8 +56,6 @@ run_rofi() {
 
 # Execute Command
 run_cmd() {
-	selected="$(confirm_exit)"
-	if [[ "$selected" == "$yes" ]]; then
 		if [[ $1 == '--shutdown' ]]; then
 			systemctl poweroff
 		elif [[ $1 == '--reboot' ]]; then
@@ -84,9 +77,6 @@ run_cmd() {
 				qdbus org.kde.ksmserver /KSMServer logout 0 0 0
 			fi
 		fi
-	else
-		exit 0
-	fi
 }
 
 # Actions

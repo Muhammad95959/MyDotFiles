@@ -48,9 +48,9 @@ settings:
     - history
     - filesystem
   statusbar.show:
-    global: never
+    global: always
   tabs.show:
-    global: never
+    global: always
   url.default_page:
     global: https://timesprayer.com/
   url.incdec_segments:
