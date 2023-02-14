@@ -5,6 +5,12 @@
  * Nord Project Repo    : https://github.com/arcticicestudio/nord
  *******************************************************************************/
 
+configuration {
+    hover-select:               true;
+    me-select-entry:            "MousePrimary";
+    me-accept-entry:            "!MousePrimary";
+}
+
 * {
     font:   "Fira Code 10";
 
@@ -59,7 +65,7 @@ inputbar {
 }
 
 prompt, entry, element-text, element-icon {
-    vertical-align: 0.5;
+    vertical-align: 0;
 }
 
 prompt {
@@ -71,8 +77,8 @@ listview {
 }
 
 element {
-    padding:    1px 8px;
-    spacing:    4px;
+    padding:    1px 20px;
+    spacing:    0px;
 }
 
 element normal urgent {

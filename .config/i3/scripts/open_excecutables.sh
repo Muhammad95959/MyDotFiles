@@ -16,6 +16,6 @@ case "$chosen" in
     "Open Video Downloader") i3-msg workspace 10; kitty --class yt-dlp -e bash ~/.config/i3/scripts/yt-dlp_script.sh ;;
     "Toggle Gaps") bash ~/.config/i3/scripts/toggle_gaps.sh ;;
     "Toggle Polybar Location") bash ~/.config/i3/scripts/toggle_polybar_location.sh ;;
-    "Toggle VPN") bash /mnt/Disk_D/Muhammad/Linux_stuff/Scripts/toggle_vpn.sh ;;
-    "Update MyDotFiles Repo") bash /mnt/Disk_D/Muhammad/Linux_stuff/Scripts/update_MyDotFiles_repo.sh ;;
+    "Toggle VPN") bash ~/.config/i3/scripts/toggle_vpn.sh ;;
+    "Update MyDotFiles Repo") bash ~/.config/i3/scripts/update_MyDotFiles_repo.sh ;;
 esac

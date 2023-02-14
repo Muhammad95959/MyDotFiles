@@ -1,7 +1,8 @@
 /*****----- Configuration -----*****/
 configuration {
-    font:                       "JetBrains Mono Nerd Font 12";
+    font:                       "JetBrains Mono Nerd Font 20";
 	modi:                       "drun,run,filebrowser,window";
+    location:                   0;
     show-icons:                 true;
     display-drun:               "";
     display-run:                "";
@@ -47,8 +48,8 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       600px;
-    height:                      570px;
+    width:                       1000px;
+    height:                      575px;
     x-offset:                    0px;
     y-offset:                    0px;
 
