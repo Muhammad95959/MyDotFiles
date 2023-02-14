@@ -51,7 +51,7 @@ mainbox {
 }
 
 inputbar {
-    width:      25%;
+    width:      20%;
     height:     100%;
     padding:    1px 8px;
     spacing:    8px;

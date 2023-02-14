@@ -79,6 +79,10 @@ let g:rnvimr_action = {
 :set keymap=arabic
 :set iminsert=0
 :set clipboard+=unnamedplus
+:set encoding=utf-8
+:set fileencoding=utf-8
+:set termencoding=utf-8
+:set fileencodings=utf-8,cp1256
 
 """ ColorSchemes ----------------------------
 hi Pmenu ctermbg=NONE ctermfg=White

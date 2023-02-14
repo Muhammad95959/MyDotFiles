@@ -63,7 +63,7 @@ default_floating_border pixel 2
 # client.urgent           #2f343a #900000 #ffffff #900000   #900000
 # client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
-client.focused           #cad3f5 #cad3f5 #24273a #cad3d5   #cad3f5
+client.focused           #61afef #61afef #24273a #61dfff   #61afef
  client.focused_inactive #555555 #555555 #ffffff #666666   #555555
 client.unfocused         #222222 #222222 #888888 #333333   #555555
 
@@ -221,11 +221,13 @@ bindsym $mod+shift+0 move container to workspace number $ws10 ; workspace number
 
 # open windows in specific workspaces
 for_window [class="Uget-gtk"] layout tabbed
+for_window [class="yt-dlp"] layout tabbed
 for_window [class="RangerFileChooser"] floating enabled
 for_window [class="Gcolor3"] floating enabled
 for_window [class="Timeshift-gtk"] floating disabled
 for_window [class="Shutter"] floating disabled
 assign     [class="Uget-gtk"] $ws10
+assign     [class="yt-dlp"] $ws10
 
 #  __  __           _           
 # |  \/  | ___   __| | ___  ___ 
@@ -347,11 +349,11 @@ mode "scripts" {
 mode "executable_scripts" {
     bindsym b exec bash ~/.config/i3/scripts/i3_border_changer.sh, mode "default"
     bindsym e exec kitty -e bash /mnt/Disk_D/Muhammad/English_Learner/english_learner.sh, mode "default"
+    bindsym o exec bash ~/.config/i3/scripts/open_excecutables.sh, mode "default"
     bindsym p exec bash ~/.config/i3/scripts/toggle_polybar_location.sh, mode "default"
     bindsym u exec bash /mnt/Disk_D/Muhammad/Linux_stuff/Scripts/update_MyDotFiles_repo.sh, mode "default"
     bindsym v exec bash /mnt/Disk_D/Muhammad/Linux_stuff/Scripts/toggle_vpn.sh, mode "default"
-    bindsym w exec bash ~/.config/i3/scripts/add_workspaces.sh, mode "default"
-    bindsym y workspace $ws10; layout tabbed; exec kitty -e bash ~/.config/i3/scripts/yt-dlp_script.sh, mode "default"
+    bindsym y workspace $ws10; exec kitty --class yt-dlp -e bash ~/.config/i3/scripts/yt-dlp_script.sh, mode "default"
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
