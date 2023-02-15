@@ -22,8 +22,7 @@ focus_follows_mouse no
 
 exec --no-startup-id numlockx
 exec --no-startup-id amixer set Capture 40%
-exec --no-startup-id xset r rate 420 42
-exec --no-startup-id setxkbmap -layout us,ar && setxkbmap -option 'grp:alt_shift_toggle' && bash ~/.config/i3/scripts/caps_remapping.sh
+exec --no-startup-id bash ~/.config/i3/scripts/keyboard_config.sh
 exec --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Accel Speed' 0.5
 exec --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Natural Scrolling Enabled' 1
 exec --no-startup-id xinput set-prop 'PixArt Lenovo USB Optical Mouse' 'libinput Accel Speed' 0.5
@@ -38,8 +37,7 @@ exec --no-startup-id sudo virsh net-start default
 exec_always --no-startup-id volnoti -t 2
 exec_always --no-startup-id dunst
 exec_always --no-startup-id picom
-# exec_always --no-startup-id killall xborders; xborders --border-rgba 8bd5caff --border-radius 14 --border-width 2 --disable-version-warning --border-mode outside
-# exec setxkbmap -layout us,ar && setxkbmap -option 'grp:alt_shift_toggle' && xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock" && xmodmap -e "keycode 66 = Escape NoSymbol Escape" && xmodmap -e "clear lock"
+# exec_always --no-startup-id killall xborders; xborders --border-rgba 61afefff --border-radius 14 --border-width 2 --disable-version-warning --border-mode inside
 
 #  _____ _                    _             
 # |_   _| |__   ___ _ __ ___ (_)_ __   __ _ 
@@ -51,6 +49,7 @@ exec_always --no-startup-id picom
 gaps inner 10
 # gaps top 28
 # gaps horizontal 28
+# border_radius 14
 hide_edge_borders smart_no_gaps
 # smart_borders no_gaps
 default_border pixel 2
