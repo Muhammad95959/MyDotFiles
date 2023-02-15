@@ -9,7 +9,7 @@ chosen=$(printf "\
 8
 9
 10\
-" | rofi -dmenu -i -theme ~/.config/rofi/nord_oneline.rasi -p "choose a workspace:")
+" | rofi -dmenu -i -theme ~/.config/rofi/nord_oneline.rasi -p "open workspace:")
 
 case "$chosen" in
     "1") i3-msg workspace 1 ;;

@@ -94,7 +94,7 @@ bindsym $mod+shift+i     exec xcalib -invert -alter
 bindsym $mod+m           mode "mouse"
 bindsym $mod+shift+m     --release exec xdotool type 'ﷺ'
 bindsym $mod+n           mode "redshift"
-bindsym $mod+shift+n     exec xdotool mousemove 1890 153 click 1 sleep 0.02 mousemove restore
+bindsym $mod+shift+n     exec bash ~/.config/i3/scripts/xdotool_close.sh
 bindsym $mod+o           mode "scripts"
 bindsym $mod+shift+o     mode "executable_scripts"
 bindsym $mod+p           exec dolphin
@@ -115,9 +115,9 @@ bindsym Print            exec flameshot gui --path ~/Pictures
 bindsym shift+Print      exec flameshot full --path ~/Pictures
 # PulseAudio controls
 bindsym XF86AudioRaiseVolume       exec bash ~/.config/i3/scripts/volume_control/pactl_volume_up_limit.sh
-bindsym XF86AudioLowerVolume       exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioLowerVolume       exec amixer set Master on && pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym shift+XF86AudioRaiseVolume exec bash ~/.config/i3/scripts/volume_control/pactl_volume_up_by_1_limit.sh
-bindsym shift+XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -1%
+bindsym shift+XF86AudioLowerVolume exec amixer set Master on && pactl set-sink-volume @DEFAULT_SINK@ -1%
 bindsym XF86AudioMute              exec bash ~/.config/i3/scripts/volume_control/volume_toggle_mute.sh
 bindsym XF86AudioMicMute           exec bash ~/.config/i3/scripts/volume_control/mic_toggle_mute.sh
 # screen brightness controls
