@@ -9,6 +9,22 @@ function blueText {
 
 read -p "$(blueText "Do you want to download a playlist? [n/y]: ")" isPlaylist
 
+if [ $isPlaylist ]; then
+    read -p "$(blueText "
+1: download certain videos
+2: download the full playlist (default)
+your choice : ")" pChoice 
+fi
+
+toDownload=""
+case $pChoice in
+    1) 
+        read -p "$(blueText "
+the videos in the format [ eg: 1,3-7,13 ] : ")" pVideos
+        toDownload="--playlist-items $pVideos" ;;
+    *) ;;
+esac
+
 read -p "
 $(blueText "url: ")" url
 
@@ -32,7 +48,7 @@ read -p "$(blueText "
 your chosen number : ")" quality
 
 case $isPlaylist in
-    y | Y) yt-dlp -f $quality -o "%(playlist_index)02d - %(title)s.%(ext)s" $url ;;
+    y | Y) yt-dlp -f $quality -o "%(playlist_index)02d - %(title)s.%(ext)s" $toDownload $url ;;
     *) yt-dlp -f $quality $url ;;
 esac
 

@@ -86,10 +86,7 @@ map <leader>/ <Action>(ShowErrorDescription)
 map <leader>b <Action>(ToggleLineBreakpoint)
 map <leader>c <Action>(Stop)
 map <leader>d <Action>(Debug)
-map <leader>e :NERDTree<CR>
-map <leader>l <Action>(ActivateLogcatToolWindow)
 map <leader>n <Action>(RenameElement)
-map <leader>o <Action>(OpenFile)
 map <leader>r <Action>(Run)
 map <leader>s :source ~/.ideavimrc<CR>
 
