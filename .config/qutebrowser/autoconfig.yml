@@ -32,8 +32,6 @@ settings:
         L: null
         M: hint links spawn mpv {hint-url}
         Z: hint links spawn kitty -e yt-dlp {hint-url}
-        j: null
-        k: null
         xb: config-cycle statusbar.show always never
         xt: config-cycle tabs.show always never
         xx: config-cycle statusbar.show always never;; config-cycle tabs.show always
@@ -50,9 +48,9 @@ settings:
   statusbar.show:
     global: always
   tabs.show:
-    global: always
-  url.default_page:
-    global: https://timesprayer.com/
+    global: never
+  # url.default_page:
+  #   global: https://timesprayer.com/
   url.incdec_segments:
     global:
     - path
@@ -62,8 +60,6 @@ settings:
   url.searchengines:
     global:
       DEFAULT: https://www.google.com/search?q={}
-  url.start_pages:
-    global: https://timesprayer.com/
   window.transparent:
     global: false
   zoom.default:
