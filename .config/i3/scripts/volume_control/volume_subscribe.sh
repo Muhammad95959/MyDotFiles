@@ -1,4 +1,5 @@
 #!/bin/bash
+
 MAX_VOL=150
 OLD_VOL=$(($(amixer get Master | grep -Po "[0-9]+(?=%)" | tail -1)*100/$MAX_VOL))
 pactl subscribe | grep --line-buffered "sink" |

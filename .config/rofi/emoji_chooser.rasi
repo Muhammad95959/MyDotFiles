@@ -13,7 +13,7 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import                          "colors/onedark.rasi"
+@import                          "colors/mine.rasi"
 
 * {
     border-colour:               var(selected);

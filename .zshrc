@@ -90,7 +90,7 @@ alias nvimrc="nvim ~/.config/nvim/init.vim"
 alias i3config="nvim ~/.config/i3/config"
 alias barconfig="nvim ~/.config/polybar/config.ini"
 alias notes="nvim /mnt/Disk_D/Muhammad/notes"
-alias pnotes="nvim /mnt/Disk_D/Muhammad/My\ Documents/my_programming_notes.txt"
+alias pnotes="nvim /mnt/Disk_D/Muhammad/My\ Documents/Programming_Notes/my_programming_notes.txt"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

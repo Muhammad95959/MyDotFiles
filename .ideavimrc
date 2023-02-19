@@ -49,10 +49,6 @@ vnoremap > >gv
 vnoremap <A-j> :m .+1<CR>==gv
 vnoremap <A-k> :m .-2<CR>==gv
 
-vnoremap <A-j> :move '>+1<CR>gv-gv
-
-vnoremap <A-k> :move '<-2<CR>gv-gv
-
 " clipboard magic
 noremap x "_x
 noremap s "_s

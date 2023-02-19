@@ -26,7 +26,7 @@ exec --no-startup-id bash ~/.config/i3/scripts/keyboard_config.sh
 exec --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Accel Speed' 0.5
 exec --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Natural Scrolling Enabled' 1
 exec --no-startup-id xinput set-prop 'PixArt Lenovo USB Optical Mouse' 'libinput Accel Speed' 0.5
-exec --no-startup-id polybar -r
+exec --no-startup-id polybar -c ~/.config/polybar/polycat.ini -r
 exec --no-startup-id nm-applet
 exec --no-startup-id killall nm-applet
 exec --no-startup-id nitrogen --restore
@@ -62,7 +62,7 @@ default_floating_border pixel 2
 # client.urgent           #2f343a #900000 #ffffff #900000   #900000
 # client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
-client.focused           #61afef #61afef #24273a #61dfff   #61afef
+client.focused           #c6a0f6 #c6a0f6 #24273a #c640f6   #c6a0f6
  client.focused_inactive #555555 #555555 #ffffff #666666   #555555
 client.unfocused         #222222 #222222 #888888 #333333   #555555
 
@@ -220,6 +220,7 @@ bindsym $mod+shift+0 move container to workspace number $ws10 ; workspace number
 
 # open windows in specific workspaces
 for_window [class="RangerFileChooser"] floating enabled
+for_window [class="Nitrogen"] floating enabled
 for_window [class="Gcolor3"] floating enabled
 for_window [class="Timeshift-gtk"] floating disabled
 for_window [class="Shutter"] floating disabled
@@ -347,7 +348,10 @@ mode "scripts" {
 
 mode "executable_scripts" {
     bindsym b exec bash ~/.config/i3/scripts/i3_border_changer.sh, mode "default"
+    bindsym c exec bash ~/.config/i3/scripts/catpuccin_theme.sh, mode "default"
+    bindsym shift+c exec bash ~/.config/i3/scripts/default_theme.sh, mode "default"
     bindsym e exec kitty -e bash /mnt/Disk_D/Muhammad/English_Learner/english_learner.sh, mode "default"
+    bindsym n exec bash ~/.config/i3/scripts/toggle_nvchad.sh, mode "default"
     bindsym o exec bash ~/.config/i3/scripts/open_excecutables.sh, mode "default"
     bindsym p exec bash ~/.config/i3/scripts/toggle_polybar_location.sh, mode "default"
     bindsym u exec bash ~/.config/i3/scripts/update_MyDotFiles_repo.sh, mode "default"

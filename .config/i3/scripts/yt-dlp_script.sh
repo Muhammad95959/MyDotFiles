@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cd ~/Downloads
 toilet yt-dlp script -w 100 --metal --filter border
 
@@ -9,11 +11,19 @@ function blueText {
 
 read -p "$(blueText "Do you want to download a playlist? [n/y]: ")" isPlaylist
 
+split=""
 if [ $isPlaylist ]; then
     read -p "$(blueText "
 1: download certain videos
 2: download the full playlist (default)
 your choice : ")" pChoice 
+else
+    read -p "$(blueText "
+Do you want to split chapters? [n/y]: ")" split
+fi
+
+if [ $split ]; then
+    split="--split-chapters"
 fi
 
 toDownload=""
@@ -49,7 +59,7 @@ your chosen number : ")" quality
 
 case $isPlaylist in
     y | Y) yt-dlp -f $quality -o "%(playlist_index)02d - %(title)s.%(ext)s" $toDownload $url ;;
-    *) yt-dlp -f $quality $url ;;
+    *) yt-dlp $split -f $quality $url ;;
 esac
 
 notify-send "download completed"

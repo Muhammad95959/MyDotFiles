@@ -1,3 +1,5 @@
+#!/bin/bash
+
 chosen=$(printf "\
 1
 2

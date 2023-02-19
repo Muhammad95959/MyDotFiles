@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 if [ "$(grep 'bottom = true' ~/.config/polybar/config.ini)" != "" ]; then
     sed -Ei "/bottom = true/s/true/false/" ~/.config/polybar/config.ini
