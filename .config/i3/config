@@ -74,7 +74,6 @@ client.unfocused         #222222 #222222 #888888 #333333   #555555
 #           |___/                               |___/     
 
 bindsym $mod+Return      exec kitty
-bindsym $mod+Escape      exec setcapslock toggle
 bindsym $mod+a           mode "applications"
 bindsym $mod+b           exec brave
 bindsym $mod+shift+b     exec qutebrowser
@@ -86,8 +85,8 @@ bindsym $mod+e           layout toggle split
 bindsym $mod+shift+e     exec ocrdesktop -c && notify-send -t 5000 "content copied to clipboard"
 bindsym $mod+f           fullscreen toggle
 bindsym $mod+shift+f     exec bash ~/.config/i3/scripts/toggle_gaps.sh
-bindsym $mod+g           gaps inner current plus 5
-bindsym $mod+shift+g     gaps inner current minus 5
+bindsym $mod+g           gaps inner current plus 9 ; gaps horizontal current plus 7
+bindsym $mod+shift+g     gaps inner current minus 9 ; gaps horizontal current minus 7
 bindsym $mod+i           exec rofi -modi emoji -show emoji -theme ~/.config/rofi/emoji_chooser.rasi
 bindsym $mod+shift+i     exec xcalib -invert -alter
 bindsym $mod+m           mode "mouse"
@@ -112,6 +111,7 @@ bindsym $mod+space       focus mode_toggle
 bindsym $mod+shift+space floating toggle
 bindsym Print            exec flameshot gui --path ~/Pictures
 bindsym shift+Print      exec flameshot full --path ~/Pictures
+bindsym ctrl+Escape      exec setcapslock toggle
 # PulseAudio controls
 bindsym XF86AudioRaiseVolume       exec bash ~/.config/i3/scripts/volume_control/pactl_volume_up_limit.sh
 bindsym XF86AudioLowerVolume       exec amixer set Master on && pactl set-sink-volume @DEFAULT_SINK@ -5%
@@ -262,15 +262,13 @@ mode "applications" {
     bindsym o exec obs, mode "default"
     bindsym p exec pamac-manager, mode "default"
     bindsym s exec kshutdown, mode "default"
-    bindsym t exec telegram-desktop, mode "default"
+    bindsym t exec timeshift-launcher, mode "default"
     bindsym u exec uget-gtk, mode "default"
     bindsym v exec virt-manager, mode "default"
-    bindsym w exec whatsapp-for-linux, mode "default"
-    bindsym z exec zoom, mode "default"
+    bindsym z exec zathura /mnt/Disk_D/مستندات/برمجة/Head-First-Kotlin-Dawn-Griffiths.pdf, mode "default"
 
     bindsym shift+b exec bleachbit, mode "default"
     bindsym shift+c exec cheese, mode "default"
-    bindsym shift+d exec discord, mode "default"
     bindsym shift+g exec gimp, mode "default"
     bindsym shift+i exec inkscape, mode "default"
     bindsym shift+k exec kate, mode "default"
@@ -278,15 +276,12 @@ mode "applications" {
     bindsym shift+n exec kitty -e newsboat, mode "default"
     bindsym shift+p exec pdfarranger, mode "default"
     bindsym shift+s exec shotcut, mode "default"
-    bindsym shift+t exec timeshift-launcher, mode "default"
     bindsym shift+u exec python3 /mnt/Disk_D/برامج/Linux/ultimatevocalremovergui-master/UVR.py, mode "default"
     bindsym shift+v exec ventoygui, mode "default"
-    bindsym shift+z exec zathura /mnt/Disk_D/مستندات/برمجة/Head-First-Kotlin-Dawn-Griffiths.pdf, mode "default"
 
     bindsym Mod1+b exec notify-send -t 5000 "$(acpi)", mode "default"
     bindsym Mod1+c exec gucharmap, mode "default"
     bindsym Mod1+p exec pavucontrol, mode "default"
-    bindsym Mod1+t exec ticktick, mode "default"
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -338,7 +333,7 @@ mode "scripts" {
 
     bindsym shift+h exec kitty -e nvim ~/.zhistory, mode "default"
     bindsym shift+i exec kitty -e nvim ~/Disk_D/Muhammad/Linux_stuff/Scripts/myManjaroI3Script.sh, mode "default"
-    bindsym shift+u exec kitty -e nvim ~/.config/i3/scripts/update_MyDotFiles_repo.sh, mode "default"
+    bindsym shift+u exec kitty -e nvim ~/.config/i3/scripts/update_DotFiles_repo.sh, mode "default"
     bindsym shift+z exec kitty -e nvim ~/.zshrc, mode "default"
 
     bindsym Return mode "default"
@@ -354,7 +349,7 @@ mode "executable_scripts" {
     bindsym n exec bash ~/.config/i3/scripts/toggle_nvchad.sh, mode "default"
     bindsym o exec bash ~/.config/i3/scripts/open_excecutables.sh, mode "default"
     bindsym p exec bash ~/.config/i3/scripts/toggle_polybar_location.sh, mode "default"
-    bindsym u exec bash ~/.config/i3/scripts/update_MyDotFiles_repo.sh, mode "default"
+    bindsym u exec bash ~/.config/i3/scripts/update_DotFiles_repo.sh, mode "default"
     bindsym v exec bash ~/.config/i3/scripts/toggle_vpn.sh, mode "default"
     bindsym y workspace $ws10; exec kitty --class yt-dlp -e bash ~/.config/i3/scripts/yt-dlp_script.sh, mode "default"
 

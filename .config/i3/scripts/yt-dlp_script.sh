@@ -12,7 +12,7 @@ function blueText {
 read -p "$(blueText "Do you want to download a playlist? [n/y]: ")" isPlaylist
 
 split=""
-if [ $isPlaylist ]; then
+if [ "$isPlaylist" == "y" ] || [ "$isPlaylist" == "Y" ]; then
     read -p "$(blueText "
 1: download certain videos
 2: download the full playlist (default)
@@ -34,6 +34,8 @@ the videos in the format [ eg: 1,3-7,13 ] : ")" pVideos
         toDownload="--playlist-items $pVideos" ;;
     *) ;;
 esac
+
+# pFirstVideo="--playlist-items $(echo $pVideos | awk -F',' '{print $1}' | sed 's/-.*//')"
 
 read -p "
 $(blueText "url: ")" url
