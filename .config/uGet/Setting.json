@@ -41,7 +41,7 @@
 		"SortNth": 1,
 		"Width": {
 			"state": 18,
-			"name": 1137,
+			"name": 1125,
 			"complete": 79,
 			"total": 70,
 			"percent": 60,
@@ -51,10 +51,10 @@
 			"UploadSpeed": 80,
 			"uploaded": 0,
 			"ratio": 49,
-			"retry": 49,
+			"retry": 45,
 			"category": 0,
 			"uri": 0,
-			"AddedOn": 140,
+			"AddedOn": 152,
 			"CompletedOn": 0
 		},
 		"completed": true

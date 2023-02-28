@@ -3,7 +3,6 @@
 # toggle_gaps [on|off|toggle]
 
 INNER=10
-OUTER=0
 HORIZONTAL=0
 
 mode=$1
@@ -25,9 +24,9 @@ if [[ -z "$mode" || "$mode" == "toggle" ]]; then
 fi
 
 if [[ "$mode" == "on" ]]; then
-	i3-msg "gaps inner current set $INNER; gaps outer current set $OUTER; gaps horizontal current set $HORIZONTAL"
+	i3-msg "gaps inner current set $INNER; gaps horizontal current set $HORIZONTAL"
     # killall xborders; xborders --border-rgba 61afefff --border-radius 14 --border-width 2 --disable-version-warning --border-mode inside
 else
-	i3-msg "gaps inner current set 0; gaps outer current set 0; gaps horizontal current set 0"
+	i3-msg "gaps inner current set 0; gaps horizontal current set 0"
     # killall xborders
 fi

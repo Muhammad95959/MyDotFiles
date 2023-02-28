@@ -47,13 +47,10 @@ exec_always --no-startup-id picom
 #                                     |___/ 
 
 gaps inner 10
-# gaps top 28
-# gaps horizontal 28
 # border_radius 14
-hide_edge_borders smart_no_gaps
 # smart_borders no_gaps
-default_border pixel 2
-default_floating_border pixel 2
+hide_edge_borders smart_no_gaps
+for_window [class=.*] border pixel 2
 
 # # class                 border  backgr. text    indicator child_border
 # client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
