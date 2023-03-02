@@ -59,7 +59,7 @@ for_window [class=.*] border pixel 2
 # client.urgent           #2f343a #900000 #ffffff #900000   #900000
 # client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
-client.focused           #61afef #61afef #24273a #61dfff   #61afef
+client.focused           #8bd5ca #8bd5ca #24273a #8ed5fa   #8bd5ca
  client.focused_inactive #555555 #555555 #ffffff #666666   #555555
 client.unfocused         #222222 #222222 #888888 #333333   #555555
 
@@ -158,6 +158,16 @@ bindsym $mod+ctrl+Left  resize shrink width 20 px or 5 ppt
 bindsym $mod+ctrl+Down  resize grow height 20 px or 5 ppt
 bindsym $mod+ctrl+Up    resize shrink height 20 px or 5 ppt
 bindsym $mod+ctrl+Right resize grow width 20 px or 5 ppt
+# resize focused window and center it
+bindsym $mod+ctrl+shift+h resize shrink width 20 px or 5 ppt, move position center
+bindsym $mod+ctrl+shift+j resize grow height 20 px or 5 ppt, move position center
+bindsym $mod+ctrl+shift+k resize shrink height 20 px or 5 ppt, move position center
+bindsym $mod+ctrl+shift+l resize grow width 20 px or 5 ppt, move position center
+# alternatively, you can use the cursor keys:
+bindsym $mod+ctrl+shift+Left  resize shrink width 20 px or 5 ppt, move position center
+bindsym $mod+ctrl+shift+Down  resize grow height 20 px or 5 ppt, move position center
+bindsym $mod+ctrl+shift+Up    resize shrink height 20 px or 5 ppt, move position center
+bindsym $mod+ctrl+shift+Right resize grow width 20 px or 5 ppt, move position center
 
 # __        __         _                                  
 # \ \      / /__  _ __| | _____ _ __   __ _  ___ ___  ___ 
