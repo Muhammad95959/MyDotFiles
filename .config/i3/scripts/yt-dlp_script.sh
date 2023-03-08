@@ -13,32 +13,27 @@ read -p "$(blueText "Do you want to download a playlist? [n/y]: ")" isPlaylist
 
 split=""
 if [ "$isPlaylist" == "y" ] || [ "$isPlaylist" == "Y" ]; then
-    read -p "$(blueText "
-1: download certain videos
-2: download the full playlist (default)
-your choice : ")" pChoice 
+    read -p "$(blueText "\n1: download certain videos\n2: download the full playlist (default)\nyour choice : ")" pChoice 
 else
-    read -p "$(blueText "
-Do you want to split chapters? [n/y]: ")" split
+    read -p "$(blueText "\nDo you want to split chapters? [n/y]: ")" split
 fi
 
-if [ $split ]; then
+if [ "$split" == "y" ] || [ "$split" == "Y" ] ; then
     split="--split-chapters"
 fi
+
+read -p "
+$(blueText "url: ")" url
 
 toDownload=""
 case $pChoice in
     1) 
-        read -p "$(blueText "
-the videos in the format [ eg: 1,3-7,13 ] : ")" pVideos
+        read -p "$(blueText "\nthe videos in the format [ eg: 1,3-7,13 ] : ")" pVideos
         toDownload="--playlist-items $pVideos" ;;
     *) ;;
 esac
 
 # pFirstVideo="--playlist-items $(echo $pVideos | awk -F',' '{print $1}' | sed 's/-.*//')"
-
-read -p "
-$(blueText "url: ")" url
 
 read -p "$(blueText "
 download options:- 
@@ -56,8 +51,7 @@ case $choice in
     *) yt-dlp -F $url | sed '/images/d;/audio\ only/d;/video\ only/d' ;;
 esac
 
-read -p "$(blueText "
-your chosen number : ")" quality
+read -p "$(blueText "\nyour chosen number : ")" quality
 
 case $isPlaylist in
     y | Y) yt-dlp -f $quality -o "%(playlist_index)02d - %(title)s.%(ext)s" $toDownload $url ;;

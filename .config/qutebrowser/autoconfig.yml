@@ -48,9 +48,7 @@ settings:
   statusbar.show:
     global: always
   tabs.show:
-    global: never
-  # url.default_page:
-  #   global: https://timesprayer.com/
+    global: always
   url.incdec_segments:
     global:
     - path

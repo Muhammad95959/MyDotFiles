@@ -18,7 +18,7 @@ setopt INC_APPEND_HISTORY
 
 # Enable colors and change prompt
 autoload -U colors && colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[white]%}%~%{$fg[red]%}]%{$fg[cyan]%}$%b "
+PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$fg[cyan]%}$%b "
 
 # Basic auto/tab complete:
 autoload -U compinit
@@ -82,6 +82,7 @@ alias logout="pkill -KILL -u $USER"
 alias ll="exa --icons -a --group-directories-first"
 alias zrefresh="source ~/.zshrc"
 alias cpath="pwd | xclip -selection clipboard"
+alias copycmd="tail -n 2 .zhistory | head -n 1 | xclip -selection clipboard"
 alias zshrc="nvim ~/.zshrc"
 alias nvimrc="nvim ~/.config/nvim/init.vim"
 alias i3config="nvim ~/.config/i3/config"

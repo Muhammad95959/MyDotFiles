@@ -10,9 +10,14 @@
 /*****----- Configuration -----*****/
 configuration {
     show-icons:                 false;
+    hover-select:               true;
+    me-select-entry:            "MousePrimary";
+    me-accept-entry:            "!MousePrimary";
 }
 
 /*****----- Global Properties -----*****/
+@import                          "shared/colors.rasi"
+
 * {
     /* Resolution : 1920x1080 */
     mainbox-spacing:             50px;
@@ -28,11 +33,11 @@ configuration {
     textbox-font:                "Iosevka Nerd Font 12";
     element-text-font:           "feather 48";
 
-    background-window:           black/20%;
-    background-normal:           white/5%;
-    background-selected:         white/15%;
-    foreground-normal:           white;
-    foreground-selected:         white;
+    background-window:           @background;
+    background-normal:           @background-alt;
+    background-selected:         @selected;
+    foreground-normal:           @foreground;
+    foreground-selected:         @background;
 }
 
 /*****----- Main Window -----*****/
@@ -44,6 +49,9 @@ window {
     width:                       1000px;
     border-radius:               50px;
     cursor:                      "default";
+    border:                      2px solid;
+    border-radius:               50px;
+    border-color:                @selected;
     background-color:            var(background-window);
 }
 
@@ -81,7 +89,7 @@ message {
     padding:                     var(message-padding);
     border-radius:               var(message-border-radius);
     background-color:            var(background-normal);
-    text-color:                  var(foreground-normal);
+    text-color:                  @active;
 }
 textbox {
     font:                        var(textbox-font);

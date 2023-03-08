@@ -43,69 +43,6 @@
 		}
 	},
 	"children": [
-		{
-			"info": {
-				"relation": {
-					"group": 72,
-					"priority": 1
-				},
-				"progress": {
-					"complete": 13575341,
-					"total": 13575341,
-					"elapsed": 6,
-					"uploaded": 0,
-					"percent": 100
-				},
-				"http": {
-					"referrer": "https:\/\/download.lenovo.com\/consumer\/mobiles_pub\/l340_irh_gaming_ug_en_201904.pdf?linkTrack=PSP:ProductInfo:UserGuide",
-					"cookie-file": "\/home\/muhammad\/.config\/uGet\/attachment\/794AC74D.cookie",
-					"redirection-limit": 30
-				},
-				"proxy": {
-					"port": 80,
-					"type": 0
-				},
-				"log": {
-					"added-time": 1677647188,
-					"completed-time": 1677647195,
-					"messages": [
-						{
-							"string": "Resumable",
-							"type": 2,
-							"time": 1677647189
-						}
-					]
-				},
-				"common": {
-					"name": "l340_irh_gaming_ug_en_201904.pdf",
-					"uri": "https:\/\/download.lenovo.com\/consumer\/mobiles_pub\/l340_irh_gaming_ug_en_201904.pdf?linkTrack=PSP:ProductInfo:UserGuide",
-					"file": "l340_irh_gaming_ug_en_201904.pdf",
-					"folder": "\/home\/muhammad\/Downloads",
-					"connect-timeout": 15,
-					"transmit-timeout": 30,
-					"retry-delay": 6,
-					"retry-limit": 99,
-					"retry-count": 0,
-					"max-connections": 10,
-					"max-upload-speed": 0,
-					"max-download-speed": 0,
-					"timestamp": 1
-				},
-				"files": {
-					"list": [
-						{
-							"path": "\/home\/muhammad\/Downloads\/l340_irh_gaming_ug_en_201904.pdf",
-							"type": 0,
-							"state": 8,
-							"total": 0,
-							"complete": 0
-						}
-					]
-				}
-			},
-			"children": [
-			]
-		}
 	]
 }
 

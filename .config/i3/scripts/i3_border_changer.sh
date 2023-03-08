@@ -7,7 +7,7 @@ blue_jeans_companion="#61dfff"
 deep_champagne="#eed49f"
 deep_champagne_companion="#eed4df"
 lavender_blue="#cad3f5"
-lavender_blue_companion="#cad3c5"
+lavender_blue_companion="#9aa3c5"
 light_salmon="#f5a97f"
 light_salmon_companion="#f5a9bf"
 middle_blue_green="#8bd5ca"
@@ -37,7 +37,8 @@ Yellow\
 " | rofi -dmenu -i -theme ~/.config/rofi/border_color_chooser.rasi -p "choose a color: ")
 
 function change_border {
-    sed -Ei "/^client.focused/s/^.*$/client.focused           "$1" "$1" "$3" "$2"   "$1"/" ~/.config/i3/config
+    sed -Ei "/^client.focused.*###/s/^.*###/client.focused          "$1" "$1" "$3" "$2"   "$1"    ###/" ~/.config/i3/config
+    sed -Ei "/xborders --border-rgba/s/--border-rgba ......../--border-rgba "$(echo "$1" | sed "s/#//")"ff/" ~/.config/i3/config
     i3-msg restart
 }
 

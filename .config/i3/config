@@ -7,7 +7,7 @@
 
 set $mod Mod4
 
-font pango:JetBrainsMono Nerd Font 10
+font pango:JetBrainsMono Nerd Font 9
 
 floating_modifier $mod
 
@@ -37,7 +37,7 @@ exec --no-startup-id sudo virsh net-start default
 exec_always --no-startup-id volnoti -t 2
 exec_always --no-startup-id dunst
 exec_always --no-startup-id picom
-# exec_always --no-startup-id killall xborders; xborders --border-rgba 61afefff --border-radius 14 --border-width 2 --disable-version-warning --border-mode inside
+# exec_always --no-startup-id killall xborders; xborders --border-rgba cad3f5ff --border-radius 14 --border-width 2 --disable-version-warning --border-mode inside
 
 #  _____ _                    _             
 # |_   _| |__   ___ _ __ ___ (_)_ __   __ _ 
@@ -48,9 +48,14 @@ exec_always --no-startup-id picom
 
 gaps inner 10
 # border_radius 14
-# smart_borders no_gaps
+smart_borders no_gaps
 hide_edge_borders smart_no_gaps
-for_window [class=.*] border pixel 2
+for_window [all] border pixel 2
+for_window [all] title_window_icon padding 7px
+
+client.focused          #cad3f5 #cad3f5 #24273a #9aa3c5   #cad3f5    ### edited via script
+client.focused_inactive #555555 #555555 #ffffff #666666   #555555
+client.unfocused        #222222 #222222 #888888 #333333   #555555
 
 # # class                 border  backgr. text    indicator child_border
 # client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
@@ -59,10 +64,6 @@ for_window [class=.*] border pixel 2
 # client.urgent           #2f343a #900000 #ffffff #900000   #900000
 # client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
-client.focused           #8bd5ca #8bd5ca #24273a #8ed5fa   #8bd5ca
- client.focused_inactive #555555 #555555 #ffffff #666666   #555555
-client.unfocused         #222222 #222222 #888888 #333333   #555555
-
 #  _  __            _     _           _ _                 
 # | |/ /___ _   _  | |__ (_)_ __   __| (_)_ __   __ _ ___ 
 # | ' // _ \ | | | | '_ \| | '_ \ / _` | | '_ \ / _` / __|
@@ -70,45 +71,46 @@ client.unfocused         #222222 #222222 #888888 #333333   #555555
 # |_|\_\___|\__, | |_.__/|_|_| |_|\__,_|_|_| |_|\__, |___/
 #           |___/                               |___/     
 
-bindsym $mod+Return      exec kitty
-bindsym $mod+a           mode "applications"
-bindsym $mod+b           exec brave
-bindsym $mod+shift+b     exec qutebrowser
-bindsym $mod+c           exec rofi-gpaste
-bindsym $mod+shift+c     exec dunstctl close-all
-bindsym $mod+d           exec rofi -show drun
-bindsym $mod+shift+d     exec killall dunst
-bindsym $mod+e           layout toggle split
-bindsym $mod+shift+e     exec ocrdesktop -c && notify-send -t 5000 "content copied to clipboard"
-bindsym $mod+f           fullscreen toggle
-bindsym $mod+shift+f     exec bash ~/.config/i3/scripts/toggle_gaps.sh
-bindsym $mod+g           gaps inner current plus 9 ; gaps horizontal current plus 7
-bindsym $mod+shift+g     gaps inner current minus 9 ; gaps horizontal current minus 7
-bindsym $mod+i           exec rofi -modi emoji -show emoji -theme ~/.config/rofi/emoji_chooser.rasi
-bindsym $mod+shift+i     exec xcalib -invert -alter
-bindsym $mod+m           mode "mouse"
-bindsym $mod+shift+m     --release exec xdotool type 'ﷺ'
-bindsym $mod+n           mode "redshift"
-bindsym $mod+shift+n     exec bash ~/.config/i3/scripts/xdotool_close.sh
-bindsym $mod+o           mode "scripts"
-bindsym $mod+shift+o     mode "executable_scripts"
-bindsym $mod+p           exec dolphin
-bindsym $mod+shift+p     exec killall picom
-bindsym $mod+q           kill
-bindsym $mod+shift+q     exec ~/.config/rofi/powermenu/type-1/powermenu.sh
-bindsym $mod+r           exec kitty -e ranger
-bindsym $mod+shift+r     restart
-bindsym $mod+s           split v
-bindsym $mod+t           split v ; layout tabbed
-bindsym $mod+shift+u     exec killall uget-gtk
-bindsym $mod+v           split h
-bindsym $mod+w           layout tabbed
-bindsym $mod+shift+w     exec nitrogen --set-zoom-fill --random --no-recurse /mnt/Disk_D/Backgrounds
-bindsym $mod+space       focus mode_toggle
-bindsym $mod+shift+space floating toggle
-bindsym Print            exec flameshot gui --path ~/Pictures
-bindsym shift+Print      exec flameshot full --path ~/Pictures
-bindsym ctrl+Escape      exec setcapslock toggle
+bindsym $mod+Return       exec kitty
+bindsym $mod+shift+Return exec kitty --class floating-kitty --override background_opacity=0.8
+bindsym $mod+a            mode "applications"
+bindsym $mod+b            exec brave
+bindsym $mod+shift+b      exec qutebrowser
+bindsym $mod+c            exec rofi-gpaste
+bindsym $mod+shift+c      exec dunstctl close-all
+bindsym $mod+d            exec rofi -show drun
+bindsym $mod+shift+d      exec killall dunst
+bindsym $mod+e            layout toggle split
+bindsym $mod+shift+e      exec ocrdesktop -c && notify-send -t 5000 "content copied to clipboard"
+bindsym $mod+f            fullscreen toggle
+bindsym $mod+shift+f      exec bash ~/.config/i3/scripts/toggle_gaps.sh
+bindsym $mod+g            gaps inner current plus 9 ; gaps horizontal current plus 7
+bindsym $mod+shift+g      gaps inner current minus 9 ; gaps horizontal current minus 7
+bindsym $mod+i            exec rofi -modi emoji -show emoji -theme ~/.config/rofi/emoji_chooser.rasi
+bindsym $mod+shift+i      exec xcalib -invert -alter
+bindsym $mod+m            mode "mouse"
+bindsym $mod+shift+m      --release exec xdotool type 'ﷺ'
+bindsym $mod+n            mode "redshift"
+bindsym $mod+shift+n      exec bash ~/.config/i3/scripts/xdotool_close.sh
+bindsym $mod+o            mode "scripts"
+bindsym $mod+shift+o      mode "executable_scripts"
+bindsym $mod+p            exec dolphin
+bindsym $mod+shift+p      exec killall picom
+bindsym $mod+q            kill
+bindsym $mod+shift+q      exec ~/.config/rofi/powermenu/type-1/powermenu.sh
+bindsym $mod+r            exec kitty -e ranger
+bindsym $mod+shift+r      restart
+bindsym $mod+s            split v
+bindsym $mod+t            split v ; layout tabbed
+bindsym $mod+shift+u      exec killall uget-gtk
+bindsym $mod+v            split h
+bindsym $mod+w            layout tabbed
+bindsym $mod+shift+w      exec nitrogen --set-zoom-fill --random --no-recurse /mnt/Disk_D/Backgrounds
+bindsym $mod+space        focus mode_toggle
+bindsym $mod+shift+space  floating toggle
+bindsym Print             exec flameshot gui --path ~/Pictures
+bindsym shift+Print       exec flameshot full --path ~/Pictures
+bindsym ctrl+Escape       exec setcapslock toggle
 # PulseAudio controls
 bindsym XF86AudioRaiseVolume       exec bash ~/.config/i3/scripts/volume_control/pactl_volume_up_limit.sh
 bindsym XF86AudioLowerVolume       exec amixer set Master on && pactl set-sink-volume @DEFAULT_SINK@ -5%
@@ -139,15 +141,15 @@ bindsym $mod+Down  focus down
 bindsym $mod+Up    focus up
 bindsym $mod+Right focus right
 # move focused window
-bindsym $mod+shift+h move left
-bindsym $mod+shift+j move down
-bindsym $mod+shift+k move up
-bindsym $mod+shift+l move right
+bindsym $mod+shift+h move left 20 px
+bindsym $mod+shift+j move down 20 px
+bindsym $mod+shift+k move up 20 px
+bindsym $mod+shift+l move right 20 px
 # alternatively, you can use the cursor keys:
-bindsym $mod+shift+Left  move left
-bindsym $mod+shift+Down  move down
-bindsym $mod+shift+Up    move up
-bindsym $mod+shift+Right move right
+bindsym $mod+shift+Left  move left 20 px
+bindsym $mod+shift+Down  move down 20 px
+bindsym $mod+shift+Up    move up 20 px
+bindsym $mod+shift+Right move right 20 px
 # resize focused window
 bindsym $mod+ctrl+h resize shrink width 20 px or 5 ppt
 bindsym $mod+ctrl+j resize grow height 20 px or 5 ppt
@@ -225,10 +227,17 @@ bindsym $mod+shift+8 move container to workspace number $ws8  ; workspace number
 bindsym $mod+shift+9 move container to workspace number $ws9  ; workspace number $ws9
 bindsym $mod+shift+0 move container to workspace number $ws10 ; workspace number $ws10
 
-# open windows in specific workspaces
+# __        ___           _                            _           
+# \ \      / (_)_ __   __| | _____      __  _ __ _   _| | ___  ___ 
+#  \ \ /\ / /| | '_ \ / _` |/ _ \ \ /\ / / | '__| | | | |/ _ \/ __|
+#   \ V  V / | | | | | (_| | (_) \ V  V /  | |  | |_| | |  __/\__ \
+#    \_/\_/  |_|_| |_|\__,_|\___/ \_/\_/   |_|   \__,_|_|\___||___/
+#
+
 for_window [class="RangerFileChooser"] floating enabled
 for_window [class="Nitrogen"] floating enabled
 for_window [class="Gcolor3"] floating enabled
+for_window [class="floating-kitty"] floating enabled
 for_window [class="Timeshift-gtk"] floating disabled
 for_window [class="Shutter"] floating disabled
 for_window [class="Uget-gtk"] layout tabbed
@@ -288,6 +297,7 @@ mode "applications" {
 
     bindsym Mod1+b exec notify-send -t 5000 "$(acpi)", mode "default"
     bindsym Mod1+c exec gucharmap, mode "default"
+    bindsym Mod1+m exec kitty --class pulsemixer -e pulsemixer, mode "default"
     bindsym Mod1+p exec pavucontrol, mode "default"
 
     bindsym Return mode "default"
