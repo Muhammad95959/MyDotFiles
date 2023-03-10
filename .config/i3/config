@@ -26,6 +26,7 @@ exec --no-startup-id bash ~/.config/i3/scripts/keyboard_config.sh
 exec --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Accel Speed' 0.5
 exec --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Natural Scrolling Enabled' 1
 exec --no-startup-id xinput set-prop 'PixArt Lenovo USB Optical Mouse' 'libinput Accel Speed' 0.5
+exec --no-startup-id xiccd
 exec --no-startup-id polybar -r
 exec --no-startup-id nm-applet
 exec --no-startup-id killall nm-applet
@@ -37,7 +38,7 @@ exec --no-startup-id sudo virsh net-start default
 exec_always --no-startup-id volnoti -t 2
 exec_always --no-startup-id dunst
 exec_always --no-startup-id picom
-# exec_always --no-startup-id killall xborders; xborders --border-rgba cad3f5ff --border-radius 14 --border-width 2 --disable-version-warning --border-mode inside
+# exec_always --no-startup-id killall xborders; xborders --border-rgba cdd6f4ff --border-radius 14 --border-width 2 --disable-version-warning --border-mode inside
 
 #  _____ _                    _             
 # |_   _| |__   ___ _ __ ___ (_)_ __   __ _ 
@@ -53,7 +54,7 @@ hide_edge_borders smart_no_gaps
 for_window [all] border pixel 2
 for_window [all] title_window_icon padding 7px
 
-client.focused          #cad3f5 #cad3f5 #24273a #9aa3c5   #cad3f5    ### edited via script
+client.focused          #cdd6f4 #cdd6f4 #24273a #9aa3c5   #cdd6f4    ### edited via script
 client.focused_inactive #555555 #555555 #ffffff #666666   #555555
 client.unfocused        #222222 #222222 #888888 #333333   #555555
 

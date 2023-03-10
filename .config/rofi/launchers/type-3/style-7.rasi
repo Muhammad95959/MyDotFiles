@@ -140,7 +140,7 @@ element selected.normal {
     border:                      0px 0px 0px 0px;
     border-radius:               12px;
     border-color:                @selected;
-    background-color:            white/15%;
+    background-color:            grey/15%;
     text-color:                  @foreground;
 }
 element-icon {

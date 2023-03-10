@@ -3,32 +3,34 @@
 
 """ Plugins  --------------------------------
 call plug#begin()
+Plug 'Shougo/deol.nvim'
 Plug 'ap/vim-css-color'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-Plug 'mbbill/undotree'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'itchyny/lightline.vim'
-Plug 'julien/vim-colors-green'
 Plug 'catppuccin/nvim'
 Plug 'folke/tokyonight.nvim'
-Plug 'windwp/nvim-autopairs'
-Plug 'numToStr/Comment.nvim'
 Plug 'gbprod/yanky.nvim'
-Plug 'kevinhwang91/rnvimr'
 Plug 'gelguy/wilder.nvim'
-Plug 'jamessan/vim-gnupg'
-Plug 'lewis6991/impatient.nvim'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-cmdline'
-Plug 'tamago324/cmp-zsh'
-Plug 'Shougo/deol.nvim'
-Plug 'uga-rosa/cmp-dictionary'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'itchyny/lightline.vim'
+Plug 'jamessan/vim-gnupg'
+Plug 'julien/vim-colors-green'
+Plug 'kevinhwang91/rnvimr'
+Plug 'lewis6991/impatient.nvim'
+Plug 'mbbill/undotree'
+Plug 'numToStr/Comment.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-tree/nvim-tree.lua'
+Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'tamago324/cmp-zsh'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'uga-rosa/cmp-dictionary'
+Plug 'windwp/nvim-autopairs'
 call plug#end()
 
 """ Plugin settings -------------------------
@@ -108,9 +110,6 @@ nnoremap <silent><C-Down> :resize +2<CR>
 nnoremap <silent><C-Left> :vertical resize -2<CR>
 nnoremap <silent><C-Right> :vertical resize +2<CR>
 
-nnoremap <silent><A-l> :tabn<CR>
-nnoremap <silent><A-h> :tabp<CR>
-
 nnoremap <silent><A-j> <ESC>:m.+1<CR>
 nnoremap <silent><A-k> <ESC>:m.-2<CR>
 
@@ -123,7 +122,13 @@ vnoremap <A-k> :m.-2<CR>==gv
 vnoremap <A-j> :move'>+1<CR>gv-gv
 vnoremap <A-k> :move'<-2<CR>gv-gv
 
+noremap <silent><A-l> :tabn<CR>
+noremap <silent><A-h> :tabp<CR>
+noremap <silent><A-.> :tabm +1<CR>
+noremap <silent><A-,> :tabm -1<CR>
+
 noremap <silent><leader>f :RnvimrToggle<CR>
+noremap <silent><leader>n :NvimTreeToggle<CR>
 noremap <silent><leader>u :UndotreeToggle<CR>
 noremap <silent><leader>= mmggVG='m
 noremap <silent><leader>s :set hlsearch!<CR>

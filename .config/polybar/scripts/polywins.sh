@@ -5,7 +5,7 @@
 
 active_text_color="#FFFFFF"
 active_bg=
-active_underline="#ed8796"
+active_underline="#f38ba8"
 
 inactive_text_color="#b7b7b7"
 inactive_bg=
