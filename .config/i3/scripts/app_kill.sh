@@ -10,7 +10,7 @@ selected_app=$(printf '%s' "$apps" | rofi -dmenu | awk '{print $1}')
 if [ -n "$selected_app" ]; then
     app_name=$(ps -p "$selected_app" -o comm=)
     # msg=$(echo "Are you sure you want to kill $app_name?")
-    choice=$(printf "\t\t    Yes\n\t\t    No" | rofi -dmenu \
+    choice=$(printf "Yes\nNo" | rofi -dmenu \
         -mesg "Are you sure you want to kill $app_name?" \
 		-theme-str 'mainbox {children: [ "message", "listview" ];}' \
         -theme-str 'listview { scrollbar: false; }'

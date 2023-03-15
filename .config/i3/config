@@ -74,14 +74,13 @@ client.unfocused        #222222 #222222 #888888 #333333   #555555
 #           |___/                               |___/     
 
 bindsym $mod+Return       exec kitty
-bindsym $mod+shift+Return exec kitty --class floating-kitty --override background_opacity=0.8
+bindsym $mod+shift+Return exec kitty --class floating-kitty --override background_opacity=0.9
 bindsym $mod+a            mode "applications"
 bindsym $mod+b            exec brave
 bindsym $mod+shift+b      exec qutebrowser
 bindsym $mod+c            exec rofi-gpaste
 bindsym $mod+shift+c      exec dunstctl close-all
 bindsym $mod+d            exec rofi -show drun
-bindsym $mod+shift+d      exec killall dunst
 bindsym $mod+e            layout toggle split
 bindsym $mod+shift+e      exec ocrdesktop -c && notify-send -t 5000 "content copied to clipboard"
 bindsym $mod+f            fullscreen toggle
@@ -97,14 +96,12 @@ bindsym $mod+shift+n      exec bash ~/.config/i3/scripts/xdotool_close.sh
 bindsym $mod+o            mode "scripts"
 bindsym $mod+shift+o      mode "executable_scripts"
 bindsym $mod+p            exec dolphin
-bindsym $mod+shift+p      exec killall picom
 bindsym $mod+q            kill
 bindsym $mod+shift+q      exec ~/.config/rofi/powermenu/type-1/powermenu.sh
 bindsym $mod+r            exec kitty -e ranger
 bindsym $mod+shift+r      restart
 bindsym $mod+s            split v
 bindsym $mod+t            split v ; layout tabbed
-bindsym $mod+shift+u      exec killall uget-gtk
 bindsym $mod+v            split h
 bindsym $mod+w            layout tabbed
 bindsym $mod+shift+w      exec nitrogen --set-zoom-fill --random --no-recurse /mnt/Disk_D/Backgrounds
