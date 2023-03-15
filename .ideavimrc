@@ -53,17 +53,17 @@ vnoremap <A-k> :m .-2<CR>==gv
 noremap x "_x
 noremap s "_s
 noremap r "_r
-noremap ,p "_dp
+" noremap ,p "_dp
 " vnoremap <C-p> "+p
 " nnoremap <C-p> "+p
 " vnoremap <leader>p "*p
 " nnoremap <leader>p "*p
-vnoremap ,c "_c
-nnoremap ,c "_c
-nnoremap ,C "_C
-vnoremap ,d "_d
-nnoremap ,d "_d
-nnoremap ,D "_D
+" vnoremap ,c "_c
+" nnoremap ,c "_c
+" nnoremap ,C "_C
+" vnoremap ,d "_d
+" nnoremap ,d "_d
+" nnoremap ,D "_D
 " vnoremap <leader>y "+y
 " nnoremap <leader>y "+y
 " nnoremap <leader>Y "+Y

@@ -51,7 +51,7 @@ case $choice in
     *) yt-dlp -F $url | sed '/images/d;/audio\ only/d;/video\ only/d' ;;
 esac
 
-read -p "$(blueText "\nyour chosen number : ")" quality
+read -p "$(blueText "\nyour chosen ID : ")" quality
 
 case $isPlaylist in
     y | Y) yt-dlp -f $quality -o "%(playlist_index)02d - %(title)s.%(ext)s" $toDownload $url ;;

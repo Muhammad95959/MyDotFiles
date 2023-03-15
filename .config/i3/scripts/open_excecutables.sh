@@ -2,6 +2,7 @@
 
 chosen=$(printf "\
 Change Borders' Colors
+Change Nvidia Power Mode
 Open English Learner
 Open Video Downloader
 Toggle Gaps
@@ -12,6 +13,7 @@ Update MyDotFiles Repo\
 
 case "$chosen" in
     "Change Borders' Colors") bash ~/.config/i3/scripts/i3_border_changer.sh ;;
+    "Change Nvidia Power Mode") bash ~/.config/i3/scripts/nvidia_power_mode.sh ;;
     "Open English Learner") kitty -e bash /mnt/Disk_D/Muhammad/English_Learner/english_learner.sh ;;
     "Open Video Downloader") i3-msg workspace 10; kitty --class yt-dlp -e bash ~/.config/i3/scripts/yt-dlp_script.sh ;;
     "Toggle Gaps") bash ~/.config/i3/scripts/toggle_gaps.sh ;;

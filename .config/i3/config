@@ -22,6 +22,7 @@ focus_follows_mouse no
 
 exec --no-startup-id numlockx
 exec --no-startup-id amixer set Capture 40%
+exec --no-startup-id nvidia-settings -a "[gpu:0]/GPUPowerMizerMode=2"
 exec --no-startup-id bash ~/.config/i3/scripts/keyboard_config.sh
 exec --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Accel Speed' 0.5
 exec --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Natural Scrolling Enabled' 1
@@ -38,7 +39,7 @@ exec --no-startup-id sudo virsh net-start default
 exec_always --no-startup-id volnoti -t 2
 exec_always --no-startup-id dunst
 exec_always --no-startup-id picom
-# exec_always --no-startup-id killall xborders; xborders --border-rgba cdd6f4ff --border-radius 14 --border-width 2 --disable-version-warning --border-mode inside
+# exec_always --no-startup-id killall xborders; xborders --border-rgba 61afefff --border-radius 14 --border-width 2 --disable-version-warning --border-mode inside
 
 #  _____ _                    _             
 # |_   _| |__   ___ _ __ ___ (_)_ __   __ _ 
@@ -54,7 +55,7 @@ hide_edge_borders smart_no_gaps
 for_window [all] border pixel 2
 for_window [all] title_window_icon padding 7px
 
-client.focused          #cdd6f4 #cdd6f4 #24273a #9aa3c5   #cdd6f4    ### edited via script
+client.focused          #61afef #61afef #24273a #61dfff   #61afef    ### edited via script
 client.focused_inactive #555555 #555555 #ffffff #666666   #555555
 client.unfocused        #222222 #222222 #888888 #333333   #555555
 
@@ -235,14 +236,14 @@ bindsym $mod+shift+0 move container to workspace number $ws10 ; workspace number
 #    \_/\_/  |_|_| |_|\__,_|\___/ \_/\_/   |_|   \__,_|_|\___||___/
 #
 
+for_window [workspace=$ws9] floating enable
+for_window [workspace=$ws10] layout tabbed
 for_window [class="RangerFileChooser"] floating enabled
 for_window [class="Nitrogen"] floating enabled
 for_window [class="Gcolor3"] floating enabled
 for_window [class="floating-kitty"] floating enabled
 for_window [class="Timeshift-gtk"] floating disabled
 for_window [class="Shutter"] floating disabled
-for_window [class="Uget-gtk"] layout tabbed
-for_window [class="yt-dlp"] layout tabbed
 assign     [class="Uget-gtk"] $ws10
 assign     [class="yt-dlp"] $ws10
 
@@ -364,7 +365,8 @@ mode "executable_scripts" {
     bindsym c exec bash ~/.config/i3/scripts/catpuccin_theme.sh, mode "default"
     bindsym shift+c exec bash ~/.config/i3/scripts/default_theme.sh, mode "default"
     bindsym e exec kitty -e bash /mnt/Disk_D/Muhammad/English_Learner/english_learner.sh, mode "default"
-    bindsym n exec bash ~/.config/i3/scripts/toggle_nvchad.sh, mode "default"
+    bindsym k exec bash ~/.config/i3/scripts/app_kill.sh, mode "default"
+    bindsym n exec bash ~/.config/i3/scripts/nvidia_power_mode.sh, mode "default"
     bindsym o exec bash ~/.config/i3/scripts/open_excecutables.sh, mode "default"
     bindsym p exec bash ~/.config/i3/scripts/toggle_polybar_location.sh, mode "default"
     bindsym u exec bash ~/.config/i3/scripts/update_DotFiles_repo.sh, mode "default"
@@ -376,3 +378,13 @@ mode "executable_scripts" {
     bindsym $mod+shift+o mode "default"
 }
 
+workspace 1 output eDP-1
+workspace 2 output eDP-1
+workspace 3 output eDP-1
+workspace 4 output eDP-1
+workspace 5 output eDP-1
+workspace 6 output HDMI-1-0
+workspace 7 output HDMI-1-0
+workspace 8 output HDMI-1-0
+workspace 9 output HDMI-1-0
+workspace 10 output HDMI-1-0
