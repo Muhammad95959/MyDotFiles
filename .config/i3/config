@@ -241,6 +241,7 @@ for_window [class="Gcolor3"] floating enabled
 for_window [class="floating-kitty"] floating enabled
 for_window [class="Timeshift-gtk"] floating disabled
 for_window [class="Shutter"] floating disabled
+for_window [class="Conky"] floating enable, sticky enable, border none, focus none, title none
 assign     [class="Uget-gtk"] $ws10
 assign     [class="yt-dlp"] $ws10
 
@@ -375,13 +376,3 @@ mode "executable_scripts" {
     bindsym $mod+shift+o mode "default"
 }
 
-workspace 1 output eDP-1
-workspace 2 output eDP-1
-workspace 3 output eDP-1
-workspace 4 output eDP-1
-workspace 5 output eDP-1
-workspace 6 output HDMI-1-0
-workspace 7 output HDMI-1-0
-workspace 8 output HDMI-1-0
-workspace 9 output HDMI-1-0
-workspace 10 output HDMI-1-0
