@@ -23,7 +23,7 @@ focus_follows_mouse no
 exec --no-startup-id numlockx
 exec --no-startup-id amixer set Capture 40%
 exec --no-startup-id nvidia-settings -a "[gpu:0]/GPUPowerMizerMode=2"
-exec --no-startup-id bash ~/.config/i3/scripts/keyboard_config.sh
+exec --no-startup-id bash ~/Scripts/keyboard_config.sh
 exec --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Accel Speed' 0.5
 exec --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Natural Scrolling Enabled' 1
 exec --no-startup-id xinput set-prop 'PixArt Lenovo USB Optical Mouse' 'libinput Accel Speed' 0.5
@@ -33,7 +33,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id killall nm-applet
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id ~/.config/i3/scripts/volume_control/volume_subscribe.sh
+exec --no-startup-id ~/Scripts/volume_control/volume_subscribe.sh
 exec --no-startup-id gpaste-client start
 exec --no-startup-id sudo virsh net-start default
 exec_always --no-startup-id volnoti -t 2
@@ -49,9 +49,11 @@ exec_always --no-startup-id picom
 #                                     |___/ 
 
 gaps inner 10
+smart_gaps on
+smart_borders on
 # border_radius 14
-smart_borders no_gaps
-hide_edge_borders smart_no_gaps
+# smart_borders no_gaps
+# hide_edge_borders smart_no_gaps
 for_window [all] border pixel 2
 for_window [all] title_window_icon padding 7px
 
@@ -84,7 +86,7 @@ bindsym $mod+d            exec rofi -show drun
 bindsym $mod+e            layout toggle split
 bindsym $mod+shift+e      exec ocrdesktop -c && notify-send -t 5000 "content copied to clipboard"
 bindsym $mod+f            fullscreen toggle
-bindsym $mod+shift+f      exec bash ~/.config/i3/scripts/toggle_gaps.sh
+bindsym $mod+shift+f      exec bash ~/Scripts/toggle_gaps.sh
 bindsym $mod+g            gaps inner current plus 9 ; gaps horizontal current plus 7
 bindsym $mod+shift+g      gaps inner current minus 9 ; gaps horizontal current minus 7
 bindsym $mod+i            exec rofi -modi emoji -show emoji -theme ~/.config/rofi/emoji_chooser.rasi
@@ -92,7 +94,7 @@ bindsym $mod+shift+i      exec xcalib -invert -alter
 bindsym $mod+m            mode "mouse"
 bindsym $mod+shift+m      --release exec xdotool type 'ﷺ'
 bindsym $mod+n            mode "redshift"
-bindsym $mod+shift+n      exec bash ~/.config/i3/scripts/xdotool_close.sh
+bindsym $mod+shift+n      exec bash ~/Scripts/xdotool_close.sh
 bindsym $mod+o            mode "scripts"
 bindsym $mod+shift+o      mode "executable_scripts"
 bindsym $mod+p            exec dolphin
@@ -111,17 +113,17 @@ bindsym Print             exec flameshot gui --path ~/Pictures
 bindsym shift+Print       exec flameshot full --path ~/Pictures
 bindsym ctrl+Escape       exec setcapslock toggle
 # PulseAudio controls
-bindsym XF86AudioRaiseVolume       exec bash ~/.config/i3/scripts/volume_control/pactl_volume_up_limit.sh
+bindsym XF86AudioRaiseVolume       exec bash ~/Scripts/volume_control/pactl_volume_up_limit.sh
 bindsym XF86AudioLowerVolume       exec amixer set Master on && pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym shift+XF86AudioRaiseVolume exec bash ~/.config/i3/scripts/volume_control/pactl_volume_up_by_1_limit.sh
+bindsym shift+XF86AudioRaiseVolume exec bash ~/Scripts/volume_control/pactl_volume_up_by_1_limit.sh
 bindsym shift+XF86AudioLowerVolume exec amixer set Master on && pactl set-sink-volume @DEFAULT_SINK@ -1%
-bindsym XF86AudioMute              exec bash ~/.config/i3/scripts/volume_control/volume_toggle_mute.sh
-bindsym XF86AudioMicMute           exec bash ~/.config/i3/scripts/volume_control/mic_toggle_mute.sh
+bindsym XF86AudioMute              exec bash ~/Scripts/volume_control/volume_toggle_mute.sh
+bindsym XF86AudioMicMute           exec bash ~/Scripts/volume_control/mic_toggle_mute.sh
 # screen brightness controls
-bindsym XF86MonBrightnessUp         exec ~/.config/i3/scripts/brightness_control/inc.exp
-bindsym XF86MonBrightnessDown       exec ~/.config/i3/scripts/brightness_control/dec.exp
-bindsym shift+XF86MonBrightnessUp   exec ~/.config/i3/scripts/brightness_control/s_inc.exp
-bindsym shift+XF86MonBrightnessDown exec ~/.config/i3/scripts/brightness_control/s_dec.exp
+bindsym XF86MonBrightnessUp         exec ~/Scripts/brightness_control/inc.exp
+bindsym XF86MonBrightnessDown       exec ~/Scripts/brightness_control/dec.exp
+bindsym shift+XF86MonBrightnessUp   exec ~/Scripts/brightness_control/s_inc.exp
+bindsym shift+XF86MonBrightnessDown exec ~/Scripts/brightness_control/s_dec.exp
 # media player controls
 bindsym XF86AudioPlay       exec playerctl play-pause
 bindsym XF86AudioPause      exec playerctl play-pause
@@ -239,9 +241,9 @@ for_window [class="RangerFileChooser"] floating enabled
 for_window [class="Nitrogen"] floating enabled
 for_window [class="Gcolor3"] floating enabled
 for_window [class="floating-kitty"] floating enabled
+for_window [class="supertuxkart"] floating disabled
 for_window [class="Timeshift-gtk"] floating disabled
 for_window [class="Shutter"] floating disabled
-for_window [class="Conky"] floating enable, sticky enable, border none, focus none, title none
 assign     [class="Uget-gtk"] $ws10
 assign     [class="yt-dlp"] $ws10
 
@@ -266,7 +268,7 @@ mode "redshift" {
 }
 
 mode "applications" {
-    bindsym a exec android-studio, mode "default"
+    bindsym a exec prime-run android-studio, mode "default"
     bindsym b exec blueman-manager, mode "default"
     bindsym c exec gcolor3, mode "default"
     bindsym d exec gnome-disks, mode "default"
@@ -283,6 +285,7 @@ mode "applications" {
     bindsym v exec virt-manager, mode "default"
     bindsym z exec zathura /mnt/Disk_D/مستندات/برمجة/Head-First-Kotlin-Dawn-Griffiths.pdf, mode "default"
 
+    bindsym shift+a exec android-studio, mode "default"
     bindsym shift+b exec bleachbit, mode "default"
     bindsym shift+c exec cheese, mode "default"
     bindsym shift+g exec gimp, mode "default"
@@ -350,7 +353,7 @@ mode "scripts" {
 
     bindsym shift+h exec kitty -e nvim ~/.zhistory, mode "default"
     bindsym shift+i exec kitty -e nvim ~/Disk_D/Muhammad/Linux_stuff/Scripts/myManjaroI3Script.sh, mode "default"
-    bindsym shift+u exec kitty -e nvim ~/.config/i3/scripts/update_DotFiles_repo.sh, mode "default"
+    bindsym shift+u exec kitty -e nvim ~/Scripts/update_DotFiles_repo.sh, mode "default"
     bindsym shift+z exec kitty -e nvim ~/.zshrc, mode "default"
 
     bindsym Return mode "default"
@@ -359,17 +362,18 @@ mode "scripts" {
 }
 
 mode "executable_scripts" {
-    bindsym b exec bash ~/.config/i3/scripts/i3_border_changer.sh, mode "default"
-    bindsym c exec bash ~/.config/i3/scripts/catpuccin_theme.sh, mode "default"
-    bindsym shift+c exec bash ~/.config/i3/scripts/default_theme.sh, mode "default"
+    bindsym b exec bash ~/Scripts/i3_border_changer.sh, mode "default"
+    bindsym c exec bash ~/Scripts/catpuccin_theme.sh, mode "default"
+    bindsym shift+c exec bash ~/Scripts/default_theme.sh, mode "default"
     bindsym e exec kitty -e bash /mnt/Disk_D/Muhammad/English_Learner/english_learner.sh, mode "default"
-    bindsym k exec bash ~/.config/i3/scripts/app_kill.sh, mode "default"
-    bindsym n exec bash ~/.config/i3/scripts/nvidia_power_mode.sh, mode "default"
-    bindsym o exec bash ~/.config/i3/scripts/open_excecutables.sh, mode "default"
-    bindsym p exec bash ~/.config/i3/scripts/toggle_polybar_location.sh, mode "default"
-    bindsym u exec bash ~/.config/i3/scripts/update_DotFiles_repo.sh, mode "default"
-    bindsym v exec bash ~/.config/i3/scripts/toggle_vpn.sh, mode "default"
-    bindsym y workspace $ws10; exec kitty --class yt-dlp -e bash ~/.config/i3/scripts/yt-dlp_script.sh, mode "default"
+    bindsym k exec bash ~/Scripts/app_kill.sh, mode "default"
+    bindsym m exec bash ~/Scripts/url_to_mpv.sh, mode "default"
+    bindsym n exec bash ~/Scripts/nvidia_power_mode.sh, mode "default"
+    bindsym o exec bash ~/Scripts/open_excecutables.sh, mode "default"
+    bindsym p exec bash ~/Scripts/toggle_polybar_location.sh, mode "default"
+    bindsym u exec bash ~/Scripts/update_DotFiles_repo.sh, mode "default"
+    bindsym v exec bash ~/Scripts/toggle_vpn.sh, mode "default"
+    bindsym y workspace $ws10; exec kitty --class yt-dlp -e bash ~/Scripts/yt-dlp_script.sh, mode "default"
 
     bindsym Return mode "default"
     bindsym Escape mode "default"

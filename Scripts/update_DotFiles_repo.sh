@@ -12,6 +12,8 @@ cp  ~/.config/katerc     ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  ~/.config/katevirc   ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  ~/.config/kcalcrc    ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 
+cp  -r  ~/Scripts              ~/Disk_D/Muhammad/Repositories/DotFiles/
+
 cp  -r  ~/.config/Kvantum      ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/alacritty    ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/dunst        ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
@@ -32,4 +34,4 @@ cp  -r  ~/.config/vimiv        ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/zathura      ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/zsh          ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 
-notify-send -t 3000 "updated myDotFiles repo"
+notify-send -t 3000 "updated DotFiles repo"

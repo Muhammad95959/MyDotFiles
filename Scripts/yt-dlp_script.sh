@@ -45,10 +45,10 @@ download options:-
 your choice : ")" choice 
 
 case $choice in
-    1) yt-dlp -F $url ;;
-    2) yt-dlp -F $url | grep -i 'audio only' ;;
-    3) yt-dlp -F $url | grep -i 'video only' ;;
-    *) yt-dlp -F $url | sed '/images/d;/audio\ only/d;/video\ only/d' ;;
+    1) yt-dlp -F $toDownload $url ;;
+    2) yt-dlp -F $toDownload $url | grep -i 'audio only' ;;
+    3) yt-dlp -F $toDownload $url | grep -i 'video only' ;;
+    *) yt-dlp -F $toDownload $url | sed '/images/d;/audio\ only/d;/video\ only/d' ;;
 esac
 
 read -p "$(blueText "\nyour chosen ID : ")" quality

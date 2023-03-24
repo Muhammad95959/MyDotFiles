@@ -3,6 +3,7 @@
 
 """ Plugins  --------------------------------
 call plug#begin()
+Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'Shougo/deol.nvim'
 Plug 'ap/vim-css-color'
 Plug 'catppuccin/nvim'
