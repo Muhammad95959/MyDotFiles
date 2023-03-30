@@ -27,7 +27,6 @@ exec --no-startup-id bash ~/Scripts/keyboard_config.sh
 exec --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Accel Speed' 0.5
 exec --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Natural Scrolling Enabled' 1
 exec --no-startup-id xinput set-prop 'PixArt Lenovo USB Optical Mouse' 'libinput Accel Speed' 0.5
-exec --no-startup-id xiccd
 exec --no-startup-id polybar -r
 exec --no-startup-id nm-applet
 exec --no-startup-id killall nm-applet
@@ -39,6 +38,7 @@ exec --no-startup-id sudo virsh net-start default
 exec_always --no-startup-id volnoti -t 2
 exec_always --no-startup-id dunst
 exec_always --no-startup-id picom
+# exec --no-startup-id xiccd
 # exec_always --no-startup-id killall xborders; xborders --border-rgba 61afefff --border-radius 14 --border-width 2 --disable-version-warning --border-mode inside
 
 #  _____ _                    _             
@@ -240,10 +240,12 @@ for_window [workspace=$ws10] layout tabbed
 for_window [class="RangerFileChooser"] floating enabled
 for_window [class="Nitrogen"] floating enabled
 for_window [class="Gcolor3"] floating enabled
+for_window [class="livecaptions"] floating enabled
 for_window [class="floating-kitty"] floating enabled
 for_window [class="supertuxkart"] floating disabled
 for_window [class="Timeshift-gtk"] floating disabled
 for_window [class="Shutter"] floating disabled
+for_window [class="livecaptions"] move absolute position 276px 885px
 assign     [class="Uget-gtk"] $ws10
 assign     [class="yt-dlp"] $ws10
 
@@ -275,6 +277,7 @@ mode "applications" {
     bindsym g exec gparted, mode "default"
     bindsym i exec idea, mode "default"
     bindsym k exec kcalc, mode "default"
+    bindsym l exec flatpak run net.sapples.LiveCaptions, mode "default"
     bindsym m exec picard, mode "default"
     bindsym n exec nitrogen, mode "default"
     bindsym o exec obs, mode "default"
