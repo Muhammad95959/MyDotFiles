@@ -39,7 +39,7 @@ exec_always --no-startup-id volnoti -t 2
 exec_always --no-startup-id dunst
 exec_always --no-startup-id picom
 # exec --no-startup-id xiccd
-# exec_always --no-startup-id killall xborders; xborders --border-rgba 61afefff --border-radius 14 --border-width 2 --disable-version-warning --border-mode inside
+# exec_always --no-startup-id killall xborders; xborders --border-rgba 7b58dcff --border-radius 14 --border-width 2 --disable-version-warning --border-mode inside
 
 #  _____ _                    _             
 # |_   _| |__   ___ _ __ ___ (_)_ __   __ _ 
@@ -49,15 +49,15 @@ exec_always --no-startup-id picom
 #                                     |___/ 
 
 gaps inner 10
-smart_gaps on
-smart_borders on
+# smart_gaps on
+# smart_borders on
 # border_radius 14
 # smart_borders no_gaps
-# hide_edge_borders smart_no_gaps
+hide_edge_borders smart_no_gaps
 for_window [all] border pixel 2
 for_window [all] title_window_icon padding 7px
 
-client.focused          #61afef #61afef #24273a #61dfff   #61afef    ### edited via script
+client.focused          #7b58dc #7b58dc #ffffff #9b58dc   #7b58dc    ### edited via script
 client.focused_inactive #555555 #555555 #ffffff #666666   #555555
 client.unfocused        #222222 #222222 #888888 #333333   #555555
 

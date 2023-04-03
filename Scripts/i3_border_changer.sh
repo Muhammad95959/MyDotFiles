@@ -14,14 +14,10 @@ middle_blue_green="#8bd5ca"
 middle_blue_green_companion="#8ed5fa"
 pale_violet="#c6a0f6"
 pale_violet_compaion="#c640f6"
-red="#ff0000"
-red_companion="#aa0000"
 ruddy_pink="#ed8796"
 ruddy_pink_companion="#ed87d6"
 slate_blue="#7b58dc"
 slate_blue_companion="#9b58dc"
-yellow="#ffff00"
-yellow_companion="#aaff00"
 
 chosen=$(printf "\
 Blue Jeans
@@ -30,10 +26,8 @@ Lavender Blue
 Light Salmon
 Middle Blue Green
 Pale Violet
-Red
 Ruddy Pink
-Slate Blue
-Yellow\
+Slate Blue\
 " | rofi -dmenu -i -theme ~/.config/rofi/border_color_chooser.rasi -p "choose a color: ")
 
 function change_border {
@@ -49,8 +43,6 @@ case "$chosen" in
     "Light Salmon") change_border "$light_salmon" "$light_salmon_companion" "$dark" ;;
     "Middle Blue Green") change_border "$middle_blue_green" "$middle_blue_green_companion" "$dark" ;;
     "Pale Violet") change_border "$pale_violet" "$pale_violet_compaion" "$dark" ;;
-    "Red") change_border "$red" "$red_companion" "$dark" ;;
     "Ruddy Pink") change_border "$ruddy_pink" "$ruddy_pink_companion" "$dark" ;;
     "Slate Blue") change_border "$slate_blue" "$slate_blue_companion" "$light" ;;
-    "Yellow") change_border "$yellow" "$yellow_companion" "$dark" ;;
 esac

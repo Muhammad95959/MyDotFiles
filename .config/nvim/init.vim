@@ -61,31 +61,31 @@ let g:rnvimr_action = {
 			\ }
 
 """ Common settings -------------------------
-:set number
-:set relativenumber
-:set autoindent
-:set expandtab
-:set tabstop=4
-:set shiftwidth=4
-:set smarttab
-:set softtabstop=4
-:set linebreak
-:set ignorecase
-:set smartcase
-:set scrolloff=4
-:set mouse=a
-:set noswapfile
-:set nobackup
-:set undofile
-:set noshowmode
-:set termbidi
-:set keymap=arabic
-:set iminsert=0
-:set clipboard+=unnamedplus
-:set encoding=utf-8
-:set fileencoding=utf-8
-:set termencoding=utf-8
-:set fileencodings=utf-8,cp1256
+set number
+set relativenumber
+set autoindent
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set softtabstop=4
+set linebreak
+set ignorecase
+set smartcase
+set scrolloff=4
+set mouse=a
+set noswapfile
+set nobackup
+set undofile
+set noshowmode
+set termbidi
+set keymap=arabic
+set iminsert=0
+set clipboard+=unnamedplus
+set encoding=utf-8
+set fileencoding=utf-8
+set termencoding=utf-8
+set fileencodings=utf-8,cp1256
 
 """ ColorSchemes ----------------------------
 hi Pmenu ctermbg=NONE ctermfg=White
