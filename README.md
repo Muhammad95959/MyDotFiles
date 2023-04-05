@@ -1,3 +1,3 @@
 # MyDotFiles
-![2023-03-15_21-25_1](https://user-images.githubusercontent.com/75130655/225421410-c596d2ec-5ecd-41c6-9a65-ba9cd1d3d0cb.png)
-![2023-03-15_21-28](https://user-images.githubusercontent.com/75130655/225422175-8e9c0582-1309-4e2a-845a-5d1ee9a09fc9.png)
+![2023-04-05_05-25](https://user-images.githubusercontent.com/75130655/229973887-1ec6c96c-65c8-459c-98cb-d5dcf9218993.png)
+![2023-04-05_05-27](https://user-images.githubusercontent.com/75130655/229973903-7d1a7a1c-55ed-4a68-a3af-7ed6e9c4e44f.png)
