@@ -80,13 +80,13 @@ export EDITOR=nvim
 # Aliases
 alias logout="pkill -KILL -u $USER"
 alias ll="exa --icons -a --group-directories-first"
-alias zrefresh="source ~/.zshrc"
+alias zrefresh="source $HOME/.zshrc"
 alias cppath="pwd | xclip -selection clipboard"
 alias copycmd="tail -n 2 .zhistory | head -n 1 | xclip -selection clipboard"
-alias zshrc="nvim ~/.zshrc"
-alias nvimrc="nvim ~/.config/nvim/init.vim"
-alias i3config="nvim ~/.config/i3/config"
-alias barconfig="nvim ~/.config/polybar/config.ini"
+alias zshrc="nvim $HOME/.zshrc"
+alias nvimrc="nvim $HOME/.config/nvim/init.vim"
+alias i3config="nvim $HOME/.config/i3/config"
+alias barconfig="nvim $HOME/.config/polybar/config.ini"
 alias notes="nvim /mnt/Disk_D/Muhammad/notes"
 alias pnotes="nvim /mnt/Disk_D/Muhammad/My\ Documents/Programming_Notes/my_programming_notes.txt"
 

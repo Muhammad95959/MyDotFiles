@@ -21,6 +21,7 @@ focus_follows_mouse no
 #                               |_|    
 
 exec --no-startup-id numlockx
+exec --no-startup-id unclutter
 exec --no-startup-id amixer set Capture 40%
 exec --no-startup-id nvidia-settings -a "[gpu:0]/GPUPowerMizerMode=2"
 exec --no-startup-id bash ~/Scripts/keyboard_config.sh
@@ -49,13 +50,12 @@ exec_always --no-startup-id picom
 #                                     |___/ 
 
 gaps inner 10
-# smart_gaps on
-# smart_borders on
-# border_radius 14
-# smart_borders no_gaps
-hide_edge_borders smart_no_gaps
+# smart_gaps on    ### edited via
+# smart_borders on     ### edited via
+hide_edge_borders smart_no_gaps    ### edited via
 for_window [all] border pixel 2
 for_window [all] title_window_icon padding 7px
+# border_radius 12
 
 client.focused          #7b58dc #7b58dc #ffffff #9b58dc   #7b58dc    ### edited via script
 client.focused_inactive #555555 #555555 #ffffff #666666   #555555
@@ -100,7 +100,7 @@ bindsym $mod+shift+o      mode "executable_scripts"
 bindsym $mod+p            exec dolphin
 bindsym $mod+q            kill
 bindsym $mod+shift+q      exec ~/.config/rofi/powermenu/type-1/powermenu.sh
-bindsym $mod+r            exec kitty -e ranger
+bindsym $mod+r            exec kitty --class Ranger -e ranger
 bindsym $mod+shift+r      restart
 bindsym $mod+s            split v
 bindsym $mod+t            split v ; layout tabbed
@@ -241,6 +241,7 @@ for_window [class="RangerFileChooser"] floating enabled
 for_window [class="Nitrogen"] floating enabled
 for_window [class="Gcolor3"] floating enabled
 for_window [class="livecaptions"] floating enabled
+for_window [class="Arandr"] floating enabled
 for_window [class="floating-kitty"] floating enabled
 for_window [class="supertuxkart"] floating disabled
 for_window [class="Timeshift-gtk"] floating disabled
@@ -270,7 +271,7 @@ mode "redshift" {
 }
 
 mode "applications" {
-    bindsym a exec prime-run android-studio, mode "default"
+    bindsym a exec android-studio, mode "default"
     bindsym b exec blueman-manager, mode "default"
     bindsym c exec gcolor3, mode "default"
     bindsym d exec gnome-disks, mode "default"
@@ -288,7 +289,6 @@ mode "applications" {
     bindsym v exec virt-manager, mode "default"
     bindsym z exec zathura /mnt/Disk_D/مستندات/برمجة/Head-First-Kotlin-Dawn-Griffiths.pdf, mode "default"
 
-    bindsym shift+a exec android-studio, mode "default"
     bindsym shift+b exec bleachbit, mode "default"
     bindsym shift+c exec cheese, mode "default"
     bindsym shift+g exec gimp, mode "default"
@@ -367,13 +367,14 @@ mode "scripts" {
 mode "executable_scripts" {
     bindsym b exec bash ~/Scripts/i3_border_changer.sh, mode "default"
     bindsym c exec bash ~/Scripts/catpuccin_theme.sh, mode "default"
-    bindsym shift+c exec bash ~/Scripts/default_theme.sh, mode "default"
     bindsym e exec kitty -e bash /mnt/Disk_D/Muhammad/English_Learner/english_learner.sh, mode "default"
     bindsym k exec bash ~/Scripts/app_kill.sh, mode "default"
     bindsym m exec bash ~/Scripts/url_to_mpv.sh, mode "default"
     bindsym n exec bash ~/Scripts/nvidia_power_mode.sh, mode "default"
     bindsym o exec bash ~/Scripts/open_excecutables.sh, mode "default"
     bindsym p exec bash ~/Scripts/toggle_polybar_location.sh, mode "default"
+    bindsym s exec bash ~/Scripts/toggle_i3_smart_gaps.sh, mode "default"
+    bindsym shift+c exec bash ~/Scripts/default_theme.sh, mode "default"
     bindsym u exec bash ~/Scripts/update_DotFiles_repo.sh, mode "default"
     bindsym v exec bash ~/Scripts/toggle_vpn.sh, mode "default"
     bindsym y workspace $ws10; exec kitty --class yt-dlp -e bash ~/Scripts/yt-dlp_script.sh, mode "default"
@@ -382,4 +383,3 @@ mode "executable_scripts" {
     bindsym Escape mode "default"
     bindsym $mod+shift+o mode "default"
 }
-
