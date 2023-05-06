@@ -50,8 +50,8 @@ exec_always --no-startup-id picom
 #                                     |___/ 
 
 gaps inner 10
-# smart_gaps on    ### edited via
-# smart_borders on     ### edited via
+# smart_gaps on    ### edited via script
+# smart_borders on     ### edited via script
 hide_edge_borders smart_no_gaps    ### edited via
 for_window [all] border pixel 2
 for_window [all] title_window_icon padding 7px
@@ -76,13 +76,13 @@ client.unfocused        #222222 #222222 #888888 #333333   #555555
 #           |___/                               |___/     
 
 bindsym $mod+Return       exec kitty
-bindsym $mod+shift+Return exec kitty --class floating-kitty --override background_opacity=0.9
+bindsym $mod+shift+Return exec rofi -show drun
 bindsym $mod+a            mode "applications"
 bindsym $mod+b            exec brave
 bindsym $mod+shift+b      exec qutebrowser
 bindsym $mod+c            exec rofi-gpaste
 bindsym $mod+shift+c      exec dunstctl close-all
-bindsym $mod+d            exec rofi -show drun
+bindsym $mod+d            exec dolphin
 bindsym $mod+e            layout toggle split
 bindsym $mod+shift+e      exec ocrdesktop -c && notify-send -t 5000 "content copied to clipboard"
 bindsym $mod+f            fullscreen toggle
@@ -97,14 +97,13 @@ bindsym $mod+n            mode "redshift"
 bindsym $mod+shift+n      exec bash ~/Scripts/xdotool_close.sh
 bindsym $mod+o            mode "scripts"
 bindsym $mod+shift+o      mode "executable_scripts"
-bindsym $mod+p            exec dolphin
 bindsym $mod+q            kill
 bindsym $mod+shift+q      exec ~/.config/rofi/powermenu/type-1/powermenu.sh
 bindsym $mod+r            exec kitty --class Ranger -e ranger
 bindsym $mod+shift+r      restart
-bindsym $mod+s            split v
 bindsym $mod+t            split v ; layout tabbed
-bindsym $mod+v            split h
+bindsym $mod+v            split v
+bindsym $mod+shift+v      split h
 bindsym $mod+w            layout tabbed
 bindsym $mod+shift+w      exec nitrogen --set-zoom-fill --random --no-recurse /mnt/Disk_D/Backgrounds
 bindsym $mod+space        focus mode_toggle
@@ -243,7 +242,6 @@ for_window [class="Gcolor3"] floating enabled
 for_window [class="livecaptions"] floating enabled
 for_window [class="Arandr"] floating enabled
 for_window [class="floating-kitty"] floating enabled
-for_window [class="supertuxkart"] floating disabled
 for_window [class="Timeshift-gtk"] floating disabled
 for_window [class="Shutter"] floating disabled
 for_window [class="livecaptions"] move absolute position 276px 885px
@@ -265,7 +263,6 @@ mode "redshift" {
     bindsym 4 exec --no-startup-id "$kill_redshift redshift -P -O 3000", mode "default"
     bindsym 5 exec --no-startup-id "$kill_redshift redshift -P -O 2500", mode "default"
 
-    bindsym Return mode "default"
     bindsym Escape mode "default"
     bindsym $mod+n mode "default"
 }
@@ -298,7 +295,7 @@ mode "applications" {
     bindsym shift+n exec kitty -e newsboat, mode "default"
     bindsym shift+p exec pdfarranger, mode "default"
     bindsym shift+s exec shotcut, mode "default"
-    bindsym shift+u exec python3 /mnt/Disk_D/برامج/Linux/ultimatevocalremovergui-master/UVR.py, mode "default"
+    bindsym shift+u exec python3 /mnt/Disk_D/برامج/Linux/ultimatevocalremovergui/UVR.py, mode "default"
     bindsym shift+v exec ventoygui, mode "default"
 
     bindsym Mod1+b exec notify-send -t 5000 "$(acpi)", mode "default"
@@ -306,7 +303,6 @@ mode "applications" {
     bindsym Mod1+m exec kitty --class pulsemixer -e pulsemixer, mode "default"
     bindsym Mod1+p exec pavucontrol, mode "default"
 
-    bindsym Return mode "default"
     bindsym Escape mode "default"
     bindsym $mod+a mode "default"
 }
@@ -347,7 +343,7 @@ mode "scripts" {
     bindsym f exec kitty -e nvim ~/.config/newsboat/urls, mode "default"
     bindsym i exec kitty -e nvim ~/.config/i3/config, mode "default"
     bindsym k exec kitty -e nvim ~/.config/kitty/kitty.conf, mode "default"
-    bindsym n exec kitty -e nvim ~/.config/nvim/init.vim, mode "default"
+    bindsym n exec kitty -e nvim ~/.config/nvim/lua/Muhammad/init.lua, mode "default"
     bindsym m exec kitty -e nvim ~/.config/mpv/mpv.conf, mode "default"
     bindsym p exec kitty -e nvim ~/.config/picom/picom.conf, mode "default"
     bindsym q exec kitty -e nvim ~/.config/qutebrowser/config.py, mode "default"
@@ -359,7 +355,6 @@ mode "scripts" {
     bindsym shift+u exec kitty -e nvim ~/Scripts/update_DotFiles_repo.sh, mode "default"
     bindsym shift+z exec kitty -e nvim ~/.zshrc, mode "default"
 
-    bindsym Return mode "default"
     bindsym Escape mode "default"
     bindsym $mod+o mode "default"
 }
@@ -374,12 +369,10 @@ mode "executable_scripts" {
     bindsym o exec bash ~/Scripts/open_excecutables.sh, mode "default"
     bindsym p exec bash ~/Scripts/toggle_polybar_location.sh, mode "default"
     bindsym s exec bash ~/Scripts/toggle_i3_smart_gaps.sh, mode "default"
-    bindsym shift+c exec bash ~/Scripts/default_theme.sh, mode "default"
     bindsym u exec bash ~/Scripts/update_DotFiles_repo.sh, mode "default"
     bindsym v exec bash ~/Scripts/toggle_vpn.sh, mode "default"
     bindsym y workspace $ws10; exec kitty --class yt-dlp -e bash ~/Scripts/yt-dlp_script.sh, mode "default"
 
-    bindsym Return mode "default"
     bindsym Escape mode "default"
     bindsym $mod+shift+o mode "default"
 }

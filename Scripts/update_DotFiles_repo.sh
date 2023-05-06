@@ -26,6 +26,7 @@ cp  -r  ~/.config/nomacs       ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/nvim         ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/picom        ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/polybar      ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
+cp  -r  ~/.config/qtile        ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/qutebrowser  ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/ranger       ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/rofi         ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
