@@ -79,12 +79,13 @@ export EDITOR=nvim
 
 # Aliases
 alias logout="pkill -KILL -u $USER"
-alias ll="exa --icons -a --group-directories-first"
+alias ls="exa --icons -a --group-directories-first"
+alias ll="exa --icons -a --group-directories-first -l"
 alias zrefresh="source $HOME/.zshrc"
 alias cppath="pwd | xclip -selection clipboard"
-alias copycmd="tail -n 2 .zhistory | head -n 1 | xclip -selection clipboard"
+alias copycmd="tail -n 2 ~/.zhistory | head -n 1 | xclip -selection clipboard"
 alias zshrc="nvim $HOME/.zshrc"
-alias nvimrc="nvim $HOME/.config/nvim/init.vim"
+alias nvimrc="nvim $HOME/.config/nvim/lua/custom/init.lua"
 alias awesomeconfig="nvim $HOME/.config/awesome/rc.lua"
 alias i3config="nvim $HOME/.config/i3/config"
 alias qtileconfig="nvim $HOME/.config/qtile/config.py"

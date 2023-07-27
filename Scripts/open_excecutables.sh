@@ -7,7 +7,6 @@ Open English Learner
 Open Video Downloader
 Toggle Gaps
 Toggle Polybar Location
-Toggle VPN
 Update MyDotFiles Repo\
 " | rofi -dmenu -i -theme ~/.config/rofi/script_chooser.rasi -p "choose a script: ")
 
@@ -18,6 +17,5 @@ case "$chosen" in
     "Open Video Downloader") i3-msg workspace 10; kitty --class yt-dlp -e bash ~/Scripts/yt-dlp_script.sh ;;
     "Toggle Gaps") bash ~/Scripts/toggle_gaps.sh ;;
     "Toggle Polybar Location") bash ~/Scripts/toggle_polybar_location.sh ;;
-    "Toggle VPN") bash ~/Scripts/toggle_vpn.sh ;;
     "Update MyDotFiles Repo") bash ~/Scripts/update_MyDotFiles_repo.sh ;;
 esac

@@ -64,6 +64,8 @@ run_cmd() {
 				bspc quit
 			elif [[ "$DESKTOP_SESSION" == 'i3' ]]; then
 				i3-msg exit
+			elif [[ "$DESKTOP_SESSION" == 'qtile' ]]; then
+                qtile cmd-obj -o cmd -f shutdown  
 			elif [[ "$DESKTOP_SESSION" == 'plasma' ]]; then
 				qdbus org.kde.ksmserver /KSMServer logout 0 0 0
 			fi
@@ -83,7 +85,7 @@ case ${chosen} in
 		if [[ -x '/usr/bin/betterlockscreen' ]]; then
 			betterlockscreen -l
 		elif [[ -x '/usr/bin/i3lock' ]]; then
-			i3lock -c 000000
+			i3lock -n -e -i /mnt/Disk_D/Backgrounds/locks/catlock.png
 		fi
         ;;
     $suspend)

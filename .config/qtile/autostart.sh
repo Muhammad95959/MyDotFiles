@@ -2,4 +2,4 @@
 
 picom --config $HOME/.config/qtile/picom.conf &
 dunst &
-volnoti -t 2 -r 15 &
+volnoti -t 2 -r 20 &

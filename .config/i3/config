@@ -26,16 +26,16 @@ exec --no-startup-id amixer set Capture 40%
 exec --no-startup-id nvidia-settings -a "[gpu:0]/GPUPowerMizerMode=2"
 exec --no-startup-id bash ~/Scripts/keyboard_config.sh
 exec --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Accel Speed' 0.5
+exec --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Tapping Enabled' 1
 exec --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Natural Scrolling Enabled' 1
-exec --no-startup-id xinput set-prop 'PixArt Lenovo USB Optical Mouse' 'libinput Accel Speed' 0.5
+exec --no-startup-id xinput set-prop 'PixArt Lenovo USB Optical Mouse' 'libinput Accel Speed' 0.3
 exec --no-startup-id polybar -r
-exec --no-startup-id nm-applet
-exec --no-startup-id killall nm-applet
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id ~/Scripts/volume_control/volume_subscribe.sh
 exec --no-startup-id gpaste-client start
 exec --no-startup-id sudo virsh net-start default
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -n -e -i /mnt/Disk_D/Backgrounds/locks/catlock.png
 exec_always --no-startup-id volnoti -t 2
 exec_always --no-startup-id dunst
 exec_always --no-startup-id picom
@@ -50,9 +50,9 @@ exec_always --no-startup-id picom
 #                                     |___/ 
 
 gaps inner 10
-# smart_gaps on    ### edited via script
-# smart_borders on     ### edited via script
-hide_edge_borders smart_no_gaps    ### edited via
+smart_gaps on    ### edited via script
+smart_borders on     ### edited via script
+# hide_edge_borders smart_no_gaps    ### edited via script
 for_window [all] border pixel 2
 for_window [all] title_window_icon padding 7px
 # border_radius 12
@@ -82,7 +82,7 @@ bindsym $mod+b            exec brave
 bindsym $mod+shift+b      exec qutebrowser
 bindsym $mod+c            exec rofi-gpaste
 bindsym $mod+shift+c      exec dunstctl close-all
-bindsym $mod+d            exec dolphin
+bindsym $mod+d            exec thunar
 bindsym $mod+e            layout toggle split
 bindsym $mod+shift+e      exec ocrdesktop -c && notify-send -t 5000 "content copied to clipboard"
 bindsym $mod+f            fullscreen toggle
@@ -101,6 +101,7 @@ bindsym $mod+q            kill
 bindsym $mod+shift+q      exec ~/.config/rofi/powermenu/type-1/powermenu.sh
 bindsym $mod+r            exec kitty --class Ranger -e ranger
 bindsym $mod+shift+r      restart
+bindsym $mod+s            exec bash ~/Scripts/volume_control/volume_toggle_mute.sh
 bindsym $mod+t            split v ; layout tabbed
 bindsym $mod+v            split v
 bindsym $mod+shift+v      split h
@@ -113,16 +114,20 @@ bindsym shift+Print       exec flameshot full --path ~/Pictures
 bindsym ctrl+Escape       exec setcapslock toggle
 # PulseAudio controls
 bindsym XF86AudioRaiseVolume       exec bash ~/Scripts/volume_control/pactl_volume_up_limit.sh
-bindsym XF86AudioLowerVolume       exec amixer set Master on && pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioLowerVolume       exec pactl set-sink-mute @DEFAULT_SINK@ 0 && pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym shift+XF86AudioRaiseVolume exec bash ~/Scripts/volume_control/pactl_volume_up_by_1_limit.sh
-bindsym shift+XF86AudioLowerVolume exec amixer set Master on && pactl set-sink-volume @DEFAULT_SINK@ -1%
+bindsym shift+XF86AudioLowerVolume exec pactl set-sink-mute @DEFAULT_SINK@ 0 && pactl set-sink-volume @DEFAULT_SINK@ -1%
 bindsym XF86AudioMute              exec bash ~/Scripts/volume_control/volume_toggle_mute.sh
 bindsym XF86AudioMicMute           exec bash ~/Scripts/volume_control/mic_toggle_mute.sh
+bindsym $mod+plus                  exec bash ~/Scripts/volume_control/pactl_volume_up_limit.sh
+bindsym $mod+minus                 exec pactl set-sink-mute @DEFAULT_SINK@ 0 && pactl set-sink-volume @DEFAULT_SINK@ -5%
 # screen brightness controls
 bindsym XF86MonBrightnessUp         exec ~/Scripts/brightness_control/inc.exp
 bindsym XF86MonBrightnessDown       exec ~/Scripts/brightness_control/dec.exp
 bindsym shift+XF86MonBrightnessUp   exec ~/Scripts/brightness_control/s_inc.exp
 bindsym shift+XF86MonBrightnessDown exec ~/Scripts/brightness_control/s_dec.exp
+bindsym $mod+shift+plus                   exec ~/Scripts/brightness_control/inc.exp
+bindsym $mod+shift+minus                  exec ~/Scripts/brightness_control/dec.exp
 # media player controls
 bindsym XF86AudioPlay       exec playerctl play-pause
 bindsym XF86AudioPause      exec playerctl play-pause
@@ -244,6 +249,7 @@ for_window [class="Arandr"] floating enabled
 for_window [class="floating-kitty"] floating enabled
 for_window [class="Timeshift-gtk"] floating disabled
 for_window [class="Shutter"] floating disabled
+for_window [class="jetbrains-toolbox"] floating disabled
 for_window [class="livecaptions"] move absolute position 276px 885px
 assign     [class="Uget-gtk"] $ws10
 assign     [class="yt-dlp"] $ws10
@@ -284,7 +290,7 @@ mode "applications" {
     bindsym t exec timeshift-launcher, mode "default"
     bindsym u exec uget-gtk, mode "default"
     bindsym v exec virt-manager, mode "default"
-    bindsym z exec zathura /mnt/Disk_D/مستندات/برمجة/Head-First-Kotlin-Dawn-Griffiths.pdf, mode "default"
+    bindsym z exec zathura "/mnt/Disk_D/مستندات/برمجة/Head First HTML and CSS 2nd Edition.pdf", mode "default"
 
     bindsym shift+b exec bleachbit, mode "default"
     bindsym shift+c exec cheese, mode "default"
@@ -343,7 +349,7 @@ mode "scripts" {
     bindsym f exec kitty -e nvim ~/.config/newsboat/urls, mode "default"
     bindsym i exec kitty -e nvim ~/.config/i3/config, mode "default"
     bindsym k exec kitty -e nvim ~/.config/kitty/kitty.conf, mode "default"
-    bindsym n exec kitty -e nvim ~/.config/nvim/lua/Muhammad/init.lua, mode "default"
+    bindsym n exec kitty -e nvim ~/.config/nvim/init.lua, mode "default"
     bindsym m exec kitty -e nvim ~/.config/mpv/mpv.conf, mode "default"
     bindsym p exec kitty -e nvim ~/.config/picom/picom.conf, mode "default"
     bindsym q exec kitty -e nvim ~/.config/qutebrowser/config.py, mode "default"
@@ -361,8 +367,8 @@ mode "scripts" {
 
 mode "executable_scripts" {
     bindsym b exec bash ~/Scripts/i3_border_changer.sh, mode "default"
-    bindsym c exec bash ~/Scripts/catpuccin_theme.sh, mode "default"
     bindsym e exec kitty -e bash /mnt/Disk_D/Muhammad/English_Learner/english_learner.sh, mode "default"
+    bindsym g exec bash ~/Scripts/google_translate.sh, mode "default"
     bindsym k exec bash ~/Scripts/app_kill.sh, mode "default"
     bindsym m exec bash ~/Scripts/url_to_mpv.sh, mode "default"
     bindsym n exec bash ~/Scripts/nvidia_power_mode.sh, mode "default"

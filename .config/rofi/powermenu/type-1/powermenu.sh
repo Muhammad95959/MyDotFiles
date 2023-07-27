@@ -100,7 +100,7 @@ case ${chosen} in
 		if [[ -x '/usr/bin/betterlockscreen' ]]; then
 			betterlockscreen -l
 		elif [[ -x '/usr/bin/i3lock' ]]; then
-			i3lock -c 000000
+			i3lock -n -e -i /mnt/Disk_D/Backgrounds/locks/catlock.png
 		fi
         ;;
     $suspend)

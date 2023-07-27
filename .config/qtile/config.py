@@ -83,7 +83,7 @@ scripts_mode = [
     Key([], "f", lazy.spawn("/bin/sh -c 'kitty -e nvim ~/.config/newsboat/urls'")),
     Key([], "i", lazy.spawn("/bin/sh -c 'kitty -e nvim ~/.config/i3/config'")),
     Key([], "k", lazy.spawn("/bin/sh -c 'kitty -e nvim ~/.config/kitty/kitty.conf'")),
-    Key([], "n", lazy.spawn("/bin/sh -c 'kitty -e nvim ~/.config/nvim/lua/Muhammad/init.lua'")),
+    Key([], "n", lazy.spawn("/bin/sh -c 'kitty -e nvim ~/.config/nvim/lua/custom/init.lua'")),
     Key([], "m", lazy.spawn("/bin/sh -c 'kitty -e nvim ~/.config/mpv/mpv.conf'")),
     Key([], "p", lazy.spawn("/bin/sh -c 'kitty -e nvim ~/.config/picom/picom.conf'")),
     Key([], "q", lazy.spawn("/bin/sh -c 'kitty -e nvim ~/.config/qutebrowser/config.py'")),
@@ -98,8 +98,8 @@ scripts_mode = [
 
 executable_scripts_mode = [
     Key([], "b", lazy.spawn("/bin/sh -c 'bash ~/Scripts/i3_border_changer.sh")),
-    Key([], "c", lazy.spawn("/bin/sh -c 'bash ~/Scripts/catpuccin_theme.sh'")),
     Key([], "e", lazy.spawn("/bin/sh -c 'kitty -e bash /mnt/Disk_D/Muhammad/English_Learner/english_learner.sh'")),
+    Key([], "g", lazy.spawn("/bin/sh -c 'bash ~/Scripts/google_translate.sh'")),
     Key([], "k", lazy.spawn("/bin/sh -c 'bash ~/Scripts/app_kill.sh'")),
     Key([], "m", lazy.spawn("/bin/sh -c 'bash ~/Scripts/url_to_mpv.sh'")),
     Key([], "n", lazy.spawn("/bin/sh -c 'bash ~/Scripts/nvidia_power_mode.sh'")),
@@ -182,7 +182,7 @@ keys = [
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift"], "q", lazy.spawn("/bin/sh -c 'bash ~/.config/rofi/powermenu/type-1/powermenu.sh'"), desc="Launch rofi powermenu"),
     Key([mod], "r", lazy.spawn("kitty --class Ranger -e ranger"), desc="Launch ranger"),
-    Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
+    Key([mod, "shift"], "r", lazy.reload_config(), lazy.spawn("/bin/sh -c 'killall polybar; polybar -r -c ~/.config/qtile/polybar.ini'"), desc="Reload the config"),
     Key([mod, "shift"], "w", lazy.spawn("nitrogen --set-zoom-fill --random --no-recurse /mnt/Disk_D/Backgrounds"), desc="Change the background randomly"),
     Key([], "Print", lazy.spawn("/bin/sh -c 'flameshot gui --path ~/Pictures'"), desc="Launch flameshot"),
     Key(["shift"], "Print", lazy.spawn("/bin/sh -c 'flameshot full --path ~/Pictures'"), desc="Take full screenshot"),
@@ -219,6 +219,12 @@ keys = [
     Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
     Key(["shift"], "XF86AudioNext", lazy.spawn("playerctl position 5+")),
     Key(["shift"], "XF86AudioPrev", lazy.spawn("playerctl position 5-")),
+]
+
+mouse = [
+    Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
+    Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
+    Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
 
 #    ____
@@ -267,19 +273,6 @@ layouts = [
     # layout.MonadTall(),
 ]
 
-#   __  __
-#  |  \/  | ___  _   _ ___  ___
-#  | |\/| |/ _ \| | | / __|/ _ \
-#  | |  | | (_) | |_| \__ \  __/
-#  |_|  |_|\___/ \__,_|___/\___|
-
-# Drag floating layouts.
-mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
-    Click([mod], "Button2", lazy.window.bring_to_front()),
-]
-
 #   ____       _   _   _
 #  / ___|  ___| |_| |_(_)_ __   __ _ ___
 #  \___ \ / _ \ __| __| | '_ \ / _` / __|
@@ -287,15 +280,16 @@ mouse = [
 #  |____/ \___|\__|\__|_|_| |_|\__, |___/
 #                              |___/
 
-follow_mouse_focus = False
-bring_front_click = False
-cursor_warp = False
-auto_fullscreen = True
-focus_on_window_activation = "smart"
-reconfigure_screens = True
-auto_minimize = True
-wl_input_rules = None
 wmname = "LG3D"
+cursor_warp = False
+auto_minimize = True
+auto_fullscreen = True
+bring_front_click = False
+follow_mouse_focus = False
+reconfigure_screens = True
+focus_on_window_activation = "smart"
+wl_input_rules = None
+screens = []
 dgroups_app_rules = []
 floating_layout = layout.Floating(
     float_rules=[

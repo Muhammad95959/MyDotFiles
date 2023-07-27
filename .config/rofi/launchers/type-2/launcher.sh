@@ -12,9 +12,10 @@
 ## style-11    style-12    style-13    style-14    style-15
 
 dir="$HOME/.config/rofi/launchers/type-2"
-theme='style-2'
+theme='style-6'
 
 ## Run
 rofi \
+    -disable-history \
     -show drun \
     -theme ${dir}/${theme}.rasi
