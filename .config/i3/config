@@ -22,9 +22,9 @@ focus_follows_mouse no
 
 exec --no-startup-id numlockx
 exec --no-startup-id unclutter
+exec --no-startup-id udiskie
 exec --no-startup-id amixer set Capture 40%
 exec --no-startup-id nvidia-settings -a "[gpu:0]/GPUPowerMizerMode=2"
-exec --no-startup-id bash ~/Scripts/keyboard_config.sh
 exec --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Accel Speed' 0.5
 exec --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Tapping Enabled' 1
 exec --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Natural Scrolling Enabled' 1
@@ -36,6 +36,7 @@ exec --no-startup-id ~/Scripts/volume_control/volume_subscribe.sh
 exec --no-startup-id gpaste-client start
 exec --no-startup-id sudo virsh net-start default
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -n -e -i /mnt/Disk_D/Backgrounds/locks/catlock.png
+exec_always --no-startup-id bash ~/Scripts/keyboard_config.sh
 exec_always --no-startup-id volnoti -t 2
 exec_always --no-startup-id dunst
 exec_always --no-startup-id picom

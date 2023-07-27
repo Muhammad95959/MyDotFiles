@@ -8,8 +8,8 @@ cp  ~/.xprofile     ~/Disk_D/Muhammad/Repositories/DotFiles/
 cp  ~/.zshrc        ~/Disk_D/Muhammad/Repositories/DotFiles/
 
 cp  -r  ~/.fonts               ~/Disk_D/Muhammad/Repositories/DotFiles/
-cp  -r  ~/.themes              ~/Disk_D/Muhammad/Repositories/DotFiles/
-cp  -r  ~/.icons               ~/Disk_D/Muhammad/Repositories/DotFiles/
+# cp  -r  ~/.themes              ~/Disk_D/Muhammad/Repositories/DotFiles/
+# cp  -r  ~/.icons               ~/Disk_D/Muhammad/Repositories/DotFiles/
 cp  -r  ~/Scripts              ~/Disk_D/Muhammad/Repositories/DotFiles/
 
 cp  -r  ~/.config/alacritty    ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
