@@ -92,6 +92,7 @@ alias qtileconfig="nvim $HOME/.config/qtile/config.py"
 alias barconfig="nvim $HOME/.config/polybar/config.ini"
 alias notes="nvim /mnt/Disk_D/Muhammad/notes"
 alias pnotes="nvim /mnt/Disk_D/Muhammad/My\ Documents/Programming_Notes/my_programming_notes.txt"
+alias pkgsbackup="pacman -Qne > /mnt/Disk_D/Muhammad/Repositories/DotFiles/Packages/ArchNativePackages.txt && pacman -Qm > /mnt/Disk_D/Muhammad/Repositories/DotFiles/Packages/ArchAurPackages.txt"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
