@@ -4,12 +4,15 @@ brave-bin
 dragon-drop
 gotop
 jetbrains-toolbox
+layan-gtk-theme-git
 lightdm-webkit-theme-aether
 nomacs
 nvimpager
+oxygen-cursors
 rofi-gpaste-git
 setcapslock
 shrinkpdf
+tela-circle-icon-theme-standard
 timeshift-autosnap
 timeshift-bin
 toilet
