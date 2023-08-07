@@ -1,6 +1,6 @@
 auto-cpufreq 1.9.8-1
 autojump 22.5.3-9
-brave-bin 1:1.56.14-1
+brave-bin 1:1.56.20-1
 dragon-drop 1.2.0-1
 gotop 4.2.0-1
 jetbrains-toolbox 1.28.1.15219-1
@@ -11,11 +11,11 @@ rofi-gpaste-git r39.03e3d44-1
 setcapslock 0.0.4-1
 shrinkpdf 1.1-1
 timeshift-autosnap 0.9-1
-timeshift-bin 23.07.1-1
+timeshift-bin 23.07.1-2
 toilet 0.3.r155.3eb9d58-1
 toilet-fonts 1.0-2
 ttf-segoe-ui-variable 1.0-1
 uget-integrator 1.0.0-2
 uget-integrator-chrome 1.0.0-4
 ventoy-bin 1.0.94-1
-yay-bin 12.1.0-1
+yay-bin 12.1.2-1
