@@ -2,7 +2,7 @@ auto-cpufreq
 autojump
 brave-bin
 dragon-drop
-gotop
+gotop-bin
 jetbrains-toolbox
 layan-gtk-theme-git
 lightdm-webkit-theme-aether
