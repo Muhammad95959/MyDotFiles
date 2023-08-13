@@ -103,6 +103,7 @@ tumbler
 udiskie
 uget
 unclutter
+unzip
 vde2
 vimiv
 virt-manager
