@@ -10,6 +10,7 @@ bridge-utils
 brightnessctl
 cheese
 cmatrix
+code
 cups
 dbus-glib
 dnsmasq
@@ -19,6 +20,7 @@ exa
 expect
 fd
 ffmpegthumbnailer
+file-roller
 flameshot
 flatpak
 font-manager
@@ -78,9 +80,11 @@ polkit-gnome
 polybar
 pulseaudio
 pulsemixer
+pyenv
 python-pynvim
 qemu-base
 qt5ct
+qutebrowser
 ranger
 redshift
 ripgrep
@@ -92,6 +96,8 @@ shotcut
 shutter
 system-config-printer
 thunar
+thunar-archive-plugin
+tk
 tldr
 tlp
 ttf-dejavu-nerd

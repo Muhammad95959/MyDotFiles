@@ -102,7 +102,7 @@ bindsym $mod+q            kill
 bindsym $mod+shift+q      exec ~/.config/rofi/powermenu/type-1/powermenu.sh
 bindsym $mod+r            exec kitty --class Ranger -e ranger
 bindsym $mod+shift+r      restart
-bindsym $mod+s            mode "vol&bright_settings"
+bindsym $mod+s            mode "video"
 bindsym $mod+t            split v ; layout tabbed
 bindsym $mod+v            split v
 bindsym $mod+shift+v      split h
@@ -112,7 +112,7 @@ bindsym $mod+space        focus mode_toggle
 bindsym $mod+shift+space  floating toggle
 bindsym Print             exec flameshot gui --path ~/Pictures
 bindsym shift+Print       exec flameshot full --path ~/Pictures
-bindsym ctrl+Escape       exec setcapslock toggle
+bindsym shift+Escape      exec setcapslock toggle
 # PulseAudio controls
 bindsym XF86AudioRaiseVolume       exec bash ~/Scripts/volume_control/pactl_volume_up_limit.sh
 bindsym XF86AudioLowerVolume       exec pactl set-sink-mute @DEFAULT_SINK@ 0 && pactl set-sink-volume @DEFAULT_SINK@ -5%
@@ -247,7 +247,7 @@ for_window [class="floating-kitty"] floating enabled
 for_window [class="Timeshift-gtk"] floating disabled
 for_window [class="Shutter"] floating disabled
 for_window [class="jetbrains-toolbox"] floating disabled
-for_window [class="livecaptions"] move absolute position 276px 885px
+for_window [class="livecaptions"] move absolute position 500px 900px
 assign     [class="Uget-gtk"] $ws10
 assign     [class="yt-dlp"] $ws10
 
@@ -287,7 +287,7 @@ mode "applications" {
     bindsym t exec timeshift-launcher, mode "default"
     bindsym u exec uget-gtk, mode "default"
     bindsym v exec virt-manager, mode "default"
-    bindsym z exec zathura "/mnt/Disk_D/مستندات/برمجة/Head First HTML and CSS 2nd Edition.pdf", mode "default"
+    bindsym z exec zathura "/mnt/Disk_D/مستندات/برمجة/Head_First_JavaScript_Programming.pdf", mode "default"
 
     bindsym shift+b exec bleachbit, mode "default"
     bindsym shift+c exec cheese, mode "default"
@@ -298,7 +298,7 @@ mode "applications" {
     bindsym shift+n exec kitty -e newsboat, mode "default"
     bindsym shift+p exec pdfarranger, mode "default"
     bindsym shift+s exec shotcut, mode "default"
-    bindsym shift+u exec python3 /mnt/Disk_D/برامج/Linux/ultimatevocalremovergui/UVR.py, mode "default"
+    bindsym shift+u exec /mnt/Disk_D/برامج/Linux/ultimatevocalremovergui/python3.10_environment/bin/python3 /mnt/Disk_D/برامج/Linux/ultimatevocalremovergui/UVR.py, mode "default"
     bindsym shift+v exec ventoygui, mode "default"
 
     bindsym Mod1+b exec notify-send -t 5000 "$(acpi)", mode "default"
@@ -340,12 +340,15 @@ mode "mouse" {
     bindsym $mod+m mode "default"
 }
 
-mode "vol&bright_settings" {
+mode "video" {
     bindsym h exec pactl set-sink-mute @DEFAULT_SINK@ 0 && pactl set-sink-volume @DEFAULT_SINK@ -5%
     bindsym l exec bash ~/Scripts/volume_control/pactl_volume_up_limit.sh
     bindsym j exec ~/Scripts/brightness_control/dec.exp
     bindsym k exec ~/Scripts/brightness_control/inc.exp
     bindsym m exec bash ~/Scripts/volume_control/volume_toggle_mute.sh
+    bindsym s exec playerctl play-pause
+    bindsym f exec playerctl position 5+
+    bindsym b exec playerctl position 5-
     bindsym $mod+h exec pactl set-sink-mute @DEFAULT_SINK@ 0 && pactl set-sink-volume @DEFAULT_SINK@ -1%
     bindsym $mod+l exec bash ~/Scripts/volume_control/pactl_volume_up_by_1_limit.sh
     bindsym $mod+j exec ~/Scripts/brightness_control/s_dec.exp
