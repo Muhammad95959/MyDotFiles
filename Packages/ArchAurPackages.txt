@@ -3,6 +3,7 @@ autojump
 brave-bin
 dragon-drop
 gotop-bin
+i3lock-color
 jetbrains-toolbox
 layan-gtk-theme-git
 lightdm-webkit-theme-aether

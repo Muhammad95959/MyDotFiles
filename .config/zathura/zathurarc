@@ -3,3 +3,4 @@ set window-height 5000
 set window-width 5000
 set first-page-column 1
 set window-title-basename true
+set sandbox none

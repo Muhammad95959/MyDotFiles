@@ -1,6 +1,7 @@
 acpi
 alsa-utils
 android-tools
+arandr
 atool
 base
 base-devel
@@ -37,7 +38,6 @@ gvfs-mtp
 gvfs-smb
 highlight
 i3-wm
-i3lock
 inetutils
 inkscape
 iptables-nft
@@ -95,10 +95,10 @@ samba
 shotcut
 shutter
 system-config-printer
+tealdeer
 thunar
 thunar-archive-plugin
 tk
-tldr
 tlp
 ttf-dejavu-nerd
 ttf-jetbrains-mono-nerd
@@ -109,6 +109,7 @@ tumbler
 udiskie
 uget
 unclutter
+unrar
 unzip
 vde2
 vimiv
