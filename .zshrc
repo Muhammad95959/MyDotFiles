@@ -90,8 +90,7 @@ alias awesomeconfig="nvim $HOME/.config/awesome/rc.lua"
 alias i3config="nvim $HOME/.config/i3/config"
 alias qtileconfig="nvim $HOME/.config/qtile/config.py"
 alias barconfig="nvim $HOME/.config/polybar/config.ini"
-alias notes="nvim /mnt/Disk_D/Muhammad/notes"
-alias pnotes="nvim /mnt/Disk_D/Muhammad/My\ Documents/Programming_Notes/my_programming_notes.txt"
+alias uvrautoplay="bash ~/Scripts/UVR_autoplay.sh"
 alias pkgsbackup="pacman -Qne | awk '{print \$1}' \
   > /mnt/Disk_D/Muhammad/Repositories/DotFiles/Packages/ArchNativePackages.txt \
   && pacman -Qm | awk '{print \$1}' \

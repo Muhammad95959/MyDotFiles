@@ -1,3 +1,4 @@
+annotator
 auto-cpufreq
 autojump
 brave-bin

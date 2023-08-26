@@ -5,7 +5,7 @@ ar_to_en="https://translate.google.com.eg/?hl=ar&tab=rT1&sl=ar&tl=en&op=translat
 
 choice=$(printf "Translate English\nTranslate Arabic" | rofi -dmenu \
     -p "Choice : " \
-    -theme ~/.config/rofi/nord_oneline.rasi
+    -theme ~/.config/rofi/oneliner.rasi
 )
 
 if [ -z "$choice" ]; then
@@ -14,7 +14,7 @@ fi
 
 text=$(rofi -dmenu \
     -p "Type here : " \
-    -theme ~/.config/rofi/nord_oneline.rasi
+    -theme ~/.config/rofi/oneliner.rasi
 )
 
 if [ -z "$text" ]; then

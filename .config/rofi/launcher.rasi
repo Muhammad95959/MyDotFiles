@@ -47,8 +47,8 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       1000px;
-    height:                      500px;
+    width:                       600px;
+    height:                      570px;
     x-offset:                    0px;
     y-offset:                    0px;
 

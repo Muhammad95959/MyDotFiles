@@ -78,7 +78,7 @@ client.unfocused        #222222 #222222 #888888 #333333   #555555
 #           |___/                               |___/
 
 bindsym $mod+Return       exec kitty
-bindsym $mod+shift+Return exec rofi -show drun
+bindsym $mod+shift+Return exec rofi -show drun -theme ~/.config/rofi/launcher.rasi
 bindsym $mod+a            mode "applications"
 bindsym $mod+b            exec brave
 bindsym $mod+shift+b      exec qutebrowser
@@ -239,7 +239,7 @@ bindsym $mod+shift+0 move container to workspace number $ws10 ; workspace number
 #    \_/\_/  |_|_| |_|\__,_|\___/ \_/\_/   |_|   \__,_|_|\___||___/
 #
 
-for_window [workspace=$ws9] floating enable
+for_window [workspace=$ws9] layout tabbed
 for_window [workspace=$ws10] layout tabbed
 for_window [class="RangerFileChooser"] floating enabled
 for_window [class="Nitrogen"] floating enabled
@@ -249,8 +249,10 @@ for_window [class="Arandr"] floating enabled
 for_window [class="Timeshift-gtk"] floating disabled
 for_window [class="Shutter"] floating disabled
 for_window [class="jetbrains-toolbox"] floating disabled
+for_window [title="Ultimate Vocal Remover"] floating disabled
 for_window [class="livecaptions"] move absolute position 500px 900px
 for_window [class="hiddenkitty"] move scratchpad
+assign     [title="Ultimate Vocal Remover"] $ws9
 assign     [class="Uget-gtk"] $ws10
 assign     [class="yt-dlp"] $ws10
 
