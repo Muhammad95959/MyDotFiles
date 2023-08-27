@@ -11,7 +11,7 @@ font pango:JetBrainsMono Nerd Font 9
 
 floating_modifier $mod
 
-# focus_follows_mouse no
+focus_follows_mouse no
 
 #  ____  _             _
 # / ___|| |_ __ _ _ __| |_ _   _ _ __
@@ -31,6 +31,7 @@ exec --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Natural Sc
 exec --no-startup-id xinput set-prop 'PixArt Lenovo USB Optical Mouse' 'libinput Accel Speed' 0.3
 exec --no-startup-id polybar -r main
 exec --no-startup-id nitrogen --restore
+exec --no-startup-id deadd-notificatoin-center
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id ~/Scripts/volume_control/volume_subscribe.sh
 exec --no-startup-id gpaste-client start
@@ -39,7 +40,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -n -e -i /mnt/Disk
 exec_always --no-startup-id bash ~/Scripts/screen_layout/two_monitors.sh
 exec_always --no-startup-id bash ~/Scripts/keyboard_config.sh
 exec_always --no-startup-id volnoti -t 2
-exec_always --no-startup-id dunst
 exec_always --no-startup-id picom
 # exec --no-startup-id xiccd
 # exec_always --no-startup-id killall xborders; xborders --border-rgba 7b58dcff --border-radius 14 --border-width 2 --disable-version-warning --border-mode inside
@@ -83,7 +83,7 @@ bindsym $mod+a            mode "applications"
 bindsym $mod+b            exec brave
 bindsym $mod+shift+b      exec qutebrowser
 bindsym $mod+c            exec rofi-gpaste
-bindsym $mod+shift+c      exec dunstctl close-all
+bindsym $mod+shift+c      exec notify-send.py a --hint boolean:deadd-notification-center:true string:type:clearPopups
 bindsym $mod+d            exec thunar
 bindsym $mod+e            layout toggle split
 bindsym $mod+shift+e      exec ocrdesktop -c && notify-send -t 5000 "content copied to clipboard"
@@ -391,7 +391,6 @@ mode "video" {
 
 mode "scripts" {
     bindsym b exec kitty -e nvim ~/.config/polybar/config.ini, mode "default"
-    bindsym d exec kitty -e nvim ~/.config/dunst/dunstrc, mode "default"
     bindsym f exec kitty -e nvim ~/.config/newsboat/urls, mode "default"
     bindsym i exec kitty -e nvim ~/.config/i3/config, mode "default"
     bindsym k exec kitty -e nvim ~/.config/kitty/kitty.conf, mode "default"

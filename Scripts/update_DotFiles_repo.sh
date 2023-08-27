@@ -16,6 +16,7 @@ cp  -r  ~/Scripts              ~/Disk_D/Muhammad/Repositories/DotFiles/
 cp  -r  ~/.config/Kvantum      ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/Thunar       ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/alacritty    ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
+cp  -r  ~/.config/deadd        ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/dunst        ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/fontconfig   ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/gtk-2.0      ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
