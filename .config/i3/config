@@ -23,6 +23,7 @@ focus_follows_mouse no
 # exec --no-startup-id numlockx
 exec --no-startup-id unclutter
 exec --no-startup-id udiskie
+exec --no-startup-id xset s off -dpms
 exec --no-startup-id amixer set Capture 40%
 exec --no-startup-id nvidia-settings -a "[gpu:0]/GPUPowerMizerMode=2"
 exec --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Accel Speed' 0.5
