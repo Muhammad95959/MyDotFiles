@@ -107,6 +107,7 @@ bindsym $mod+shift+r      restart
 bindsym $mod+s            mode "video"
 bindsym $mod+shift+s      sticky toggle
 bindsym $mod+t            split v ; layout tabbed
+bindsym $mod+shift+t      exec xdotool mousemove 1680 10 click 1 sleep 0.02 mousemove restore
 bindsym $mod+v            split v
 bindsym $mod+shift+v      split h
 bindsym $mod+w            layout tabbed
@@ -398,12 +399,13 @@ mode "scripts" {
     bindsym n exec kitty -e nvim ~/.config/nvim/init.lua, mode "default"
     bindsym m exec kitty -e nvim ~/.config/mpv/mpv.conf, mode "default"
     bindsym p exec kitty -e nvim ~/.config/picom/picom.conf, mode "default"
-    bindsym q exec kitty -e nvim ~/.config/qutebrowser/config.py, mode "default"
+    bindsym q exec kitty -e nvim ~/.config/qtile/config.py, mode "default"
     bindsym r exec kitty -e nvim ~/.config/ranger/rc.conf, mode "default"
     bindsym z exec kitty -e nvim ~/.config/zathura/zathurarc, mode "default"
 
     bindsym shift+h exec kitty -e nvim ~/.zhistory, mode "default"
     bindsym shift+i exec kitty -e nvim ~/Disk_D/Muhammad/Linux_stuff/Scripts/myManjaroI3Script.sh, mode "default"
+    bindsym shift+q exec kitty -e nvim ~/.config/qutebrowser/config.py, mode "default"
     bindsym shift+u exec kitty -e nvim ~/Scripts/update_DotFiles_repo.sh, mode "default"
     bindsym shift+z exec kitty -e nvim ~/.zshrc, mode "default"
 

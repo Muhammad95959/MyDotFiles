@@ -20,7 +20,7 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import                          "colors/onedark.rasi"
+@import                          "colors/catppuccin.rasi"
 
 /*****----- Main Window -----*****/
 window {

@@ -12,7 +12,7 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import                          "colors/onedark.rasi"
+@import                          "colors/catppuccin.rasi"
 
 * {
     border-colour:               var(selected);
@@ -47,8 +47,8 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       600px;
-    height:                      570px;
+    width:                       530px;
+    height:                      530px;
     x-offset:                    0px;
     y-offset:                    0px;
 

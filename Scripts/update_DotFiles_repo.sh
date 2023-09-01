@@ -9,8 +9,7 @@ cp  ~/.xprofile     ~/Disk_D/Muhammad/Repositories/DotFiles/
 cp  ~/.zshrc        ~/Disk_D/Muhammad/Repositories/DotFiles/
 
 cp  -r  ~/.fonts               ~/Disk_D/Muhammad/Repositories/DotFiles/
-# cp  -r  ~/.icons               ~/Disk_D/Muhammad/Repositories/DotFiles/
-# cp  -r  ~/.themes              ~/Disk_D/Muhammad/Repositories/DotFiles/
+cp  -r  ~/.icons               ~/Disk_D/Muhammad/Repositories/DotFiles/
 cp  -r  ~/Scripts              ~/Disk_D/Muhammad/Repositories/DotFiles/
 
 cp  -r  ~/.config/Kvantum      ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
@@ -31,7 +30,6 @@ cp  -r  ~/.config/nvim         ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/octave       ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/picom        ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/polybar      ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
-cp  -r  ~/.config/qtile        ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/qutebrowser  ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/ranger       ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/rofi         ~/Disk_D/Muhammad/Repositories/DotFiles/.config/

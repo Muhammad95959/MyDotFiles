@@ -1,7 +1,6 @@
 return {
+  lazy = true,
   "kevinhwang91/rnvimr",
-  cmd = { "RnvimrToggle" },
-  keys = { "<leader>r" },
   config = function()
     vim.g.rnvimr_enable_ex = 1
     vim.g.rnvimr_enable_picker = 1
@@ -14,7 +13,8 @@ return {
       ["gw"] = "JumpNvimCwd",
       ["yw"] = "EmitRangerCwd",
     }
-
-    vim.keymap.set("n", "<leader>r", vim.cmd.RnvimrToggle)
   end,
+  keys = {
+    { "<leader>r", vim.cmd.RnvimrToggle, desc = "Rnvimr Toggle" },
+  },
 }

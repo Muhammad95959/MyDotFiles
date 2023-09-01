@@ -1,0 +1,134 @@
+# Created by Octave 8.3.0, Tue Aug 29 22:52:45 2023 EEST <muhammad@archlinux>
+# name: local_packages
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 13
+# name: name
+# type: sq_string
+# elements: 1
+# length: 10
+statistics
+
+
+# name: version
+# type: sq_string
+# elements: 1
+# length: 5
+1.6.0
+
+
+# name: date
+# type: sq_string
+# elements: 1
+# length: 9
+2023-5-28
+
+
+# name: author
+# type: sq_string
+# elements: 1
+# length: 15
+various authors
+
+
+# name: maintainer
+# type: sq_string
+# elements: 1
+# length: 42
+Andreas Bertsatos <abertsatos@biol.uoa.gr>
+
+
+# name: title
+# type: sq_string
+# elements: 1
+# length: 10
+Statistics
+
+
+# name: description
+# type: sq_string
+# elements: 1
+# length: 38
+The Statistics package for GNU Octave.
+
+
+# name: categories
+# type: sq_string
+# elements: 1
+# length: 10
+Statistics
+
+
+# name: depends
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 3
+# name: package
+# type: sq_string
+# elements: 1
+# length: 6
+octave
+
+
+# name: operator
+# type: sq_string
+# elements: 1
+# length: 2
+>=
+
+
+# name: version
+# type: sq_string
+# elements: 1
+# length: 5
+7.2.0
+
+
+
+
+
+
+
+# name: license
+# type: sq_string
+# elements: 1
+# length: 6
+GPLv3+
+
+
+# name: url
+# type: sq_string
+# elements: 1
+# length: 40
+https://github.com/gnu-octave/statistics
+
+
+# name: dir
+# type: sq_string
+# elements: 1
+# length: 68
+/home/muhammad/.local/share/octave/api-v58/packages/statistics-1.6.0
+
+
+# name: archprefix
+# type: sq_string
+# elements: 1
+# length: 68
+/home/muhammad/.local/share/octave/api-v58/packages/statistics-1.6.0
+
+
+
+
+
+
+
