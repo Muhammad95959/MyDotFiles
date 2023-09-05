@@ -8,7 +8,7 @@ gotop-bin
 i3lock-color
 jetbrains-toolbox
 layan-gtk-theme-git
-lightdm-webkit-theme-aether
+lightdm-settings
 nomacs
 notify-send-py
 nvimpager

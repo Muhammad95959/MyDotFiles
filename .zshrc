@@ -88,7 +88,6 @@ alias zshrc="nvim $HOME/.zshrc"
 alias nvimrc="nvim $HOME/.config/nvim/lua/custom/init.lua"
 alias awesomeconfig="nvim $HOME/.config/awesome/rc.lua"
 alias i3config="nvim $HOME/.config/i3/config"
-alias qtileconfig="nvim $HOME/.config/qtile/config.py"
 alias barconfig="nvim $HOME/.config/polybar/config.ini"
 alias uvrautoplay="bash ~/Scripts/UVR_autoplay.sh"
 alias pkgsbackup="pacman -Qne | awk '{print \$1}' \

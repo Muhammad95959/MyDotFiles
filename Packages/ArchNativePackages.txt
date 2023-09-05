@@ -3,6 +3,7 @@ alsa-utils
 android-tools
 arandr
 atool
+awesome
 base
 base-devel
 bleachbit
@@ -45,7 +46,6 @@ kitty
 kvantum
 lazygit
 libreoffice-still
-lightdm-webkit2-greeter
 linux-firmware
 linux-lts
 lxappearance
@@ -98,6 +98,7 @@ thunar
 thunar-archive-plugin
 tk
 tlp
+tree
 ttf-dejavu-nerd
 ttf-jetbrains-mono-nerd
 ttf-roboto-mono-nerd
