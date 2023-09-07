@@ -73,7 +73,7 @@ bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
 # Environment variables
-export PAGER=nvimpager
+export PAGER='nvim +Man!'
 export TERMCMD=kitty
 export EDITOR=nvim
 
@@ -90,6 +90,7 @@ alias awesomeconfig="nvim $HOME/.config/awesome/rc.lua"
 alias i3config="nvim $HOME/.config/i3/config"
 alias barconfig="nvim $HOME/.config/polybar/config.ini"
 alias uvrautoplay="bash ~/Scripts/UVR_autoplay.sh"
+alias cleandeps="sudo pacman -Rsn $(pacman -Qdtq)"
 alias pkgsbackup="pacman -Qne | awk '{print \$1}' \
   > /mnt/Disk_D/Muhammad/Repositories/DotFiles/Packages/ArchNativePackages.txt \
   && pacman -Qm | awk '{print \$1}' \

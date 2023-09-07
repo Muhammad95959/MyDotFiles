@@ -8,10 +8,9 @@ gotop-bin
 i3lock-color
 jetbrains-toolbox
 layan-gtk-theme-git
-lightdm-settings
+lightdm-webkit-theme-aether
 nomacs
 notify-send-py
-nvimpager
 oxygen-cursors
 rofi-gpaste-git
 setcapslock
