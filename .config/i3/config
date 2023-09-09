@@ -100,7 +100,7 @@ bindsym $mod+shift+n      exec bash ~/Scripts/xdotool_close.sh
 bindsym $mod+o            mode "scripts"
 bindsym $mod+shift+o      mode "executable_scripts"
 bindsym $mod+q            kill
-bindsym $mod+shift+q      exec ~/.config/rofi/powermenu/type-1/powermenu.sh
+bindsym $mod+shift+q      exec ~/.config/rofi/scripts/powermenu/type-1/powermenu.sh
 bindsym $mod+r            exec kitty --class Ranger -e ranger
 bindsym $mod+shift+r      restart
 bindsym $mod+s            mode "video"

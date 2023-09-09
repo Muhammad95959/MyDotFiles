@@ -49,6 +49,7 @@ linux-firmware
 linux-lts
 lxappearance
 man-db
+man-pages
 mediainfo
 mpv
 mpv-mpris
