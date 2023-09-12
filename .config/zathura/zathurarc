@@ -1,5 +1,8 @@
-set statusbar-bg		          "#141414"
-set recolor-darkcolor		      "#FFFF00"
+-- Recoloring
+set default-bg         "#111111"
+set statusbar-bg       "#000000"
+set recolor-darkcolor  "#ffdb58"
+set recolor-lightcolor "#111111"
 
 set first-page-column 1
 set recolor true
@@ -8,3 +11,7 @@ set selection-clipboard clipboard
 set window-height 5000
 set window-title-basename true
 set window-width 5000
+
+map zi set "scroll-step 100"
+map zI set "scroll-step 40"
+map zr exec "kitty --class hiddenkitty -e /home/muhammad/Scripts/zathura_recolor.sh"

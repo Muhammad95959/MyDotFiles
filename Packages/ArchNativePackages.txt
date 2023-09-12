@@ -110,6 +110,7 @@ uget
 unclutter
 unrar
 unzip
+valgrind
 vde2
 vimiv
 virt-manager

@@ -49,6 +49,10 @@ return {
     },
   },
   {
+    "catppuccin/nvim",
+    lazy = false,
+  },
+  {
     "navarasu/onedark.nvim",
     opts = {
       style = "deep", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
@@ -56,10 +60,8 @@ return {
   },
   {
     "sainnhe/sonokai",
-    lazy = true,
   },
   {
     "tiagovla/tokyodark.nvim",
-    lazy = true,
   },
 }
