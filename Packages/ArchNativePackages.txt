@@ -70,6 +70,7 @@ octave
 okular
 openbsd-netcat
 os-prober
+pass
 pavucontrol
 pdfarranger
 picard
@@ -89,6 +90,7 @@ redshift
 ripgrep
 rofi
 rofi-emoji
+rofi-pass
 rpm-tools
 samba
 shotcut

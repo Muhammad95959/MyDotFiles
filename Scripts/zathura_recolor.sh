@@ -3,6 +3,7 @@ Canary Yellow on Black
 Yellow on Dark Gray
 Amber on Charcoal
 Mustard on Deep Charcoal
+Black on White
 Black on Beige\
 " | rofi -dmenu -i -theme ~/.config/rofi/zathura_recolor.rasi -p "choose a theme: ")
 
@@ -46,5 +47,13 @@ set default-bg         \"#000000\"\n\
 set statusbar-bg       \"#141414\"\n\
 set recolor-darkcolor  \"#000000\"\n\
 set recolor-lightcolor \"#ffe1ba\"\n" "$HOME"/.config/zathura/zathurarc
+	;;
+"Black on White")
+	sed -i "/-- Recoloring/,+5c\
+-- Recoloring\n\
+set default-bg         \"#ffffff\"\n\
+set statusbar-bg       \"#141414\"\n\
+set recolor-darkcolor  \"#000000\"\n\
+set recolor-lightcolor \"#ffffff\"\n" "$HOME"/.config/zathura/zathurarc
 	;;
 esac

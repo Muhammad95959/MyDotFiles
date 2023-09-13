@@ -91,7 +91,7 @@ bindsym $mod+f            fullscreen toggle
 bindsym $mod+shift+f      exec bash ~/Scripts/toggle_gaps.sh
 bindsym $mod+g            gaps inner current plus 9 ; gaps horizontal current plus 7
 bindsym $mod+shift+g      gaps inner current minus 9 ; gaps horizontal current minus 7
-bindsym $mod+i            exec rofi -modi emoji -show emoji -theme ~/.config/rofi/emoji_chooser.rasi
+bindsym $mod+i            exec rofi -modi emoji -show emoji -theme ~/.config/rofi/emoji_dropdown.rasi
 bindsym $mod+shift+i      exec xcalib -invert -alter
 bindsym $mod+m            mode "mouse"
 bindsym $mod+shift+m      --release exec xdotool type 'ﷺ'
@@ -99,6 +99,7 @@ bindsym $mod+n            mode "redshift"
 bindsym $mod+shift+n      exec bash ~/Scripts/xdotool_close.sh
 bindsym $mod+o            mode "scripts"
 bindsym $mod+shift+o      mode "executable_scripts"
+bindsym $mod+p            exec rofi-pass
 bindsym $mod+q            kill
 bindsym $mod+shift+q      exec ~/.config/rofi/scripts/powermenu/type-1/powermenu.sh
 bindsym $mod+r            exec kitty --class Ranger -e ranger
