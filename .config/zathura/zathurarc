@@ -1,8 +1,8 @@
 -- Recoloring
-set default-bg         "#111111"
-set statusbar-bg       "#000000"
-set recolor-darkcolor  "#ffdb58"
-set recolor-lightcolor "#111111"
+set default-bg         "#000000"
+set statusbar-bg       "#141414"
+set recolor-darkcolor  "#000000"
+set recolor-lightcolor "#ffe1ba"
 
 set first-page-column 1
 set recolor true
