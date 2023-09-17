@@ -34,5 +34,9 @@ cp  -r  ~/.config/rofi         ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/vimiv        ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/zathura      ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/zsh          ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
+
+cp  -r  ~/.config/QtProject.conf  ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
+cp  -r  ~/.config/okularpartrc    ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
+cp  -r  ~/.config/okularrc        ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
                   
 notify-send -t 3000 "updated DotFiles repo"
