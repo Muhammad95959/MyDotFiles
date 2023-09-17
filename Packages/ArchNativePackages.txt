@@ -15,8 +15,8 @@ cups
 dbus-glib
 dnsmasq
 efibootmgr
-exa
 expect
+eza
 fd
 ffmpegthumbnailer
 file-roller
@@ -100,6 +100,7 @@ thunar
 thunar-archive-plugin
 tk
 tlp
+toilet
 tree
 ttf-dejavu-nerd
 ttf-jetbrains-mono-nerd

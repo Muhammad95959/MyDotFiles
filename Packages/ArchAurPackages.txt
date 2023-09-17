@@ -18,7 +18,6 @@ shrinkpdf
 tela-circle-icon-theme-standard
 timeshift-autosnap
 timeshift-bin
-toilet
 toilet-fonts
 ttf-segoe-ui-variable
 uget-integrator
