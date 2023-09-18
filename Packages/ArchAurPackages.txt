@@ -23,4 +23,5 @@ ttf-segoe-ui-variable
 uget-integrator
 uget-integrator-chrome
 ventoy-bin
+vimv-git
 yay-bin

@@ -5,6 +5,7 @@ arandr
 atool
 base
 base-devel
+bat
 bleachbit
 blueman
 bridge-utils
@@ -23,6 +24,7 @@ file-roller
 flameshot
 flatpak
 font-manager
+fzf
 gcolor3
 gimp
 git
@@ -34,7 +36,6 @@ grub-btrfs
 grub-customizer
 gvfs-mtp
 gvfs-smb
-highlight
 i3-wm
 inetutils
 inkscape
@@ -44,13 +45,13 @@ jq
 kitty
 kvantum
 lazygit
+lf
 libreoffice-still
 linux-firmware
 linux-lts
 lxappearance
 man-db
 man-pages
-mediainfo
 mpv
 mpv-mpris
 neofetch
@@ -73,6 +74,7 @@ os-prober
 pass
 pavucontrol
 pdfarranger
+perl-image-exiftool
 picard
 picom
 playerctl
@@ -81,11 +83,9 @@ polybar
 pulseaudio
 pulsemixer
 pyenv
-python-pynvim
 qemu-base
 qt5ct
 qutebrowser
-ranger
 redshift
 ripgrep
 rofi
@@ -101,6 +101,7 @@ thunar-archive-plugin
 tk
 tlp
 toilet
+trash-cli
 tree
 ttf-dejavu-nerd
 ttf-jetbrains-mono-nerd
@@ -109,6 +110,7 @@ ttf-scheherazade-new
 ttf-ubuntu-nerd
 tumbler
 udiskie
+ueberzug
 uget
 unclutter
 unrar
@@ -119,7 +121,6 @@ vimiv
 virt-manager
 virt-viewer
 vnstat
-w3m
 wget
 wmctrl
 xcalib

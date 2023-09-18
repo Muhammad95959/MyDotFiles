@@ -102,7 +102,7 @@ bindsym $mod+shift+o      mode "executable_scripts"
 bindsym $mod+p            exec rofi-pass
 bindsym $mod+q            kill
 bindsym $mod+shift+q      exec ~/.config/rofi/scripts/powermenu/type-1/powermenu.sh
-bindsym $mod+r            exec kitty --class Ranger -e ranger
+bindsym $mod+r            exec kitty --class lf -e ~/.config/lf/lfstart.sh
 bindsym $mod+shift+r      restart
 bindsym $mod+s            mode "video"
 bindsym $mod+shift+s      sticky toggle
@@ -243,7 +243,6 @@ bindsym $mod+shift+0 move container to workspace number $ws10 ; workspace number
 
 for_window [workspace=$ws9] layout tabbed
 for_window [workspace=$ws10] layout tabbed
-for_window [class="RangerFileChooser"] floating enabled
 for_window [class="Nitrogen"] floating enabled
 for_window [class="Gcolor3"] floating enabled
 for_window [class="livecaptions"] floating enabled
@@ -396,11 +395,11 @@ mode "scripts" {
     bindsym f exec kitty -e nvim ~/.config/newsboat/urls, mode "default"
     bindsym i exec kitty -e nvim ~/.config/i3/config, mode "default"
     bindsym k exec kitty -e nvim ~/.config/kitty/kitty.conf, mode "default"
-    bindsym n exec kitty -e nvim ~/.config/nvim/init.lua, mode "default"
+    bindsym l exec kitty -e nvim ~/.config/lf/lfrc, mode "default"
     bindsym m exec kitty -e nvim ~/.config/mpv/mpv.conf, mode "default"
+    bindsym n exec kitty -e nvim ~/.config/nvim/init.lua, mode "default"
     bindsym p exec kitty -e nvim ~/.config/picom/picom.conf, mode "default"
     bindsym q exec kitty -e nvim ~/.config/qtile/config.py, mode "default"
-    bindsym r exec kitty -e nvim ~/.config/ranger/rc.conf, mode "default"
     bindsym z exec kitty -e nvim ~/.config/zathura/zathurarc, mode "default"
 
     bindsym shift+h exec kitty -e nvim ~/.zhistory, mode "default"

@@ -144,11 +144,6 @@ config.set('content.javascript.enabled', True, 'chrome://*/*')
 # Type: Bool
 config.set('content.javascript.enabled', True, 'qute://*/*')
 
-# Set ranger as a file chooser
-config.set("fileselect.handler", "external")
-config.set("fileselect.single_file.command", ['kitty', '--class', 'RangerFileChooser', '-e', 'ranger', '--choosefile={}'])
-config.set("fileselect.multiple_files.command", ['kitty', '--class', 'RangerFileChooser', '-e', 'ranger', '--choosefiles={}'])
-
 # Bindings for normal mode
 config.bind('M', 'hint links spawn mpv {hint-url}')
 config.bind('Z', 'hint links spawn kitty -e yt-dlp {hint-url}')

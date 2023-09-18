@@ -85,6 +85,7 @@ export EDITOR=nvim
 alias logout="pkill -KILL -u $USER"
 alias ls="exa --icons -a --group-directories-first"
 alias ll="exa --icons -a --group-directories-first -l"
+alias lf="$HOME/.config/lf/lfstart.sh"
 alias zrefresh="source $HOME/.zshrc"
 alias cppath="pwd | xclip -selection clipboard"
 alias copycmd="tail -n 2 ~/.zhistory | head -n 1 | xclip -selection clipboard"
