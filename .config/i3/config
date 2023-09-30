@@ -20,15 +20,10 @@ focus_follows_mouse no
 # |____/ \__\__,_|_|   \__|\__,_| .__/
 #                               |_|
 
-# exec --no-startup-id numlockx
 exec --no-startup-id unclutter
 exec --no-startup-id udiskie
 exec --no-startup-id xset s off -dpms
 exec --no-startup-id amixer set Capture 40%
-exec --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Accel Speed' 0.5
-exec --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Tapping Enabled' 1
-exec --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Natural Scrolling Enabled' 1
-exec --no-startup-id xinput set-prop 'PixArt Lenovo USB Optical Mouse' 'libinput Accel Speed' 0.3
 exec --no-startup-id polybar -r main
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id deadd-notificatoin-center
@@ -37,12 +32,14 @@ exec --no-startup-id ~/Scripts/volume_control/volume_subscribe.sh
 exec --no-startup-id gpaste-client start
 exec --no-startup-id sudo virsh net-start default
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -n -e -i /mnt/Disk_D/Backgrounds/locks/catlock.png
+exec_always --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Accel Speed' 0.5
+exec_always --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Tapping Enabled' 1
+exec_always --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Natural Scrolling Enabled' 1
+exec_always --no-startup-id xinput set-prop 'PixArt Lenovo USB Optical Mouse' 'libinput Accel Speed' 0.3
 exec_always --no-startup-id bash ~/Scripts/screen_layout/two_monitors.sh
 exec_always --no-startup-id bash ~/Scripts/keyboard_config.sh
 exec_always --no-startup-id volnoti -t 2
 exec_always --no-startup-id picom
-# exec --no-startup-id xiccd
-# exec_always --no-startup-id killall xborders; xborders --border-rgba 7b58dcff --border-radius 14 --border-width 2 --disable-version-warning --border-mode inside
 
 #  _____ _                    _
 # |_   _| |__   ___ _ __ ___ (_)_ __   __ _
@@ -105,7 +102,7 @@ bindsym $mod+shift+q      exec ~/.config/rofi/scripts/powermenu/type-1/powermenu
 bindsym $mod+r            exec kitty --class Ranger -e ranger
 bindsym $mod+shift+r      restart
 bindsym $mod+s            mode "video"
-bindsym $mod+shift+s      sticky toggle
+bindsym $mod+shift+s      exec i3-msg scratchpad show || i3-msg move scratchpad
 bindsym $mod+t            split v ; layout tabbed
 bindsym $mod+shift+t      exec xdotool mousemove 1680 10 click 1 sleep 0.02 mousemove restore
 bindsym $mod+v            split v
@@ -241,7 +238,6 @@ bindsym $mod+shift+0 move container to workspace number $ws10 ; workspace number
 #    \_/\_/  |_|_| |_|\__,_|\___/ \_/\_/   |_|   \__,_|_|\___||___/
 #
 
-for_window [workspace=$ws9] layout tabbed
 for_window [workspace=$ws10] layout tabbed
 for_window [class="RangerFileChooser"] floating enabled
 for_window [class="Nitrogen"] floating enabled
@@ -310,10 +306,9 @@ mode "applications" {
     bindsym d exec gnome-disks, mode "default"
     bindsym g exec gparted, mode "default"
     bindsym i exec idea, mode "default"
-    bindsym k exec kcalc, mode "default"
     bindsym l exec flatpak run net.sapples.LiveCaptions, mode "default"
     bindsym m exec picard, mode "default"
-    bindsym n exec nitrogen, mode "default"
+    bindsym n exec kitty --class nvim -e nvim, mode "default"
     bindsym o exec obs, mode "default"
     bindsym p exec pamac-manager, mode "default"
     bindsym s exec kshutdown, mode "default"
@@ -326,18 +321,14 @@ mode "applications" {
     bindsym shift+c exec cheese, mode "default"
     bindsym shift+g exec gimp, mode "default"
     bindsym shift+i exec inkscape, mode "default"
-    bindsym shift+k exec kate, mode "default"
-    bindsym shift+m exec mp3splt-gtk, mode "default"
-    bindsym shift+n exec kitty -e newsboat, mode "default"
+    bindsym shift+m exec kitty --class pulsemixer -e pulsemixer, mode "default"
+    bindsym shift+n exec nitrogen, mode "default"
     bindsym shift+p exec pdfarranger, mode "default"
     bindsym shift+s exec shotcut, mode "default"
     bindsym shift+u exec prime-run /mnt/Disk_D/برامج/Linux/ultimatevocalremovergui/python3.10_environment/bin/python3 /mnt/Disk_D/برامج/Linux/ultimatevocalremovergui/UVR.py, mode "default"
     bindsym shift+v exec ventoygui, mode "default"
 
     bindsym Mod1+b exec notify-send -t 5000 "$(acpi)", mode "default"
-    bindsym Mod1+c exec gucharmap, mode "default"
-    bindsym Mod1+m exec kitty --class pulsemixer -e pulsemixer, mode "default"
-    bindsym Mod1+p exec pavucontrol, mode "default"
 
     bindsym Escape mode "default"
     bindsym $mod+a mode "default"
@@ -421,6 +412,7 @@ mode "executable_scripts" {
     bindsym n exec bash ~/Scripts/nvidia_power_mode.sh, mode "default"
     bindsym o exec bash ~/Scripts/open_excecutables.sh, mode "default"
     bindsym p exec bash ~/Scripts/toggle_polybar_location.sh, mode "default"
+    bindsym r exec bash ~/Scripts/rofi-nerdfonts/rofi-nerdfonts.sh, mode "default"
     bindsym s exec bash ~/Scripts/toggle_i3_smart_gaps.sh, mode "default"
     bindsym t exec bash ~/Scripts/screen_layout/two_monitors.sh, mode "default"
     bindsym u exec bash ~/Scripts/update_DotFiles_repo.sh, mode "default"

@@ -73,10 +73,6 @@ bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
 # Environment variables
-# export $XDG_DATA_HOME=$HOME/.local/share
-# export $XDG_CONFIG_HOME=$HOME/.config
-# export $XDG_STATE_HOME=$HOME/.local/state
-# export $XDG_CACHE_HOME=$HOME/.cache
 export PAGER='nvim +Man!'
 export TERMCMD=kitty
 export EDITOR=nvim

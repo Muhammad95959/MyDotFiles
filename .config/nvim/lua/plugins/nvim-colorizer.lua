@@ -8,4 +8,7 @@ return {
       require("colorizer").attach_to_buffer(0)
     end, 0)
   end,
+  keys = {
+    { "<leader>uz", vim.cmd.ColorizerToggle, desc = "Colorizer Toggle" },
+  }
 }

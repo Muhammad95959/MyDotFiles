@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   id="svg7384"
+   version="1.1"
+   height="94.400009"
+   width="94.400009"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata
+     id="metadata90">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Gnome Symbolic Icon Theme</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <title
+     id="title9167">Gnome Symbolic Icon Theme</title>
+  <defs
+     id="defs7386" />
+  <g
+     transform="matrix(5.9,0,0,5.9,0,9.8466871e-6)"
+     id="g28">
+    <g
+       transform="translate(-81,-317)"
+       id="layer9"
+       style="display:inline">
+      <g
+         transform="translate(0,40)"
+         id="g4927-4-0"
+         style="display:inline;fill:#000000">
+        <rect
+           x="81"
+           y="284"
+           id="rect4906-43-6"
+           rx="0.5625"
+           ry="0.5625"
+           height="2"
+           width="2.9722719"
+           style="color:#bebebe;display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;enable-background:new" />
+        <rect
+           x="93.983536"
+           y="284"
+           id="rect4906-4-6-6"
+           rx="0.5625"
+           ry="0.5625"
+           height="2"
+           width="3.0164659"
+           style="color:#bebebe;display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;enable-background:new" />
+      </g>
+      <g
+         transform="rotate(-45,137.28427,305)"
+         id="g33239"
+         style="display:inline;fill:#000000">
+        <rect
+           x="81"
+           y="284"
+           id="rect33241"
+           rx="0.5625"
+           height="2"
+           ry="0.5625"
+           style="color:#bebebe;display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;enable-background:new"
+           width="2.9722719" />
+        <rect
+           x="93.983536"
+           y="284"
+           id="rect33243"
+           rx="0.5625"
+           height="2"
+           ry="0.5625"
+           style="color:#bebebe;display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;enable-background:new"
+           width="3.0164659" />
+      </g>
+      <g
+         transform="rotate(-90,109,305)"
+         id="g33245"
+         style="display:inline;fill:#000000">
+        <rect
+           x="81"
+           y="284"
+           id="rect33247"
+           rx="0.5625"
+           ry="0.5625"
+           height="2"
+           width="2.9722719"
+           style="color:#bebebe;display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;enable-background:new" />
+        <rect
+           x="93.983536"
+           y="284"
+           id="rect33249"
+           rx="0.5625"
+           ry="0.5625"
+           height="2"
+           width="3.0164659"
+           style="color:#bebebe;display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;enable-background:new" />
+      </g>
+      <g
+         transform="rotate(-135,97.284271,305)"
+         id="g33251"
+         style="display:inline;fill:#000000">
+        <rect
+           x="81"
+           y="284"
+           id="rect33253"
+           rx="0.5625"
+           height="2"
+           ry="0.5625"
+           style="color:#bebebe;display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;enable-background:new"
+           width="2.9722719" />
+        <rect
+           x="93.983536"
+           y="284"
+           id="rect33255"
+           rx="0.5625"
+           height="2"
+           ry="0.5625"
+           style="color:#bebebe;display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;enable-background:new"
+           width="3.0164659" />
+      </g>
+      <path
+         d="m 89.034905,320.9942 c -2.171787,0 -3.946856,1.77507 -3.946856,3.94686 0,2.17178 1.775069,3.97566 3.946856,3.97566 2.171787,0 3.975664,-1.80388 3.975664,-3.97566 0,-2.17179 -1.803877,-3.94686 -3.975664,-3.94686 z m 0,2.01664 c 1.090904,0 1.959023,0.83931 1.959023,1.93022 0,1.0909 -0.868119,1.95902 -1.959023,1.95902 -1.090904,0 -1.930214,-0.86812 -1.930214,-1.95902 0,-1.09091 0.83931,-1.93022 1.930214,-1.93022 z"
+         id="path32729"
+         style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:Sans;-inkscape-font-specification:Sans;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2.16945;marker:none;enable-background:accumulate" />
+    </g>
+    <g
+       transform="translate(-81,-317)"
+       id="layer10" />
+    <g
+       transform="translate(-81,-317)"
+       id="layer11" />
+    <g
+       transform="translate(-81,-317)"
+       id="layer12" />
+    <g
+       transform="translate(-81,-317)"
+       id="layer13" />
+    <g
+       transform="translate(-81,-317)"
+       id="layer14" />
+    <g
+       transform="translate(-81,-317)"
+       id="layer15"
+       style="display:inline" />
+    <g
+       transform="translate(-81,-317)"
+       id="g4953"
+       style="display:inline" />
+  </g>
+</svg>

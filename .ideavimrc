@@ -3,6 +3,7 @@ let mapleader=" "
 
 """ Plugins  --------------------------------
 set NERDTree 
+set which-key
 set surround
 set multiple-cursors
 set commentary
@@ -28,6 +29,7 @@ set smartcase
 set scrolloff=5
 set mouse=a
 set incsearch
+set notimeout
 set noerrorbells
 set clipboard=unnamedplus
 set clipboard+=ideaput

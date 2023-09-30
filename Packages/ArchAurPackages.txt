@@ -8,7 +8,6 @@ gotop-bin
 i3lock-color
 jetbrains-toolbox
 layan-gtk-theme-git
-lightdm-webkit-theme-aether
 nomacs
 notify-send-py
 oxygen-cursors
@@ -24,4 +23,5 @@ uget-integrator
 uget-integrator-chrome
 ventoy-bin
 vimv-git
+visual-studio-code-bin
 yay-bin

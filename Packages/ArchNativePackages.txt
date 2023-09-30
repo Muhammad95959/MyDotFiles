@@ -28,7 +28,6 @@ fzf
 gcolor3
 gimp
 git
-gnome-calculator
 gnome-disk-utility
 gparted
 grub
@@ -47,6 +46,7 @@ kvantum
 lazygit
 lf
 libreoffice-still
+lightdm-slick-greeter
 linux-firmware
 linux-lts
 lxappearance
@@ -62,7 +62,6 @@ noto-fonts
 noto-fonts-emoji
 npm
 ntfs-3g
-numlockx
 nvidia-lts
 nvidia-prime
 obs-studio
@@ -81,9 +80,11 @@ playerctl
 polkit-gnome
 polybar
 pulseaudio
+pulseaudio-bluetooth
 pulsemixer
 pyenv
 python-pynvim
+qalculate-gtk
 qemu-base
 qt5ct
 qutebrowser
