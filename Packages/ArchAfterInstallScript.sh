@@ -6,6 +6,8 @@ sudo sed -Ei 's/#ParallelDownloads = 5/ParallelDownloads = 10/' /etc/pacman.conf
 sudo sed -Ei 's/CriticalPowerAction=HybridSleep/CriticalPowerAction=PowerOff/' /etc/UPower/UPower.conf
 sudo flatpak override --filesystem=~/.themes
 sudo cp /mnt/Disk_D/Muhammad/Repositories/DotFiles/Packages/root_files/20-connectivity.conf /etc/NetworkManager/conf.d
+sudo cp /mnt/Disk_D/Muhammad/Repositories/DotFiles/Packages/root_files/slick-greeter.conf /etc/lightdm
+sudo cp /mnt/Disk_D/Muhammad/Repositories/DotFiles/Packages/root_files/background.jpg /etc/lightdm
 sudo cp /mnt/Disk_D/Muhammad/Repositories/DotFiles/Packages/root_files/nobeep.conf /etc/modprobe.d
 sudo cp /mnt/Disk_D/Muhammad/Repositories/DotFiles/Packages/root_files/smb.conf /etc/samba
 sudo cp /mnt/Disk_D/Muhammad/Repositories/DotFiles/Packages/root_files/environment /etc

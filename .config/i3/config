@@ -99,7 +99,7 @@ bindsym $mod+shift+o      mode "executable_scripts"
 bindsym $mod+p            exec rofi-pass
 bindsym $mod+q            kill
 bindsym $mod+shift+q      exec ~/.config/rofi/scripts/powermenu/type-1/powermenu.sh
-bindsym $mod+r            exec kitty --class Ranger -e ranger
+bindsym $mod+r            exec kitty --class Ranger --hold -e ranger
 bindsym $mod+shift+r      restart
 bindsym $mod+s            mode "video"
 bindsym $mod+shift+s      exec i3-msg scratchpad show || i3-msg move scratchpad
@@ -308,7 +308,7 @@ mode "applications" {
     bindsym i exec idea, mode "default"
     bindsym l exec flatpak run net.sapples.LiveCaptions, mode "default"
     bindsym m exec picard, mode "default"
-    bindsym n exec kitty --class nvim -e nvim, mode "default"
+    bindsym n exec kitty --class nvim --hold -e nvim, mode "default"
     bindsym o exec obs, mode "default"
     bindsym p exec pamac-manager, mode "default"
     bindsym s exec kshutdown, mode "default"
@@ -321,7 +321,7 @@ mode "applications" {
     bindsym shift+c exec cheese, mode "default"
     bindsym shift+g exec gimp, mode "default"
     bindsym shift+i exec inkscape, mode "default"
-    bindsym shift+m exec kitty --class pulsemixer -e pulsemixer, mode "default"
+    bindsym shift+m exec kitty --class pulsemixer --hold -e pulsemixer, mode "default"
     bindsym shift+n exec nitrogen, mode "default"
     bindsym shift+p exec pdfarranger, mode "default"
     bindsym shift+s exec shotcut, mode "default"
@@ -383,21 +383,21 @@ mode "video" {
 }
 
 mode "scripts" {
-    bindsym b exec kitty -e nvim ~/.config/polybar/config.ini, mode "default"
-    bindsym f exec kitty -e nvim ~/.config/newsboat/urls, mode "default"
-    bindsym i exec kitty -e nvim ~/.config/i3/config, mode "default"
-    bindsym k exec kitty -e nvim ~/.config/kitty/kitty.conf, mode "default"
-    bindsym m exec kitty -e nvim ~/.config/mpv/mpv.conf, mode "default"
-    bindsym n exec kitty -e nvim ~/.config/nvim/init.lua, mode "default"
-    bindsym p exec kitty -e nvim ~/.config/picom/picom.conf, mode "default"
-    bindsym q exec kitty -e nvim ~/.config/qutebrowser/config.py, mode "default"
-    bindsym r exec kitty -e nvim ~/.config/ranger/rc.conf, mode "default"
-    bindsym z exec kitty -e nvim ~/.config/zathura/zathurarc, mode "default"
+    bindsym b exec kitty --hold -e nvim ~/.config/polybar/config.ini, mode "default"
+    bindsym f exec kitty --hold -e nvim ~/.config/newsboat/urls, mode "default"
+    bindsym i exec kitty --hold -e nvim ~/.config/i3/config, mode "default"
+    bindsym k exec kitty --hold -e nvim ~/.config/kitty/kitty.conf, mode "default"
+    bindsym m exec kitty --hold -e nvim ~/.config/mpv/mpv.conf, mode "default"
+    bindsym n exec kitty --hold -e nvim ~/.config/nvim/init.lua, mode "default"
+    bindsym p exec kitty --hold -e nvim ~/.config/picom/picom.conf, mode "default"
+    bindsym q exec kitty --hold -e nvim ~/.config/qutebrowser/config.py, mode "default"
+    bindsym r exec kitty --hold -e nvim ~/.config/ranger/rc.conf, mode "default"
+    bindsym z exec kitty --hold -e nvim ~/.config/zathura/zathurarc, mode "default"
 
-    bindsym shift+h exec kitty -e nvim ~/.zhistory, mode "default"
-    bindsym shift+i exec kitty -e nvim ~/Disk_D/Muhammad/Linux_stuff/Scripts/myManjaroI3Script.sh, mode "default"
-    bindsym shift+u exec kitty -e nvim ~/Scripts/update_DotFiles_repo.sh, mode "default"
-    bindsym shift+z exec kitty -e nvim ~/.zshrc, mode "default"
+    bindsym shift+h exec kitty --hold -e nvim ~/.zhistory, mode "default"
+    bindsym shift+i exec kitty --hold -e nvim ~/Disk_D/Muhammad/Linux_stuff/Scripts/myManjaroI3Script.sh, mode "default"
+    bindsym shift+u exec kitty --hold -e nvim ~/Scripts/update_DotFiles_repo.sh, mode "default"
+    bindsym shift+z exec kitty --hold -e nvim ~/.zshrc, mode "default"
 
     bindsym Escape mode "default"
     bindsym $mod+o mode "default"
@@ -405,7 +405,7 @@ mode "scripts" {
 
 mode "executable_scripts" {
     bindsym b exec bash ~/Scripts/i3_border_changer.sh, mode "default"
-    bindsym e exec kitty -e bash /mnt/Disk_D/Muhammad/English_Learner/english_learner.sh, mode "default"
+    bindsym e exec kitty --hold -e bash /mnt/Disk_D/Muhammad/English_Learner/english_learner.sh, mode "default"
     bindsym g exec bash ~/Scripts/google_translate.sh, mode "default"
     bindsym k exec bash ~/Scripts/app_kill.sh, mode "default"
     bindsym m exec bash ~/Scripts/url_to_mpv.sh, mode "default"

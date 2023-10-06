@@ -86,7 +86,6 @@ alias zrefresh="source $HOME/.zshrc"
 alias cppath="pwd | xclip -selection clipboard"
 alias copycmd="tail -n 2 ~/.zhistory | head -n 1 | xclip -selection clipboard"
 alias zshrc="nvim $HOME/.zshrc"
-alias ffmpegnotes="nvim /mnt/Disk_D/Muhammad/My_Documents/ffmpeg_commands.md"
 alias i3config="nvim $HOME/.config/i3/config"
 alias barconfig="nvim $HOME/.config/polybar/config.ini"
 alias uvrautoplay="bash ~/Scripts/UVR_autoplay.sh"
@@ -103,6 +102,7 @@ alias pkgsbackup="pacman -Qne | awk '{print \$1}' \
 source ~/.config/zsh/autojump/autojump.plugin.zsh
 source ~/.config/zsh/zsh-kitty/zsh-kitty.plugin.zsh
 source ~/.config/zsh/powerlevel10k/powerlevel9k.zsh-theme
+source ~/.config/zsh/zsh-vim-mode/zsh-vim-mode.plugin.zsh
 source ~/.config/zsh/zsh-peco-history/zsh-peco-history.zsh
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
