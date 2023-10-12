@@ -130,10 +130,10 @@ bindsym shift+XF86MonBrightnessDown exec ~/Scripts/brightness_control/s_dec.exp
 # media player controls
 bindsym XF86AudioPlay       exec playerctl play-pause
 bindsym XF86AudioPause      exec playerctl play-pause
-bindsym XF86AudioNext       exec playerctl next
-bindsym XF86AudioPrev       exec playerctl previous
-bindsym shift+XF86AudioNext exec playerctl position 5+
-bindsym shift+XF86AudioPrev exec playerctl position 5-
+bindsym XF86AudioNext       exec playerctl position 5+
+bindsym XF86AudioPrev       exec playerctl position 5-
+bindsym shift+XF86AudioNext exec playerctl next
+bindsym shift+XF86AudioPrev exec playerctl previous
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -373,10 +373,10 @@ mode "video" {
     bindsym s exec playerctl play-pause
     bindsym f exec playerctl position 5+
     bindsym b exec playerctl position 5-
-    bindsym $mod+h exec pactl set-sink-mute @DEFAULT_SINK@ 0 && pactl set-sink-volume @DEFAULT_SINK@ -1%
-    bindsym $mod+l exec bash ~/Scripts/volume_control/pactl_volume_up_by_1_limit.sh
-    bindsym $mod+j exec ~/Scripts/brightness_control/s_dec.exp
-    bindsym $mod+k exec ~/Scripts/brightness_control/s_inc.exp
+    bindsym shift+h exec pactl set-sink-mute @DEFAULT_SINK@ 0 && pactl set-sink-volume @DEFAULT_SINK@ -1%
+    bindsym shift+l exec bash ~/Scripts/volume_control/pactl_volume_up_by_1_limit.sh
+    bindsym shift+j exec ~/Scripts/brightness_control/s_dec.exp
+    bindsym shift+k exec ~/Scripts/brightness_control/s_inc.exp
 
     bindsym Escape mode "default"
     bindsym $mod+s mode "default"
@@ -405,6 +405,7 @@ mode "scripts" {
 
 mode "executable_scripts" {
     bindsym b exec bash ~/Scripts/i3_border_changer.sh, mode "default"
+    bindsym c exec bash ~/Scripts/rofi-nerdfonts/rofi-nerdfonts.sh, mode "default"
     bindsym e exec kitty --hold -e bash /mnt/Disk_D/Muhammad/English_Learner/english_learner.sh, mode "default"
     bindsym g exec bash ~/Scripts/google_translate.sh, mode "default"
     bindsym k exec bash ~/Scripts/app_kill.sh, mode "default"
@@ -412,7 +413,7 @@ mode "executable_scripts" {
     bindsym n exec bash ~/Scripts/nvidia_power_mode.sh, mode "default"
     bindsym o exec bash ~/Scripts/open_excecutables.sh, mode "default"
     bindsym p exec bash ~/Scripts/toggle_polybar_location.sh, mode "default"
-    bindsym r exec bash ~/Scripts/rofi-nerdfonts/rofi-nerdfonts.sh, mode "default"
+    bindsym r exec bash ~/Scripts/i3_resize.sh, mode "default"
     bindsym s exec bash ~/Scripts/toggle_i3_smart_gaps.sh, mode "default"
     bindsym t exec bash ~/Scripts/screen_layout/two_monitors.sh, mode "default"
     bindsym u exec bash ~/Scripts/update_DotFiles_repo.sh, mode "default"

@@ -26,6 +26,7 @@ flatpak
 font-manager
 fzf
 gcolor3
+gdb
 gimp
 git
 gnome-disk-utility

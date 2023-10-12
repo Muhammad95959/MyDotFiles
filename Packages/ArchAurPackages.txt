@@ -23,5 +23,4 @@ uget-integrator
 uget-integrator-chrome
 ventoy-bin
 vimv-git
-visual-studio-code-bin
 yay-bin
