@@ -421,8 +421,6 @@ mode "executable_scripts" {
     bindsym y workspace $ws10; exec kitty --class yt-dlp -e bash ~/Scripts/yt-dlp_script.sh, mode "default"
     bindsym z exec bash ~/Scripts/zathura_history.sh, mode "default"
 
-    bindsym shift+g exec bash ~/Scripts/games.sh, mode "default"
-
     bindsym Escape mode "default"
     bindsym $mod+shift+o mode "default"
 }

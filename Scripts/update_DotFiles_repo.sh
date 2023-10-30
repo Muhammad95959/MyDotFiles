@@ -22,6 +22,7 @@ cp  -r  ~/.config/gtk-3.0      ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/gtk-4.0      ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/i3           ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/kitty        ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
+cp  -r  ~/.config/lf           ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/mpv          ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/nomacs       ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
 cp  -r  ~/.config/nvim         ~/Disk_D/Muhammad/Repositories/DotFiles/.config/
