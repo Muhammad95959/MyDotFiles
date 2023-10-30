@@ -4,6 +4,7 @@ chsh -s $(which zsh)
 sudo sed -Ei '/Color/s/^#//' /etc/pacman.conf
 sudo sed -Ei 's/#ParallelDownloads = 5/ParallelDownloads = 10/' /etc/pacman.conf
 sudo sed -Ei 's/CriticalPowerAction=HybridSleep/CriticalPowerAction=PowerOff/' /etc/UPower/UPower.conf
+sudo chown muhammad:muhammad /sys/class/backlight/intel_backlight/brightness
 sudo flatpak override --filesystem=~/.themes
 sudo cp /mnt/Disk_D/Muhammad/Repositories/DotFiles/Packages/root_files/20-connectivity.conf /etc/NetworkManager/conf.d
 sudo cp /mnt/Disk_D/Muhammad/Repositories/DotFiles/Packages/root_files/slick-greeter.conf /etc/lightdm

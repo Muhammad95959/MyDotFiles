@@ -26,10 +26,10 @@ set recolor-lightcolor \"#000000\"\n" "$HOME"/.config/zathura/zathurarc
 "White on Black")
 	sed -i "/-- Recoloring/,+5c\
 -- Recoloring\n\
-set default-bg         \"#ffffff\"\n\
-set statusbar-bg       \"#000000\"\n\
-set recolor-darkcolor  \"#000000\"\n\
-set recolor-lightcolor \"#ffffff\"\n" "$HOME"/.config/zathura/zathurarc
+set default-bg         \"#000000\"\n\
+set statusbar-bg       \"#141414\"\n\
+set recolor-darkcolor  \"#ffffff\"\n\
+set recolor-lightcolor \"#000000\"\n" "$HOME"/.config/zathura/zathurarc
 	;;
 "Black on White")
 	sed -i "/-- Recoloring/,+5c\

@@ -56,7 +56,7 @@ for_window [all] border pixel 2
 for_window [all] title_window_icon padding 7px
 # border_radius 12
 
-client.focused          #7b58dc #7b58dc #ffffff #9b58dc   #7b58dc    ### edited via script
+client.focused          #61afef #61afef #24273a #61dfff   #61afef    ### edited via script
 client.focused_inactive #555555 #555555 #ffffff #666666   #555555
 client.unfocused        #222222 #222222 #888888 #333333   #555555
 
@@ -77,7 +77,7 @@ client.unfocused        #222222 #222222 #888888 #333333   #555555
 bindsym $mod+Return       exec kitty
 bindsym $mod+shift+Return exec rofi -show drun -theme ~/.config/rofi/launcher.rasi
 bindsym $mod+a            mode "applications"
-bindsym $mod+b            exec brave
+bindsym $mod+b            exec thorium-browser
 bindsym $mod+shift+b      exec qutebrowser
 bindsym $mod+c            exec rofi-gpaste
 bindsym $mod+shift+c      exec notify-send.py a --hint boolean:deadd-notification-center:true string:type:clearPopups
@@ -93,7 +93,7 @@ bindsym $mod+shift+i      exec xcalib -invert -alter
 bindsym $mod+m            mode "mouse"
 bindsym $mod+shift+m      --release exec xdotool type 'ﷺ'
 bindsym $mod+n            mode "redshift"
-bindsym $mod+shift+n      exec bash ~/Scripts/xdotool_close.sh
+bindsym $mod+shift+n      exec bash ~/Scripts/xdotool_click.sh
 bindsym $mod+o            mode "scripts"
 bindsym $mod+shift+o      mode "executable_scripts"
 bindsym $mod+p            exec rofi-pass
@@ -104,7 +104,6 @@ bindsym $mod+shift+r      restart
 bindsym $mod+s            mode "video"
 bindsym $mod+shift+s      exec i3-msg scratchpad show || i3-msg move scratchpad
 bindsym $mod+t            split v ; layout tabbed
-bindsym $mod+shift+t      exec xdotool mousemove 1680 10 click 1 sleep 0.02 mousemove restore
 bindsym $mod+v            split v
 bindsym $mod+shift+v      split h
 bindsym $mod+w            layout tabbed
@@ -307,7 +306,7 @@ mode "applications" {
     bindsym g exec gparted, mode "default"
     bindsym i exec idea, mode "default"
     bindsym l exec flatpak run net.sapples.LiveCaptions, mode "default"
-    bindsym m exec picard, mode "default"
+    bindsym m exec mpv --player-operation-mode=pseudo-gui, mode "default"
     bindsym n exec kitty --class nvim --hold -e nvim, mode "default"
     bindsym o exec obs, mode "default"
     bindsym p exec pamac-manager, mode "default"
@@ -318,13 +317,14 @@ mode "applications" {
     bindsym z exec zathura "/mnt/Disk_D/مستندات/برمجة/head_first_c.pdf", mode "default"
 
     bindsym shift+b exec bleachbit, mode "default"
-    bindsym shift+c exec cheese, mode "default"
+    bindsym shift+c exec qalculate-gtk, mode "default"
     bindsym shift+g exec gimp, mode "default"
     bindsym shift+i exec inkscape, mode "default"
     bindsym shift+m exec kitty --class pulsemixer --hold -e pulsemixer, mode "default"
     bindsym shift+n exec nitrogen, mode "default"
     bindsym shift+p exec pdfarranger, mode "default"
     bindsym shift+s exec shotcut, mode "default"
+    bindsym shift+t exec mousepad, mode "default"
     bindsym shift+u exec prime-run /mnt/Disk_D/برامج/Linux/ultimatevocalremovergui/python3.10_environment/bin/python3 /mnt/Disk_D/برامج/Linux/ultimatevocalremovergui/UVR.py, mode "default"
     bindsym shift+v exec ventoygui, mode "default"
 
@@ -384,6 +384,7 @@ mode "video" {
 
 mode "scripts" {
     bindsym b exec kitty --hold -e nvim ~/.config/polybar/config.ini, mode "default"
+    bindsym d exec kitty --hold -e nvim ~/.config/dwm/config.h, mode "default"
     bindsym f exec kitty --hold -e nvim ~/.config/newsboat/urls, mode "default"
     bindsym i exec kitty --hold -e nvim ~/.config/i3/config, mode "default"
     bindsym k exec kitty --hold -e nvim ~/.config/kitty/kitty.conf, mode "default"
@@ -419,6 +420,8 @@ mode "executable_scripts" {
     bindsym u exec bash ~/Scripts/update_DotFiles_repo.sh, mode "default"
     bindsym y workspace $ws10; exec kitty --class yt-dlp -e bash ~/Scripts/yt-dlp_script.sh, mode "default"
     bindsym z exec bash ~/Scripts/zathura_history.sh, mode "default"
+
+    bindsym shift+g exec bash ~/Scripts/games.sh, mode "default"
 
     bindsym Escape mode "default"
     bindsym $mod+shift+o mode "default"

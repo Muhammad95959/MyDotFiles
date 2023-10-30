@@ -1,7 +1,7 @@
 inotifywait -m ~/Downloads -e create -e moved_to |
   while read -r file; do
     if [[ "$file" =~ .*\.wav$ ]]; then
-      sleep 5
+      sleep 6
       i3-msg "workspace 9"
       sleep 0.3
       i3-msg "kill"

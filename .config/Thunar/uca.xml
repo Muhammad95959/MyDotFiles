@@ -33,7 +33,7 @@
 	<submenu></submenu>
 	<unique-id>1690663577489158-1</unique-id>
 	<command>kitty --working-directory %f</command>
-	<description>Example for a custom action</description>
+	<description></description>
 	<range></range>
 	<patterns>*</patterns>
 	<startup-notify/>
