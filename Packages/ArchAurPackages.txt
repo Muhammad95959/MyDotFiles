@@ -15,12 +15,13 @@ rofi-gpaste-git
 setcapslock
 shrinkpdf
 tela-circle-icon-theme-standard
+thorium-browser-bin
 timeshift-autosnap
 timeshift-bin
 toilet-fonts
 ttf-segoe-ui-variable
 uget-integrator
-uget-integrator-chrome
+uget-integrator-chromium
 ventoy-bin
 vimv-git
 yay-bin

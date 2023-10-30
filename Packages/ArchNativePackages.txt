@@ -53,6 +53,7 @@ linux-lts
 lxappearance
 man-db
 man-pages
+mousepad
 mpv
 mpv-mpris
 neofetch
