@@ -40,6 +40,7 @@ i3-wm
 inetutils
 inkscape
 inotify-tools
+interception-tools
 iptables-nft
 jq
 kitty
@@ -129,7 +130,6 @@ vnstat
 wget
 wmctrl
 xcalib
-xcape
 xclip
 xorg-xinput
 xss-lock

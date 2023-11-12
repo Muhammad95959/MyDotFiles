@@ -31,6 +31,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id ~/Scripts/volume_control/volume_subscribe.sh
 exec --no-startup-id gpaste-client start
 exec --no-startup-id sudo virsh net-start default
+exec --no-startup-id sudo chown $USER:$USER /sys/class/backlight/intel_backlight/brightness
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -n -e -i /mnt/Disk_D/Backgrounds/locks/catlock.png
 exec_always --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Accel Speed' 0.5
 exec_always --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Tapping Enabled' 1
@@ -56,7 +57,7 @@ for_window [all] border pixel 2
 for_window [all] title_window_icon padding 7px
 # border_radius 12
 
-client.focused          #61afef #61afef #24273a #61dfff   #61afef    ### edited via script
+client.focused          #7b58dc #7b58dc #ffffff #9b58dc   #7b58dc    ### edited via script
 client.focused_inactive #555555 #555555 #ffffff #666666   #555555
 client.unfocused        #222222 #222222 #888888 #333333   #555555
 
@@ -300,7 +301,7 @@ mode "redshift" {
 
 mode "applications" {
     bindsym a exec android-studio, mode "default"
-    bindsym b exec blueman-manager, mode "default"
+    bindsym b exec thorium-browser --incognito, mode "default"
     bindsym c exec gcolor3, mode "default"
     bindsym d exec gnome-disks, mode "default"
     bindsym g exec gparted, mode "default"
@@ -310,13 +311,14 @@ mode "applications" {
     bindsym n exec kitty --class nvim --hold -e nvim, mode "default"
     bindsym o exec obs, mode "default"
     bindsym p exec pamac-manager, mode "default"
+    bindsym q exec flatpak run io.github._0xzer0x.qurancompanion, mode "default"
     bindsym s exec kshutdown, mode "default"
-    bindsym t exec timeshift-launcher, mode "default"
+    bindsym t exec telegram-desktop, mode "default"
     bindsym u exec uget-gtk, mode "default"
     bindsym v exec virt-manager, mode "default"
     bindsym z exec zathura "/mnt/Disk_D/مستندات/برمجة/head_first_c.pdf", mode "default"
 
-    bindsym shift+b exec bleachbit, mode "default"
+    bindsym shift+b exec blueman-manager, mode "default"
     bindsym shift+c exec qalculate-gtk, mode "default"
     bindsym shift+g exec gimp, mode "default"
     bindsym shift+i exec inkscape, mode "default"

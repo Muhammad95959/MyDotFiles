@@ -15,6 +15,7 @@ rofi-gpaste-git
 setcapslock
 shrinkpdf
 tela-circle-icon-theme-standard
+telegram-desktop-bin
 thorium-browser-bin
 timeshift-autosnap
 timeshift-bin

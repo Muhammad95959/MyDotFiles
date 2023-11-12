@@ -4,15 +4,15 @@ chsh -s $(which zsh)
 sudo sed -Ei '/Color/s/^#//' /etc/pacman.conf
 sudo sed -Ei 's/#ParallelDownloads = 5/ParallelDownloads = 10/' /etc/pacman.conf
 sudo sed -Ei 's/CriticalPowerAction=HybridSleep/CriticalPowerAction=PowerOff/' /etc/UPower/UPower.conf
-sudo chown muhammad:muhammad /sys/class/backlight/intel_backlight/brightness
 sudo flatpak override --filesystem=~/.themes
+sudo cp -r /mnt/Disk_D/Muhammad/Repositories/DotFiles/Packages/root_files/volnoti /usr/share/pixmaps/
 sudo cp /mnt/Disk_D/Muhammad/Repositories/DotFiles/Packages/root_files/20-connectivity.conf /etc/NetworkManager/conf.d
-sudo cp /mnt/Disk_D/Muhammad/Repositories/DotFiles/Packages/root_files/slick-greeter.conf /etc/lightdm
 sudo cp /mnt/Disk_D/Muhammad/Repositories/DotFiles/Packages/root_files/background.jpg /etc/lightdm
-sudo cp /mnt/Disk_D/Muhammad/Repositories/DotFiles/Packages/root_files/nobeep.conf /etc/modprobe.d
-sudo cp /mnt/Disk_D/Muhammad/Repositories/DotFiles/Packages/root_files/smb.conf /etc/samba
 sudo cp /mnt/Disk_D/Muhammad/Repositories/DotFiles/Packages/root_files/environment /etc
-sudo cp -r /mnt/Disk_D/Muhammad/Linux_stuff/Scripts/root/volnoti_icons/volnoti /usr/share/pixmaps/
+sudo cp /mnt/Disk_D/Muhammad/Repositories/DotFiles/Packages/root_files/my-udevmon.yaml /etc/interception/udevmon.d
+sudo cp /mnt/Disk_D/Muhammad/Repositories/DotFiles/Packages/root_files/nobeep.conf /etc/modprobe.d
+sudo cp /mnt/Disk_D/Muhammad/Repositories/DotFiles/Packages/root_files/slick-greeter.conf /etc/lightdm
+sudo cp /mnt/Disk_D/Muhammad/Repositories/DotFiles/Packages/root_files/smb.conf /etc/samba
 gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 
 sudo systemctl start smb
@@ -36,10 +36,12 @@ sudo modprobe -r kvm_intel
 sudo modprobe kvm_intel nested=1
 echo "options kvm-intel nested=1" | sudo tee /etc/modprobe.d/kvm-intel.conf
 
-sudo systemctl enable --now cups
-sudo systemctl enable --now vnstat.service
 sudo systemctl enable --now auto-cpufreq
+sudo systemctl enable --now cups
+sudo systemctl enable --now systemd-timesyncd
 sudo systemctl enable --now tlp.service
+sudo systemctl enable --now udevmon
+sudo systemctl enable --now vnstat.service
 
 sudo -s
 echo "kernel.sysrq = 1" >> /etc/sysctl.d/99-sysctl.conf

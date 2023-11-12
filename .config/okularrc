@@ -14,12 +14,12 @@ LockSidebar=true
 ShowSidebar=false
 
 [MainWindow]
-1920x1080 screen: Height=1036
-1920x1080 screen: Width=941
-1920x1080 screen: XPosition=967
-1920x1080 screen: YPosition=32
+1920x1080 screen: Height=1060
+1920x1080 screen: Width=1920
+1920x1080 screen: XPosition=0
+1920x1080 screen: YPosition=20
 MenuBar=Disabled
-State=AAAA/wAAAAD9AAAAAQAAAAAAAADIAAAD1fwCAAAAAfsAAAAcAG8AawB1AGwAYQByAF8AcwBpAGQAZQBiAGEAcgAAAABPAAAD1QAAAV0A///+AAADdQAAA9oAAAAEAAAABAAAAAgAAAAI/AAAAAMAAAAAAAAAAQAAACIAYQBuAG4AbwB0AGEAdABpAG8AbgBUAG8AbwBsAEIAYQByAwAAAAD/////AAAAAAAAAAAAAAABAAAAAQAAACwAcQB1AGkAYwBrAEEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgIAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAQAAAAAAAADIAAAD1fwCAAAAAfsAAAAcAG8AawB1AGwAYQByAF8AcwBpAGQAZQBiAGEAcgAAAABPAAAD1QAAAV0A///+AAAHSAAAA/IAAAAEAAAABAAAAAgAAAAI/AAAAAMAAAAAAAAAAQAAACIAYQBuAG4AbwB0AGEAdABpAG8AbgBUAG8AbwBsAEIAYQByAwAAAAD/////AAAAAAAAAAAAAAABAAAAAQAAACwAcQB1AGkAYwBrAEEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgIAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
 eDP-1=eDP-1
 
@@ -34,6 +34,7 @@ File4[$e]=$HOME/Disk_D/Engineering/Semester materials/Info/Ahmed/Lecture_1_Commu
 File5[$e]=$HOME/Disk_D/Engineering/Semester materials/Info/Hania/Info lecture1 fall 2023.pdf
 File6[$e]=/mnt/Disk_D/Engineering/Semester materials/Info/Ahmed/Lecture_1_Communication_Basics.pdf
 File7[$e]=/mnt/Disk_D/Muhammad/My_Documents/dual-function-keys.md
+File8[$e]=/mnt/Disk_D/Engineering/Semester materials/Info/Hania/Info lecture 3 fall 2023.pdf
 Name1[$e]=200 سؤال وجواب في العقيدة.pdf
 Name2[$e]=head_first_c.pdf
 Name3[$e]=Comm Lecturer name-summer 023.pdf
@@ -41,6 +42,7 @@ Name4[$e]=Lecture_1_Communication_Basics.pdf
 Name5[$e]=Info lecture1 fall 2023.pdf
 Name6[$e]=Lecture_1_Communication_Basics.pdf
 Name7[$e]=dual-function-keys.md
+Name8[$e]=Info lecture 3 fall 2023.pdf
 
 [Toolbar mainToolBar]
 ToolButtonStyle=IconOnly
