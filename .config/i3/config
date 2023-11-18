@@ -244,6 +244,7 @@ for_window [class="Nitrogen"] floating enabled
 for_window [class="Gcolor3"] floating enabled
 for_window [class="livecaptions"] floating enabled
 for_window [class="Arandr"] floating enabled
+for_window [class="pomatez"] floating enabled
 for_window [class="Timeshift-gtk"] floating disabled
 for_window [class="Shutter"] floating disabled
 for_window [class="jetbrains-toolbox"] floating disabled
@@ -310,11 +311,11 @@ mode "applications" {
     bindsym m exec mpv --player-operation-mode=pseudo-gui, mode "default"
     bindsym n exec kitty --class nvim --hold -e nvim, mode "default"
     bindsym o exec obs, mode "default"
-    bindsym p exec pamac-manager, mode "default"
+    bindsym p exec pomatez, mode "default"
     bindsym q exec flatpak run io.github._0xzer0x.qurancompanion, mode "default"
     bindsym s exec kshutdown, mode "default"
     bindsym t exec telegram-desktop, mode "default"
-    bindsym u exec uget-gtk, mode "default"
+    bindsym u exec bash ~/Scripts/UVR_multi_opener.sh, mode "default"
     bindsym v exec virt-manager, mode "default"
     bindsym z exec zathura "/mnt/Disk_D/مستندات/برمجة/head_first_c.pdf", mode "default"
 
@@ -327,7 +328,7 @@ mode "applications" {
     bindsym shift+p exec pdfarranger, mode "default"
     bindsym shift+s exec shotcut, mode "default"
     bindsym shift+t exec mousepad, mode "default"
-    bindsym shift+u exec prime-run /mnt/Disk_D/برامج/Linux/ultimatevocalremovergui/python3.10_environment/bin/python3 /mnt/Disk_D/برامج/Linux/ultimatevocalremovergui/UVR.py, mode "default"
+    bindsym shift+u exec uget-gtk, mode "default"
     bindsym shift+v exec ventoygui, mode "default"
 
     bindsym Mod1+b exec notify-send -t 5000 "$(acpi)", mode "default"

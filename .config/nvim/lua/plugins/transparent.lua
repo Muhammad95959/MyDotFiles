@@ -1,6 +1,7 @@
 return {
   "xiyaowong/transparent.nvim",
+  lazy = false,
   keys = {
-    { "<leader>ut", vim.cmd.TransparentToggle, desc = "Transparent Toggle" },
+    { "<leader>uZ", vim.cmd.TransparentToggle, desc = "Transparent Toggle" },
   },
 }

@@ -73,7 +73,7 @@ bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
 # Environment variables
-export PAGER='nvim +Man!'
+export MANPAGER='nvim +Man!'
 export TERMCMD=kitty
 export EDITOR=nvim
 

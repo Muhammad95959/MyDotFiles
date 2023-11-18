@@ -54,6 +54,7 @@ linux-lts
 lxappearance
 man-db
 man-pages
+mariadb
 mousepad
 mpv
 mpv-mpris

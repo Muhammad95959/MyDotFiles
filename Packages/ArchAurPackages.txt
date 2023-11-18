@@ -11,6 +11,7 @@ layan-gtk-theme-git
 nomacs
 notify-send-py
 oxygen-cursors
+pomatez
 rofi-gpaste-git
 setcapslock
 shrinkpdf
