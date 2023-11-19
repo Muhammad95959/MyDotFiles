@@ -303,7 +303,7 @@ mode "redshift" {
 mode "applications" {
     bindsym a exec android-studio, mode "default"
     bindsym b exec thorium-browser --incognito, mode "default"
-    bindsym c exec gcolor3, mode "default"
+    bindsym c exec qalculate-gtk, mode "default"
     bindsym d exec gnome-disks, mode "default"
     bindsym g exec gparted, mode "default"
     bindsym i exec idea, mode "default"
@@ -320,7 +320,7 @@ mode "applications" {
     bindsym z exec zathura "/mnt/Disk_D/مستندات/برمجة/head_first_c.pdf", mode "default"
 
     bindsym shift+b exec blueman-manager, mode "default"
-    bindsym shift+c exec qalculate-gtk, mode "default"
+    bindsym shift+c exec gcolor3, mode "default"
     bindsym shift+g exec gimp, mode "default"
     bindsym shift+i exec inkscape, mode "default"
     bindsym shift+m exec kitty --class pulsemixer --hold -e pulsemixer, mode "default"

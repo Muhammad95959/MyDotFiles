@@ -49,6 +49,11 @@ set recolor-lightcolor \"#ffe1ba\"\n" "$HOME"/.config/zathura/zathurarc
 	;;
 esac
 
+if [ -z "$chosen" ]
+then
+  exit 1
+fi
+
 if [ "$(xdotool getactivewindow getwindowclassname)" == "Zathura" ]; then
   xdotool type ":"
   xdotool type "s"

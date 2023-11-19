@@ -37,6 +37,7 @@ grub-customizer
 gvfs-mtp
 gvfs-smb
 i3-wm
+img2pdf
 inetutils
 inkscape
 inotify-tools
