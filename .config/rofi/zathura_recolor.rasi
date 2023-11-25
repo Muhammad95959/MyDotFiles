@@ -28,8 +28,8 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       275px;
-    height:                      315px;
+    width:                       320px;
+    height:                      370px;
     x-offset:                    0px;
     y-offset:                    0px;
 

@@ -6,6 +6,7 @@ set recolor-lightcolor "#111111"
 
 set first-page-column 1
 set recolor false
+set render-loading true
 set sandbox none
 set selection-clipboard clipboard
 set window-height 5000

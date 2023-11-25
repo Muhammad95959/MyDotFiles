@@ -92,9 +92,9 @@ alias barconfig="nvim $HOME/.config/polybar/config.ini"
 alias uvrautoplay="bash ~/Scripts/UVR_autoplay.sh"
 alias cleandeps="sudo pacman -Rsn $(pacman -Qdtq)"
 alias pkgsbackup="pacman -Qne | awk '{print \$1}' \
-  > /mnt/Disk_D/Muhammad/Repositories/DotFiles/Packages/ArchNativePackages.txt \
+  > /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/ArchNativePackages.txt \
   && pacman -Qm | awk '{print \$1}' \
-  > /mnt/Disk_D/Muhammad/Repositories/DotFiles/Packages/ArchAurPackages.txt"
+  > /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/ArchAurPackages.txt"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

@@ -37,6 +37,7 @@ File5[$e]=$HOME/Disk_D/Engineering/Semester materials/Info/Hania/Info lecture1 f
 File6[$e]=/mnt/Disk_D/Engineering/Semester materials/Info/Ahmed/Lecture_1_Communication_Basics.pdf
 File7[$e]=/mnt/Disk_D/Muhammad/My_Documents/dual-function-keys.md
 File8[$e]=/mnt/Disk_D/Engineering/Semester materials/Info/Hania/Info lecture 3 fall 2023.pdf
+File9[$e]=$HOME/Downloads/Level 1.pdf
 Name1[$e]=200 سؤال وجواب في العقيدة.pdf
 Name2[$e]=head_first_c.pdf
 Name3[$e]=Comm Lecturer name-summer 023.pdf
@@ -45,6 +46,7 @@ Name5[$e]=Info lecture1 fall 2023.pdf
 Name6[$e]=Lecture_1_Communication_Basics.pdf
 Name7[$e]=dual-function-keys.md
 Name8[$e]=Info lecture 3 fall 2023.pdf
+Name9[$e]=Level 1.pdf
 
 [Toolbar mainToolBar]
 ToolButtonStyle=IconOnly
