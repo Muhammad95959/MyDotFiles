@@ -29,24 +29,26 @@ eDP-1=eDP-1
 ToolButtonStyle=IconOnly
 
 [Recent Files]
-File1[$e]=$HOME/Disk_D/مستندات/200 سؤال وجواب في العقيدة.pdf
-File2[$e]=/mnt/Disk_D/مستندات/برمجة/head_first_c.pdf
-File3[$e]=$HOME/Disk_D/Engineering/Comm Lecturer name-summer 023.pdf
-File4[$e]=$HOME/Disk_D/Engineering/Semester materials/Info/Ahmed/Lecture_1_Communication_Basics.pdf
-File5[$e]=$HOME/Disk_D/Engineering/Semester materials/Info/Hania/Info lecture1 fall 2023.pdf
-File6[$e]=/mnt/Disk_D/Engineering/Semester materials/Info/Ahmed/Lecture_1_Communication_Basics.pdf
-File7[$e]=/mnt/Disk_D/Muhammad/My_Documents/dual-function-keys.md
-File8[$e]=/mnt/Disk_D/Engineering/Semester materials/Info/Hania/Info lecture 3 fall 2023.pdf
-File9[$e]=$HOME/Downloads/Level 1.pdf
-Name1[$e]=200 سؤال وجواب في العقيدة.pdf
-Name2[$e]=head_first_c.pdf
-Name3[$e]=Comm Lecturer name-summer 023.pdf
-Name4[$e]=Lecture_1_Communication_Basics.pdf
-Name5[$e]=Info lecture1 fall 2023.pdf
-Name6[$e]=Lecture_1_Communication_Basics.pdf
-Name7[$e]=dual-function-keys.md
-Name8[$e]=Info lecture 3 fall 2023.pdf
-Name9[$e]=Level 1.pdf
+File1[$e]=$HOME/Disk_D/Engineering/Semester materials/Info/Ahmed/Lecture_1_Communication_Basics.pdf
+File10[$e]=/mnt/Disk_D/Engineering/Semester materials/Info/Hania/1+2+3+4+5+6.pdf
+File2[$e]=$HOME/Disk_D/Engineering/Semester materials/Info/Hania/Info lecture1 fall 2023.pdf
+File3[$e]=/mnt/Disk_D/Engineering/Semester materials/Info/Ahmed/Lecture_1_Communication_Basics.pdf
+File4[$e]=/mnt/Disk_D/Muhammad/My_Documents/dual-function-keys.md
+File5[$e]=/mnt/Disk_D/Engineering/Semester materials/Info/Hania/Info lecture 3 fall 2023.pdf
+File6[$e]=$HOME/Downloads/Level 1.pdf
+File7[$e]=$HOME/Disk_D/Engineering/Semester materials/قانون/المبادئ العامة للقانون.pdf
+File8[$e]=/mnt/Disk_D/Engineering/Semester materials/Info/Hania/Info lecture 5 fall 2023.pdf
+File9[$e]=/mnt/Disk_D/Engineering/Semester materials/Info/Hania/Info lecture 6 fall 2023.pdf
+Name1[$e]=Lecture_1_Communication_Basics.pdf
+Name10[$e]=1+2+3+4+5+6.pdf
+Name2[$e]=Info lecture1 fall 2023.pdf
+Name3[$e]=Lecture_1_Communication_Basics.pdf
+Name4[$e]=dual-function-keys.md
+Name5[$e]=Info lecture 3 fall 2023.pdf
+Name6[$e]=Level 1.pdf
+Name7[$e]=المبادئ العامة للقانون.pdf
+Name8[$e]=Info lecture 5 fall 2023.pdf
+Name9[$e]=Info lecture 6 fall 2023.pdf
 
 [Toolbar mainToolBar]
 ToolButtonStyle=IconOnly

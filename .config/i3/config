@@ -111,6 +111,8 @@ bindsym $mod+w            layout tabbed
 bindsym $mod+shift+w      exec nitrogen --head=0 --set-zoom-fill --random --no-recurse /mnt/Disk_D/Backgrounds
 bindsym $mod+space        focus mode_toggle
 bindsym $mod+shift+space  floating toggle
+bindsym $mod+minus        exec picom-trans -c -5
+bindsym $mod+equal        exec picom-trans -c +5
 bindsym Print             exec flameshot gui --path ~/Pictures
 bindsym ctrl+Print        exec kitty --class hiddenkitty -e ~/Scripts/flameshotwindows.sh --path ~/Pictures
 bindsym shift+Print       exec flameshot full --path ~/Pictures
