@@ -58,8 +58,8 @@ for_window [all] title_window_icon padding 7px
 # border_radius 12
 
 client.focused          #7b58dc #7b58dc #ffffff #9b58dc   #7b58dc    ### edited via script
-client.focused_inactive #555555 #555555 #ffffff #666666   #555555
-client.unfocused        #222222 #222222 #888888 #333333   #555555
+client.focused_inactive #303446 #303446 #ffffff #666666   #303446
+client.unfocused        #1e1e2e #1e1e2e #777777 #333333   #555555
 
 # # class                 border  backgr. text    indicator child_border
 # client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
@@ -78,7 +78,7 @@ client.unfocused        #222222 #222222 #888888 #333333   #555555
 bindsym $mod+Return       exec kitty
 bindsym $mod+shift+Return exec rofi -show drun -theme ~/.config/rofi/launcher.rasi
 bindsym $mod+a            mode "applications"
-bindsym $mod+b            exec thorium-browser
+bindsym $mod+b            exec thorium-browser --test-type
 bindsym $mod+shift+b      exec qutebrowser
 bindsym $mod+c            exec rofi-gpaste
 bindsym $mod+shift+c      exec notify-send.py a --hint boolean:deadd-notification-center:true string:type:clearPopups
@@ -105,6 +105,7 @@ bindsym $mod+shift+r      restart
 bindsym $mod+s            mode "video"
 bindsym $mod+shift+s      exec i3-msg scratchpad show || i3-msg move scratchpad
 bindsym $mod+t            split v ; layout tabbed
+bindsym $mod+shift+t      exec bash ~/Scripts/google_translate.sh
 bindsym $mod+v            split v
 bindsym $mod+shift+v      split h
 bindsym $mod+w            layout tabbed
@@ -304,7 +305,7 @@ mode "redshift" {
 
 mode "applications" {
     bindsym a exec android-studio, mode "default"
-    bindsym b exec thorium-browser --incognito, mode "default"
+    bindsym b exec thorium-browser --test-type --incognito, mode "default"
     bindsym c exec qalculate-gtk, mode "default"
     bindsym d exec gnome-disks, mode "default"
     bindsym g exec gparted, mode "default"
@@ -417,7 +418,7 @@ mode "executable_scripts" {
     bindsym k exec bash ~/Scripts/app_kill.sh, mode "default"
     bindsym m exec bash ~/Scripts/url_to_mpv.sh, mode "default"
     bindsym n exec bash ~/Scripts/nvidia_power_mode.sh, mode "default"
-    bindsym o exec bash ~/Scripts/open_excecutables.sh, mode "default"
+    bindsym o exec bash ~/Scripts/open_executables.sh, mode "default"
     bindsym p exec bash ~/Scripts/toggle_polybar_location.sh, mode "default"
     bindsym r exec bash ~/Scripts/i3_resize.sh, mode "default"
     bindsym s exec bash ~/Scripts/toggle_i3_smart_gaps.sh, mode "default"
