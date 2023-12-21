@@ -105,7 +105,7 @@ bindsym $mod+shift+r      restart
 bindsym $mod+s            mode "video"
 bindsym $mod+shift+s      exec i3-msg scratchpad show || i3-msg move scratchpad
 bindsym $mod+t            split v ; layout tabbed
-bindsym $mod+shift+t      exec bash ~/Scripts/google_translate.sh
+bindsym $mod+shift+t      exec bash ~/Scripts/thorium_translate.sh
 bindsym $mod+v            split v
 bindsym $mod+shift+v      split h
 bindsym $mod+w            layout tabbed
@@ -320,6 +320,7 @@ mode "applications" {
     bindsym t exec telegram-desktop, mode "default"
     bindsym u exec bash ~/Scripts/UVR_multi_opener.sh, mode "default"
     bindsym v exec virt-manager, mode "default"
+    bindsym w exec bash ~/Scripts/virt_opener.sh win10, mode "default"
     bindsym z exec zathura "/mnt/Disk_D/مستندات/برمجة/head_first_c.pdf", mode "default"
 
     bindsym shift+b exec blueman-manager, mode "default"
