@@ -102,8 +102,8 @@ bindsym $mod+q            kill
 bindsym $mod+shift+q      exec ~/.config/rofi/scripts/powermenu/type-1/powermenu.sh
 bindsym $mod+r            exec kitty --class Ranger --hold -e ranger
 bindsym $mod+shift+r      restart
-bindsym $mod+s            mode "video"
-bindsym $mod+shift+s      exec i3-msg scratchpad show || i3-msg move scratchpad
+bindsym $mod+s            exec i3-msg scratchpad show || i3-msg move scratchpad
+bindsym $mod+shift+s      mode "video"
 bindsym $mod+t            split v ; layout tabbed
 bindsym $mod+shift+t      exec bash ~/Scripts/thorium_translate.sh
 bindsym $mod+v            split v
@@ -386,7 +386,7 @@ mode "video" {
     bindsym shift+k exec ~/Scripts/brightness_control/s_inc.exp
 
     bindsym Escape mode "default"
-    bindsym $mod+s mode "default"
+    bindsym $mod+shift+s mode "default"
 }
 
 mode "scripts" {
@@ -414,6 +414,7 @@ mode "scripts" {
 mode "executable_scripts" {
     bindsym b exec bash ~/Scripts/i3_border_changer.sh, mode "default"
     bindsym c exec bash ~/Scripts/rofi-nerdfonts/rofi-nerdfonts.sh, mode "default"
+    bindsym d exec bash ~/Scripts/to_do.sh, mode "default"
     bindsym e exec kitty --hold -e bash /mnt/Disk_D/Muhammad/English_Learner/english_learner.sh, mode "default"
     bindsym g exec bash ~/Scripts/google_translate.sh, mode "default"
     bindsym k exec bash ~/Scripts/app_kill.sh, mode "default"
