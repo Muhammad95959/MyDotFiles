@@ -1,5 +1,5 @@
 -- Recoloring
-set default-bg               "#272839"
+set default-bg               "#1E1E2E"
 set statusbar-bg             "#313244"
 set recolor-lightcolor       "#1E1E2E"
 set recolor-darkcolor        "#CDD6F4"

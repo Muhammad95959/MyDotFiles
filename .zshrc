@@ -81,15 +81,15 @@ export EDITOR=nvim
 alias logout="pkill -KILL -u $USER"
 alias ls="exa --icons -a --group-directories-first"
 alias ll="exa --icons -a --group-directories-first -l"
-alias lf="$HOME/.config/lf/lfstart.sh"
 alias zrefresh="source $HOME/.zshrc"
-alias cppath="pwd | xclip -selection clipboard"
+alias cppath="pwd | sed 's/ /\\\\ /g' | xclip -selection clipboard"
 alias copycmd="tail -n 2 ~/.zhistory | head -n 1 | xclip -selection clipboard"
 alias zshrc="nvim $HOME/.zshrc"
 alias i3config="nvim $HOME/.config/i3/config"
 alias dwmconfig="nvim $HOME/.config/dwm/config.h"
 alias barconfig="nvim $HOME/.config/polybar/config.ini"
 alias uvrautoplay="bash ~/Scripts/UVR_autoplay.sh"
+alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias cleandeps="sudo pacman -Rsn $(pacman -Qdtq)"
 alias pkgsbackup="pacman -Qne | awk '{print \$1}' \
   > /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/ArchNativePackages.txt \

@@ -33,6 +33,7 @@ exec --no-startup-id gpaste-client start
 exec --no-startup-id sudo virsh net-start default
 exec --no-startup-id sudo chown $USER:$USER /sys/class/backlight/intel_backlight/brightness
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -n -e -i /mnt/Disk_D/Backgrounds/locks/catlock.png
+exec_always --no-startup-id xinput set-prop '2.4G Mouse' 'libinput Accel Speed' 0.5
 exec_always --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Accel Speed' 0.5
 exec_always --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Tapping Enabled' 1
 exec_always --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Natural Scrolling Enabled' 1
@@ -251,6 +252,7 @@ for_window [class="pomatez"] floating enabled
 for_window [class="Timeshift-gtk"] floating disabled
 for_window [class="Shutter"] floating disabled
 for_window [class="jetbrains-toolbox"] floating disabled
+for_window [class="tmnt_mim.exe"] floating disabled
 for_window [title="Ultimate Vocal Remover"] floating disabled
 for_window [class="livecaptions"] move absolute position 500px 900px
 for_window [class="hiddenkitty"] move scratchpad
@@ -414,7 +416,7 @@ mode "scripts" {
 mode "executable_scripts" {
     bindsym b exec bash ~/Scripts/i3_border_changer.sh, mode "default"
     bindsym c exec bash ~/Scripts/rofi-nerdfonts/rofi-nerdfonts.sh, mode "default"
-    bindsym d exec bash ~/Scripts/to_do.sh, mode "default"
+    bindsym d exec bash /mnt/Disk_D/Muhammad/todo.sh, mode "default"
     bindsym e exec kitty --hold -e bash /mnt/Disk_D/Muhammad/English_Learner/english_learner.sh, mode "default"
     bindsym g exec bash ~/Scripts/google_translate.sh, mode "default"
     bindsym k exec bash ~/Scripts/app_kill.sh, mode "default"

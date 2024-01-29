@@ -29,7 +29,7 @@ window {
     anchor:                      center;
     fullscreen:                  false;
     width:                       320px;
-    height:                      475px;
+    height:                      525px;
     x-offset:                    0px;
     y-offset:                    0px;
 
