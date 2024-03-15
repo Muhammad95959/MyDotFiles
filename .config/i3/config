@@ -28,18 +28,19 @@ exec --no-startup-id polybar -r main
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id deadd-notificatoin-center
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id ~/Scripts/volume_control/volume_subscribe.sh
 exec --no-startup-id gpaste-client start
 exec --no-startup-id sudo virsh net-start default
 exec --no-startup-id sudo chown $USER:$USER /sys/class/backlight/intel_backlight/brightness
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -n -e -i /mnt/Disk_D/Backgrounds/locks/catlock.png
+exec --no-startup-id xss-lock --transfer-sleep-lock -- xfce4-screensaver-command -l
 exec_always --no-startup-id xinput set-prop '2.4G Mouse' 'libinput Accel Speed' 0.5
 exec_always --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Accel Speed' 0.5
 exec_always --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Tapping Enabled' 1
 exec_always --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Natural Scrolling Enabled' 1
 exec_always --no-startup-id xinput set-prop 'PixArt Lenovo USB Optical Mouse' 'libinput Accel Speed' 0.3
+exec_always --no-startup-id killall volume_subscribe.sh ; ~/Scripts/volume_control/volume_subscribe.sh
 exec_always --no-startup-id bash ~/Scripts/screen_layout/two_monitors.sh
 exec_always --no-startup-id bash ~/Scripts/keyboard_config.sh
+exec_always --no-startup-id xfce4-screensaver
 exec_always --no-startup-id volnoti -t 2
 exec_always --no-startup-id picom
 
@@ -58,7 +59,7 @@ for_window [all] border pixel 2
 for_window [all] title_window_icon padding 7px
 # border_radius 12
 
-client.focused          #7b58dc #7b58dc #ffffff #9b58dc   #7b58dc    ### edited via script
+client.focused          #cdd6f4 #cdd6f4 #24273a #9aa3c5   #cdd6f4    ### edited via script
 client.focused_inactive #303446 #303446 #ffffff #666666   #303446
 client.unfocused        #1e1e2e #1e1e2e #777777 #333333   #555555
 
@@ -85,7 +86,6 @@ bindsym $mod+c            exec rofi-gpaste
 bindsym $mod+shift+c      exec notify-send.py a --hint boolean:deadd-notification-center:true string:type:clearPopups
 bindsym $mod+d            exec thunar
 bindsym $mod+e            layout toggle split
-bindsym $mod+shift+e      exec ocrdesktop -c && notify-send -t 5000 "content copied to clipboard"
 bindsym $mod+f            fullscreen toggle
 bindsym $mod+shift+f      exec bash ~/Scripts/toggle_gaps.sh
 bindsym $mod+g            gaps inner current plus 9 ; gaps horizontal current plus 7
@@ -309,8 +309,7 @@ mode "applications" {
     bindsym a exec android-studio, mode "default"
     bindsym b exec thorium-browser --test-type --incognito, mode "default"
     bindsym c exec qalculate-gtk, mode "default"
-    bindsym d exec gnome-disks, mode "default"
-    bindsym g exec gparted, mode "default"
+    bindsym g exec gimp, mode "default"
     bindsym i exec idea, mode "default"
     bindsym l exec flatpak run net.sapples.LiveCaptions, mode "default"
     bindsym m exec mpv --player-operation-mode=pseudo-gui, mode "default"
@@ -318,24 +317,20 @@ mode "applications" {
     bindsym o exec obs, mode "default"
     bindsym p exec pomatez, mode "default"
     bindsym q exec flatpak run io.github._0xzer0x.qurancompanion, mode "default"
-    bindsym s exec kshutdown, mode "default"
     bindsym t exec telegram-desktop, mode "default"
     bindsym u exec bash ~/Scripts/UVR_multi_opener.sh, mode "default"
     bindsym v exec virt-manager, mode "default"
-    bindsym w exec bash ~/Scripts/virt_opener.sh win10, mode "default"
+    bindsym w exec whatsie, mode "default"
     bindsym z exec zathura "/mnt/Disk_D/مستندات/برمجة/head_first_c.pdf", mode "default"
 
+    bindsym shift+a exec bash ~/Scripts/virt_opener.sh android-x86-9.0, mode "default"
     bindsym shift+b exec blueman-manager, mode "default"
     bindsym shift+c exec gcolor3, mode "default"
-    bindsym shift+g exec gimp, mode "default"
     bindsym shift+i exec inkscape, mode "default"
     bindsym shift+m exec kitty --class pulsemixer --hold -e pulsemixer, mode "default"
     bindsym shift+n exec nitrogen, mode "default"
-    bindsym shift+p exec pdfarranger, mode "default"
-    bindsym shift+s exec shotcut, mode "default"
     bindsym shift+t exec mousepad, mode "default"
-    bindsym shift+u exec uget-gtk, mode "default"
-    bindsym shift+v exec ventoygui, mode "default"
+    bindsym shift+w exec bash ~/Scripts/virt_opener.sh win10, mode "default"
 
     bindsym Mod1+b exec notify-send -t 5000 "$(acpi)", mode "default"
 

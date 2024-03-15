@@ -7,7 +7,7 @@ State=AAAA/wAAAAD9AAAAAQAAAAAAAADIAAAD1fwCAAAAAfsAAAAcAG8AawB1AGwAYQByAF8AcwBpAG
 eDP-1=eDP-1
 
 [Desktop Entry]
-FullScreen=false
+FullScreen=true
 shouldShowMenuBarComingFromFullScreen=false
 shouldShowToolBarComingFromFullScreen=true
 
@@ -21,7 +21,6 @@ ShowSidebar=false
 1920x1080 screen: XPosition=0
 1920x1080 screen: YPosition=20
 MenuBar=Disabled
-State=AAAA/wAAAAD9AAAAAQAAAAAAAADIAAAD1fwCAAAAAfsAAAAcAG8AawB1AGwAYQByAF8AcwBpAGQAZQBiAGEAcgAAAABPAAAD1QAAAV0A///+AAAHSAAAA/IAAAAEAAAABAAAAAgAAAAI/AAAAAMAAAAAAAAAAQAAACIAYQBuAG4AbwB0AGEAdABpAG8AbgBUAG8AbwBsAEIAYQByAwAAAAD/////AAAAAAAAAAAAAAABAAAAAQAAACwAcQB1AGkAYwBrAEEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgIAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
 eDP-1=eDP-1
 
@@ -29,26 +28,26 @@ eDP-1=eDP-1
 ToolButtonStyle=IconOnly
 
 [Recent Files]
-File1[$e]=$HOME/Disk_D/Engineering/Semester materials/3rd Communication Fall 2024.pdf
-File10[$e]=/mnt/Disk_D/Engineering/Semester materials/قانون/Law _ Engineering Ethics Midterm Fall 2023.pdf
-File2[$e]=$HOME/Downloads/معمل الستاليت.pdf
-File3[$e]=/mnt/Disk_D/Engineering/Semester materials/Info/Hania/Info lecture 08 fall 2023.pdf
-File4[$e]=$HOME/Downloads/1.pdf
-File5[$e]=/mnt/Disk_D/Engineering/Semester materials/Info/Ahmed/Lecture_3_Satellite_communiation.pdf
-File6[$e]=$HOME/Downloads/Project #02 (Power Point).pdf
-File7[$e]=$HOME/Downloads/Year_Mark_Comm_info_50.pdf
-File8[$e]=/mnt/Disk_D/Engineering/Semester materials/Info/شاب_جامد_منزل_ورق/A INFO lecture 02.pdf
-File9[$e]=$HOME/Downloads/Law rev 2027.pdf
-Name1[$e]=3rd Communication Fall 2024.pdf
-Name10[$e]=Law _ Engineering Ethics Midterm Fall 2023.pdf
-Name2[$e]=معمل الستاليت.pdf
-Name3[$e]=Info lecture 08 fall 2023.pdf
-Name4[$e]=1.pdf
-Name5[$e]=Lecture_3_Satellite_communiation.pdf
-Name6[$e]=Project #02 (Power Point).pdf
-Name7[$e]=Year_Mark_Comm_info_50.pdf
-Name8[$e]=A INFO lecture 02.pdf
-Name9[$e]=Law rev 2027.pdf
+File1[$e]=$HOME/Downloads/Law rev 2027.pdf
+File10[$e]=$HOME/.cache/.fr-2AUPK2/report2.pdf
+File2[$e]=/mnt/Disk_D/Engineering/Semester materials/قانون/Law _ Engineering Ethics Midterm Fall 2023.pdf
+File3[$e]=$HOME/Downloads/اعلان_تسجيل_0.pdf
+File4[$e]=$HOME/Downloads/WhatSie/electronics2.pdf
+File5[$e]=$HOME/Downloads/electric machines Lecture 2.pdf
+File6[$e]=/mnt/Disk_D/Engineering/Semester materials/Microprocessors/Lectures/Chapter0.pdf
+File7[$e]=/mnt/Disk_D/Engineering/Semester materials/Microprocessors/Old Lectures/Software /Chapter2.pdf
+File8[$e]=$HOME/.cache/.fr-VD55J2/report.pdf
+File9[$e]=$HOME/Downloads/Timetable 2nd Term - Ramadan Edition.pdf
+Name1[$e]=Law rev 2027.pdf
+Name10[$e]=report2.pdf
+Name2[$e]=Law _ Engineering Ethics Midterm Fall 2023.pdf
+Name3[$e]=اعلان_تسجيل_0.pdf
+Name4[$e]=electronics2.pdf
+Name5[$e]=electric machines Lecture 2.pdf
+Name6[$e]=Chapter0.pdf
+Name7[$e]=Chapter2.pdf
+Name8[$e]=report.pdf
+Name9[$e]=Timetable 2nd Term - Ramadan Edition.pdf
 
 [Toolbar mainToolBar]
 ToolButtonStyle=IconOnly

@@ -210,7 +210,8 @@ generate_window_list() {
 		# Add on-click action Polybar formatting
 		printf "%s" "%{A1:$on_click raise_or_minimize $wid:}"
 		printf "%s" "%{A2:$on_click close $wid:}"
-		printf "%s" "%{A3:$on_click slop_resize $wid:}"
+		# printf "%s" "%{A3:$on_click slop_resize $wid:}"
+		printf "%s" "%{A3:$on_click close $wid:}"
 		printf "%s" "%{A4:$on_click increment_size $wid:}"
 		printf "%s" "%{A5:$on_click decrement_size $wid:}"
 		# Print the final window name

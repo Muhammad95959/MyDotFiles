@@ -72,6 +72,15 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
+# Zsh function for searching and opening files using nvim
+fzf-nvim() {
+    local file
+    # file=$(find . -type f | fzf) && [ -n "$file" ] && nvim "$file"
+    file=$(find ~ /mnt/Disk_D/Muhammad /mnt/Disk_D/Engineering \( -path '*/.git/*' -o -path ~/.android -o -path ~/.cache -o -path ~/.gradle -o -path ~/.npm -o -path ~/.pyenv -o -path ~/.config/BraveSoftware -o -path ~/.config/chromium -o -path ~/.config/content_shell -o -path ~/.config/thorium -o -path ~/.local/share/Android -o -path ~/.local/share/JetBrains -o -path ~/.local/share/nvim -o -path /mnt/Disk_D/Muhammad/Android_Studio/ASProjects \) -prune -o -type f -print | fzf) && [ -n "$file" ] && nvim "$file"
+}
+zle -N fzf-nvim
+bindkey '^z' fzf-nvim
+
 # Environment variables
 export MANPAGER='nvim +Man!'
 export TERMCMD=kitty
@@ -104,6 +113,7 @@ source ~/.config/zsh/autojump/autojump.plugin.zsh
 source ~/.config/zsh/zsh-kitty/zsh-kitty.plugin.zsh
 source ~/.config/zsh/powerlevel10k/powerlevel9k.zsh-theme
 source ~/.config/zsh/zsh-vim-mode/zsh-vim-mode.plugin.zsh
+source ~/.config/zsh/zsh-fzf-history-search/zsh-fzf-history-search.zsh
 source ~/.config/zsh/zsh-peco-history/zsh-peco-history.zsh
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

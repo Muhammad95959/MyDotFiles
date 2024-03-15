@@ -86,6 +86,8 @@ case ${chosen} in
 			betterlockscreen -l
 		elif [[ -x '/usr/bin/i3lock' ]]; then
 			i3lock -n -e -i /mnt/Disk_D/Backgrounds/locks/catlock.png
+		elif [[ -x '/usr/bin/xfce4-screensaver' ]]; then
+			xfce4-screensaver-command -l
 		fi
         ;;
     $suspend)
