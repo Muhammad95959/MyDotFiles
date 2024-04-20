@@ -20,23 +20,26 @@ focus_follows_mouse no
 # |____/ \__\__,_|_|   \__|\__,_| .__/
 #                               |_|
 
-exec --no-startup-id unclutter
 exec --no-startup-id udiskie
-exec --no-startup-id xset s off -dpms
-exec --no-startup-id amixer set Capture 40%
+exec --no-startup-id unclutter
 exec --no-startup-id polybar -r main
+exec --no-startup-id xset s off -dpms
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id deadd-notificatoin-center
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id gpaste-client start
+exec --no-startup-id amixer set Capture 80%
+exec --no-startup-id deadd-notificatoin-center
 exec --no-startup-id sudo virsh net-start default
-exec --no-startup-id sudo chown $USER:$USER /sys/class/backlight/intel_backlight/brightness
+exec --no-startup-id polybar -r bottom_left_hot_corner
+exec --no-startup-id bash ~/Scripts/backup_zsh_history.sh
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id xss-lock --transfer-sleep-lock -- xfce4-screensaver-command -l
+exec --no-startup-id sudo chown $USER:$USER /sys/class/backlight/intel_backlight/brightness
 exec_always --no-startup-id xinput set-prop '2.4G Mouse' 'libinput Accel Speed' 0.5
 exec_always --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Accel Speed' 0.5
 exec_always --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Tapping Enabled' 1
 exec_always --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Natural Scrolling Enabled' 1
 exec_always --no-startup-id xinput set-prop 'PixArt Lenovo USB Optical Mouse' 'libinput Accel Speed' 0.3
+exec_always --no-startup-id xinput set-prop 'YICHIP Wireless Device Mouse' 'libinput Accel Speed' 0.3
 exec_always --no-startup-id killall volume_subscribe.sh ; ~/Scripts/volume_control/volume_subscribe.sh
 exec_always --no-startup-id bash ~/Scripts/screen_layout/two_monitors.sh
 exec_always --no-startup-id bash ~/Scripts/keyboard_config.sh
@@ -59,7 +62,7 @@ for_window [all] border pixel 2
 for_window [all] title_window_icon padding 7px
 # border_radius 12
 
-client.focused          #cdd6f4 #cdd6f4 #24273a #9aa3c5   #cdd6f4    ### edited via script
+client.focused          #61afef #61afef #24273a #61dfff   #61afef    ### edited via script
 client.focused_inactive #303446 #303446 #ffffff #666666   #303446
 client.unfocused        #1e1e2e #1e1e2e #777777 #333333   #555555
 
@@ -99,6 +102,7 @@ bindsym $mod+shift+n      exec bash ~/Scripts/xdotool_click.sh
 bindsym $mod+o            mode "scripts"
 bindsym $mod+shift+o      mode "executable_scripts"
 bindsym $mod+p            exec rofi-pass
+bindsym $mod+shift+p      exec rofi -show window
 bindsym $mod+q            kill
 bindsym $mod+shift+q      exec ~/.config/rofi/scripts/powermenu/type-1/powermenu.sh
 bindsym $mod+r            exec kitty --class Ranger --hold -e ranger
@@ -115,10 +119,10 @@ bindsym $mod+space        focus mode_toggle
 bindsym $mod+shift+space  floating toggle
 bindsym $mod+minus        exec picom-trans -c -5
 bindsym $mod+equal        exec picom-trans -c +5
-bindsym Print             exec flameshot gui --path ~/Pictures
+bindsym Print             exec flameshot gui
 bindsym ctrl+Print        exec kitty --class hiddenkitty -e ~/Scripts/flameshotwindows.sh --path ~/Pictures
-bindsym shift+Print       exec flameshot full --path ~/Pictures
-bindsym shift+Escape      exec setcapslock toggle
+bindsym shift+Print       exec flameshot gui --region 1920x1080+0+0
+bindsym ctrl+Escape       exec setcapslock toggle
 # PulseAudio controls
 bindsym XF86AudioRaiseVolume       exec bash ~/Scripts/volume_control/pactl_volume_up_limit.sh
 bindsym XF86AudioLowerVolume       exec pactl set-sink-mute @DEFAULT_SINK@ 0 && pactl set-sink-volume @DEFAULT_SINK@ -5%
@@ -250,9 +254,7 @@ for_window [class="livecaptions"] floating enabled
 for_window [class="Arandr"] floating enabled
 for_window [class="pomatez"] floating enabled
 for_window [class="Timeshift-gtk"] floating disabled
-for_window [class="Shutter"] floating disabled
 for_window [class="jetbrains-toolbox"] floating disabled
-for_window [class="tmnt_mim.exe"] floating disabled
 for_window [title="Ultimate Vocal Remover"] floating disabled
 for_window [class="livecaptions"] move absolute position 500px 900px
 for_window [class="hiddenkitty"] move scratchpad
@@ -289,50 +291,45 @@ workspace 10 output HDMI-1-0
 #
 
 mode "redshift" {
-    bindsym r exec --no-startup-id "$kill_redshift redshift -x", mode "default"
-    bindsym 1 exec --no-startup-id "$kill_redshift redshift -P -O 5000", mode "default"
-    bindsym 2 exec --no-startup-id "$kill_redshift redshift -P -O 4000", mode "default"
-    bindsym 3 exec --no-startup-id "$kill_redshift redshift -P -O 3500", mode "default"
-    bindsym 4 exec --no-startup-id "$kill_redshift redshift -P -O 3000", mode "default"
-    bindsym 5 exec --no-startup-id "$kill_redshift redshift -P -O 2500", mode "default"
-    bindsym 6 exec --no-startup-id "$kill_redshift redshift -P -O 2000", mode "default"
-    bindsym 7 exec --no-startup-id "$kill_redshift redshift -P -O 1750", mode "default"
-    bindsym 8 exec --no-startup-id "$kill_redshift redshift -P -O 1500", mode "default"
-    bindsym 9 exec --no-startup-id "$kill_redshift redshift -P -O 1250", mode "default"
-    bindsym 0 exec --no-startup-id "$kill_redshift redshift -P -O 1000", mode "default"
+    bindsym r exec --no-startup-id redshift -x         ,mode "default"
+    bindsym 1 exec --no-startup-id redshift -P -O 5000 ,mode "default"
+    bindsym 2 exec --no-startup-id redshift -P -O 4000 ,mode "default"
+    bindsym 3 exec --no-startup-id redshift -P -O 3500 ,mode "default"
+    bindsym 4 exec --no-startup-id redshift -P -O 3000 ,mode "default"
+    bindsym 5 exec --no-startup-id redshift -P -O 2500 ,mode "default"
+    bindsym 6 exec --no-startup-id redshift -P -O 2000 ,mode "default"
+    bindsym 7 exec --no-startup-id redshift -P -O 1750 ,mode "default"
+    bindsym 8 exec --no-startup-id redshift -P -O 1500 ,mode "default"
+    bindsym 9 exec --no-startup-id redshift -P -O 1250 ,mode "default"
+    bindsym 0 exec --no-startup-id redshift -P -O 1000 ,mode "default"
 
     bindsym Escape mode "default"
     bindsym $mod+n mode "default"
 }
 
 mode "applications" {
-    bindsym a exec android-studio, mode "default"
-    bindsym b exec thorium-browser --test-type --incognito, mode "default"
-    bindsym c exec qalculate-gtk, mode "default"
-    bindsym g exec gimp, mode "default"
-    bindsym i exec idea, mode "default"
-    bindsym l exec flatpak run net.sapples.LiveCaptions, mode "default"
-    bindsym m exec mpv --player-operation-mode=pseudo-gui, mode "default"
-    bindsym n exec kitty --class nvim --hold -e nvim, mode "default"
-    bindsym o exec obs, mode "default"
-    bindsym p exec pomatez, mode "default"
-    bindsym q exec flatpak run io.github._0xzer0x.qurancompanion, mode "default"
-    bindsym t exec telegram-desktop, mode "default"
-    bindsym u exec bash ~/Scripts/UVR_multi_opener.sh, mode "default"
-    bindsym v exec virt-manager, mode "default"
-    bindsym w exec whatsie, mode "default"
-    bindsym z exec zathura "/mnt/Disk_D/مستندات/برمجة/head_first_c.pdf", mode "default"
-
-    bindsym shift+a exec bash ~/Scripts/virt_opener.sh android-x86-9.0, mode "default"
-    bindsym shift+b exec blueman-manager, mode "default"
-    bindsym shift+c exec gcolor3, mode "default"
-    bindsym shift+i exec inkscape, mode "default"
-    bindsym shift+m exec kitty --class pulsemixer --hold -e pulsemixer, mode "default"
-    bindsym shift+n exec nitrogen, mode "default"
-    bindsym shift+t exec mousepad, mode "default"
-    bindsym shift+w exec bash ~/Scripts/virt_opener.sh win10, mode "default"
-
-    bindsym Mod1+b exec notify-send -t 5000 "$(acpi)", mode "default"
+    bindsym a exec android-studio                                                                ,mode "default"
+    bindsym b exec thorium-browser --test-type --incognito                                       ,mode "default"
+    bindsym c exec qalculate-gtk                                                                 ,mode "default"
+    bindsym g exec gimp                                                                          ,mode "default"
+    bindsym i exec idea                                                                          ,mode "default"
+    bindsym k exec /home/muhammad/Disk_D/برامج/Linux/kdenlive/kdenlive-24.02.0_A-x86_64.AppImage ,mode "default"
+    bindsym l exec flatpak run net.sapples.LiveCaptions                                          ,mode "default"
+    bindsym m exec mpv --player-operation-mode=pseudo-gui                                        ,mode "default"
+    bindsym n exec kitty --class nvim --hold -e nvim                                             ,mode "default"
+    bindsym p exec pomatez                                                                       ,mode "default"
+    bindsym q exec flatpak run io.github._0xzer0x.qurancompanion                                 ,mode "default"
+    bindsym t exec telegram-desktop                                                              ,mode "default"
+    bindsym u exec bash ~/Scripts/UVR_multi_opener.sh                                            ,mode "default"
+    bindsym v exec virt-manager                                                                  ,mode "default"
+    bindsym w exec whatsie                                                                       ,mode "default"
+    bindsym shift+a exec bash ~/Scripts/virt_opener.sh android-x86-9.0                           ,mode "default"
+    bindsym shift+b exec notify-send -t 5000 "$(acpi)"                                           ,mode "default"
+    bindsym shift+c exec gcolor3                                                                 ,mode "default"
+    bindsym shift+m exec kitty --class pulsemixer --hold -e pulsemixer                           ,mode "default"
+    bindsym shift+n exec nitrogen                                                                ,mode "default"
+    bindsym shift+t exec mousepad                                                                ,mode "default"
+    bindsym shift+w exec bash ~/Scripts/virt_opener.sh win10                                     ,mode "default"
 
     bindsym Escape mode "default"
     bindsym $mod+a mode "default"
@@ -387,44 +384,42 @@ mode "video" {
 }
 
 mode "scripts" {
-    bindsym b exec kitty --hold -e nvim ~/.config/polybar/config.ini, mode "default"
-    bindsym d exec kitty --hold -e nvim ~/.config/dwm/config.h, mode "default"
-    bindsym f exec kitty --hold -e nvim ~/.config/newsboat/urls, mode "default"
-    bindsym i exec kitty --hold -e nvim ~/.config/i3/config, mode "default"
-    bindsym k exec kitty --hold -e nvim ~/.config/kitty/kitty.conf, mode "default"
-    bindsym m exec kitty --hold -e nvim ~/.config/mpv/mpv.conf, mode "default"
-    bindsym n exec kitty --hold -e nvim ~/.config/nvim/init.lua, mode "default"
-    bindsym p exec kitty --hold -e nvim ~/.config/picom/picom.conf, mode "default"
-    bindsym q exec kitty --hold -e nvim ~/.config/qutebrowser/config.py, mode "default"
-    bindsym r exec kitty --hold -e nvim ~/.config/ranger/rc.conf, mode "default"
-    bindsym z exec kitty --hold -e nvim ~/.config/zathura/zathurarc, mode "default"
-
-    bindsym shift+h exec kitty --hold -e nvim ~/.zhistory, mode "default"
-    bindsym shift+i exec kitty --hold -e nvim ~/Disk_D/Muhammad/Linux_stuff/Scripts/myManjaroI3Script.sh, mode "default"
-    bindsym shift+u exec kitty --hold -e nvim ~/Scripts/update_DotFiles_repo.sh, mode "default"
-    bindsym shift+z exec kitty --hold -e nvim ~/.zshrc, mode "default"
+    bindsym b exec kitty --hold -e nvim ~/.config/polybar/config.ini                                     ,mode "default"
+    bindsym d exec kitty --hold -e nvim ~/.config/dwm/config.h                                           ,mode "default"
+    bindsym f exec kitty --hold -e nvim ~/.config/newsboat/urls                                          ,mode "default"
+    bindsym i exec kitty --hold -e nvim ~/.config/i3/config                                              ,mode "default"
+    bindsym k exec kitty --hold -e nvim ~/.config/kitty/kitty.conf                                       ,mode "default"
+    bindsym m exec kitty --hold -e nvim ~/.config/mpv/mpv.conf                                           ,mode "default"
+    bindsym n exec kitty --hold -e nvim ~/.config/nvim/init.lua                                          ,mode "default"
+    bindsym p exec kitty --hold -e nvim ~/.config/picom/picom.conf                                       ,mode "default"
+    bindsym q exec kitty --hold -e nvim ~/.config/qutebrowser/config.py                                  ,mode "default"
+    bindsym r exec kitty --hold -e nvim ~/.config/ranger/rc.conf                                         ,mode "default"
+    bindsym z exec kitty --hold -e nvim ~/.config/zathura/zathurarc                                      ,mode "default"
+    bindsym shift+h exec kitty --hold -e nvim ~/.zhistory                                                ,mode "default"
+    bindsym shift+u exec kitty --hold -e nvim ~/Scripts/update_DotFiles_repo.sh                          ,mode "default"
+    bindsym shift+z exec kitty --hold -e nvim ~/.zshrc                                                   ,mode "default"
 
     bindsym Escape mode "default"
     bindsym $mod+o mode "default"
 }
 
 mode "executable_scripts" {
-    bindsym b exec bash ~/Scripts/i3_border_changer.sh, mode "default"
-    bindsym c exec bash ~/Scripts/rofi-nerdfonts/rofi-nerdfonts.sh, mode "default"
-    bindsym d exec bash /mnt/Disk_D/Muhammad/todo.sh, mode "default"
-    bindsym e exec kitty --hold -e bash /mnt/Disk_D/Muhammad/English_Learner/english_learner.sh, mode "default"
-    bindsym g exec bash ~/Scripts/google_translate.sh, mode "default"
-    bindsym k exec bash ~/Scripts/app_kill.sh, mode "default"
-    bindsym m exec bash ~/Scripts/url_to_mpv.sh, mode "default"
-    bindsym n exec bash ~/Scripts/nvidia_power_mode.sh, mode "default"
-    bindsym o exec bash ~/Scripts/open_executables.sh, mode "default"
-    bindsym p exec bash ~/Scripts/toggle_polybar_location.sh, mode "default"
-    bindsym r exec bash ~/Scripts/i3_resize.sh, mode "default"
-    bindsym s exec bash ~/Scripts/toggle_i3_smart_gaps.sh, mode "default"
-    bindsym t exec bash ~/Scripts/screen_layout/two_monitors.sh, mode "default"
-    bindsym u exec bash ~/Scripts/update_DotFiles_repo.sh, mode "default"
-    bindsym y workspace $ws10; exec kitty --class yt-dlp -e bash ~/Scripts/yt-dlp_script.sh, mode "default"
-    bindsym z exec bash ~/Scripts/zathura_history.sh, mode "default"
+    bindsym b exec bash ~/Scripts/i3_border_changer.sh                                          ,mode "default"
+    bindsym c exec bash ~/Scripts/rofi-nerdfonts/rofi-nerdfonts.sh                              ,mode "default"
+    bindsym d exec bash /mnt/Disk_D/Muhammad/todo.sh                                            ,mode "default"
+    bindsym e exec kitty --hold -e bash /mnt/Disk_D/Muhammad/English_Learner/english_learner.sh ,mode "default"
+    bindsym g exec bash ~/Scripts/google_translate.sh                                           ,mode "default"
+    bindsym h exec bash ~/Scripts/toggle_polybar.sh, mode "default"
+    bindsym k exec bash ~/Scripts/app_kill.sh                                                   ,mode "default"
+    bindsym m exec bash ~/Scripts/url_to_mpv.sh                                                 ,mode "default"
+    bindsym o exec bash ~/Scripts/open_executables.sh                                           ,mode "default"
+    bindsym p exec bash ~/Scripts/toggle_polybar_location.sh                                    ,mode "default"
+    bindsym r exec bash ~/Scripts/i3_resize.sh                                                  ,mode "default"
+    bindsym s exec bash ~/Scripts/toggle_i3_smart_gaps.sh                                       ,mode "default"
+    bindsym t exec bash ~/Scripts/screen_layout/two_monitors.sh                                 ,mode "default"
+    bindsym u exec bash ~/Scripts/update_DotFiles_repo.sh                                       ,mode "default"
+    bindsym y workspace $ws10; exec kitty --class yt-dlp -e bash ~/Scripts/yt-dlp_script.sh     ,mode "default"
+    bindsym z exec bash ~/Scripts/zathura_history.sh                                            ,mode "default"
 
     bindsym Escape mode "default"
     bindsym $mod+shift+o mode "default"

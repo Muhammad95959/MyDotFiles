@@ -80,6 +80,8 @@ run_cmd() {
                 qtile cmd-obj -o cmd -f shutdown  
             elif [[ "$DESKTOP_SESSION" == 'plasma' ]]; then
 				qdbus org.kde.ksmserver /KSMServer logout 0 0 0
+      else
+        pkill -KILL -u "$USER"
 			fi
 		fi
 	else

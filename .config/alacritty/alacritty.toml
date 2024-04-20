@@ -1,0 +1,75 @@
+theme = "iTerm-Default"
+
+[[items]]
+
+[items.colors]
+author = "Chris Kempson"
+name = "3024 (dark)"
+
+[items.colors.bright]
+black = "#5c5855"
+blue = "#01a0e4"
+cyan = "#b5e4f4"
+green = "#01a252"
+magenta = "#a16a94"
+red = "#db2d20"
+white = "#f7f7f7"
+yellow = "#fded02"
+
+[items.colors.cursor]
+cursor = "#a5a2a2"
+text = "#090300"
+
+[items.colors.normal]
+black = "#090300"
+blue = "#01a0e4"
+cyan = "#b5e4f4"
+green = "#01a252"
+magenta = "#a16a94"
+red = "#db2d20"
+white = "#a5a2a2"
+yellow = "#fded02"
+
+[items.colors.primary]
+background = "#090300"
+foreground = "#a5a2a2"
+
+[[items]]
+theme = "3024.dark"
+
+[colors.bright]
+black = "#565656"
+blue = "#49a4f8"
+cyan = "#99faf2"
+green = "#c0e17d"
+magenta = "#a47de9"
+red = "#ec5357"
+white = "#ffffff"
+yellow = "#f9da6a"
+
+[colors.normal]
+black = "#2e2e2e"
+blue = "#47a0f3"
+cyan = "#64dbed"
+green = "#abe047"
+magenta = "#7b5cb0"
+red = "#eb4129"
+white = "#e5e9f0"
+yellow = "#f6c744"
+
+[colors.primary]
+background = "#101421"
+foreground = "#fffbf6"
+
+[cursor.style]
+blinking = "always"
+
+[font]
+size = 8.0
+
+[window]
+opacity = 0.8
+
+[window.dimensions]
+columns = 180
+lines = 40

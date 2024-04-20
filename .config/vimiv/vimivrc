@@ -8,7 +8,6 @@ slideshow_delay: 2
 shuffle: no
 display_bar: yes
 default_thumbsize: (128, 128)
-geometry: 5000x5000
 recursive: no
 rescale_svg: yes
 overzoom: 1

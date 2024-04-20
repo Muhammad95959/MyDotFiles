@@ -72,24 +72,46 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
-# Zsh function for searching and opening files using nvim
+# fzf function for searching and opening files using nvim
 fzf-nvim() {
-    local file
-    # file=$(find . -type f | fzf) && [ -n "$file" ] && nvim "$file"
-    file=$(find ~ /mnt/Disk_D/Muhammad /mnt/Disk_D/Engineering \( -path '*/.git/*' -o -path ~/.android -o -path ~/.cache -o -path ~/.gradle -o -path ~/.npm -o -path ~/.pyenv -o -path ~/.config/BraveSoftware -o -path ~/.config/chromium -o -path ~/.config/content_shell -o -path ~/.config/thorium -o -path ~/.local/share/Android -o -path ~/.local/share/JetBrains -o -path ~/.local/share/nvim -o -path /mnt/Disk_D/Muhammad/Android_Studio/ASProjects \) -prune -o -type f -print | fzf) && [ -n "$file" ] && nvim "$file"
+  local selected_file
+  selected_file=$(find ~ /mnt/Disk_D/Muhammad /mnt/Disk_D/Engineering \( \
+    -path '*/.git/*' \
+    -o -path ~/.android \
+    -o -path ~/.cache \
+    -o -path ~/.gradle \
+    -o -path ~/.npm \
+    -o -path ~/.pyenv \
+    -o -path ~/.config/BraveSoftware \
+    -o -path ~/.config/chromium \
+    -o -path ~/.config/content_shell \
+    -o -path ~/.config/thorium \
+    -o -path ~/.local/share/Android \
+    -o -path ~/.local/share/JetBrains \
+    -o -path ~/.local/share/nvim \
+    -o -path ~/.local/share/nvim-custom \
+    -o -path /mnt/Disk_D/Muhammad/Android_Studio/ASProjects \) \
+    -prune -o -type f -print \
+    | fzf --preview 'bat --style=numbers --color=always --line-range :500 {}')
+  [ -n "$selected_file" ] && nvim "$selected_file"
 }
-zle -N fzf-nvim
-bindkey '^z' fzf-nvim
 
 # Environment variables
 export MANPAGER='nvim +Man!'
 export TERMCMD=kitty
 export EDITOR=nvim
+export BAT_THEME=tokyonight_moon
+export FZF_DEFAULT_OPTS=" \
+--border=rounded --height=~99% --reverse \
+--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+--color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
 
 # Aliases
 alias logout="pkill -KILL -u $USER"
 alias ls="exa --icons -a --group-directories-first"
 alias ll="exa --icons -a --group-directories-first -l"
+alias nvim-custom="NVIM_APPNAME=nvim-custom nvim"
 alias zrefresh="source $HOME/.zshrc"
 alias cppath="pwd | sed 's/ /\\\\ /g' | xclip -selection clipboard"
 alias copycmd="tail -n 2 ~/.zhistory | head -n 1 | xclip -selection clipboard"
@@ -98,12 +120,14 @@ alias i3config="nvim $HOME/.config/i3/config"
 alias dwmconfig="nvim $HOME/.config/dwm/config.h"
 alias barconfig="nvim $HOME/.config/polybar/config.ini"
 alias uvrautoplay="bash ~/Scripts/UVR_autoplay.sh"
+alias rofi-systemd="bash ~/.config/rofi/scripts/rofi-systemd"
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias cleandeps="sudo pacman -Rsn $(pacman -Qdtq)"
 alias pkgsbackup="pacman -Qne | awk '{print \$1}' \
   > /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/ArchNativePackages.txt \
   && pacman -Qm | awk '{print \$1}' \
   > /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/ArchAurPackages.txt"
+alias fn="fzf-nvim"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -113,7 +137,8 @@ source ~/.config/zsh/autojump/autojump.plugin.zsh
 source ~/.config/zsh/zsh-kitty/zsh-kitty.plugin.zsh
 source ~/.config/zsh/powerlevel10k/powerlevel9k.zsh-theme
 source ~/.config/zsh/zsh-vim-mode/zsh-vim-mode.plugin.zsh
-source ~/.config/zsh/zsh-fzf-history-search/zsh-fzf-history-search.zsh
 source ~/.config/zsh/zsh-peco-history/zsh-peco-history.zsh
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.config/zsh/fzf-tab-completion/zsh/fzf-zsh-completion.sh
+source ~/.config/zsh/fzf-integration.zsh

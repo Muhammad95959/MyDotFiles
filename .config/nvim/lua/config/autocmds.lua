@@ -2,11 +2,11 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
-vim.cmd[[
+vim.cmd([[
   autocmd! BufEnter * if &ft ==# 'help' | wincmd L | endif
-]]
+]])
 
-vim.cmd[[
+vim.cmd([[
     function! RemoveEmpty()
         " Save cursor position
         let save_cursor = getpos('.')
@@ -25,4 +25,4 @@ vim.cmd[[
     endfunction
 
     command! RemoveEmpty :call RemoveEmpty()
-]]
+]])

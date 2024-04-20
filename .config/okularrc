@@ -7,7 +7,7 @@ State=AAAA/wAAAAD9AAAAAQAAAAAAAADIAAAD1fwCAAAAAfsAAAAcAG8AawB1AGwAYQByAF8AcwBpAG
 eDP-1=eDP-1
 
 [Desktop Entry]
-FullScreen=true
+FullScreen=false
 shouldShowMenuBarComingFromFullScreen=false
 shouldShowToolBarComingFromFullScreen=true
 
@@ -28,26 +28,26 @@ eDP-1=eDP-1
 ToolButtonStyle=IconOnly
 
 [Recent Files]
-File1[$e]=$HOME/Downloads/Law rev 2027.pdf
-File10[$e]=$HOME/.cache/.fr-2AUPK2/report2.pdf
-File2[$e]=/mnt/Disk_D/Engineering/Semester materials/قانون/Law _ Engineering Ethics Midterm Fall 2023.pdf
-File3[$e]=$HOME/Downloads/اعلان_تسجيل_0.pdf
-File4[$e]=$HOME/Downloads/WhatSie/electronics2.pdf
-File5[$e]=$HOME/Downloads/electric machines Lecture 2.pdf
-File6[$e]=/mnt/Disk_D/Engineering/Semester materials/Microprocessors/Lectures/Chapter0.pdf
-File7[$e]=/mnt/Disk_D/Engineering/Semester materials/Microprocessors/Old Lectures/Software /Chapter2.pdf
-File8[$e]=$HOME/.cache/.fr-VD55J2/report.pdf
-File9[$e]=$HOME/Downloads/Timetable 2nd Term - Ramadan Edition.pdf
-Name1[$e]=Law rev 2027.pdf
-Name10[$e]=report2.pdf
-Name2[$e]=Law _ Engineering Ethics Midterm Fall 2023.pdf
-Name3[$e]=اعلان_تسجيل_0.pdf
-Name4[$e]=electronics2.pdf
-Name5[$e]=electric machines Lecture 2.pdf
-Name6[$e]=Chapter0.pdf
-Name7[$e]=Chapter2.pdf
-Name8[$e]=report.pdf
-Name9[$e]=Timetable 2nd Term - Ramadan Edition.pdf
+File1[$e]=$HOME/Downloads/Timetable 2nd Term - Ramadan Edition.pdf
+File10[$e]=$HOME/Downloads/WhatSie/CamScanner 04-06-2024 23.23.pdf
+File2[$e]=$HOME/.cache/.fr-2AUPK2/report2.pdf
+File3[$e]=/mnt/Disk_D/Engineering/Semester_materials/Electronics2/electronics2Final.pdf
+File4[$e]=$HOME/Downloads/WhatSie/طلاب لم يستكملوا التدريب.pdf
+File5[$e]=$HOME/Disk_D/Engineering/Semester_materials/OS/Lab/Project/CSEx61-dockerized-pintos/specs/sysv-abi-i386-4.pdf
+File6[$e]=/mnt/Disk_D/Engineering/Semester_materials/OS/CSEx61 - OS - Spring 2024 - Term Timeline.pdf
+File7[$e]=$HOME/Downloads/Machins نظري.pdf
+File8[$e]=$HOME/Downloads/Noor-Book.com  القران الكريم.pdf
+File9[$e]=$HOME/Downloads/Electronics II Midterm Exams & Solutions.pdf
+Name1[$e]=Timetable 2nd Term - Ramadan Edition.pdf
+Name10[$e]=CamScanner 04-06-2024 23.23.pdf
+Name2[$e]=report2.pdf
+Name3[$e]=electronics2Final.pdf
+Name4[$e]=طلاب لم يستكملوا التدريب.pdf
+Name5[$e]=sysv-abi-i386-4.pdf
+Name6[$e]=CSEx61 - OS - Spring 2024 - Term Timeline.pdf
+Name7[$e]=Machins نظري.pdf
+Name8[$e]=Noor-Book.com  القران الكريم.pdf
+Name9[$e]=Electronics II Midterm Exams & Solutions.pdf
 
 [Toolbar mainToolBar]
 ToolButtonStyle=IconOnly

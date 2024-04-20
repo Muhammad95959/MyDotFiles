@@ -2,7 +2,7 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/muhammad/.gtkrc-2.0.mine"
-gtk-theme-name="Layan-Dark-Solid"
+gtk-theme-name="Arc-Dark"
 gtk-icon-theme-name="Tela-circle-dark"
 gtk-font-name="Cantarell 11"
 gtk-cursor-theme-name="Oxygen-35-Black-Ghost"

@@ -14,7 +14,5 @@ return {
       ["yw"] = "EmitRangerCwd",
     }
   end,
-  keys = {
-    { "<leader>r", vim.cmd.RnvimrToggle, desc = "Rnvimr Toggle" },
-  },
+  keys = { { "<leader>r", vim.cmd.RnvimrToggle, desc = "Rnvimr Toggle" }, },
 }
