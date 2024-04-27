@@ -7,7 +7,7 @@
 
 set $mod Mod4
 
-font pango:JetBrainsMono Nerd Font 9
+font pango:JetBrainsMono Nerd Font 8
 
 floating_modifier $mod
 
@@ -29,7 +29,6 @@ exec --no-startup-id gpaste-client start
 exec --no-startup-id amixer set Capture 80%
 exec --no-startup-id deadd-notificatoin-center
 exec --no-startup-id sudo virsh net-start default
-exec --no-startup-id polybar -r bottom_left_hot_corner
 exec --no-startup-id bash ~/Scripts/backup_zsh_history.sh
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id xss-lock --transfer-sleep-lock -- xfce4-screensaver-command -l
@@ -39,7 +38,7 @@ exec_always --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Acc
 exec_always --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Tapping Enabled' 1
 exec_always --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Natural Scrolling Enabled' 1
 exec_always --no-startup-id xinput set-prop 'PixArt Lenovo USB Optical Mouse' 'libinput Accel Speed' 0.3
-exec_always --no-startup-id xinput set-prop 'YICHIP Wireless Device Mouse' 'libinput Accel Speed' 0.3
+exec_always --no-startup-id xinput set-prop 'YICHIP Wireless Device Mouse' 'libinput Accel Speed' 0.7
 exec_always --no-startup-id killall volume_subscribe.sh ; ~/Scripts/volume_control/volume_subscribe.sh
 exec_always --no-startup-id bash ~/Scripts/screen_layout/two_monitors.sh
 exec_always --no-startup-id bash ~/Scripts/keyboard_config.sh
@@ -108,7 +107,7 @@ bindsym $mod+shift+q      exec ~/.config/rofi/scripts/powermenu/type-1/powermenu
 bindsym $mod+r            exec kitty --class Ranger --hold -e ranger
 bindsym $mod+shift+r      restart
 bindsym $mod+s            exec i3-msg scratchpad show || i3-msg move scratchpad
-bindsym $mod+shift+s      mode "video"
+bindsym $mod+shift+s      exec xdotool getactivewindow && i3-msg sticky toggle || i3-msg mode "video"
 bindsym $mod+t            split v ; layout tabbed
 bindsym $mod+shift+t      exec bash ~/Scripts/thorium_translate.sh
 bindsym $mod+v            split v
@@ -215,17 +214,23 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
+bindsym $mod+comma  workspace prev
+bindsym $mod+period workspace next
+
 # move focused container to workspace
-bindsym $mod+Mod1+1 move container to workspace number $ws1
-bindsym $mod+Mod1+2 move container to workspace number $ws2
-bindsym $mod+Mod1+3 move container to workspace number $ws3
-bindsym $mod+Mod1+4 move container to workspace number $ws4
-bindsym $mod+Mod1+5 move container to workspace number $ws5
-bindsym $mod+Mod1+6 move container to workspace number $ws6
-bindsym $mod+Mod1+7 move container to workspace number $ws7
-bindsym $mod+Mod1+8 move container to workspace number $ws8
-bindsym $mod+Mod1+9 move container to workspace number $ws9
-bindsym $mod+Mod1+0 move container to workspace number $ws10
+bindsym $mod+ctrl+1 move container to workspace number $ws1
+bindsym $mod+ctrl+2 move container to workspace number $ws2
+bindsym $mod+ctrl+3 move container to workspace number $ws3
+bindsym $mod+ctrl+4 move container to workspace number $ws4
+bindsym $mod+ctrl+5 move container to workspace number $ws5
+bindsym $mod+ctrl+6 move container to workspace number $ws6
+bindsym $mod+ctrl+7 move container to workspace number $ws7
+bindsym $mod+ctrl+8 move container to workspace number $ws8
+bindsym $mod+ctrl+9 move container to workspace number $ws9
+bindsym $mod+ctrl+0 move container to workspace number $ws10
+
+bindsym $mod+ctrl+comma  move container to workspace prev
+bindsym $mod+ctrl+period move container to workspace next
 
 # move focused container to workspace and switch to that workspace
 bindsym $mod+shift+1 move container to workspace number $ws1  ; workspace number $ws1
@@ -238,6 +243,9 @@ bindsym $mod+shift+7 move container to workspace number $ws7  ; workspace number
 bindsym $mod+shift+8 move container to workspace number $ws8  ; workspace number $ws8
 bindsym $mod+shift+9 move container to workspace number $ws9  ; workspace number $ws9
 bindsym $mod+shift+0 move container to workspace number $ws10 ; workspace number $ws10
+
+bindsym $mod+shift+comma  move container to workspace prev ; workspace prev
+bindsym $mod+shift+period move container to workspace next ; workspace next
 
 # __        ___           _                            _
 # \ \      / (_)_ __   __| | _____      __  _ __ _   _| | ___  ___
@@ -329,6 +337,7 @@ mode "applications" {
     bindsym shift+m exec kitty --class pulsemixer --hold -e pulsemixer                           ,mode "default"
     bindsym shift+n exec nitrogen                                                                ,mode "default"
     bindsym shift+t exec mousepad                                                                ,mode "default"
+    bindsym shift+u exec bash ~/Scripts/virt_opener.sh ubuntu24.04                               ,mode "default"
     bindsym shift+w exec bash ~/Scripts/virt_opener.sh win10                                     ,mode "default"
 
     bindsym Escape mode "default"

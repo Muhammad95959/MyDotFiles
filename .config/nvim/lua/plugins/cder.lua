@@ -1,9 +1,9 @@
 return {
   "zane-/cder.nvim",
-  opts = {
-    dir_command = { "fd", "--hidden", "--type=d", ".", os.getenv("HOME") },
+  keys = {
+    { "<C-t>", "<cmd>Telescope cder<cr>", desc = "cder" },
   },
   config = function()
-    require("telescope").load_extension("cder")
+    require('telescope').load_extension('cder')
   end,
 }
