@@ -34,10 +34,37 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
+### Plugins ---------------------------------------------------------------
+
+source /etc/profile.d/autojump.zsh
+source ~/.config/zsh/powerlevel10k/powerlevel9k.zsh-theme
+source ~/.config/zsh/zsh-vim-mode/zsh-vim-mode.plugin.zsh
+source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.config/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/.config/zsh/fzf-tab-completion/zsh/fzf-zsh-completion.sh
+
 ### VI mode ---------------------------------------------------------------
 
 bindkey -v
 export KEYTIMEOUT=1
+
+### Bindings --------------------------------------------------------------
+
+# Fix backspace bug
+bindkey '^?' backward-delete-char
+
+# Edit line in vim with ctrl-e:
+export VISUAL=nvim
+autoload edit-command-line; zle -N edit-command-line
+bindkey -M vicmd '^e' edit-command-line
+
+# bind UP and DOWN arrow keys to history substring search
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+bindkey '^[[A' history-substring-search-up			
+bindkey '^[[B' history-substring-search-down
 
 ### History setup ---------------------------------------------------------
 
@@ -51,7 +78,7 @@ HISTFILE=~/.zhistory
 HISTSIZE=100000
 SAVEHIST=100000
 
-# Auto/Tab completion setup -----------------------------------------------
+# completion setup --------------------------------------------------------
 
 autoload -U compinit
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
@@ -64,6 +91,13 @@ zstyle ':completion:*' cache-path ~/.cache/zsh/cache
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots) # Include hidden files
+
+# load kitty completions if in kitty
+if test "$TERM" = "xterm-kitty"; then
+  if (( $+commands[kitty] )); then
+    eval "$(kitty + complete setup zsh)"
+  fi
+fi
 
 ### Environment variables -------------------------------------------------
 
@@ -94,6 +128,8 @@ alias uvrautoplay="bash ~/Scripts/UVR_autoplay.sh"
 alias rofi-systemd="bash ~/.config/rofi/scripts/rofi-systemd"
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias cleandeps="sudo pacman -Rsn $(pacman -Qdtq)"
+alias replaceunderscore="find . -depth -name '*_*' | while read -r file; do mv "$file" "$(dirname "$file")/$(basename "$file" | tr '_' ' ')"; done"
+alias replacespace="find . -depth -name '* *' | while read -r file; do mv "$file" "$(dirname "$file")/$(basename "$file" | tr ' ' '_')"; done"
 alias pkgsbackup="pacman -Qne | awk '{print \$1}' \
   > /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/ArchNativePackages.txt \
   && pacman -Qm | awk '{print \$1}' \
@@ -131,36 +167,3 @@ fzf-nvim() {
 
 # fzf integration with zsh
 eval "$(fzf --zsh)"
-
-### Plugins ---------------------------------------------------------------
-
-source ~/.config/zsh/autojump/autojump.plugin.zsh
-source ~/.config/zsh/zsh-kitty/zsh-kitty.plugin.zsh
-source ~/.config/zsh/powerlevel10k/powerlevel9k.zsh-theme
-source ~/.config/zsh/zsh-vim-mode/zsh-vim-mode.plugin.zsh
-source ~/.config/zsh/zsh-peco-history/zsh-peco-history.zsh
-source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.config/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
-source ~/.config/zsh/fzf-tab-completion/zsh/fzf-zsh-completion.sh
-
-### Bindings --------------------------------------------------------------
-
-# Edit line in vim with ctrl-e:
-export VISUAL=nvim
-autoload edit-command-line; zle -N edit-command-line
-bindkey -M vicmd '^e' edit-command-line
-
-# Use vim keys in tab complete menu:
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey '^?' backward-delete-char # Fix backspace bug
-
-# bind UP and DOWN arrow keys to history substring search
-zmodload zsh/terminfo
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
-bindkey '^[[A' history-substring-search-up			
-bindkey '^[[B' history-substring-search-down

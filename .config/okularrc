@@ -28,26 +28,26 @@ eDP-1=eDP-1
 ToolButtonStyle=IconOnly
 
 [Recent Files]
-File1[$e]=$HOME/Downloads/Timetable 2nd Term - Ramadan Edition.pdf
-File10[$e]=$HOME/Downloads/WhatSie/CamScanner 04-06-2024 23.23.pdf
-File2[$e]=$HOME/.cache/.fr-2AUPK2/report2.pdf
-File3[$e]=/mnt/Disk_D/Engineering/Semester_materials/Electronics2/electronics2Final.pdf
-File4[$e]=$HOME/Downloads/WhatSie/طلاب لم يستكملوا التدريب.pdf
-File5[$e]=$HOME/Disk_D/Engineering/Semester_materials/OS/Lab/Project/CSEx61-dockerized-pintos/specs/sysv-abi-i386-4.pdf
-File6[$e]=/mnt/Disk_D/Engineering/Semester_materials/OS/CSEx61 - OS - Spring 2024 - Term Timeline.pdf
-File7[$e]=$HOME/Downloads/Machins نظري.pdf
-File8[$e]=$HOME/Downloads/Noor-Book.com  القران الكريم.pdf
-File9[$e]=$HOME/Downloads/Electronics II Midterm Exams & Solutions.pdf
-Name1[$e]=Timetable 2nd Term - Ramadan Edition.pdf
-Name10[$e]=CamScanner 04-06-2024 23.23.pdf
-Name2[$e]=report2.pdf
-Name3[$e]=electronics2Final.pdf
-Name4[$e]=طلاب لم يستكملوا التدريب.pdf
-Name5[$e]=sysv-abi-i386-4.pdf
-Name6[$e]=CSEx61 - OS - Spring 2024 - Term Timeline.pdf
-Name7[$e]=Machins نظري.pdf
-Name8[$e]=Noor-Book.com  القران الكريم.pdf
-Name9[$e]=Electronics II Midterm Exams & Solutions.pdf
+File1[$e]=$HOME/.cache/.fr-2AUPK2/report2.pdf
+File10[$e]=$HOME/Downloads/Timer interrupt handler.pdf
+File2[$e]=/mnt/Disk_D/Engineering/Semester_materials/Electronics2/electronics2Final.pdf
+File3[$e]=$HOME/Downloads/WhatSie/طلاب لم يستكملوا التدريب.pdf
+File4[$e]=$HOME/Disk_D/Engineering/Semester_materials/OS/Lab/Project/CSEx61-dockerized-pintos/specs/sysv-abi-i386-4.pdf
+File5[$e]=/mnt/Disk_D/Engineering/Semester_materials/OS/CSEx61 - OS - Spring 2024 - Term Timeline.pdf
+File6[$e]=$HOME/Downloads/Machins نظري.pdf
+File7[$e]=$HOME/Downloads/Noor-Book.com  القران الكريم.pdf
+File8[$e]=$HOME/Downloads/Electronics II Midterm Exams & Solutions.pdf
+File9[$e]=$HOME/Downloads/WhatSie/CamScanner 04-06-2024 23.23.pdf
+Name1[$e]=report2.pdf
+Name10[$e]=Timer interrupt handler.pdf
+Name2[$e]=electronics2Final.pdf
+Name3[$e]=طلاب لم يستكملوا التدريب.pdf
+Name4[$e]=sysv-abi-i386-4.pdf
+Name5[$e]=CSEx61 - OS - Spring 2024 - Term Timeline.pdf
+Name6[$e]=Machins نظري.pdf
+Name7[$e]=Noor-Book.com  القران الكريم.pdf
+Name8[$e]=Electronics II Midterm Exams & Solutions.pdf
+Name9[$e]=CamScanner 04-06-2024 23.23.pdf
 
 [Toolbar mainToolBar]
 ToolButtonStyle=IconOnly

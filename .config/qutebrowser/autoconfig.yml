@@ -45,6 +45,8 @@ settings:
     - bookmarks
     - history
     - filesystem
+  content.notifications.enabled:
+    https://datanodes.to: false
   statusbar.show:
     global: always
   tabs.show:

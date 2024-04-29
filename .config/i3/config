@@ -38,7 +38,7 @@ exec_always --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Acc
 exec_always --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Tapping Enabled' 1
 exec_always --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Natural Scrolling Enabled' 1
 exec_always --no-startup-id xinput set-prop 'PixArt Lenovo USB Optical Mouse' 'libinput Accel Speed' 0.3
-exec_always --no-startup-id xinput set-prop 'YICHIP Wireless Device Mouse' 'libinput Accel Speed' 0.7
+exec_always --no-startup-id xinput set-prop 'YICHIP Wireless Device Mouse' 'libinput Accel Speed' 1
 exec_always --no-startup-id killall volume_subscribe.sh ; ~/Scripts/volume_control/volume_subscribe.sh
 exec_always --no-startup-id bash ~/Scripts/screen_layout/two_monitors.sh
 exec_always --no-startup-id bash ~/Scripts/keyboard_config.sh
@@ -61,7 +61,7 @@ for_window [all] border pixel 2
 for_window [all] title_window_icon padding 7px
 # border_radius 12
 
-client.focused          #61afef #61afef #24273a #61dfff   #61afef    ### edited via script
+client.focused          #ed8796 #ed8796 #24273a #ed87d6   #ed8796    ### edited via script
 client.focused_inactive #303446 #303446 #ffffff #666666   #303446
 client.unfocused        #1e1e2e #1e1e2e #777777 #333333   #555555
 
@@ -107,7 +107,7 @@ bindsym $mod+shift+q      exec ~/.config/rofi/scripts/powermenu/type-1/powermenu
 bindsym $mod+r            exec kitty --class Ranger --hold -e ranger
 bindsym $mod+shift+r      restart
 bindsym $mod+s            exec i3-msg scratchpad show || i3-msg move scratchpad
-bindsym $mod+shift+s      exec xdotool getactivewindow && i3-msg sticky toggle || i3-msg mode "video"
+bindsym $mod+shift+s      sticky toggle
 bindsym $mod+t            split v ; layout tabbed
 bindsym $mod+shift+t      exec bash ~/Scripts/thorium_translate.sh
 bindsym $mod+v            split v
@@ -374,24 +374,6 @@ mode "mouse" {
     bindsym $mod+m mode "default"
 }
 
-mode "video" {
-    bindsym h exec pactl set-sink-mute @DEFAULT_SINK@ 0 && pactl set-sink-volume @DEFAULT_SINK@ -5%
-    bindsym l exec bash ~/Scripts/volume_control/pactl_volume_up_limit.sh
-    bindsym j exec ~/Scripts/brightness_control/dec.exp
-    bindsym k exec ~/Scripts/brightness_control/inc.exp
-    bindsym m exec bash ~/Scripts/volume_control/volume_toggle_mute.sh
-    bindsym s exec playerctl play-pause
-    bindsym f exec playerctl position 5+
-    bindsym b exec playerctl position 5-
-    bindsym shift+h exec pactl set-sink-mute @DEFAULT_SINK@ 0 && pactl set-sink-volume @DEFAULT_SINK@ -1%
-    bindsym shift+l exec bash ~/Scripts/volume_control/pactl_volume_up_by_1_limit.sh
-    bindsym shift+j exec ~/Scripts/brightness_control/s_dec.exp
-    bindsym shift+k exec ~/Scripts/brightness_control/s_inc.exp
-
-    bindsym Escape mode "default"
-    bindsym $mod+shift+s mode "default"
-}
-
 mode "scripts" {
     bindsym b exec kitty --hold -e nvim ~/.config/polybar/config.ini                                     ,mode "default"
     bindsym d exec kitty --hold -e nvim ~/.config/dwm/config.h                                           ,mode "default"
@@ -418,10 +400,9 @@ mode "executable_scripts" {
     bindsym d exec bash /mnt/Disk_D/Muhammad/todo.sh                                            ,mode "default"
     bindsym e exec kitty --hold -e bash /mnt/Disk_D/Muhammad/English_Learner/english_learner.sh ,mode "default"
     bindsym g exec bash ~/Scripts/google_translate.sh                                           ,mode "default"
-    bindsym h exec bash ~/Scripts/toggle_polybar.sh, mode "default"
+    bindsym h exec bash ~/Scripts/toggle_polybar.sh                                             ,mode "default"
     bindsym k exec bash ~/Scripts/app_kill.sh                                                   ,mode "default"
     bindsym m exec bash ~/Scripts/url_to_mpv.sh                                                 ,mode "default"
-    bindsym o exec bash ~/Scripts/open_executables.sh                                           ,mode "default"
     bindsym p exec bash ~/Scripts/toggle_polybar_location.sh                                    ,mode "default"
     bindsym r exec bash ~/Scripts/i3_resize.sh                                                  ,mode "default"
     bindsym s exec bash ~/Scripts/toggle_i3_smart_gaps.sh                                       ,mode "default"
@@ -429,6 +410,9 @@ mode "executable_scripts" {
     bindsym u exec bash ~/Scripts/update_DotFiles_repo.sh                                       ,mode "default"
     bindsym y workspace $ws10; exec kitty --class yt-dlp -e bash ~/Scripts/yt-dlp_script.sh     ,mode "default"
     bindsym z exec bash ~/Scripts/zathura_history.sh                                            ,mode "default"
+
+    bindsym shift+g exec bash ~/Scripts/games.sh                                                ,mode "default"
+    bindsym shift+p exec bash ~/Downloads/pintos-project-1.sh                                   ,mode "default"
 
     bindsym Escape mode "default"
     bindsym $mod+shift+o mode "default"
