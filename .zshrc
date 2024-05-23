@@ -36,7 +36,7 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 ### Plugins ---------------------------------------------------------------
 
-source /etc/profile.d/autojump.zsh
+source ~/.config/zsh/autojump.plugin.zsh
 source ~/.config/zsh/powerlevel10k/powerlevel9k.zsh-theme
 source ~/.config/zsh/zsh-vim-mode/zsh-vim-mode.plugin.zsh
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -114,6 +114,7 @@ export FZF_DEFAULT_OPTS=" \
 ### Aliases ---------------------------------------------------------------
 
 alias logout="pkill -KILL -u $USER"
+alias ff="fzf-nvim"
 alias ls="exa --icons -a --group-directories-first"
 alias ll="exa --icons -a --group-directories-first -l"
 alias nvim-custom="NVIM_APPNAME=nvim-custom nvim"
@@ -127,14 +128,15 @@ alias barconfig="nvim $HOME/.config/polybar/config.ini"
 alias uvrautoplay="bash ~/Scripts/UVR_autoplay.sh"
 alias rofi-systemd="bash ~/.config/rofi/scripts/rofi-systemd"
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
-alias cleandeps="sudo pacman -Rsn $(pacman -Qdtq)"
 alias replaceunderscore="find . -depth -name '*_*' | while read -r file; do mv "$file" "$(dirname "$file")/$(basename "$file" | tr '_' ' ')"; done"
 alias replacespace="find . -depth -name '* *' | while read -r file; do mv "$file" "$(dirname "$file")/$(basename "$file" | tr ' ' '_')"; done"
-alias pkgsbackup="pacman -Qne | awk '{print \$1}' \
-  > /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/ArchNativePackages.txt \
-  && pacman -Qm | awk '{print \$1}' \
-  > /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/ArchAurPackages.txt"
-alias fn="fzf-nvim"
+
+if command -v pacman &> /dev/null; then
+  alias pkgsbackup="pacman -Qne | awk '{print \$1}' \
+    > /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/ArchNativePackages.txt \
+    && pacman -Qm | awk '{print \$1}' \
+    > /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/ArchAurPackages.txt"
+fi
 
 ### fzf setup -------------------------------------------------------------
 
@@ -144,11 +146,13 @@ fzf-nvim() {
   selected_file=$(find ~ /mnt/Disk_D/Muhammad /mnt/Disk_D/Engineering \( \
     -path '*/.git/*' \
     -o -path ~/.android \
+    -o -path ~/.arduino15 \
     -o -path ~/.cache \
     -o -path ~/.gradle \
     -o -path ~/.npm \
     -o -path ~/.pyenv \
     -o -path ~/.config/BraveSoftware \
+    -o -path ~/.config/Microsoft \
     -o -path ~/.config/chromium \
     -o -path ~/.config/content_shell \
     -o -path ~/.config/thorium \
@@ -166,4 +170,4 @@ fzf-nvim() {
 }
 
 # fzf integration with zsh
-eval "$(fzf --zsh)"
+[ -x "$(command -v fzf)" ] && eval "$(fzf --zsh)"

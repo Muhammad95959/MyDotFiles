@@ -11,11 +11,18 @@ super + shift + Return
 
 # browser
 super + b
-  thorium-browser --test-type
+  brave --test-type
+
+# ranger
+super + r
+  kitty --class Ranger --hold -e ranger ~
+
+super + c
+  rofi-gpaste
 
 # reload sxhkd
 super + shift + x
-	pkill -USR1 -x sxhkd
+	killall sxhkd; sxhkd -c ~/.config/dk/sxhkdrc &
 
 # powermenu
 super + shift + q
@@ -80,6 +87,33 @@ super + {equal,minus}
 # change border widths
 super + ctrl + {_,shift + }{equal,minus}
 	dkcmd set border {width,outer_width} {+1,-1}
+
+super + o ; {b, d, i, k, m, n, p, q, r, z, shift + h, shift + u, shift + z}
+  {kitty --hold -e nvim ~/.config/polybar/config.ini \
+  ,kitty --hold -e nvim ~/.config/dk/sxhkdrc \
+  ,kitty --hold -e nvim ~/.config/i3/config \
+  ,kitty --hold -e nvim ~/.config/kitty/kitty.conf \
+  ,kitty --hold -e nvim ~/.config/mpv/mpv.conf \
+  ,kitty --hold -e nvim ~/.config/nvim/lua/config/lazy.lua \
+  ,kitty --hold -e nvim ~/.config/picom/picom.conf \
+  ,kitty --hold -e nvim ~/.config/qutebrowser/config.py \
+  ,kitty --hold -e nvim ~/.config/ranger/rc.conf \
+  ,kitty --hold -e nvim ~/.config/zathura/zathurarc \
+  ,kitty --hold -e nvim ~/.zhistory \
+  ,kitty --hold -e nvim ~/Scripts/update_DotFiles_repo.sh \
+  ,kitty --hold -e nvim ~/.zshrc}
+
+super + shift + o ; {c, d, e, g, k, m, o, t, u, z}
+  {bash ~/Scripts/rofi-nerdfonts/rofi-nerdfonts.sh \
+  ,bash /mnt/Disk_D/Muhammad/todo.sh \
+  ,kitty --hold -e bash /mnt/Disk_D/Muhammad/English_Learner/english_learner.sh \
+  ,bash ~/Scripts/google_translate.sh \
+  ,bash ~/Scripts/app_kill.sh \
+  ,bash ~/Scripts/url_to_mpv.sh \
+  ,bash ~/Scripts/open_executables.sh \
+  ,bash ~/Scripts/screen_layout/two_monitors.sh \
+  ,bash ~/Scripts/update_DotFiles_repo.sh \
+  ,bash ~/Scripts/zathura_history.sh}
 
 # volume keys
 XF86AudioRaiseVolume

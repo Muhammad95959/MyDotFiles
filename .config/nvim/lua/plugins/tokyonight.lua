@@ -10,6 +10,12 @@ return {
       hl.LineNr = {
         fg = "#7777bb",
       }
+      hl.LineNrAbove = {
+        fg = "#7777bb",
+      }
+      hl.LineNrBelow = {
+        fg = "#7777bb",
+      }
       hl.CursorLineNr = {
         fg = c.fg,
         -- bg = c.bg_highlight,

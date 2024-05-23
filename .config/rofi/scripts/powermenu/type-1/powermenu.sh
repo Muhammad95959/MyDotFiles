@@ -14,8 +14,8 @@ dir="$HOME/.config/rofi/scripts/powermenu/type-1"
 theme='style-2'
 
 # CMDs
-uptime="`uptime -p | sed -e 's/up //g'`"
-host=`hostname`
+uptime="$(uptime -p | sed -e 's/up //g')"
+host=$(hostname)
 
 # Options
 shutdown=' Shutdown'
@@ -77,11 +77,11 @@ run_cmd() {
 			elif [[ "$DESKTOP_SESSION" == 'i3' ]]; then
 				i3-msg exit
 			elif [[ "$DESKTOP_SESSION" == 'qtile' ]]; then
-                qtile cmd-obj -o cmd -f shutdown  
-            elif [[ "$DESKTOP_SESSION" == 'plasma' ]]; then
+				qtile cmd-obj -o cmd -f shutdown
+			elif [[ "$DESKTOP_SESSION" == 'plasma' ]]; then
 				qdbus org.kde.ksmserver /KSMServer logout 0 0 0
-      else
-        pkill -KILL -u "$USER"
+			else
+				pkill -KILL -u "$USER"
 			fi
 		fi
 	else
@@ -92,25 +92,25 @@ run_cmd() {
 # Actions
 chosen="$(run_rofi)"
 case ${chosen} in
-    $shutdown)
-		run_cmd --shutdown
-        ;;
-    $reboot)
-		run_cmd --reboot
-        ;;
-    $lock)
-		if [[ -x '/usr/bin/betterlockscreen' ]]; then
-			betterlockscreen -l
-		elif [[ -x '/usr/bin/i3lock' ]]; then
-			i3lock -n -e -i /mnt/Disk_D/Backgrounds/locks/catlock.png
-		elif [[ -x '/usr/bin/xfce4-screensaver' ]]; then
-			xfce4-screensaver-command -l
-		fi
-        ;;
-    $suspend)
-		run_cmd --suspend
-        ;;
-    $logout)
-		run_cmd --logout
-        ;;
+$shutdown)
+	run_cmd --shutdown
+	;;
+$reboot)
+	run_cmd --reboot
+	;;
+$lock)
+	if [[ -x '/usr/bin/betterlockscreen' ]]; then
+		betterlockscreen -l
+	elif [[ -x '/usr/bin/i3lock' ]]; then
+		i3lock -n -e -i /mnt/Disk_D/Backgrounds/locks/catlock.png
+	elif [[ -x '/usr/bin/xfce4-screensaver' ]]; then
+		xfce4-screensaver-command -l
+	fi
+	;;
+$suspend)
+	run_cmd --suspend
+	;;
+$logout)
+	run_cmd --logout
+	;;
 esac

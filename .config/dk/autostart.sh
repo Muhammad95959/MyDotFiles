@@ -5,7 +5,7 @@ killall polybar ; polybar dk-main -r &
 unclutter &
 udiskie &
 xset s off -dpms &
-amixer set Capture 40% &
+amixer set Capture 80% &
 deadd-notificatoin-center &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 gpaste-client start &
