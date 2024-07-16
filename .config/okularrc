@@ -28,26 +28,26 @@ eDP-1=eDP-1
 ToolButtonStyle=IconOnly
 
 [Recent Files]
-File1[$e]=$HOME/Downloads/FinalExams-Proposal_May2024.pdf
-File10[$e]=/mnt/Disk_D/Engineering/Semester_materials/Microprocessors/Lectures/Chapter3.pdf
-File2[$e]=$HOME/Downloads/Timer interrupt handler.pdf
-File3[$e]=/mnt/Disk_D/Engineering/Semester_materials/Machines/Transformers EEP 235.pdf
-File4[$e]=$HOME/Downloads/CamScanner 05-05-2024 19.35 (1).pdf
-File5[$e]=$HOME/Downloads/Cover.pdf
-File6[$e]=/mnt/Disk_D/Engineering/Semester_materials/Microprocessors/Project/Hardware-Report.pdf
-File7[$e]=$HOME/Downloads/WhatSie/labelectro3.4.pdf
-File8[$e]=$HOME/Downloads/EEC 233 - ExC II - 23-24 - T2 - MT.pdf
-File9[$e]=$HOME/Downloads/3am.pdf
-Name1[$e]=FinalExams-Proposal_May2024.pdf
-Name10[$e]=Chapter3.pdf
-Name2[$e]=Timer interrupt handler.pdf
-Name3[$e]=Transformers EEP 235.pdf
-Name4[$e]=CamScanner 05-05-2024 19.35 (1).pdf
-Name5[$e]=Cover.pdf
-Name6[$e]=Hardware-Report.pdf
-Name7[$e]=labelectro3.4.pdf
-Name8[$e]=EEC 233 - ExC II - 23-24 - T2 - MT.pdf
-Name9[$e]=3am.pdf
+File1[$e]=/mnt/Disk_D/Engineering/Semester_materials/Project_Management/Revision/Exams/2 - Final Exams/PM GSP Final Exams/PM Final Exams & Solutions.pdf
+File10[$e]=/mnt/Disk_D/Muhammad/Comics/Watchmen (01 - 12) (1986) (Remixed)/Watchmen 01.pdf
+File2[$e]=/mnt/Disk_D/Engineering/Semester_materials/Project_Management/Revision/Midterm Revision/MCQ Questions & Answers.pdf
+File3[$e]=/mnt/Disk_D/Engineering/Semester_materials/Project_Management/Revision/بصمج يا دولي.pdf
+File4[$e]=/mnt/Disk_D/Engineering/Semester_materials/Electronics2/Revision/dir/Final 2023 with solutions.pdf
+File5[$e]=/mnt/Disk_D/Engineering/Semester_materials/Electronics2/Revision/Final 2023 with solutions.pdf
+File6[$e]=/mnt/Disk_D/Engineering/Semester_materials/Electronics2/Revision/Finals/electronics2Final.pdf
+File7[$e]=/mnt/Disk_D/Engineering/Semester_materials/Project_Management/Revision/عقود/مسألة عقود بتتكرر.pdf
+File8[$e]=/mnt/Disk_D/Engineering/Semester_materials/Electronics2/Revision/Finals/Electronics 2 2022 final answers and edits.pdf
+File9[$e]=/mnt/Disk_D/Engineering/Semester_materials/Electronics2/Revision/Finals/Final 2023 with solutions.pdf
+Name1[$e]=PM Final Exams & Solutions.pdf
+Name10[$e]=Watchmen 01.pdf
+Name2[$e]=MCQ Questions & Answers.pdf
+Name3[$e]=بصمج يا دولي.pdf
+Name4[$e]=Final 2023 with solutions.pdf
+Name5[$e]=Final 2023 with solutions.pdf
+Name6[$e]=electronics2Final.pdf
+Name7[$e]=مسألة عقود بتتكرر.pdf
+Name8[$e]=Electronics 2 2022 final answers and edits.pdf
+Name9[$e]=Final 2023 with solutions.pdf
 
 [Toolbar mainToolBar]
 ToolButtonStyle=IconOnly

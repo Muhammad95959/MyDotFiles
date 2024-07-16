@@ -17,7 +17,7 @@ xinput set-prop 'Synaptics TM3336-004' 'libinput Accel Speed' 0.5 &
 xinput set-prop 'Synaptics TM3336-004' 'libinput Tapping Enabled' 1 &
 xinput set-prop 'Synaptics TM3336-004' 'libinput Natural Scrolling Enabled' 1 &
 xinput set-prop 'PixArt Lenovo USB Optical Mouse' 'libinput Accel Speed' 0.3 &
-killall volume_subscribe.sh ; ~/Scripts/volume_control/volume_subscribe.sh &
+killall volume_subscribe.sh ; ~/Scripts/volume_subscribe.sh &
 bash ~/Scripts/screen_layout/two_monitors.sh &
 bash ~/Scripts/keyboard_config.sh &
 xfce4-screensaver &

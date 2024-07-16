@@ -36,7 +36,6 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 ### Plugins ---------------------------------------------------------------
 
-source ~/.config/zsh/autojump.plugin.zsh
 source ~/.config/zsh/powerlevel10k/powerlevel9k.zsh-theme
 source ~/.config/zsh/zsh-vim-mode/zsh-vim-mode.plugin.zsh
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -104,7 +103,7 @@ fi
 export MANPAGER='nvim +Man!'
 export TERMCMD=kitty
 export EDITOR=nvim
-export BAT_THEME=tokyonight_moon
+export BAT_THEME=Coldark-Dark
 export FZF_DEFAULT_OPTS=" \
 --border=rounded --height=~99% --reverse \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
@@ -117,19 +116,25 @@ alias logout="pkill -KILL -u $USER"
 alias ff="fzf-nvim"
 alias ls="exa --icons -a --group-directories-first"
 alias ll="exa --icons -a --group-directories-first -l"
+alias bl="~/Scripts/bilal.sh -a | sed 's/:/:+/1' | column -ts + | rg '\d'"
 alias nvim-custom="NVIM_APPNAME=nvim-custom nvim"
 alias zrefresh="source $HOME/.zshrc"
-alias cppath="pwd | sed 's/ /\\\\ /g' | xclip -selection clipboard"
+alias cppath="pwd | sed 's/\(^.*$\)/\"\1\"/' | xclip -selection clipboard"
 alias copycmd="tail -n 2 ~/.zhistory | head -n 1 | xclip -selection clipboard"
 alias zshrc="nvim $HOME/.zshrc"
 alias i3config="nvim $HOME/.config/i3/config"
 alias dwmconfig="nvim $HOME/.config/dwm/config.h"
 alias barconfig="nvim $HOME/.config/polybar/config.ini"
 alias uvrautoplay="bash ~/Scripts/UVR_autoplay.sh"
-alias rofi-systemd="bash ~/.config/rofi/scripts/rofi-systemd"
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias replaceunderscore="find . -depth -name '*_*' | while read -r file; do mv "$file" "$(dirname "$file")/$(basename "$file" | tr '_' ' ')"; done"
 alias replacespace="find . -depth -name '* *' | while read -r file; do mv "$file" "$(dirname "$file")/$(basename "$file" | tr ' ' '_')"; done"
+
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+  alias rofi-systemd="XDG_CONFIG_HOME=$HOME/.config/rofi/wayland bash ~/.config/rofi/scripts/rofi-systemd"
+else
+  alias rofi-systemd="bash ~/.config/rofi/scripts/rofi-systemd"
+fi
 
 if command -v pacman &> /dev/null; then
   alias pkgsbackup="pacman -Qne | awk '{print \$1}' \
@@ -137,6 +142,25 @@ if command -v pacman &> /dev/null; then
     && pacman -Qm | awk '{print \$1}' \
     > /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/ArchAurPackages.txt"
 fi
+
+### zoxide setup ----------------------------------------------------------
+
+eval "$(zoxide init zsh)"
+
+# Add a `r` function to zsh that opens ranger either at the given directory or
+# at the one zoxide suggests
+r() {
+  if [ "$1" != "" ]; then
+    if [ -d "$1" ]; then
+      ranger "$1"
+    else
+      ranger "$(zoxide query $1)"
+    fi
+  else
+    ranger
+  fi
+    return $?
+}
 
 ### fzf setup -------------------------------------------------------------
 
@@ -160,6 +184,7 @@ fzf-nvim() {
     -o -path ~/.local/share/JetBrains \
     -o -path ~/.local/share/nvim \
     -o -path ~/.local/share/nvim-custom \
+    -o -path ~/.local/share/waydroid \
     -o -path /mnt/Disk_D/Muhammad/Android_Studio/ASProjects \) \
     -prune -o -type f -print \
     | fzf --preview 'bat --style=numbers --color=always --line-range :500 {}')

@@ -84,12 +84,14 @@ $reboot)
 	run_cmd --reboot
 	;;
 $lock)
-	if [[ -x '/usr/bin/betterlockscreen' ]]; then
+	if [[ -x '/usr/bin/betterlockscreen' && "$XDG_SESSION_TYPE" = "x11" ]]; then
 		betterlockscreen -l
-	elif [[ -x '/usr/bin/i3lock' ]]; then
+	elif [[ -x '/usr/bin/i3lock' && "$XDG_SESSION_TYPE" = "x11" ]]; then
 		i3lock -n -e -i /mnt/Disk_D/Backgrounds/locks/catlock.png
-	elif [[ -x '/usr/bin/xfce4-screensaver' ]]; then
+	elif [[ -x '/usr/bin/xfce4-screensaver' && "$XDG_SESSION_TYPE" = "x11" ]]; then
 		xfce4-screensaver-command -l
+	elif [[ -x '/usr/bin/hyprlock' && "$XDG_SESSION_TYPE" = "wayland" ]]; then
+    hyprlock
 	fi
 	;;
 $suspend)

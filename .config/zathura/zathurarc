@@ -25,9 +25,9 @@ set index-active-fg          "#313244"
 set index-active-bg          "#CDD6F4"
 set render-loading-bg        "#1E1E2E"
 set render-loading-fg        "#CDD6F4"
-set highlight-color          "#575268"
-set highlight-fg             "#F5C2E7"
-set highlight-active-color   "#F5C2E7"
+set highlight-color          rgba(87,82,104,0.8)
+set highlight-fg             rgba(245,194,231,0.8)
+set highlight-active-color   rgba(245,194,231,0.8)
 
 set first-page-column 1
 set recolor false
@@ -36,7 +36,7 @@ set sandbox none
 set selection-clipboard clipboard
 set window-title-basename true
 
-map ظ feedkeys ":"
+map ظ feedkeys "/"
 map zi set "scroll-step 100"
 map zI set "scroll-step 40"
 map zr exec "kitty --class hiddenkitty -e /home/muhammad/Scripts/zathura_recolor.sh"

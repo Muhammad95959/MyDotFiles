@@ -117,27 +117,27 @@ super + shift + o ; {c, d, e, g, k, m, o, t, u, z}
 
 # volume keys
 XF86AudioRaiseVolume
-    bash ~/Scripts/volume_control/pactl_volume_up_limit.sh
+    bash ~/Scripts/volume_changer.sh vol_inc
 XF86AudioLowerVolume
-    pactl set-sink-mute @DEFAULT_SINK@ 0 && pactl set-sink-volume @DEFAULT_SINK@ -5%
+    bash ~/Scripts/volume_changer.sh vol_dec
 shift + XF86AudioRaiseVolume
-    bash ~/Scripts/volume_control/pactl_volume_up_by_1_limit.sh
+    bash ~/Scripts/volume_changer.sh vol_small_inc
 shift + XF86AudioLowerVolume
-    pactl set-sink-mute @DEFAULT_SINK@ 0 && pactl set-sink-volume @DEFAULT_SINK@ -1%
+    bash ~/Scripts/volume_changer.sh vol_small_dec
 XF86AudioMute
-    bash ~/Scripts/volume_control/volume_toggle_mute.sh
+    bash ~/Scripts/volume_changer.sh toggle_vol_mute
 XF86AudioMicMute
-    bash ~/Scripts/volume_control/mic_toggle_mute.sh
+    bash ~/Scripts/volume_changer.sh toggle_mic_mute
 
 # backlight keys
 XF86MonBrightnessUp
-    ~/Scripts/brightness_control/inc.exp
+    ~/Scripts/brightness_changer.sh inc
 XF86MonBrightnessDown
-    ~/Scripts/brightness_control/dec.exp
+    ~/Scripts/brightness_changer.sh dec
 shift + XF86MonBrightnessUp
-    ~/Scripts/brightness_control/s_inc.exp
+    ~/Scripts/brightness_changer.sh exp-inc
 shift + XF86MonBrightnessDown
-    ~/Scripts/brightness_control/s_dec.exp
+    ~/Scripts/brightness_changer.sh exp-dec
 
 # media keys
 XF86AudioPlay
