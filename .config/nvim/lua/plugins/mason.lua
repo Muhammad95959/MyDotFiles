@@ -3,6 +3,7 @@ return {
   opts = {
     ensure_installed = {
       "bash-language-server",
+      "emmet-ls",
       "eslint-lsp",
       "json-lsp",
       "lua-language-server",

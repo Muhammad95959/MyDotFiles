@@ -28,26 +28,26 @@ eDP-1=eDP-1
 ToolButtonStyle=IconOnly
 
 [Recent Files]
-File1[$e]=/mnt/Disk_D/Engineering/Semester_materials/Project_Management/Revision/Exams/2 - Final Exams/PM GSP Final Exams/PM Final Exams & Solutions.pdf
-File10[$e]=/mnt/Disk_D/Muhammad/Comics/Watchmen (01 - 12) (1986) (Remixed)/Watchmen 01.pdf
-File2[$e]=/mnt/Disk_D/Engineering/Semester_materials/Project_Management/Revision/Midterm Revision/MCQ Questions & Answers.pdf
-File3[$e]=/mnt/Disk_D/Engineering/Semester_materials/Project_Management/Revision/بصمج يا دولي.pdf
-File4[$e]=/mnt/Disk_D/Engineering/Semester_materials/Electronics2/Revision/dir/Final 2023 with solutions.pdf
-File5[$e]=/mnt/Disk_D/Engineering/Semester_materials/Electronics2/Revision/Final 2023 with solutions.pdf
-File6[$e]=/mnt/Disk_D/Engineering/Semester_materials/Electronics2/Revision/Finals/electronics2Final.pdf
-File7[$e]=/mnt/Disk_D/Engineering/Semester_materials/Project_Management/Revision/عقود/مسألة عقود بتتكرر.pdf
-File8[$e]=/mnt/Disk_D/Engineering/Semester_materials/Electronics2/Revision/Finals/Electronics 2 2022 final answers and edits.pdf
-File9[$e]=/mnt/Disk_D/Engineering/Semester_materials/Electronics2/Revision/Finals/Final 2023 with solutions.pdf
-Name1[$e]=PM Final Exams & Solutions.pdf
-Name10[$e]=Watchmen 01.pdf
-Name2[$e]=MCQ Questions & Answers.pdf
-Name3[$e]=بصمج يا دولي.pdf
-Name4[$e]=Final 2023 with solutions.pdf
-Name5[$e]=Final 2023 with solutions.pdf
-Name6[$e]=electronics2Final.pdf
-Name7[$e]=مسألة عقود بتتكرر.pdf
-Name8[$e]=Electronics 2 2022 final answers and edits.pdf
-Name9[$e]=Final 2023 with solutions.pdf
+File1[$e]=/mnt/Disk_D/Engineering/Semester_materials/Control/new lectures/1_Intro.pdf
+File10[$e]=/mnt/Disk_D/Engineering/COMM 24 - GPs Feedback.pdf
+File2[$e]=/mnt/Disk_D/Engineering/Semester_materials/Control/new lectures/2_Modelling 2.pdf
+File3[$e]=/mnt/Disk_D/Engineering/Semester_materials/Waves/EMT.pdf
+File4[$e]=/mnt/Disk_D/Engineering/Semester_materials/Waves/Sections/Section 3.pdf
+File5[$e]=/mnt/Disk_D/Engineering/Semester_materials/Waves/Revision/أسئلة المحاضرات كلها بالمراجعه.pdf
+File6[$e]=$HOME/Downloads/Ch2-sec.pdf
+File7[$e]=$HOME/Disk_D/Engineering/Semester_materials/Control/lab/lab-1/Assignment-1-1.pdf
+File8[$e]=$HOME/Downloads/WhatSie/Section 2 - EMW - Summer.pdf
+File9[$e]=/mnt/Disk_D/Engineering/لائحة اتصالات.pdf
+Name1[$e]=1_Intro.pdf
+Name10[$e]=COMM 24 - GPs Feedback.pdf
+Name2[$e]=2_Modelling 2.pdf
+Name3[$e]=EMT.pdf
+Name4[$e]=Section 3.pdf
+Name5[$e]=أسئلة المحاضرات كلها بالمراجعه.pdf
+Name6[$e]=Ch2-sec.pdf
+Name7[$e]=Assignment-1-1.pdf
+Name8[$e]=Section 2 - EMW - Summer.pdf
+Name9[$e]=لائحة اتصالات.pdf
 
 [Toolbar mainToolBar]
 ToolButtonStyle=IconOnly

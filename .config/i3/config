@@ -7,7 +7,7 @@
 
 set $mod Mod4
 
-font pango:JetBrainsMono Nerd Font 0
+font pango:JetBrainsMono Nerd Font 8
 
 floating_modifier $mod
 
@@ -105,7 +105,7 @@ bindsym $mod+p            exec rofi-pass
 bindsym $mod+shift+p      exec rofi -show window
 bindsym $mod+q            kill
 bindsym $mod+shift+q      exec ~/.config/rofi/scripts/powermenu/type-1/powermenu.sh
-bindsym $mod+r            exec kitty --class Ranger --hold -e ranger
+# bindsym $mod+r            exec kitty --class Ranger --hold -e ranger
 bindsym $mod+shift+r      restart
 bindsym $mod+s            exec i3-msg scratchpad show || i3-msg move scratchpad
 bindsym $mod+shift+s      sticky toggle
@@ -115,6 +115,7 @@ bindsym $mod+v            split v
 bindsym $mod+shift+v      split h
 bindsym $mod+w            layout tabbed
 bindsym $mod+shift+w      exec nitrogen --head=0 --set-zoom-fill --random --no-recurse /mnt/Disk_D/Backgrounds
+bindsym $mod+y            exec kitty --class Yazi --hold -e yazi
 bindsym $mod+space        focus mode_toggle
 bindsym $mod+shift+space  floating toggle
 bindsym $mod+minus        exec picom-trans -c -5
@@ -258,7 +259,7 @@ bindsym $mod+shift+period move container to workspace next ; workspace next
 for_window [workspace=$ws10] layout tabbed
 for_window [class="floatingkitty"] floating enabled
 for_window [class="RangerFileChooser"] floating enabled
-for_window [class="Gcolor3"] floating enabled
+for_window [class="Nl.hjdskes.gcolor3"] floating enabled
 for_window [class="Arandr"] floating enabled
 for_window [class="pomatez"] floating enabled
 for_window [class="Timeshift-gtk"] floating disabled
@@ -318,7 +319,7 @@ mode "redshift" {
 }
 
 mode "applications" {
-    bindsym a exec android-studio                                                                 ,mode "default"
+    bindsym a exec audacious                                                                      ,mode "default"
     bindsym b exec brave --test-type --incognito                                                  ,mode "default"
     bindsym c exec qalculate-gtk                                                                  ,mode "default"
     bindsym d exec /home/muhammad/Disk_D/برامج/Linux/arduino-ide_2.3.2_Linux_64bit.AppImage       ,mode "default"

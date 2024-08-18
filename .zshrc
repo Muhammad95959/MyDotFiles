@@ -11,8 +11,8 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Enable colors and change prompt
-autoload -U colors && colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$fg[cyan]%}$%b "
+# autoload -U colors && colors
+# PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$fg[cyan]%}$%b "
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
@@ -103,7 +103,9 @@ fi
 export MANPAGER='nvim +Man!'
 export TERMCMD=kitty
 export EDITOR=nvim
-export BAT_THEME=Coldark-Dark
+export BAT_THEME="Catppuccin Mocha"
+export PNPM_HOME=~/.pnpm-global
+export PATH=$PNPM_HOME/bin:$PATH
 export FZF_DEFAULT_OPTS=" \
 --border=rounded --height=~99% --reverse \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
@@ -113,6 +115,7 @@ export FZF_DEFAULT_OPTS=" \
 ### Aliases ---------------------------------------------------------------
 
 alias logout="pkill -KILL -u $USER"
+alias cd="z"
 alias ff="fzf-nvim"
 alias ls="exa --icons -a --group-directories-first"
 alias ll="exa --icons -a --group-directories-first -l"
@@ -129,6 +132,7 @@ alias uvrautoplay="bash ~/Scripts/UVR_autoplay.sh"
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias replaceunderscore="find . -depth -name '*_*' | while read -r file; do mv "$file" "$(dirname "$file")/$(basename "$file" | tr '_' ' ')"; done"
 alias replacespace="find . -depth -name '* *' | while read -r file; do mv "$file" "$(dirname "$file")/$(basename "$file" | tr ' ' '_')"; done"
+alias cptemplate="cp $HOME/Projects/Elzero/4-javascript-course/Elzero_Assignments/00-template/* ."
 
 if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
   alias rofi-systemd="XDG_CONFIG_HOME=$HOME/.config/rofi/wayland bash ~/.config/rofi/scripts/rofi-systemd"
@@ -143,13 +147,56 @@ if command -v pacman &> /dev/null; then
     > /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/ArchAurPackages.txt"
 fi
 
+### autojump setup ----------------------------------------------------------
+
+[ -s /etc/profile.d/autojump.sh ] && source /etc/profile.d/autojump.sh
+
+# Add a `r` function to zsh that opens ranger either at the given directory or
+# at the one autojump suggests
+rj() {
+  if [ "$1" != "" ]; then
+    if [ -d "$1" ]; then
+      ranger "$1"
+    elif [ -f "$1" ]; then
+      ranger --selectfile="$1"
+    else
+      out="$(autojump $1)"
+      if [ -d "$out" ]; then
+        ranger "$out"
+      else
+        ranger --selectfile="$out"
+      fi
+    fi
+  else
+    ranger
+  fi
+	return $?
+}
+
+# Add a `y` function to zsh that opens ranger either at the given directory or
+# at the one autojump suggests
+yj() {
+  if [ "$1" != "" ]; then
+    if [ -d "$1" ]; then
+      yazi "$1"
+    else
+      yazi "$(autojump $1)"
+    fi
+  else
+    yazi
+  fi
+    return $?
+}
+
 ### zoxide setup ----------------------------------------------------------
 
-eval "$(zoxide init zsh)"
+if command -v zoxide &> /dev/null; then
+  eval "$(zoxide init zsh)"
+fi
 
 # Add a `r` function to zsh that opens ranger either at the given directory or
 # at the one zoxide suggests
-r() {
+rz() {
   if [ "$1" != "" ]; then
     if [ -d "$1" ]; then
       ranger "$1"
@@ -158,6 +205,21 @@ r() {
     fi
   else
     ranger
+  fi
+    return $?
+}
+
+# Add a `y` function to zsh that opens ranger either at the given directory or
+# at the one zoxide suggests
+yz() {
+  if [ "$1" != "" ]; then
+    if [ -d "$1" ]; then
+      yazi "$1"
+    else
+      yazi "$(zoxide query $1)"
+    fi
+  else
+    yazi
   fi
     return $?
 }
@@ -196,3 +258,14 @@ fzf-nvim() {
 
 # fzf integration with zsh
 [ -x "$(command -v fzf)" ] && eval "$(fzf --zsh)"
+
+### yazi wrapper ----------------------------------------------------------
+
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}

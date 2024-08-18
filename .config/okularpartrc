@@ -2,7 +2,6 @@
 update_info=okular.upd:annotation-toolbar,okular.upd:builtin-annotations
 
 [PageView]
-MouseMode=TextSelect
 ShowScrollBars=false
 
 [Reviews]

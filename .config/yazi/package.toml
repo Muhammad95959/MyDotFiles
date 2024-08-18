@@ -1,0 +1,5 @@
+[plugin]
+deps = [{ use = "dedukun/relative-motions", commit = "73f5542" }, { use = "dedukun/bookmarks", commit = "748efed" }, { use = "yazi-rs/plugins#full-border", commit = "07b36c3" }, { use = "yazi-rs/plugins#hide-preview", commit = "07b36c3" }, { use = "Ape/open-with-cmd", commit = "8d7abc8" }]
+
+[flavor]
+deps = []

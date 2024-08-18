@@ -5,3 +5,7 @@
 vim.cmd([[
   autocmd! BufEnter * if &ft ==# 'help' | wincmd L | endif
 ]])
+
+vim.cmd([[
+  autocmd FileType * setlocal formatoptions-=cro
+]])

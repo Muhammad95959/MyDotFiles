@@ -1,7 +1,7 @@
-; thunar GtkAccelMap rc-file         -*- scheme -*-
+; Thunar GtkAccelMap rc-file         -*- scheme -*-
 ; this file is an automated accelerator map dump
 ;
-; (gtk_accel_path "<Actions>/ThunarStandardView/sort-by-mtime" "")
+; (gtk_accel_path "<Actions>/ThunarBookmarks/287fd0c7d4a24327bf77109bdceb3395" "")
 ; (gtk_accel_path "<Actions>/ThunarActionManager/restore" "")
 ; (gtk_accel_path "<Actions>/ThunarActionManager/undo" "<Primary>z")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/select-all-files" "<Primary>a")
@@ -40,6 +40,7 @@
 ; (gtk_accel_path "<Actions>/ThunarActionManager/copy" "<Primary>c")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/properties" "<Alt>Return")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/back" "<Alt>Left")
+; (gtk_accel_path "<Actions>/ThunarStandardView/sort-by-mtime" "")
 ; (gtk_accel_path "<Actions>/ThunarWindow/sendto-menu" "")
 ; (gtk_accel_path "<Actions>/ThunarBookmarks/7a7d90e683288f2cab58b413f774c18f" "")
 ; (gtk_accel_path "<Actions>/ThunarActionManager/open-location" "")
@@ -49,7 +50,6 @@
 ; (gtk_accel_path "<Actions>/ThunarStatusBar/toggle-size-in-bytes" "")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/unselect-all-files" "Escape")
 ; (gtk_accel_path "<Actions>/ThunarActionManager/copy-2" "<Primary>Insert")
-; (gtk_accel_path "<Actions>/ThunarStandardView/configure-columns" "")
 ; (gtk_accel_path "<Actions>/ThunarWindow/zoom-out-alt" "<Primary>KP_Subtract")
 ; (gtk_accel_path "<Actions>/ThunarWindow/cancel-search" "Escape")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/select-by-pattern" "<Primary>s")

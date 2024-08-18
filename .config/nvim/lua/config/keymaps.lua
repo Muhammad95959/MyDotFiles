@@ -36,7 +36,9 @@ function Close_buffer()
   end
 end
 
-map("x", "p", "P")
+map("n", "<LeftMouse>", "<LeftMouse>i")
+
+-- map("x", "p", "P")
 
 map("n", "c", '"_c')
 map("n", "C", '"_C')
