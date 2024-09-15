@@ -28,7 +28,6 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id copyq --start-server
 exec --no-startup-id amixer set Capture 80%
 exec --no-startup-id xhost +si:localuser:$USER
-exec --no-startup-id sudo virsh net-start default
 exec --no-startup-id ~/Scripts/backup_zsh_history.sh
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id xss-lock --transfer-sleep-lock -- xfce4-screensaver-command -l
@@ -61,7 +60,7 @@ for_window [all] border pixel 2
 # for_window [all] title_window_icon padding 7px
 # border_radius 12
 
-client.focused          #ed8796 #ed8796 #24273a #ed87d6   #ed8796    ### edited via script
+client.focused          #c6a0f6 #c6a0f6 #24273a #c640f6   #c6a0f6    ### edited via script
 client.focused_inactive #303446 #303446 #ffffff #666666   #303446
 client.unfocused        #1e1e2e #1e1e2e #777777 #333333   #555555
 
@@ -105,7 +104,7 @@ bindsym $mod+p            exec rofi-pass
 bindsym $mod+shift+p      exec rofi -show window
 bindsym $mod+q            kill
 bindsym $mod+shift+q      exec ~/.config/rofi/scripts/powermenu/type-1/powermenu.sh
-# bindsym $mod+r            exec kitty --class Ranger --hold -e ranger
+bindsym $mod+r            exec kitty --class Yazi --hold -e yazi
 bindsym $mod+shift+r      restart
 bindsym $mod+s            exec i3-msg scratchpad show || i3-msg move scratchpad
 bindsym $mod+shift+s      sticky toggle
@@ -115,7 +114,6 @@ bindsym $mod+v            split v
 bindsym $mod+shift+v      split h
 bindsym $mod+w            layout tabbed
 bindsym $mod+shift+w      exec nitrogen --head=0 --set-zoom-fill --random --no-recurse /mnt/Disk_D/Backgrounds
-bindsym $mod+y            exec kitty --class Yazi --hold -e yazi
 bindsym $mod+space        focus mode_toggle
 bindsym $mod+shift+space  floating toggle
 bindsym $mod+minus        exec picom-trans -c -5
@@ -263,11 +261,11 @@ for_window [class="Nl.hjdskes.gcolor3"] floating enabled
 for_window [class="Arandr"] floating enabled
 for_window [class="pomatez"] floating enabled
 for_window [class="Timeshift-gtk"] floating disabled
-for_window [class="jetbrains-toolbox"] floating disabled
 for_window [title="Ultimate Vocal Remover"] floating disabled
-for_window [class="livecaptions"] floating enabled, move absolute position 500px 900px
+for_window [class="livecaptions"] floating enable, move absolute position 500px 900px
 for_window [class="copyq"] floating enable, resize set 1280 px 720 px, move absolute position center
-for_window [class="Nitrogen"] floating enable, resize set 720 px 450 px, move absolute position 1190px 620px
+for_window [class="octave-cli"] floating enable, resize set 1600 px 900 px, move absolute position center
+for_window [class="Nitrogen"] floating enable, resize set 610 px 380 px, move absolute position 1300px 690px
 for_window [class="hiddenkitty"] move scratchpad
 assign     [title="Ultimate Vocal Remover"] $ws9
 assign     [class="Uget-gtk"] $ws10
@@ -329,6 +327,7 @@ mode "applications" {
     bindsym l exec flatpak run net.sapples.LiveCaptions                                           ,mode "default"
     bindsym m exec mpv --player-operation-mode=pseudo-gui                                         ,mode "default"
     bindsym n exec kitty --class nvim --hold -e nvim                                              ,mode "default"
+    bindsym o exec kitty -o font_size=18 --class octave-cli --hold -e octave-cli --silent         ,mode "default"
     bindsym p exec pomatez                                                                        ,mode "default"
     bindsym q exec flatpak run io.github._0xzer0x.qurancompanion                                  ,mode "default"
     bindsym t exec telegram-desktop                                                               ,mode "default"
@@ -391,6 +390,8 @@ mode "scripts" {
     bindsym p exec kitty --hold -e nvim ~/.config/picom/picom.conf              ,mode "default"
     bindsym q exec kitty --hold -e nvim ~/.config/qutebrowser/config.py         ,mode "default"
     bindsym r exec kitty --hold -e nvim ~/.config/ranger/rc.conf                ,mode "default"
+    bindsym w exec kitty --hold -e nvim ~/.config/waybar/config.jsonc           ,mode "default"
+    bindsym y exec kitty --hold -e nvim ~/.config/yazi/keymap.toml              ,mode "default"
     bindsym z exec kitty --hold -e nvim ~/.config/zathura/zathurarc             ,mode "default"
     bindsym shift+h exec kitty --hold -e nvim ~/.zhistory                       ,mode "default"
     bindsym shift+u exec kitty --hold -e nvim ~/Scripts/update_DotFiles_repo.sh ,mode "default"

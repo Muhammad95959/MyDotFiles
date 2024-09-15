@@ -9,7 +9,7 @@ sort_sensitive = false
 sort_reverse 	 = false
 sort_dir_first = true
 sort_translit  = false
-linemode       = "none"
+linemode       = "size"
 show_hidden    = true
 show_symlink   = true
 scrolloff      = 5
@@ -34,12 +34,12 @@ edit = [
 	{ run = 'code -w %*', block = true,  desc = "code (block)",   for = "windows" },
 ]
 open = [
-	{ run = 'xdg-open "$1"',                desc = "Open", for = "linux" },
+	{ run = 'setsid mimeopen "$1"',         desc = "Open", for = "linux" },
 	{ run = 'open "$@"',                    desc = "Open", for = "macos" },
 	{ run = 'start "" "%1"', orphan = true, desc = "Open", for = "windows" },
 ]
 reveal = [
-	{ run = 'xdg-open "$(dirname "$1")"',           desc = "Reveal", for = "linux" },
+	{ run = 'setsid xdg-open "$(dirname "$1")"',    desc = "Reveal", for = "linux" },
 	{ run = 'open -R "$1"',                         desc = "Reveal", for = "macos" },
 	{ run = 'explorer /select,"%1"', orphan = true, desc = "Reveal", for = "windows" },
 	{ run = '''exiftool "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show EXIF", for = "unix" },
@@ -51,28 +51,31 @@ extract = [
 play = [
 	{ run = 'mpv --force-window "$@"', orphan = true, for = "unix" },
 	{ run = 'mpv --force-window %*', orphan = true, for = "windows" },
-	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
+	# { run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
 ]
 # For Images
 vimiv = [
-  { run = 'vimiv "$1"', desc = "vimiv" },
+  { run = 'setsid vimiv "$@" >/dev/null 2>&1 &', block = false, desc = "vimiv" },
 ]
 shotwell = [
-  { run = 'shotwell "$1"', desc = "shotwell" },
+  { run = 'setsid shotwell "$@" >/dev/null 2>&1 &', block = false, desc = "shotwell" },
 ]
 inkscape = [
-  { run = 'inkscape "$1"', desc = "inkscape" },
+  { run = 'setsid inkscape "$@" >/dev/null 2>&1 &', block = false, desc = "inkscape" },
 ]
 # For Archives
 file-roller = [
-  { run = 'file-roller "$1"', desc = "file-roller" },
+  { run = 'setsid file-roller "$@" >/dev/null 2>&1 &', block = false, desc = "file-roller" },
 ]
 # For PDF
 zathura = [
-  { run = 'zathura "$1"', desc = "zathura" },
+  { run = 'setsid zathura "$@" >/dev/null 2>&1 &', block = false, desc = "zathura" },
 ]
 okular = [
-  { run = 'okular "$1"', desc = "okular" },
+  { run = 'setsid okular "$@" >/dev/null 2>&1 &', block = false, desc = "okular" },
+]
+pdfarranger = [
+  { run = 'setsid pdfarranger "$@" >/dev/null 2>&1 &', block = false, desc = "pdfarranger" },
 ]
 
 [open]
@@ -94,7 +97,7 @@ rules = [
 	# Empty file
 	{ mime = "inode/x-empty", use = [ "edit", "reveal" ] },
   # PDF
-	{ mime = "application/pdf", use = [ "zathura", "okular", "edit", "reveal" ] },
+	{ mime = "application/pdf", use = [ "zathura", "okular", "pdfarranger", "edit", "reveal" ] },
 	# Fallback
 	{ name = "*", use = [ "open", "reveal" ] },
 ]

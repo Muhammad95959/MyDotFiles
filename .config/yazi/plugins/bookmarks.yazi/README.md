@@ -81,9 +81,11 @@ The following are the default configurations:
 ```lua
 -- ~/.config/yazi/init.lua
 require("bookmarks"):setup({
-	save_last_directory = false,
+	save_last_directory = false, -- DEPRECATED - will be removed in the future. Use `last_directory`
+	last_directory = { enable = false, persist = false },
 	persist = "none",
 	desc_format = "full",
+	file_pick_mode = "hover",
 	notify = {
 		enable = false,
 		timeout = 1,
@@ -100,6 +102,15 @@ require("bookmarks"):setup({
 
 When enabled, a new bookmark is automatically created in `'` which allows the user to jump back to
 the last directory.
+
+***NOTE:*** This option is **DEPRECATED** and will be removed in the future in favor of `last_directory`.
+
+### `last_directory`
+
+When enabled, a new bookmark is automatically created in `'` which allows the user to jump back to
+the last directory.
+
+There's also the option to enable persistence to this automatic bookmark.
 
 ### `persist`
 
@@ -124,6 +135,17 @@ There are two possible values for this option:
 | -------- | ----------------------------------------------------------------------------------------------- |
 | `full`   | The default, it shows the full path of the bookmark, i.e., the parent folder + the hovered file |
 | `parent` | Only shows the parent folder of the bookmark                                                    |
+
+### `file_pick_mode`
+
+The mode for choosing which directory to bookmark.
+
+There are two possible values for this option:
+
+| Value    | Description                                                                                     |
+| -------- | ----------------------------------------------------------------------------------------------- |
+| `hover`  | The default, it uses the path of the hovered file for new bookmarks                             |
+| `parent` | Uses the path of the parent folder for new bookmarks                                            |
 
 ### `notify`
 

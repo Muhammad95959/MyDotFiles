@@ -4,7 +4,7 @@ return {
   keys = {
     -- 👇 in this section, choose your own keymappings!
     {
-      "<leader>y",
+      "<leader>r",
       "<cmd>Yazi<cr>",
       desc = "Open yazi",
     },
@@ -13,6 +13,7 @@ return {
     -- if you want to open yazi instead of netrw, see below for more info
     open_for_directories = false,
     floating_window_scaling_factor = 0.8,
+    highlight_hovered_buffers_in_same_directory = false,
     keymaps = {
       show_help = "<f1>",
       open_file_in_vertical_split = "<c-v>",

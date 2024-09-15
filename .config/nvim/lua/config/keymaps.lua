@@ -38,7 +38,8 @@ end
 
 map("n", "<LeftMouse>", "<LeftMouse>i")
 
--- map("x", "p", "P")
+map("x", "p", "P")
+map("x", "P", "p")
 
 map("n", "c", '"_c')
 map("n", "C", '"_C')

@@ -1,66 +1,34 @@
-/**
- *
- * Author : Aditya Shakya (adi1090x)
- * Github : @adi1090x
- * 
- * Rofi Theme File
- * Rofi Version: 1.7.3
- **/
-
 /*****----- Configuration -----*****/
 configuration {
-  font:                       "JetBrains Mono Nerd Font 11";
-	modi:                       "drun";
+  font: "JetBrainsMono Nerd Font 14";
+	modi:                       "dmenu";
     show-icons:                 true;
-    display-drun:               "";
-	drun-display-format:        "{name}";
+
+    kb-remove-to-eol: "";
+    kb-mode-complete: "";
+
+    kb-accept-entry: "Tab,Return";
+    kb-element-next: "Control+j";
+    kb-element-prev: "Control+k";
+    /*kb-row-left: "Control+h";*/
+    kb-row-right: "Control+l";
 }
 
 /*****----- Global Properties -----*****/
 @import                          "colors/catppuccin.rasi"
 
-* {
-    border-colour:               var(selected);
-    handle-colour:               var(selected);
-    background-colour:           var(background);
-    foreground-colour:           var(foreground);
-    alternate-background:        var(background-alt);
-    normal-background:           var(background);
-    normal-foreground:           var(foreground);
-    urgent-background:           var(urgent);
-    urgent-foreground:           var(background);
-    active-background:           var(active);
-    active-foreground:           var(background);
-    selected-normal-background:  var(selected);
-    selected-normal-foreground:  var(background);
-    selected-urgent-background:  var(active);
-    selected-urgent-foreground:  var(background);
-    selected-active-background:  var(urgent);
-    selected-active-foreground:  var(background);
-    alternate-normal-background: var(background);
-    alternate-normal-foreground: var(foreground);
-    alternate-urgent-background: var(urgent);
-    alternate-urgent-foreground: var(background);
-    alternate-active-background: var(active);
-    alternate-active-foreground: var(background);
-}
-
 /*****----- Main Window -----*****/
 window {
     transparency:                "real";
-    location:                    north;
-    anchor:                      north;
+    location:                    center;
+    anchor:                      center;
     fullscreen:                  false;
-    width:                       100%;
-    height:                      455px;
+    width:                       500px;
     x-offset:                    0px;
-    y-offset:                    -20px;
+    y-offset:                    0px;
 
     enabled:                     true;
-    margin:                      0px;
-    padding:                     0px;
-    border:                      0px solid;
-    border-radius:               0px;
+    border-radius:               12px;
     border-color:                @selected;
     background-color:            @background;
     cursor:                      "default";
@@ -69,11 +37,8 @@ window {
 /*****----- Main Box -----*****/
 mainbox {
     enabled:                     true;
-    spacing:                     0px;
-    margin:                      0px;
-    padding:                     0px;
-    border:                      0px solid;
-    border-radius:               0px 0px 0px 0px;
+    spacing:                     10px;
+    padding:                     20px;
     border-color:                @selected;
     background-color:            transparent;
     children:                    [ "inputbar", "listview" ];
@@ -84,18 +49,21 @@ inputbar {
     enabled:                     true;
     spacing:                     10px;
     margin:                      0px;
-    padding:                     10px;
-    border:                      0 0 2 0 px solid;
-    border-radius:               0px;
+    padding:                     35px 25px 100px 25px;
+    border:                      0px solid;
+    border-radius:               12px;
     border-color:                @selected;
-    background-color:            @background;
-    text-color:                  @selected;
+    background-color:            transparent;
+    background-image:            url("~/.cache/current-wallpaper", width);
+    text-color:                  @foreground;
     children:                    [ "prompt", "entry" ];
 }
 
 prompt {
     enabled:                     true;
-    background-color:            inherit;
+    padding:                     15px;
+    border-radius:               10px;
+    background-color:            @background;
     text-color:                  inherit;
 }
 textbox-prompt-colon {
@@ -107,10 +75,12 @@ textbox-prompt-colon {
 }
 entry {
     enabled:                     true;
-    background-color:            inherit;
-    text-color:                  @foreground;
+    border-radius:               10px;
+    padding:                     15px;
+    background-color:            @background;
+    text-color:                  inherit;
     cursor:                      text;
-    placeholder:                 false;
+    placeholder:                 "Search...";
     placeholder-color:           inherit;
 }
 
@@ -118,30 +88,24 @@ entry {
 listview {
     enabled:                     true;
     columns:                     1;
-    lines:                       1;
+    lines:                       6;
     cycle:                       true;
     dynamic:                     true;
-    scrollbar:                   true;
+    scrollbar:                   false;
     layout:                      vertical;
     reverse:                     false;
-    fixed-height:                true;
+    fixed-height:                false;
     fixed-columns:               true;
     
     spacing:                     5px;
-    margin:                      0px;
-    padding:                     3px;
-    border:                      0px solid;
-    border-radius:               0px;
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;
-    cursor:                      "default";
+    cursor:                      "pointer";
 }
 scrollbar {
-    margin:                      7px;
-    handle-width:                7px ;
+    handle-width:                5px ;
     handle-color:                @selected;
-    border-radius:               0px;
     background-color:            @background-alt;
 }
 
@@ -149,27 +113,28 @@ scrollbar {
 element {
     enabled:                     true;
     spacing:                     10px;
-    margin:                      0px;
-    padding:                     2px;
-    border:                      0px solid;
-    border-radius:               0px;
+    padding:                     0px 10px;
+    border-radius:               12px;
     border-color:                @selected;
-    background-color:            transparent;
     text-color:                  @foreground;
     cursor:                      pointer;
 }
+element.alternate.normal {
+    background-color: transparent;
+    text-color: @foreground;
+}
 element normal.normal {
-    background-color:            @background;
+    background-color:            transparent;
     text-color:                  @foreground;
 }
 element selected.normal {
-    background-color:            @background-alt;
+    background-color:            @selected;
     text-color:                  @foreground;
 }
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
-    size:                        32px;
+    size:                        62px;
     cursor:                      inherit;
 }
 element-text {
@@ -184,8 +149,8 @@ element-text {
 /*****----- Message -----*****/
 error-message {
     padding:                     15px;
-    border:                      0px solid;
-    border-radius:               0px;
+    border:                      2px solid;
+    border-radius:               12px;
     border-color:                @selected;
     background-color:            @background;
     text-color:                  @foreground;

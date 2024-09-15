@@ -231,9 +231,11 @@ fzf-nvim() {
   local selected_file
   selected_file=$(find ~ /mnt/Disk_D/Muhammad /mnt/Disk_D/Engineering \( \
     -path '*/.git/*' \
+    -o -path ~/Android \
     -o -path ~/.android \
     -o -path ~/.arduino15 \
     -o -path ~/.cache \
+    -o -path ~/.cargo \
     -o -path ~/.gradle \
     -o -path ~/.npm \
     -o -path ~/.pyenv \
@@ -246,7 +248,7 @@ fzf-nvim() {
     -o -path ~/.local/share/JetBrains \
     -o -path ~/.local/share/nvim \
     -o -path ~/.local/share/nvim-custom \
-    -o -path ~/.local/share/waydroid \
+    -o -path ~/.local/share/tldr \
     -o -path /mnt/Disk_D/Muhammad/Android_Studio/ASProjects \) \
     -prune -o -type f -print \
     | fzf --preview 'bat --style=numbers --color=always --line-range :500 {}')

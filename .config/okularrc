@@ -28,26 +28,26 @@ eDP-1=eDP-1
 ToolButtonStyle=IconOnly
 
 [Recent Files]
-File1[$e]=/mnt/Disk_D/Engineering/Semester_materials/Control/new lectures/1_Intro.pdf
-File10[$e]=/mnt/Disk_D/Engineering/COMM 24 - GPs Feedback.pdf
-File2[$e]=/mnt/Disk_D/Engineering/Semester_materials/Control/new lectures/2_Modelling 2.pdf
-File3[$e]=/mnt/Disk_D/Engineering/Semester_materials/Waves/EMT.pdf
-File4[$e]=/mnt/Disk_D/Engineering/Semester_materials/Waves/Sections/Section 3.pdf
-File5[$e]=/mnt/Disk_D/Engineering/Semester_materials/Waves/Revision/أسئلة المحاضرات كلها بالمراجعه.pdf
-File6[$e]=$HOME/Downloads/Ch2-sec.pdf
-File7[$e]=$HOME/Disk_D/Engineering/Semester_materials/Control/lab/lab-1/Assignment-1-1.pdf
-File8[$e]=$HOME/Downloads/WhatSie/Section 2 - EMW - Summer.pdf
-File9[$e]=/mnt/Disk_D/Engineering/لائحة اتصالات.pdf
-Name1[$e]=1_Intro.pdf
-Name10[$e]=COMM 24 - GPs Feedback.pdf
-Name2[$e]=2_Modelling 2.pdf
-Name3[$e]=EMT.pdf
-Name4[$e]=Section 3.pdf
-Name5[$e]=أسئلة المحاضرات كلها بالمراجعه.pdf
-Name6[$e]=Ch2-sec.pdf
-Name7[$e]=Assignment-1-1.pdf
-Name8[$e]=Section 2 - EMW - Summer.pdf
-Name9[$e]=لائحة اتصالات.pdf
+File1[$e]=$HOME/Disk_D/Engineering/Semester_materials/Control/lab/lab-1/Assignment-1-1.pdf
+File10[$e]=$HOME/Downloads/Chrome-DevTools-Shortcuts.pdf
+File2[$e]=$HOME/Downloads/WhatSie/Section 2 - EMW - Summer.pdf
+File3[$e]=/mnt/Disk_D/Engineering/لائحة اتصالات.pdf
+File4[$e]=/mnt/Disk_D/Engineering/COMM 24 - GPs Feedback.pdf
+File5[$e]=$HOME/Downloads/4_5929409408206377929.pdf
+File6[$e]=$HOME/Downloads/lab2.pdf
+File7[$e]=$HOME/Downloads/omnia/omnia mohammed.pdf
+File8[$e]=/run/media/muhammad/Ventoy/acoustics report.pdf
+File9[$e]=$HOME/Downloads/acoustics report.pdf
+Name1[$e]=Assignment-1-1.pdf
+Name10[$e]=Chrome-DevTools-Shortcuts.pdf
+Name2[$e]=Section 2 - EMW - Summer.pdf
+Name3[$e]=لائحة اتصالات.pdf
+Name4[$e]=COMM 24 - GPs Feedback.pdf
+Name5[$e]=4_5929409408206377929.pdf
+Name6[$e]=lab2.pdf
+Name7[$e]=omnia mohammed.pdf
+Name8[$e]=acoustics report.pdf
+Name9[$e]=acoustics report.pdf
 
 [Toolbar mainToolBar]
 ToolButtonStyle=IconOnly

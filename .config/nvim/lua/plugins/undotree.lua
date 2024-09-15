@@ -1,7 +1,7 @@
 return {
   "jiaoshijie/undotree",
   dependencies = "nvim-lua/plenary.nvim",
-  keys = { { "<leader>cu", "<cmd>lua require('undotree').toggle()<cr>", desc = "Toggle UndoTree" } },
+  keys = { { "<leader>cU", "<cmd>lua require('undotree').toggle()<cr>", desc = "Toggle UndoTree" } },
   opts = {
     float_diff = false, -- using float window previews diff, set this `true` will disable layout option
     layout = "left_left_bottom", -- "left_bottom", "left_left_bottom"
