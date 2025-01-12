@@ -5,16 +5,25 @@ return {
     style = "moon",
     on_highlights = function(hl, c)
       hl.Comment = {
-        fg = "#808fdf",
+        fg = "#818ed9",
+      }
+      hl.CodeiumSuggestion = {
+        fg = "#09B6A2",
+      }
+      hl.CmpGhostText = {
+        fg = "#717bbf",
+      }
+      hl.DiagnosticUnnecessary = {
+        fg = "#717bbf",
       }
       hl.LineNr = {
-        fg = "#7777bb",
+        fg = "#6976ad",
       }
       hl.LineNrAbove = {
-        fg = "#7777bb",
+        fg = "#6976ad",
       }
       hl.LineNrBelow = {
-        fg = "#7777bb",
+        fg = "#6976ad",
       }
       hl.CursorLineNr = {
         fg = c.fg,

@@ -1,5 +1,5 @@
 [plugin]
-deps = [{ use = "dedukun/relative-motions", rev = "73f5542" }, { use = "dedukun/bookmarks", rev = "ae06e0c" }, { use = "yazi-rs/plugins:full-border", rev = "118ae4d" }, { use = "yazi-rs/plugins:hide-preview", rev = "118ae4d" }, { use = "Ape/open-with-cmd", rev = "8d7abc8" }, { use = "KKV9/compress", rev = "60b24af" }, { use = "pirafrank/what-size", rev = "f08f7f2" }, { use = "yazi-rs/plugins:chmod", rev = "118ae4d" }]
+deps = [{ use = "dedukun/relative-motions", rev = "df97039" }, { use = "dedukun/bookmarks", rev = "35da107" }, { use = "yazi-rs/plugins:full-border", rev = "7afba3a" }, { use = "yazi-rs/plugins:hide-preview", rev = "7afba3a" }, { use = "KKV9/compress", rev = "60b24af" }, { use = "yazi-rs/plugins:chmod", rev = "7afba3a" }, { use = "yazi-rs/plugins:smart-enter", rev = "7afba3a" }, { use = "pirafrank/what-size", rev = "6791caa" }, { use = "Ape/open-with-cmd", rev = "a80d1cf" }]
 
 [flavor]
 deps = []

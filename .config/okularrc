@@ -27,27 +27,30 @@ eDP-1=eDP-1
 [MainWindow][Toolbar mainToolBar]
 ToolButtonStyle=IconOnly
 
+[Notification Messages]
+presentationInfo=false
+
 [Recent Files]
-File1[$e]=$HOME/Disk_D/Engineering/Semester_materials/Control/lab/lab-1/Assignment-1-1.pdf
-File10[$e]=$HOME/Downloads/Chrome-DevTools-Shortcuts.pdf
-File2[$e]=$HOME/Downloads/WhatSie/Section 2 - EMW - Summer.pdf
-File3[$e]=/mnt/Disk_D/Engineering/لائحة اتصالات.pdf
-File4[$e]=/mnt/Disk_D/Engineering/COMM 24 - GPs Feedback.pdf
-File5[$e]=$HOME/Downloads/4_5929409408206377929.pdf
-File6[$e]=$HOME/Downloads/lab2.pdf
-File7[$e]=$HOME/Downloads/omnia/omnia mohammed.pdf
-File8[$e]=/run/media/muhammad/Ventoy/acoustics report.pdf
-File9[$e]=$HOME/Downloads/acoustics report.pdf
-Name1[$e]=Assignment-1-1.pdf
-Name10[$e]=Chrome-DevTools-Shortcuts.pdf
-Name2[$e]=Section 2 - EMW - Summer.pdf
-Name3[$e]=لائحة اتصالات.pdf
-Name4[$e]=COMM 24 - GPs Feedback.pdf
-Name5[$e]=4_5929409408206377929.pdf
-Name6[$e]=lab2.pdf
-Name7[$e]=omnia mohammed.pdf
-Name8[$e]=acoustics report.pdf
-Name9[$e]=acoustics report.pdf
+File1[$e]=$HOME/Downloads/WhatSie/Analog Communications Midterm Exam Part II Fall 2023.pdf
+File10[$e]=$HOME/Downloads/WhatSie/varactor bk.pdf
+File2[$e]=/mnt/Disk_D/Engineering/Semester_materials/Solid/Midterm/السوليد في شوال.pdf
+File3[$e]=$HOME/Downloads/The Algorithm Design Manual by Steven S. Skiena.pdf
+File4[$e]=$HOME/Downloads/Venom War (Story Arc) (2024)/0 Prelude/1 Venom (2022-2024)/Venom 001 (2022).cbr
+File5[$e]=$HOME/Downloads/DSP -FALL 24-25.xls.pdf
+File6[$e]=$HOME/Downloads/Embedded_Systems_Course_Projects_Fall_2024_Level_3_Comm_Engineering.pdf
+File7[$e]=$HOME/Downloads/DSP mid_2.pdf
+File8[$e]=$HOME/Downloads/Analog-Presentation.pdf
+File9[$e]=$HOME/Downloads/DSP -FALL 24-25.pdf
+Name1[$e]=Analog Communications Midterm Exam Part II Fall 2023.pdf
+Name10[$e]=varactor bk.pdf
+Name2[$e]=السوليد في شوال.pdf
+Name3[$e]=The Algorithm Design Manual by Steven S. Skiena.pdf
+Name4[$e]=Venom 001 (2022).cbr
+Name5[$e]=DSP -FALL 24-25.xls.pdf
+Name6[$e]=Embedded_Systems_Course_Projects_Fall_2024_Level_3_Comm_Engineering.pdf
+Name7[$e]=DSP mid_2.pdf
+Name8[$e]=Analog-Presentation.pdf
+Name9[$e]=DSP -FALL 24-25.pdf
 
 [Toolbar mainToolBar]
 ToolButtonStyle=IconOnly

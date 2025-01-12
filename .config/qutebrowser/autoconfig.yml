@@ -48,9 +48,9 @@ settings:
   content.notifications.enabled:
     https://datanodes.to: false
   statusbar.show:
-    global: always
+    global: never
   tabs.show:
-    global: always
+    global: never
   url.incdec_segments:
     global:
     - path

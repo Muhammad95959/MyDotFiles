@@ -1,119 +1,131 @@
-# example sxhkdrc for use with dk
-#########################################################
-
-# terminal
-super + Return
-	kitty
-
-# launcher
-super + shift + Return
-  rofi -show drun -theme ~/.config/rofi/launcher.rasi
-
-# browser
-super + b
-  brave --test-type
-
-# ranger
-super + r
-  kitty --class Ranger --hold -e ranger ~
-
-super + c
-  rofi-gpaste
-
-# reload sxhkd
-super + shift + x
-	killall sxhkd; sxhkd -c ~/.config/dk/sxhkdrc &
-
-# powermenu
-super + shift + q
-  ~/.config/rofi/scripts/powermenu/type-1/powermenu.sh
-
-# reload dkrc
-super + shift + r
-	$HOME/.config/dk/dkrc
-
-# focus next or previous window
-super + {j,k}
-	dkcmd win focus {next,prev}
-
-# close window, swap tiled window in/out of master, cycle tiled windows in place
-super + {q,space,Tab}
-	dkcmd win {kill,swap,cycle}
-
-# toggle fullscreen and fake fullscreen (enable manipulating fullscreen window)
-super + {_,shift + }f
-	dkcmd win {full,fakefull}
-
-# toggle floating, sticky, or scratchpad
-super + shift + {space,s,u}
-	dkcmd win {float,stick,scratch}
-	# superernatively to scratch a window by class "scratchpad"
-	#dkcmd win {float,stick,scratchpad scratch}
-
-# move window, signed (+/-) for relative changes, for tiled windows
-# y coord changes will move the window up/down the stack
-super + shift + {h,j,k,l}
-	dkcmd win resize {x=-20,y=+20,y=-20,x=+20}
-
-# resize window, signed (+/-) for relative changes
-super + ctrl + {h,j,k,l}
-	dkcmd win resize {w=-20,h=+20,h=-20,w=+20}
-
-# view, send, or follow to a workspace (by number)
 super + {_,shift + ,ctrl + }{1-9,0}
 	dkcmd ws {view,follow,send} {1-9,10}
 
-# view, send, or follow to the next, previous, last active,
-# next non-empty, or prev non-empty workspace
+super + shift + {h,j,k,l}
+	dkcmd win resize {x=-20,y=+20,y=-20,x=+20}
+
+super + ctrl + {h,j,k,l}
+	dkcmd win resize {w=-20,h=+20,h=-20,w=+20}
+
 super + {_,shift + ,ctrl + }{bracketleft,bracketright,BackSpace,Left,Right}
 	dkcmd ws {view,follow,send} {prev,next,last,prevne,nextne}
 
-# view, send, or follow to the next, previous, or last active monitor
 super + {_,shift + ,ctrl + }{comma,period,backslash}
 	dkcmd mon {view,follow,send} {prev,next,last}
 
-# change active workspace layout or cycle between them
-super + {t,m}
-	dkcmd set layout {tile,mono}
-
-# change number of windows in master or first stack
-super + {_,shift + }{i,d}
-	dkcmd set {master,stack} {+1,-1}
-
-# change gap width
 super + {equal,minus}
 	dkcmd set gap {+5,-5}
 
-# change border widths
 super + ctrl + {_,shift + }{equal,minus}
 	dkcmd set border {width,outer_width} {+1,-1}
 
-super + o ; {b, d, i, k, m, n, p, q, r, z, shift + h, shift + u, shift + z}
-  {kitty --hold -e nvim ~/.config/polybar/config.ini \
-  ,kitty --hold -e nvim ~/.config/dk/sxhkdrc \
-  ,kitty --hold -e nvim ~/.config/i3/config \
-  ,kitty --hold -e nvim ~/.config/kitty/kitty.conf \
-  ,kitty --hold -e nvim ~/.config/mpv/mpv.conf \
-  ,kitty --hold -e nvim ~/.config/nvim/lua/config/lazy.lua \
-  ,kitty --hold -e nvim ~/.config/picom/picom.conf \
-  ,kitty --hold -e nvim ~/.config/qutebrowser/config.py \
-  ,kitty --hold -e nvim ~/.config/ranger/rc.conf \
-  ,kitty --hold -e nvim ~/.config/zathura/zathurarc \
-  ,kitty --hold -e nvim ~/.zhistory \
-  ,kitty --hold -e nvim ~/Scripts/update_DotFiles_repo.sh \
-  ,kitty --hold -e nvim ~/.zshrc}
+super + shift + space
+	dkcmd win float
 
-super + shift + o ; {c, d, e, g, k, m, o, t, u, z}
-  {bash ~/Scripts/rofi-nerdfonts/rofi-nerdfonts.sh \
-  ,bash /mnt/Disk_D/Muhammad/todo.sh \
-  ,kitty --hold -e bash /mnt/Disk_D/Muhammad/English_Learner/english_learner.sh \
-  ,bash ~/Scripts/google_translate.sh \
-  ,bash ~/Scripts/app_kill.sh \
-  ,bash ~/Scripts/url_to_mpv.sh \
-  ,bash ~/Scripts/open_executables.sh \
-  ,bash ~/Scripts/screen_layout/two_monitors.sh \
-  ,bash ~/Scripts/update_DotFiles_repo.sh \
-  ,bash ~/Scripts/zathura_history.sh}
+super + shift + s
+	dkcmd win stick
+
+super + s
+	dkcmd win scratch
+
+super + Return
+	kitty
+
+super + shift + Return
+  rofi -show drun -theme ~/.config/rofi/launcher.rasi
+
+super + b
+  brave --test-type
+
+super + r
+  kitty --class Yazi --hold -e yazi
+
+super + c
+  copyq toggle
+
+super + shift + c
+  notify-send.py a --hint boolean:deadd-notification-center:true string:type:clearPopups
+
+super + shift + x
+	killall sxhkd; sxhkd -c ~/.config/dk/sxhkdrc &
+
+super + shift + q
+  ~/.config/rofi/scripts/powermenu/type-1/powermenu.sh
+
+super + shift + r
+	$HOME/.config/dk/dkrc
+
+super + {j,k}
+	dkcmd win focus {next,prev}
+
+super + q
+	dkcmd win kill
+
+super + space
+	dkcmd win swap
+
+super + Tab
+	dkcmd win cycle
+
+super + f
+	dkcmd win full
+
+super + shift + f
+  dkcmd win fakefull
+
+super + {t,m}
+	dkcmd set layout {tile,mono}
+
+super + {_,shift + }{i,d}
+	dkcmd set {master,stack} {+1,-1}
+
+super + o ; b
+  kitty --hold -e nvim ~/.config/polybar/config.ini
+super + o ; d
+  kitty --hold -e nvim ~/.config/dk/sxhkdrc
+super + o ; i
+  kitty --hold -e nvim ~/.config/i3/config
+super + o ; k
+  kitty --hold -e nvim ~/.config/kitty/kitty.conf
+super + o ; m
+  kitty --hold -e nvim ~/.config/mpv/mpv.conf
+super + o ; n
+  kitty --hold -e nvim ~/.config/nvim/lua/config/lazy.lua
+super + o ; p
+  kitty --hold -e nvim ~/.config/picom/picom.conf
+super + o ; q
+  kitty --hold -e nvim ~/.config/qutebrowser/config.py
+super + o ; r
+  kitty --hold -e nvim ~/.config/ranger/rc.conf
+super + o ; z
+  kitty --hold -e nvim ~/.config/zathura/zathurarc
+super + o ; shift + h
+  kitty --hold -e nvim ~/.zhistory
+super + o ; shift + u
+  kitty --hold -e nvim ~/Scripts/update_DotFiles_repo.sh
+super + o ; shift + z
+  kitty --hold -e nvim ~/.zshrc
+
+super + shift + o ; c
+  bash ~/Scripts/rofi-nerdfonts/rofi-nerdfonts.sh
+super + shift + o ; d
+  bash /mnt/Disk_D/Muhammad/todo.sh
+super + shift + o ; e
+  kitty --hold -e bash /mnt/Disk_D/Muhammad/English_Learner/english_learner.sh
+super + shift + o ; g
+  bash ~/Scripts/google_translate.sh
+super + shift + o ; k
+  bash ~/Scripts/app_kill.sh
+super + shift + o ; m
+  bash ~/Scripts/url_to_mpv.sh
+super + shift + o ; o
+  bash ~/Scripts/open_executables.sh
+super + shift + o ; t
+  bash ~/Scripts/screen_layout/two_monitors.sh
+super + shift + o ; u
+  bash ~/Scripts/update_DotFiles_repo.sh
+super + shift + o ; z
+  bash ~/Scripts/zathura_history.sh
 
 # volume keys
 XF86AudioRaiseVolume

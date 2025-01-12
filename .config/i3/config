@@ -24,14 +24,15 @@ exec --no-startup-id udiskie
 exec --no-startup-id unclutter
 exec --no-startup-id polybar -r main
 exec --no-startup-id xset s off -dpms
-exec --no-startup-id nitrogen --restore
-exec --no-startup-id copyq --start-server
+exec --no-startup-id greenclip daemon
 exec --no-startup-id amixer set Capture 80%
 exec --no-startup-id xhost +si:localuser:$USER
 exec --no-startup-id ~/Scripts/backup_zsh_history.sh
+exec --no-startup-id feh --no-fehbg --bg-fill ~/.cache/x11wall
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id xss-lock --transfer-sleep-lock -- xfce4-screensaver-command -l
 exec --no-startup-id sudo chown $USER:$USER /sys/class/backlight/intel_backlight/brightness
+exec --no-startup-id cp ~/.config/BraveSoftware/Brave-Browser/Default/History /tmp/BraveHistory
 exec_always --no-startup-id xinput set-prop '2.4G Mouse' 'libinput Accel Speed' 0.5
 exec_always --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Accel Speed' 0.5
 exec_always --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Tapping Enabled' 1
@@ -39,8 +40,9 @@ exec_always --no-startup-id xinput set-prop 'Synaptics TM3336-004' 'libinput Nat
 exec_always --no-startup-id xinput set-prop 'PixArt Lenovo USB Optical Mouse' 'libinput Accel Speed' 0.3
 exec_always --no-startup-id xinput set-prop 'YICHIP Wireless Device Mouse' 'libinput Accel Speed' 1
 exec_always --no-startup-id killall volume_subscribe.sh ; sleep 1 ; ~/Scripts/volume_subscribe.sh
-exec_always --no-startup-id ~/Scripts/layout_handler.sh
+exec_always --no-startup-id autotiling -w 1 2 3 4 5 6 7 8 9 -l 2
 exec_always --no-startup-id ~/Scripts/keyboard_config.sh
+exec_always --no-startup-id ~/Scripts/layout_handler.sh
 exec_always --no-startup-id xfce4-screensaver
 exec_always --no-startup-id volnoti -t 2
 exec_always --no-startup-id picom
@@ -60,7 +62,7 @@ for_window [all] border pixel 2
 # for_window [all] title_window_icon padding 7px
 # border_radius 12
 
-client.focused          #c6a0f6 #c6a0f6 #24273a #c640f6   #c6a0f6    ### edited via script
+client.focused          #7b58dc #7b58dc #ffffff #6a43d8   #7b58dc    ### edited via script
 client.focused_inactive #303446 #303446 #ffffff #666666   #303446
 client.unfocused        #1e1e2e #1e1e2e #777777 #333333   #555555
 
@@ -83,13 +85,13 @@ bindsym $mod+shift+Return exec rofi -show drun -theme ~/.config/rofi/launcher.ra
 bindsym $mod+a            mode "applications"
 bindsym $mod+b            exec brave --test-type
 bindsym $mod+shift+b      exec qutebrowser
-bindsym $mod+c            exec copyq toggle
+bindsym $mod+c            exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 bindsym $mod+shift+c      exec notify-send.py a --hint boolean:deadd-notification-center:true string:type:clearPopups
 bindsym $mod+d            exec thunar
 bindsym $mod+shift+d      exec rofi -modi nerdy -show nerdy -theme ~/.config/rofi/emoji_dropdown.rasi
 bindsym $mod+e            layout toggle split
 bindsym $mod+f            fullscreen toggle
-bindsym $mod+shift+f      exec ~/Scripts/toggle_gaps.sh
+bindsym $mod+shift+f      exec ~/Scripts/toggle_i3_gaps.sh
 bindsym $mod+g            gaps inner current plus 9 ; gaps horizontal current plus 7
 bindsym $mod+shift+g      gaps inner current minus 9 ; gaps horizontal current minus 7
 bindsym $mod+i            exec rofimoji --selector-args="-theme ~/.config/rofi/emoji_dropdown.rasi"
@@ -97,7 +99,7 @@ bindsym $mod+shift+i      exec xcalib -invert -alter
 bindsym $mod+m            mode "mouse"
 bindsym $mod+shift+m      --release exec xdotool type 'ﷺ'
 bindsym $mod+n            mode "redshift"
-bindsym $mod+shift+n      exec ~/Scripts/xdotool_click.sh
+bindsym $mod+shift+n      exec polybar-msg action date toggle
 bindsym $mod+o            mode "scripts"
 bindsym $mod+shift+o      mode "executable_scripts"
 bindsym $mod+p            exec rofi-pass
@@ -110,10 +112,10 @@ bindsym $mod+s            exec i3-msg scratchpad show || i3-msg move scratchpad
 bindsym $mod+shift+s      sticky toggle
 bindsym $mod+t            split v ; layout tabbed
 bindsym $mod+shift+t      exec ~/Scripts/brave_translate.sh
-bindsym $mod+v            split v
-bindsym $mod+shift+v      split h
+bindsym $mod+v            split h
+bindsym $mod+shift+v      split v
 bindsym $mod+w            layout tabbed
-bindsym $mod+shift+w      exec nitrogen --head=0 --set-zoom-fill --random --no-recurse /mnt/Disk_D/Backgrounds
+bindsym $mod+shift+w      exec feh --no-fehbg --bg-fill "$(find "/mnt/Disk_D/Backgrounds" -maxdepth 1 -name '*.jpg' -o -name '*.png' | shuf -n1)"
 bindsym $mod+space        focus mode_toggle
 bindsym $mod+shift+space  floating toggle
 bindsym $mod+minus        exec picom-trans -c -5
@@ -121,7 +123,6 @@ bindsym $mod+equal        exec picom-trans -c +5
 bindsym Print             exec flameshot gui
 bindsym ctrl+Print        exec kitty --class hiddenkitty -e ~/Scripts/flameshotwindows.sh --path ~/Pictures
 bindsym shift+Print       exec flameshot gui --region 1920x1080+0+0
-bindsym ctrl+Escape       exec setcapslock toggle
 # Volume controls
 bindsym XF86AudioRaiseVolume        exec ~/Scripts/volume_changer.sh vol_inc
 bindsym XF86AudioLowerVolume        exec ~/Scripts/volume_changer.sh vol_dec
@@ -260,12 +261,14 @@ for_window [class="RangerFileChooser"] floating enabled
 for_window [class="Nl.hjdskes.gcolor3"] floating enabled
 for_window [class="Arandr"] floating enabled
 for_window [class="pomatez"] floating enabled
+for_window [class="flowtime"] floating enabled
 for_window [class="Timeshift-gtk"] floating disabled
+for_window [class="supertuxkart"] floating disabled
 for_window [title="Ultimate Vocal Remover"] floating disabled
+for_window [class="Rofi"] floating enable, border pixel 0
 for_window [class="livecaptions"] floating enable, move absolute position 500px 900px
 for_window [class="copyq"] floating enable, resize set 1280 px 720 px, move absolute position center
 for_window [class="octave-cli"] floating enable, resize set 1600 px 900 px, move absolute position center
-for_window [class="Nitrogen"] floating enable, resize set 610 px 380 px, move absolute position 1300px 690px
 for_window [class="hiddenkitty"] move scratchpad
 assign     [title="Ultimate Vocal Remover"] $ws9
 assign     [class="Uget-gtk"] $ws10
@@ -331,14 +334,13 @@ mode "applications" {
     bindsym p exec pomatez                                                                        ,mode "default"
     bindsym q exec flatpak run io.github._0xzer0x.qurancompanion                                  ,mode "default"
     bindsym t exec telegram-desktop                                                               ,mode "default"
-    bindsym u exec ~/Scripts/UVR_multi_opener.sh                                                  ,mode "default"
     bindsym v exec virt-manager                                                                   ,mode "default"
     bindsym w exec whatsie                                                                        ,mode "default"
     bindsym shift+a exec ~/Scripts/virt_opener.sh android-x86-9.0                                 ,mode "default"
     bindsym shift+b exec notify-send -t 5000 "$(acpi)"                                            ,mode "default"
     bindsym shift+c exec gcolor3                                                                  ,mode "default"
     bindsym shift+m exec kitty --class pulsemixer --hold -e pulsemixer                            ,mode "default"
-    bindsym shift+n exec nitrogen                                                                 ,mode "default"
+    bindsym shift+n exec ~/Scripts/wallpaper.sh                                                   ,mode "default"
     bindsym shift+s exec notify-send "$(~/Scripts/bilal.sh -a)"                                   ,mode "default"
     bindsym shift+t exec mousepad                                                                 ,mode "default"
     bindsym shift+u exec ~/Scripts/virt_opener.sh ubuntu24.04                                     ,mode "default"
@@ -406,16 +408,20 @@ mode "executable_scripts" {
     bindsym c exec ~/Scripts/move_to_i3_corners.sh                                     ,mode "default"
     bindsym d exec ~/Scripts/rofi_todo/todo.sh                                         ,mode "default"
     bindsym g exec ~/Scripts/google_translate.sh                                       ,mode "default"
-    bindsym h exec ~/Scripts/toggle_polybar.sh                                         ,mode "default"
+    bindsym h exec ~/Scripts/brave_history.sh                                          ,mode "default"
     bindsym k exec ~/Scripts/app_kill.sh                                               ,mode "default"
-    bindsym m exec ~/Scripts/url_to_mpv.sh                                             ,mode "default"
-    bindsym p exec ~/Scripts/toggle_polybar_location.sh                                ,mode "default"
+    bindsym l exec ~/Scripts/toggle_polybar_location.sh                                ,mode "default"
+    bindsym m exec ~/Scripts/mpv_history.sh                                            ,mode "default"
+    bindsym p exec ~/Scripts/toggle_polybar.sh                                         ,mode "default"
     bindsym r exec ~/Scripts/i3_resize.sh                                              ,mode "default"
     bindsym s exec ~/Scripts/toggle_i3_smart_gaps.sh                                   ,mode "default"
     bindsym t exec ~/Scripts/layout_handler.sh                                         ,mode "default"
     bindsym u exec ~/Scripts/update_DotFiles_repo.sh                                   ,mode "default"
+    bindsym w exec ~/Scripts/brave_bookmarks.sh                                        ,mode "default"
     bindsym y workspace $ws10; exec kitty --class yt-dlp -e ~/Scripts/yt-dlp_script.sh ,mode "default"
     bindsym z exec ~/Scripts/zathura_history.sh                                        ,mode "default"
+    bindsym shift+m exec ~/Scripts/url_to_mpv.sh                                       ,mode "default"
+    bindsym shift+w exec ~/Scripts/myWebsites.sh                                       ,mode "default"
 
     bindsym Escape mode "default"
     bindsym $mod+shift+o mode "default"

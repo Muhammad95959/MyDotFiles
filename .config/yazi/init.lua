@@ -1,15 +1,15 @@
 Status:children_add(function()
 	local h = cx.active.current.hovered
 	if h == nil or ya.target_family() ~= "unix" then
-		return ui.Line {}
+		return ui.Line({})
 	end
 
-	return ui.Line {
+	return ui.Line({
 		ui.Span(ya.user_name(h.cha.uid) or tostring(h.cha.uid)):fg("#89b4fa"),
 		ui.Span(":"),
 		ui.Span(ya.group_name(h.cha.gid) or tostring(h.cha.gid)):fg("#89b4fa"),
 		ui.Span(" "),
-	}
+	})
 end, 500, Status.RIGHT)
 
 require("relative-motions"):setup({ show_numbers = "relative_absolute", show_motion = true })
@@ -33,3 +33,7 @@ require("full-border"):setup({
 	-- Available values: ui.Border.PLAIN, ui.Border.ROUNDED
 	type = ui.Border.ROUNDED,
 })
+
+require("smart-enter"):setup {
+	open_multi = true,
+}

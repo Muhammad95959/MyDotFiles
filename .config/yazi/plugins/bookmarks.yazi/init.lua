@@ -138,6 +138,28 @@ local save_bookmark = ya.sync(function(state, idx)
 		is_parent = file.is_parent,
 	}
 
+	-- Custom sorting function
+	table.sort(state.bookmarks, function(a, b)
+		local key_a, key_b = a.on, b.on
+
+		-- Numbers first
+		if key_a:match("%d") and not key_b:match("%d") then
+			return true
+		elseif key_b:match("%d") and not key_a:match("%d") then
+			return false
+		end
+
+		-- Uppercase before lowercase
+		if key_a:match("%u") and key_b:match("%l") then
+			return true
+		elseif key_b:match("%u") and key_a:match("%l") then
+			return false
+		end
+
+		-- Regular alphabetical sorting
+		return key_a < key_b
+	end)
+
 	if state.persist then
 		_save_state(state.bookmarks)
 	end
@@ -194,7 +216,10 @@ local delete_all_bookmarks = ya.sync(function(state)
 end)
 
 return {
-	entry = function(_, args)
+	entry = function(_, job_or_args)
+		-- TODO: DEPRECATE IN Yazi 0.4
+		-- https://github.com/sxyazi/yazi/pull/1966
+		local args = job_or_args.args or job_or_args
 		local action = args[1]
 		if not action then
 			return
@@ -233,7 +258,7 @@ return {
 			return
 		end
 
-		-- TODO: DEPRECATED
+		-- TODO: DEPRECATED Yazi 0.4
 		if args.save_last_directory then
 			_save_last_directory()
 		elseif type(args.last_directory) == "table" then

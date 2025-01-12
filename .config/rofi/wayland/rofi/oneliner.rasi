@@ -22,8 +22,7 @@ configuration {
 window {
     location:           north;
     width:              100%;
-    height:             30px;
-    y-offset:           -30px;
+    y-offset:           -20px;
     background-color:   @background;
     children:           [ mainbox,message ];
 }

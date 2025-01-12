@@ -36,8 +36,6 @@ function Close_buffer()
   end
 end
 
-map("n", "<LeftMouse>", "<LeftMouse>i")
-
 map("x", "p", "P")
 map("x", "P", "p")
 
@@ -77,15 +75,15 @@ map("v", "<C-c>", "y", { desc = "yank" })
 map("v", "<C-v>", "p", { desc = "paste" })
 
 -- Open kitty terminal in the current working dir
-map("n", "<leader>k", ":silent !kitty %:p:h &<cr>", { desc = "Kitty" })
+map("n", "<leader>k", ':silent !kitty "%:p:h" &<cr>', { desc = "Kitty" })
 
--- Trim the trailing empty lines and the trailing spaces
-map(
-  "n",
-  "<leader>t",
-  ":let save_cursor = getpos('.')<CR>:silent %!sed -e :a -e '/^\\n*$/{$d;N;ba' -e '}; s/[[:space:]]*$//'<CR>:call setpos('.', save_cursor)<CR>",
-  { desc = "Trailing Trim" }
-)
+-- -- Trim the trailing empty lines and the trailing spaces
+-- map(
+--   "n",
+--   "<leader>t",
+--   ":let save_cursor = getpos('.')<CR>:silent %!sed -e :a -e '/^\\n*$/{$d;N;ba' -e '}; s/[[:space:]]*$//'<CR>:call setpos('.', save_cursor)<CR>",
+--   { desc = "Trailing Trim" }
+-- )
 
 -- Menu navigation
 vim.keymap.set("c", "<Down>", 'pumvisible() ? "\\<C-n>" : "\\<C-j>"', { expr = true, noremap = true })

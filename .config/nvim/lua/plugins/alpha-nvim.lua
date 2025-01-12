@@ -19,6 +19,6 @@ return {
   end,
   config = function()
     require("alpha").setup(require("alpha.themes.startify").config)
-    vim.keymap.set("n", "<leader>a", ":Alpha<cr>", { desc = "Alpha Toggle", silent = true })
+    vim.keymap.set("n", "<A-Space>a", ":Alpha<cr>", { desc = "Alpha Toggle", silent = true })
   end,
 }

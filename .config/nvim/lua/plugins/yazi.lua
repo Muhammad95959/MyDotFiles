@@ -4,7 +4,7 @@ return {
   keys = {
     -- 👇 in this section, choose your own keymappings!
     {
-      "<leader>r",
+      "<A-Space>r",
       "<cmd>Yazi<cr>",
       desc = "Open yazi",
     },

@@ -20,7 +20,7 @@ host=$(hostname)
 # Options
 shutdown=' Shutdown'
 reboot=' Reboot'
-lock=' Lock'
+lock=' Lock'
 suspend=' Suspend'
 logout=' Logout'
 yes=' Yes'
@@ -31,7 +31,7 @@ rofi_cmd() {
 	rofi -dmenu \
 		-p "$host" \
 		-mesg "Uptime: $uptime" \
-		-theme ${dir}/${theme}.rasi
+		-theme "${dir}"/${theme}.rasi
 }
 
 # Confirmation CMD
@@ -44,7 +44,7 @@ confirm_cmd() {
 		-dmenu \
 		-p 'Confirmation' \
 		-mesg 'Are you Sure?' \
-		-theme ${dir}/${theme}.rasi
+		-theme "${dir}"/${theme}.rasi
 }
 
 # Ask for confirmation
@@ -76,10 +76,14 @@ run_cmd() {
 				bspc quit
 			elif [[ "$DESKTOP_SESSION" == 'i3' ]]; then
 				i3-msg exit
+			elif [[ "$DESKTOP_SESSION" == 'dk' ]]; then
+				dkcmd exit
 			elif [[ "$DESKTOP_SESSION" == 'qtile' ]]; then
 				qtile cmd-obj -o cmd -f shutdown
 			elif [[ "$DESKTOP_SESSION" == 'plasma' ]]; then
 				qdbus org.kde.ksmserver /KSMServer logout 0 0 0
+			elif [[ "$DESKTOP_SESSION" == 'hyprland' ]]; then
+        hyprctl dispatch exit
 			else
 				pkill -KILL -u "$USER"
 			fi
@@ -92,13 +96,13 @@ run_cmd() {
 # Actions
 chosen="$(run_rofi)"
 case ${chosen} in
-$shutdown)
+"$shutdown")
 	run_cmd --shutdown
 	;;
-$reboot)
+"$reboot")
 	run_cmd --reboot
 	;;
-$lock)
+"$lock")
 	if [[ -x '/usr/bin/betterlockscreen' && "$XDG_SESSION_TYPE" = "x11" ]]; then
 		betterlockscreen -l
 	elif [[ -x '/usr/bin/i3lock' && "$XDG_SESSION_TYPE" = "x11" ]]; then
@@ -109,10 +113,10 @@ $lock)
     hyprlock
 	fi
 	;;
-$suspend)
+"$suspend")
 	run_cmd --suspend
 	;;
-$logout)
+"$logout")
 	run_cmd --logout
 	;;
 esac

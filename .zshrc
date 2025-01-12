@@ -42,6 +42,7 @@ source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.config/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 source ~/.config/zsh/fzf-tab-completion/zsh/fzf-zsh-completion.sh
+source ~/.config/zsh/dircycle.plugin.zsh
 
 ### VI mode ---------------------------------------------------------------
 
@@ -65,6 +66,33 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 bindkey '^[[A' history-substring-search-up			
 bindkey '^[[B' history-substring-search-down
 
+### Dirs setup ------------------------------------------------------------
+
+setopt AUTO_PUSHD
+setopt PUSHDMINUS
+setopt PUSHD_MINUS
+setopt CDABLE_VARS
+setopt PUSHD_IGNORE_DUPS
+
+DIRSTACKSIZE=${DIRSTACKSIZE:-100}
+dirstack_file=${dirstack_file:-${HOME}/.local/share/zdirs}
+
+if [[ -f ${dirstack_file} ]] && [[ ${#dirstack[*]} -eq 0 ]] ; then
+  dirstack=( ${(f)"$(< $dirstack_file)"} )
+  dirstack=(${dirstack:#$PWD})
+  # "cd -" won't work after login by just setting $OLDPWD, so
+  [[ -d $dirstack[1] ]] && cd $dirstack[1] && cd $OLDPWD
+fi
+
+autoload -U add-zsh-hook
+add-zsh-hook chpwd chpwd_dirpersist
+chpwd_dirpersist() {
+  if (( $DIRSTACKSIZE <= 0 )) || [[ -z $dirstack_file ]]; then return; fi
+  local -ax my_stack
+  my_stack=( ${PWD} ${dirstack} )
+  builtin print -l ${(u)my_stack} >! ${dirstack_file}
+}
+
 ### History setup ---------------------------------------------------------
 
 setopt HIST_EXPIRE_DUPS_FIRST
@@ -77,7 +105,7 @@ HISTFILE=~/.zhistory
 HISTSIZE=100000
 SAVEHIST=100000
 
-# completion setup --------------------------------------------------------
+### Completion setup ------------------------------------------------------
 
 autoload -U compinit
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
@@ -104,8 +132,6 @@ export MANPAGER='nvim +Man!'
 export TERMCMD=kitty
 export EDITOR=nvim
 export BAT_THEME="Catppuccin Mocha"
-export PNPM_HOME=~/.pnpm-global
-export PATH=$PNPM_HOME/bin:$PATH
 export FZF_DEFAULT_OPTS=" \
 --border=rounded --height=~99% --reverse \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
@@ -114,100 +140,50 @@ export FZF_DEFAULT_OPTS=" \
 
 ### Aliases ---------------------------------------------------------------
 
-alias logout="pkill -KILL -u $USER"
-alias cd="z"
+alias d='selected=$(grep -xv "$PWD" ~/.local/share/zdirs | fzf); [[ -n $selected ]] && cd "$selected"'
 alias ff="fzf-nvim"
-alias ls="exa --icons -a --group-directories-first"
-alias ll="exa --icons -a --group-directories-first -l"
+alias ls="eza --icons -a --group-directories-first"
+alias ll="eza --icons -a --group-directories-first -l"
+alias quit="pkill -KILL -u $USER"
+alias wget="wget --hsts-file=$HOME/.local/share/wget-hsts"
+alias tree="eza --tree"
 alias bl="~/Scripts/bilal.sh -a | sed 's/:/:+/1' | column -ts + | rg '\d'"
 alias nvim-custom="NVIM_APPNAME=nvim-custom nvim"
 alias zrefresh="source $HOME/.zshrc"
-alias cppath="pwd | sed 's/\(^.*$\)/\"\1\"/' | xclip -selection clipboard"
-alias copycmd="tail -n 2 ~/.zhistory | head -n 1 | xclip -selection clipboard"
 alias zshrc="nvim $HOME/.zshrc"
 alias i3config="nvim $HOME/.config/i3/config"
-alias dwmconfig="nvim $HOME/.config/dwm/config.h"
+alias hyprconfig="nvim $HOME/.config/hypr/hyprland.conf"
 alias barconfig="nvim $HOME/.config/polybar/config.ini"
-alias uvrautoplay="bash ~/Scripts/UVR_autoplay.sh"
+alias noticenter="kill -s USR1 $(pidof deadd-notification-center)"
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias webtemplate="cp -r /mnt/Disk_D/Muhammad/Website-Template/* ."
 alias replaceunderscore="find . -depth -name '*_*' | while read -r file; do mv "$file" "$(dirname "$file")/$(basename "$file" | tr '_' ' ')"; done"
 alias replacespace="find . -depth -name '* *' | while read -r file; do mv "$file" "$(dirname "$file")/$(basename "$file" | tr ' ' '_')"; done"
-alias cptemplate="cp $HOME/Projects/Elzero/4-javascript-course/Elzero_Assignments/00-template/* ."
 
 if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
   alias rofi-systemd="XDG_CONFIG_HOME=$HOME/.config/rofi/wayland bash ~/.config/rofi/scripts/rofi-systemd"
+  alias cppath="pwd | sed 's/\(^.*$\)/\"\1\"/' | wl-copy"
+  alias copycmd="tail -n 2 ~/.zhistory | head -n 1 | tr -d '\n' | wl-copy"
+  alias cbimage="wl-paste --type image/png > /tmp/clipboard.png && kitty +kitten icat /tmp/clipboard.png"
 else
   alias rofi-systemd="bash ~/.config/rofi/scripts/rofi-systemd"
+  alias cppath="pwd | sed 's/\(^.*$\)/\"\1\"/' | xclip -selection clipboard"
+  alias copycmd="tail -n 2 ~/.zhistory | head -n 1 | tr -d '\n' | xclip -selection clipboard"
+  alias cbimage="xclip -selection clipboard -t image/png -o > /tmp/clipboard.png && kitty +kitten icat /tmp/clipboard.png"
 fi
 
 if command -v pacman &> /dev/null; then
   alias pkgsbackup="pacman -Qne | awk '{print \$1}' \
     > /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/ArchNativePackages.txt \
-    && pacman -Qm | awk '{print \$1}' \
+    && pacman -Qme | awk '{print \$1}' \
     > /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/ArchAurPackages.txt"
 fi
-
-### autojump setup ----------------------------------------------------------
-
-[ -s /etc/profile.d/autojump.sh ] && source /etc/profile.d/autojump.sh
-
-# Add a `r` function to zsh that opens ranger either at the given directory or
-# at the one autojump suggests
-rj() {
-  if [ "$1" != "" ]; then
-    if [ -d "$1" ]; then
-      ranger "$1"
-    elif [ -f "$1" ]; then
-      ranger --selectfile="$1"
-    else
-      out="$(autojump $1)"
-      if [ -d "$out" ]; then
-        ranger "$out"
-      else
-        ranger --selectfile="$out"
-      fi
-    fi
-  else
-    ranger
-  fi
-	return $?
-}
-
-# Add a `y` function to zsh that opens ranger either at the given directory or
-# at the one autojump suggests
-yj() {
-  if [ "$1" != "" ]; then
-    if [ -d "$1" ]; then
-      yazi "$1"
-    else
-      yazi "$(autojump $1)"
-    fi
-  else
-    yazi
-  fi
-    return $?
-}
 
 ### zoxide setup ----------------------------------------------------------
 
 if command -v zoxide &> /dev/null; then
-  eval "$(zoxide init zsh)"
+  eval "$(zoxide init zsh --cmd cd)"
 fi
-
-# Add a `r` function to zsh that opens ranger either at the given directory or
-# at the one zoxide suggests
-rz() {
-  if [ "$1" != "" ]; then
-    if [ -d "$1" ]; then
-      ranger "$1"
-    else
-      ranger "$(zoxide query $1)"
-    fi
-  else
-    ranger
-  fi
-    return $?
-}
 
 # Add a `y` function to zsh that opens ranger either at the given directory or
 # at the one zoxide suggests
@@ -231,23 +207,22 @@ fzf-nvim() {
   local selected_file
   selected_file=$(find ~ /mnt/Disk_D/Muhammad /mnt/Disk_D/Engineering \( \
     -path '*/.git/*' \
-    -o -path ~/Android \
+    -o -path '*/node_modules/*' \
     -o -path ~/.android \
-    -o -path ~/.arduino15 \
     -o -path ~/.cache \
-    -o -path ~/.cargo \
-    -o -path ~/.gradle \
     -o -path ~/.npm \
-    -o -path ~/.pyenv \
     -o -path ~/.config/BraveSoftware \
     -o -path ~/.config/Microsoft \
     -o -path ~/.config/chromium \
     -o -path ~/.config/content_shell \
     -o -path ~/.config/thorium \
-    -o -path ~/.local/share/Android \
     -o -path ~/.local/share/JetBrains \
+    -o -path ~/.local/share/android \
+    -o -path ~/.local/share/cargo \
+    -o -path ~/.local/share/gradle \
     -o -path ~/.local/share/nvim \
     -o -path ~/.local/share/nvim-custom \
+    -o -path ~/.local/share/pyenv \
     -o -path ~/.local/share/tldr \
     -o -path /mnt/Disk_D/Muhammad/Android_Studio/ASProjects \) \
     -prune -o -type f -print \
@@ -267,7 +242,22 @@ function yy() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
 	yazi "$@" --cwd-file="$tmp"
 	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		builtin cd -- "$cwd"
+		cd "$cwd"
 	fi
 	rm -f -- "$tmp"
+}
+
+### audio-separator wrapper -----------------------------------------------
+
+function audio-separator() {
+  bin_path="/mnt/Disk_D/برامج/Linux/python312/bin/audio-separator"
+  models_path="/mnt/Disk_D/Muhammad/Audio-Separator-Models"
+  model=$(ls "$models_path" | sed -E '/(yaml$|json$)/d' | fzf)
+  [ -z "$model" ] && return 1
+  for file in "$@"; do
+    if $bin_path --model_file_dir "$models_path" --model_filename "$model" --single_stem Vocals --output_format=MP3 "$file"; then
+      paplay ~/.config/completion.mp3
+    fi
+  done
+  notify-send -t 7500 "Audio Separation Completed"
 }
