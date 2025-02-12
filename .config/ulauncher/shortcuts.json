@@ -1,0 +1,62 @@
+{
+    "b3a8ed5f-55c5-45d9-8767-f5f116bbf4b2": {
+        "id": "b3a8ed5f-55c5-45d9-8767-f5f116bbf4b2",
+        "name": "Google Search",
+        "keyword": "g",
+        "cmd": "https://google.com/search?q=%s",
+        "icon": "/usr/share/ulauncher/media/google-search-icon.png",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1737841534.2713768
+    },
+    "ce6a512a-50ad-44d3-88db-6b5a39645e1c": {
+        "id": "ce6a512a-50ad-44d3-88db-6b5a39645e1c",
+        "name": "Stack Overflow",
+        "keyword": "s",
+        "cmd": "https://stackoverflow.com/search?q=%s",
+        "icon": "/usr/share/ulauncher/media/stackoverflow-icon.svg",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1737841534.2714536
+    },
+    "6cce6143-29d4-41c9-ba61-0d6b6b344f3c": {
+        "id": "6cce6143-29d4-41c9-ba61-0d6b6b344f3c",
+        "name": "Youtube",
+        "keyword": "y",
+        "cmd": "https://www.youtube.com/results?search_query=%s",
+        "icon": "~/.config/ulauncher/icons/icons8-youtube.svg",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1737843565.1480603
+    },
+    "d5c2a82f-0fe1-4af0-a113-c023197e8e6b": {
+        "id": "d5c2a82f-0fe1-4af0-a113-c023197e8e6b",
+        "name": "Arch Wiki",
+        "keyword": "a",
+        "cmd": "https://wiki.archlinux.org/index.php?search=%s",
+        "icon": "~/.config/ulauncher/icons/archlinux-icon.svg",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1737847987.3012037
+    },
+    "8bbbf7d3-d261-4ab3-91ff-1fb7e83d0423": {
+        "id": "8bbbf7d3-d261-4ab3-91ff-1fb7e83d0423",
+        "name": "Reddit",
+        "keyword": "r",
+        "cmd": "https://www.reddit.com/search/?q=%s",
+        "icon": "~/.config/ulauncher/icons/reddit-logo-2436.svg",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1737848154.5110533
+    },
+    "7b387159-5c55-46ef-8ac1-06cd2e2eabde": {
+        "id": "7b387159-5c55-46ef-8ac1-06cd2e2eabde",
+        "name": "Urban Dictionary",
+        "keyword": "u",
+        "cmd": "https://www.urbandictionary.com/define.php?term=%s",
+        "icon": "~/.config/ulauncher/icons/Urban Dictionary_idt4BzToCz_1.svg",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1737848192.2329452
+    }
+}

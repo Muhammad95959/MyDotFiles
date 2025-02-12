@@ -15,9 +15,10 @@ end, 500, Status.RIGHT)
 require("relative-motions"):setup({ show_numbers = "relative_absolute", show_motion = true })
 
 require("bookmarks"):setup({
-	save_last_directory = true,
+	last_directory = { enable = true, persist = true },
 	persist = "all",
 	desc_format = "parent",
+	file_pick_mode = "parent",
 	notify = {
 		enable = true,
 		timeout = 1,

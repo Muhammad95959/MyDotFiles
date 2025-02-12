@@ -75,7 +75,7 @@ map("v", "<C-c>", "y", { desc = "yank" })
 map("v", "<C-v>", "p", { desc = "paste" })
 
 -- Open kitty terminal in the current working dir
-map("n", "<leader>k", ':silent !kitty "%:p:h" &<cr>', { desc = "Kitty" })
+map("n", "<A-Space>k", ':silent !kitty "%:p:h" &<cr>', { desc = "Kitty" })
 
 -- -- Trim the trailing empty lines and the trailing spaces
 -- map(

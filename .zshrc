@@ -1,3 +1,14 @@
+### Tmux ------------------------------------------------------------------
+
+# if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+#   ~/Scripts/clean_tmux.sh &> /dev/null
+#   if [ "$(pgrep -x kitty | wc -l)" -le 1 ]; then
+#     tmux new-session -A -s default &> /dev/null
+#   else
+#     tmux new &> /dev/null
+#   fi
+# fi
+
 ### Prompt and cursor setup -----------------------------------------------
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -41,6 +52,7 @@ source ~/.config/zsh/zsh-vim-mode/zsh-vim-mode.plugin.zsh
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.config/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/.config/zsh/zsh-completions/zsh-completions.plugin.zsh
 source ~/.config/zsh/fzf-tab-completion/zsh/fzf-zsh-completion.sh
 source ~/.config/zsh/dircycle.plugin.zsh
 
@@ -144,6 +156,8 @@ alias d='selected=$(grep -xv "$PWD" ~/.local/share/zdirs | fzf); [[ -n $selected
 alias ff="fzf-nvim"
 alias ls="eza --icons -a --group-directories-first"
 alias ll="eza --icons -a --group-directories-first -l"
+alias ta="tmux attach"
+alias tx="tmux new-session -A -s default"
 alias quit="pkill -KILL -u $USER"
 alias wget="wget --hsts-file=$HOME/.local/share/wget-hsts"
 alias tree="eza --tree"
@@ -256,7 +270,7 @@ function audio-separator() {
   [ -z "$model" ] && return 1
   for file in "$@"; do
     if $bin_path --model_file_dir "$models_path" --model_filename "$model" --single_stem Vocals --output_format=MP3 "$file"; then
-      paplay ~/.config/completion.mp3
+      setsid paplay ~/.config/completion.mp3 &
     fi
   done
   notify-send -t 7500 "Audio Separation Completed"
